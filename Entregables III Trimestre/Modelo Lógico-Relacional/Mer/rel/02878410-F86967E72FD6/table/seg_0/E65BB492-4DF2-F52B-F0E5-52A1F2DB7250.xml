@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E65BB492-4DF2-F52B-F0E5-52A1F2DB7250" name="TélefonosCliente">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>529B24B7-373D-BABA-5240-49B3921934D5</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TélefonoID" id="E6BBA813-1A77-F93E-15DB-AD119CF7D977">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>8C097370-8996-EBFA-4E8D-633EBC7D3FD4</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoTélefono" id="ACA49130-7400-134C-30E1-876DAC51E2D0">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>9ABD36AC-8B16-41A1-CA55-C57913D230C1</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumTélefono" id="F0081717-EAC6-66E2-11E1-9642E425F2E3">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>DC831697-5AAC-2453-728F-2AA525B0C51D</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_ClienteID" id="A71ABDCD-F0BC-EDA0-D806-CF65AFB655A6">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>0490465B-6612-91C0-499C-F16A26344BF7</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="346ABAA1-5930-C369-B68A-8AD675719C91" referredColumn="44FA6925-CB61-3D0F-E5D0-6481E0792FB5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21BC5C48-88E1-403F-9C46-CDEEA0CBAC1E" name="TélefonosCliente_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>F1E25F59-51EA-F115-8713-A9EF59EE877A</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6BBA813-1A77-F93E-15DB-AD119CF7D977"/>
+<colUsage columnID="A71ABDCD-F0BC-EDA0-D806-CF65AFB655A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6C7A1C58-BD5F-B55C-18CF-D049742C672F" name="TélefonosCliente_Cliente_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>17877184-CE2E-AF20-B9CF-12C6AECE453A</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A71ABDCD-F0BC-EDA0-D806-CF65AFB655A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

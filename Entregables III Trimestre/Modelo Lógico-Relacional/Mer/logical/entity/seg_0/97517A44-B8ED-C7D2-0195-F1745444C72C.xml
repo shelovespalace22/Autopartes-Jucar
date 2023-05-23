@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="97517A44-B8ED-C7D2-0195-F1745444C72C" name="MateriaPrima">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:41:10 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MateriaPrimaID" id="48DEE411-AB2C-9D0A-719B-8FC9E967A7ED">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:41:18 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TipoMateriaPrima" id="E6520BB8-F4FE-340E-C0BD-202997F25AA7">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:41:31 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NombreMateriaPrima" id="A4609B94-7C3E-3D82-2684-DD7CA00E87DA">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:41:50 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProveedorID" id="F1F2EAF2-6654-E725-A977-74E27515F831">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:51:45 UTC</createdTime>
+<generatorID>A6E8C383-498D-EC23-C3E4-799823ED1396</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9677AB87-6892-435D-26CC-C4EB7ECC3224" name="MateriaPrima PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:41:30 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>48DEE411-AB2C-9D0A-719B-8FC9E967A7ED</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

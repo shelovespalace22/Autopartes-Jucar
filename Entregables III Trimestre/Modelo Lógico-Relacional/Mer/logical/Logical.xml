@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="621295FF-DB3B-D87E-2A6C-E10A79A96109" mainViewID="BA81EBCD-4995-58D2-D076-BA5CEE0F989F">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-11 15:16:28 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91CD9F6B-C01B-EDC6-7A96-00168B3E2E61" name="Aporte">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>4A9D6A97-672C-B9E6-0E4E-D62578F2987C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AporteID" id="AA81A648-44BA-98C3-6F1E-1604EFFFA490">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>DA1AE67F-93BA-C868-A749-16BF2A29CB98</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaAporte" id="E2E51E13-D12F-6684-836B-7653567776AB">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>09F6E288-2DE0-F905-4F8D-7ED80644B9EE</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MontoAbonado" id="DC9F7E89-E271-6FF7-5B79-5B517D862649">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 11:08:17 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Factura_FacturaID" id="FD97F943-C4E9-7DE3-6E23-601970A107AF">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>AA904D03-D692-78A2-9AC4-41FA4E832986</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B678D099-0848-E976-0023-4ADEF1EF2E71" referredColumn="1CEEC0BA-8C14-BB9E-0F66-7921F50F0B20"/>
+</associations>
+</Column>
+<Column name="MedioPago_MedioPagoID" id="365806DF-8087-C582-83DF-8C586A79CC9D">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>2AB91A64-509F-DC24-41C4-A3A38C266FEF</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA9B5CC8-0CED-46E3-594B-D4BB212C4792" referredColumn="48CBD761-1741-B3B9-7631-C130CB2EE881"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="447D0C4C-EAA6-21F1-B5D5-1987D7FEAA14" name="Aporte_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>6007C75B-D262-C749-04D1-7BA2452ED12B</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA81A648-44BA-98C3-6F1E-1604EFFFA490"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="732C1622-87AB-EAC6-1769-5EED080207D7" name="Aporte_Factura_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>9996A998-19E1-3B36-CF89-563BEABBDC4C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD97F943-C4E9-7DE3-6E23-601970A107AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E9DB268-9A86-2F94-D01D-2BFF7DECECAE" name="Aporte_MedioPago_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>3E6830CE-6437-E961-3A3B-3D53BB5EC8D7</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="365806DF-8087-C582-83DF-8C586A79CC9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autoparte_Perdida" directorySegmentName="seg_0" id="B04FBD65-0641-0A78-0E4B-1E1C01A79513">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-11 15:41:09 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>F4C292C5-DF52-3965-3726-D2733568CF6E</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>sufrir una</nameOnSource>
+<nameOnTarget>referir a una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E4A1BCA0-C8B4-152B-9972-5E463B570F1E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8DCB44E8-8A73-C57B-591F-923949902AC0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FCBBA9BE-C058-8CFA-1EB8-1F2BB46C7726" name="Stock">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:16:32 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="StockID" id="D62E67B8-70A5-D30C-56A2-B48449FC9D0D">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:16:41 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stock" id="08439190-2D39-ED4B-25CF-8250F30D1138">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:16:54 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ExistenciasIniciales" id="EA7F1CBD-7345-77C1-31F3-9EFC32F99FFD">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:17:25 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="InventarioMáx" id="3CB1B5B5-0FC8-E1FC-0E38-41F6E612F444">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:17:43 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="InventarioMin" id="7E6E87BA-6AFC-9FC1-5911-3496E3FD02B5">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:18:21 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AutoparteID" id="77DC9731-C2D6-ABF7-8300-01C9190161A7">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:19:22 UTC</createdTime>
+<generatorID>841E5962-1AEB-36BA-CFF9-A9AC1E0A38D6</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DD930389-2BFC-E09D-AE05-E54DFBD214F0" name="Stock PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:16:53 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D62E67B8-70A5-D30C-56A2-B48449FC9D0D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

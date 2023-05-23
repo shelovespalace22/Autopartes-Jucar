@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="85F1CF9C-817B-DA05-C0AB-8B25A1B59327" name="Proveedor">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>0906C16C-94EE-7EFD-2CB7-1C5D556EB682</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ProveedorID" id="E96DA16C-E193-FA39-8A1E-96D478B36C0D">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoProducto" id="AB37C52F-22C5-6DB1-3ABE-D4DC21E02558">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>F137F197-4EE7-F295-ED88-72782AA956F7</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="1B631944-6CB8-96DA-B744-434307284670">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>96DB3023-3379-FC58-9D0C-765F4AD4F0A5</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="82F7BEBC-2505-039C-0339-63EDBAA20A42" name="Proveedor_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>34DFD1DD-8190-A37E-4B2E-DE4A1448013C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E96DA16C-E193-FA39-8A1E-96D478B36C0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autoparte_DetalleFactura" directorySegmentName="seg_0" id="D8B3DE15-2BDD-8192-59B6-833AC8764BD0">
+<createdBy>Ambiente</createdBy>
+<createdTime>2023-04-11 21:08:01 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>F4C292C5-DF52-3965-3726-D2733568CF6E</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>aparecer en </nameOnSource>
+<nameOnTarget>contener una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E4A1BCA0-C8B4-152B-9972-5E463B570F1E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3DA23AF4-CBD4-1D22-7867-B9172CBE5A10</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

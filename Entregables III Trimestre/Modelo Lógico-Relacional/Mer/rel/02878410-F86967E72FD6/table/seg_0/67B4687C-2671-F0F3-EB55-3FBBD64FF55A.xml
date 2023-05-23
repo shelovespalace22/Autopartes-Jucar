@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="67B4687C-2671-F0F3-EB55-3FBBD64FF55A" name="DetallePedido">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>C24AE1BC-039C-0354-7265-36E2F1120450</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DetallePedidoID" id="2B394FE4-DF70-ED94-798D-2A8DA8AD44BE">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>0F2290AB-0FDE-FA4A-35AB-54951321D071</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ProductoSolicitado" id="0ED95845-690A-81A6-CA51-FA216E683849">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>942EB6F7-E44D-BFF7-7907-74E4F8D8C64C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CantidadSolicitada" id="4BED040E-30A4-2891-1873-B6C50BF1D296">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>710D1D89-C830-DF1E-3C84-186111D26797</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pedido_PedidoID" id="33DA6532-55C5-2811-6E10-A15B69A38C3A">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>538219BC-DF72-E3C2-2BA9-9DAB00EA7720</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="823F6ADD-D153-5F70-F357-A81814C9CD3F" referredColumn="85C2F79A-01EC-D9D5-2BB3-14C757FECADC"/>
+</associations>
+</Column>
+<Column name="Proveedor_ProveedorID" id="AB63500B-45C9-6809-C7F0-0A2D49B1AE61">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>BB1A27AF-C918-1C5C-5ACE-D47F91D7EDF5</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A346583F-8A58-FED4-E34A-1BE9DB3B98F5" referredColumn="E96DA16C-E193-FA39-8A1E-96D478B36C0D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C9207D6A-66B8-92D1-40BF-37E0EDCAA878" name="DetallePedido_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>F2219E6C-2869-2B6C-5B35-4FF7E6C5A604</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B394FE4-DF70-ED94-798D-2A8DA8AD44BE"/>
+<colUsage columnID="33DA6532-55C5-2811-6E10-A15B69A38C3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EBE4871F-8C72-A6A2-21EA-D7E5A920D593" name="DetallePedido_Pedido_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>42BACB17-569C-5F59-23E7-0E785DCBCF51</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33DA6532-55C5-2811-6E10-A15B69A38C3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E512DE1D-797F-6331-C90B-573E6689A8E3" name="DetallePedido_Proveedor_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>7007D1C0-4B66-8C62-3F72-47C017D346BC</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB63500B-45C9-6809-C7F0-0A2D49B1AE61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cargo_EmpleadoCargo" directorySegmentName="seg_0" id="05870DCE-3126-08E9-043B-4261FE4B1968">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 20:11:31 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>7AE08154-8BFA-B8FA-3F40-96951CDB3344</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>formar un </nameOnSource>
+<nameOnTarget>formado por un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8C9F8CA3-F19B-6A6A-6A87-51B4236C0AD9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>71F770FA-ECE2-0B27-60E5-7556668C85CB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

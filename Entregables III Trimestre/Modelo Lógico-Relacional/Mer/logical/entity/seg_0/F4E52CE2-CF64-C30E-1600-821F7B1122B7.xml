@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F4E52CE2-CF64-C30E-1600-821F7B1122B7" name="MaterialAutoparte">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:42:07 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MateriaPrimaID" id="B01CA08D-5FDF-C506-818C-0DA670D73D79">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:42:21 UTC</createdTime>
+<generatorID>373F49A0-9DF4-90FF-8BD1-02F638CE3D36</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>48DEE411-AB2C-9D0A-719B-8FC9E967A7ED</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AutoparteID" id="C62D0A5D-9ACB-846D-2ECC-679361FD390A">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:42:36 UTC</createdTime>
+<generatorID>8F5FCFEB-3A13-7239-AA83-1DA5F69EB89B</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="662E9A63-112A-F210-8183-3A9549213392" name="MaterialAutoparte PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:42:21 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B01CA08D-5FDF-C506-818C-0DA670D73D79</attributeRef>
+<attributeRef>C62D0A5D-9ACB-846D-2ECC-679361FD390A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Categoría_Subctaegoría" directorySegmentName="seg_0" id="2A958B7C-E0B7-B5FC-4302-D4E74965E6A4">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-11 15:32:58 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>2A70CF95-4D67-9A6F-D9A7-B2C1D2355943</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>dividir en una</nameOnSource>
+<nameOnTarget>división de una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E0D7FBEB-6A87-5F0A-3D62-A56E971A429F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF58542C-38E8-4C48-6C35-6B814375A029</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

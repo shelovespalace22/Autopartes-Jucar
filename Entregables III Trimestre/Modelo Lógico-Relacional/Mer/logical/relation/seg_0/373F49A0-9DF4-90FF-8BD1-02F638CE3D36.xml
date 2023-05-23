@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MateriaPrima_MaterialAutoparte" directorySegmentName="seg_0" id="373F49A0-9DF4-90FF-8BD1-02F638CE3D36">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:42:21 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>9677AB87-6892-435D-26CC-C4EB7ECC3224</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>formar un</nameOnSource>
+<nameOnTarget>formado por una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>97517A44-B8ED-C7D2-0195-F1745444C72C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F4E52CE2-CF64-C30E-1600-821F7B1122B7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

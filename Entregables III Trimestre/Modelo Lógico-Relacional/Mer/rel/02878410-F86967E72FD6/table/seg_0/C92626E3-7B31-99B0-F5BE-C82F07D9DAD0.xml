@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C92626E3-7B31-99B0-F5BE-C82F07D9DAD0" name="MedidasAutoparte">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>7889BA2C-DE95-2D1F-1B2D-6B23EF9D8044</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MedidasID" id="54418E64-FB46-976B-5E99-FBFBCDC269EF">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>60344846-AE69-5B0F-0768-B55BC390DDEB</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Alto" id="17211D0A-28C9-D348-A355-FEC05ED50781">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>61DBC952-1D02-6921-7794-BC0E61F16A0F</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Largo" id="5597BD6F-D00D-74F8-CDD1-B13050E9E3F2">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>6318A049-1977-CF10-53C4-6BD6AFA54B95</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UnidadLongitud" id="FC3F03C8-07C4-DDFC-6017-A2ABFCA95597">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>9B47EA5D-D709-7A3A-11A6-81CB7735459C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Autoparte_AutoparteID" id="4BD0EB9F-5240-D02E-D282-3877B8D8B7F9">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>CED734FE-1264-0022-2952-712D6B1C56C5</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9C41C58-4025-9DBC-315C-076F23936195" referredColumn="37BECEDF-C8EB-D8A0-0702-5023C70E3230"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4A8F03AF-D92D-F272-2F61-AA7B2399121F" name="MedidasAutoparte_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>A8CFECE1-5549-B250-1745-D84513E67126</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54418E64-FB46-976B-5E99-FBFBCDC269EF"/>
+<colUsage columnID="4BD0EB9F-5240-D02E-D282-3877B8D8B7F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D6B0614-9C08-F2F2-F9C9-9C409299999F" name="MedidasAutoparte__IDX">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>3AF4CDEC-1B7C-AA91-FBCE-BB1218E5046F</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="4BD0EB9F-5240-D02E-D282-3877B8D8B7F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="182249D8-2FD5-4B00-475C-C8E667887461" name="MedidasAutoparte_Autoparte_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>3AF4CDEC-1B7C-AA91-FBCE-BB1218E5046F</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BD0EB9F-5240-D02E-D282-3877B8D8B7F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

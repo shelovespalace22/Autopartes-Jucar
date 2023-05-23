@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D1AEB79C-8558-46FF-EDD9-C16078641DFD" name="EstanteOrganizador">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:20:21 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="EstanteOrganizador" id="7C7CB417-4AE1-CE4E-47A6-B21127B1A43A">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:20:32 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Material" id="66175FD1-BBEF-436F-72ED-8606ADBE5921">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:20:49 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Color" id="7C46043D-1B6D-71EE-9833-616118C929A1">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:21:05 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CapacidadMáxKgs" id="62AEF467-4C14-BF09-4EDD-B662FA3C630C">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:21:37 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FabricaID" id="4F192499-7E2E-F00F-599E-182E9139F0A7">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:35:47 UTC</createdTime>
+<generatorID>61EB00B4-3F73-6C98-3034-6E42E91AE154</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>8614E1AD-90D3-37AA-6BAF-6AFE089D1862</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BodegaID" id="59899FBF-42EC-A9B6-A7B1-BDD6121B9EFB">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:36:54 UTC</createdTime>
+<generatorID>61EB00B4-3F73-6C98-3034-6E42E91AE154</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>74C175E7-BD4B-5C01-AFB8-403D67A2E337</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07ADD8D2-6118-FFBE-3EF6-DFE16CA04142" name="EstanteOrganizador PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:20:45 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7C7CB417-4AE1-CE4E-47A6-B21127B1A43A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

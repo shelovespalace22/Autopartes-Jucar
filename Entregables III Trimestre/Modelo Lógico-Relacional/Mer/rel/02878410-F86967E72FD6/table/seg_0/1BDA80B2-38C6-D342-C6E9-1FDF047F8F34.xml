@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1BDA80B2-38C6-D342-C6E9-1FDF047F8F34" name="Estantería">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>3A288E8F-CEFE-EDA5-DC6D-8C4F529C92DE</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EstanteríaID" id="885631DC-D252-2799-721B-A572173C511B">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>1FC7CC4F-C530-1520-2EF0-59D73B7DF21E</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumEstantería" id="3528A9FA-ACFD-BC17-9ED7-59C8B80D2D01">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>63D89079-7780-74BB-7AE5-43EC58ACB301</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoProducto" id="621D0A2F-6E33-6F86-7F96-41F829EBB844">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>D93B8B52-04A6-8264-54FD-30823AE4F0F4</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EstanteOrganizador_EstanteOrganizador" id="6396657E-BB3B-DFCF-AFFF-81789C127B2B">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>E70C5F3C-A698-E6D9-0E6A-A19A9842849F</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F4BC51C-6F48-77C0-7A1F-9DD801D648A8" referredColumn="9BB737C5-B4CF-3B05-56CF-3242C98A15FD"/>
+</associations>
+</Column>
+<Column name="Stock_StockID" id="88755025-12AB-4590-1A4A-8046C591C1FA">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>2B81650F-50F7-A3DB-447D-81E43CC9843B</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28E593D4-C1AF-0156-E32D-0A18B791F3DA" referredColumn="0B8821F5-8777-5750-CD65-BBA11BE4D9B7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9E5C7A0-2A1D-8ED6-E8CB-A95BA93DEA54" name="Estantería_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>210D529C-4997-8092-2E25-BEBD8C0514B9</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="885631DC-D252-2799-721B-A572173C511B"/>
+<colUsage columnID="6396657E-BB3B-DFCF-AFFF-81789C127B2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C1E31BC-018C-664E-588E-7A345F3B426E" name="Estantería_EstanteOrganizador_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>C1691EBC-01BA-B080-5C9F-2E0166CC0E2F</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6396657E-BB3B-DFCF-AFFF-81789C127B2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3708ECE-AC9D-6E4E-F527-5CC4B3947524" name="Estantería_Stock_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>A29A2FC5-2357-4D6D-8019-518E8545BC64</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88755025-12AB-4590-1A4A-8046C591C1FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

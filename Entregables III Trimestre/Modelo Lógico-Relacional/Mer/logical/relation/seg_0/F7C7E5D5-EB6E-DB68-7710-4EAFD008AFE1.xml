@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EstanteOrganizador_MedidasEstanteOrganizador" directorySegmentName="seg_0" id="F7C7E5D5-EB6E-DB68-7710-4EAFD008AFE1">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:27:35 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>07ADD8D2-6118-FFBE-3EF6-DFE16CA04142</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>tiene una</nameOnSource>
+<nameOnTarget>pertenece a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D1AEB79C-8558-46FF-EDD9-C16078641DFD</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>CCF69D82-CECC-B098-B2EF-1E8878978B89</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

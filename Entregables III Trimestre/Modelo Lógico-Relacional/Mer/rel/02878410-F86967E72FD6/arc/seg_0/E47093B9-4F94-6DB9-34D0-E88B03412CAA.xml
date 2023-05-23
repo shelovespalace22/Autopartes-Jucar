@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="E47093B9-4F94-6DB9-34D0-E88B03412CAA" name="FKArc_3">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>85F1CF9C-817B-DA05-C0AB-8B25A1B59327</table>
+<fkeys>
+<fkeyID>32B10BB7-59D0-01B7-B6C9-12AC2D520660</fkeyID>
+<fkeyID>E3412C02-F106-9AAB-B1AF-C6778B1D6CE9</fkeyID>
+</fkeys>
+</FKArc>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D163A017-9E56-EA1F-72DA-E6CA156AEA4C" containerWithKeyObject="8AFC8221-B341-4728-2B2D-62B24288DFE1" localFKIndex="1346D649-652C-7558-804A-81228B6B7071" name="DetalleFactura_Autoparte_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>D8B3DE15-2BDD-8192-59B6-833AC8764BD0</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<referredTableLongName>Autoparte</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BFE62086-A4D6-AB5D-50F2-5B859D84886F</referredTableID>
+<keyObject>9939B431-12D5-2A27-59D2-5F3679D00696</keyObject>
+<referredKeyID>9939B431-12D5-2A27-59D2-5F3679D00696</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>AutoparteID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

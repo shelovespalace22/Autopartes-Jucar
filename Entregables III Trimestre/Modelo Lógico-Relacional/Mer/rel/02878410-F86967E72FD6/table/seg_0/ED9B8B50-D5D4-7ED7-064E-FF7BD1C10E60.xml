@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED9B8B50-D5D4-7ED7-064E-FF7BD1C10E60" name="EmpleadoCargo">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>71F770FA-ECE2-0B27-60E5-7556668C85CB</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Empleado_EmpleadoID" id="65513364-9C9A-8F39-699E-2955CAE45A89">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>B932EDDA-50D7-6A51-73D7-5521475C7D4E</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B5CF349-6D60-A9FC-FB76-829F35478C40" referredColumn="5CE82AB8-DFB9-B1E4-C8F5-DFA7AA6DE2F9"/>
+</associations>
+</Column>
+<Column name="Cargo_CargoID" id="FFFC0596-443A-26A3-DA65-591594A9EE35">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>829ED7F6-DACD-AA89-A151-247840E209D7</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="137459C1-16A5-7677-B353-4F49BD2DC1AD" referredColumn="FAEBBF22-F075-EFDA-3327-24531E015EDC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B2F0B24A-42F3-5827-9D7C-D006EE4FDCF3" name="EmpleadoCargo_PK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>54923243-2CC4-6294-F1ED-121CE2E8BAC5</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65513364-9C9A-8F39-699E-2955CAE45A89"/>
+<colUsage columnID="FFFC0596-443A-26A3-DA65-591594A9EE35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F6C75B27-0786-A0AD-33EC-B822A643317B" name="EmpleadoCargo_Cargo_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>05870DCE-3126-08E9-043B-4261FE4B1968</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFFC0596-443A-26A3-DA65-591594A9EE35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D7CB20E-9AB9-896A-2A94-BD478E4D3DAE" name="EmpleadoCargo_Empleado_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>5D37942D-B9F6-C66D-DED4-68F3F2C03B48</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65513364-9C9A-8F39-699E-2955CAE45A89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

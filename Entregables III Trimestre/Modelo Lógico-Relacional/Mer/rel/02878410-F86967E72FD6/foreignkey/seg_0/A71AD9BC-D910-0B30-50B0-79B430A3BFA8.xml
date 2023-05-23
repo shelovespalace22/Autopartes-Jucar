@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A71AD9BC-D910-0B30-50B0-79B430A3BFA8" containerWithKeyObject="1F293382-6FEA-B04F-35F8-27D712F2E98A" localFKIndex="7F0FD5F6-8E20-73B7-D04A-0D89D25195DD" name="MaterialAutoparte_MateriaPrima_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>373F49A0-9DF4-90FF-8BD1-02F638CE3D36</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<referredTableLongName>MateriaPrima</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A720A8DB-7A23-5EC0-94A4-3435AFD95FAD</referredTableID>
+<keyObject>F2286833-D0F3-6425-0827-12F1A4A98F48</keyObject>
+<referredKeyID>F2286833-D0F3-6425-0827-12F1A4A98F48</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MateriaPrimaID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

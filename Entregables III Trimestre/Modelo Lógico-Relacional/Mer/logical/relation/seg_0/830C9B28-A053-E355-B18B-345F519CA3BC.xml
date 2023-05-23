@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Fabrica_TélefonosFabricas" directorySegmentName="seg_0" id="830C9B28-A053-E355-B18B-345F519CA3BC">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-04-11 18:33:12 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>310A4ADB-0075-1172-14E6-6DB14F3A7F01</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>tiene un</nameOnSource>
+<nameOnTarget>pertenece a</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>17A19EC9-5F85-E74F-4020-9B840D10E0DD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>576378B1-666F-8EC1-BE32-53E87D5FED6A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

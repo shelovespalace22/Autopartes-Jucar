@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Subcategoría_Autoparte" directorySegmentName="seg_0" id="A0BC08E3-3BF7-B6A9-CDE1-7DA9EFCD71F7">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-11 15:34:50 UTC</createdTime>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>629590EC-48BA-8981-7C31-18F243277543</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>contener una</nameOnSource>
+<nameOnTarget>tener una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BF58542C-38E8-4C48-6C35-6B814375A029</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E4A1BCA0-C8B4-152B-9972-5E463B570F1E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

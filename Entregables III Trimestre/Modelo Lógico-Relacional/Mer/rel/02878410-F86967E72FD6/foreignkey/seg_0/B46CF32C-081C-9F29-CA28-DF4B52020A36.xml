@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B46CF32C-081C-9F29-CA28-DF4B52020A36" containerWithKeyObject="621C3837-BF28-D2A1-5122-0BC7C6F43BA3" localFKIndex="618E1ADF-1597-E49D-B458-7709CAC8AD89" name="Bodega_Fabrica_FK">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:30 UTC</createdTime>
+<generatorID>CDFA71FA-549F-231E-2334-87383267403C</generatorID>
+<ownerDesignName>Volumen 7</ownerDesignName>
+<referredTableLongName>Fabrica</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>422E365D-EAE0-34E0-71D6-B5236310B06C</referredTableID>
+<keyObject>980EB3AC-7AC9-7EB9-95E5-4655239B8377</keyObject>
+<referredKeyID>980EB3AC-7AC9-7EB9-95E5-4655239B8377</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>FabricaID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
