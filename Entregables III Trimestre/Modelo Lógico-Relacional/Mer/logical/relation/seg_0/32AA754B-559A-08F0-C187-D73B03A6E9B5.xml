@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Barrio_Vía" directorySegmentName="seg_0" id="32AA754B-559A-08F0-C187-D73B03A6E9B5">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 17:23:08 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>21885D4F-A49E-1A78-44AF-ED8CB12DE5C5</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>componerse de una</nameOnSource>
+<nameOnTarget>ubicarse en un</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1440046C-3D2E-A9C4-3961-4ADF3AEFF5E0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5AF189ED-9C80-88E6-BB35-6CF39677C4DE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

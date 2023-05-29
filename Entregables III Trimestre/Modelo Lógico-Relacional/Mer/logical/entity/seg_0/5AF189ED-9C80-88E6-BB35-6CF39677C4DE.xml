@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5AF189ED-9C80-88E6-BB35-6CF39677C4DE" name="Vía">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:55:17 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="VíaID" id="739510A3-994A-505D-7C52-1D2A54F64D9B">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:55:23 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TipoCalle" id="609D3FCA-4189-24B4-247D-1BEA7473B583">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:55:32 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Calle" id="6BD0963D-89A2-522D-50F1-8B430894C907">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:55:47 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Sufijo" id="D77AED74-DDE4-FD36-5816-86A728524A3B">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:56:02 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Número1" id="EC30D706-56D8-67CB-6647-F1AAB3AEB388">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:56:35 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Número2" id="B83A5D34-10B5-2623-D3F7-C6F17B3D53FA">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:56:46 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaCreación" id="AD3CA086-215E-5D61-638D-BD94A162F3EF">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:56:58 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificación" id="986EB92B-AA46-2A0A-C64A-52DA42E0A291">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:57:10 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BarrioID" id="36500E4D-7E52-24E9-7B82-F984B9965E38">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 17:23:08 UTC</createdTime>
+<generatorID>32AA754B-559A-08F0-C187-D73B03A6E9B5</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>E353998B-4022-ECA1-979C-46DFDD9BD306</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F0948E4-B12C-EAFC-15C9-F0B8D9529147" name="Vía PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 16:55:31 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>739510A3-994A-505D-7C52-1D2A54F64D9B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

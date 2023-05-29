@@ -14,6 +14,12 @@ namespace JucarAutopartesCRUD.Models
         [Required]
         public bool State { get; set; } = true;
 
+        [Required]
+        public DateTime CreationDate { get; set; }
+
+        [Required]
+        public DateTime ModificationDate { get; set; }
+
         //Otros atributos 
         public int CategoryID { get; set; }
         public Category? Category { get; set; }

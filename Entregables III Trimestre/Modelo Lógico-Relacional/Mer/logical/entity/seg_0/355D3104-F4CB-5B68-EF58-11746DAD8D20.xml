@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="355D3104-F4CB-5B68-EF58-11746DAD8D20" name="DireccionFabrica">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 20:29:58 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DireccionFabricaID" id="E8000BB7-8158-A6EA-415F-B650022DC71A">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:11:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DirecciónID" id="195358BD-8F30-4958-8E15-3624410F90A8">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:10:51 UTC</createdTime>
+<generatorID>314E8BEB-1FF3-A575-C237-1EF4B7E0BFF4</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>A42A61BE-0919-99C7-9BA3-5DDD1124EC7B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FabricaID" id="84FEA36B-9F56-BB3C-8F2A-3004DAA87434">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:11:27 UTC</createdTime>
+<generatorID>F9407BA0-3189-4D34-69DC-E538F12B86AB</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>D8806E47-C55F-EB8B-3226-6E1933CD9E7E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificacion" id="52ACB080-AB09-E3C3-D7DE-869BE1F8441F">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:18:18 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F446A822-D62A-0984-4C47-9EF93EE05638" name="DireccionFabrica PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:12:04 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E8000BB7-8158-A6EA-415F-B650022DC71A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

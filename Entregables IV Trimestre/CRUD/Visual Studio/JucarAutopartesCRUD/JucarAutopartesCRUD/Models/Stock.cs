@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.SqlTypes;
 
 namespace JucarAutopartesCRUD.Models
 {
@@ -9,18 +8,26 @@ namespace JucarAutopartesCRUD.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StockID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese un valor!"), Range(1,500, ErrorMessage = "¡Ingrese un valor entre el rango permitido (1-500)!")]
-        public int AmountStock { get; set; }
+        [Required(ErrorMessage = "¡Ingrese un valor!"), StringLength(3), RegularExpression("^[0-9]+$")]
+        public string? QuantityAvailable { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese un valor!")]
-        public int InitialStocks { get; set; }
+        [Required(ErrorMessage = "¡Ingrese un valor!"), StringLength(3), RegularExpression("^[0-9]+$")]
+        public string? InitialStocks { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese un valor!")]
-        public int MaxInventory { get; set; } = 10;
+        [Required(ErrorMessage = "¡Ingrese un valor!"), StringLength(3), RegularExpression("^[0-9]+$")]
+        public string? ReorderPoint { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese un valor!")]
-        public int MinInventory { get; set; } = 500;
+        [Required(ErrorMessage = "¡Ingrese un valor!"), StringLength(3), RegularExpression("^[0-9]+$")]
+        public string? MinimumInventory { get; set; }
 
-        
+        [Required(ErrorMessage = "¡Ingrese un valor!"), StringLength(3), RegularExpression("^[0-9]+$")]
+        public string? MaximumInventory { get; set; }
+
+        [Required]
+        public DateTime CreationDate { get; set; }
+
+        [Required]
+        public DateTime ModificationDate { get; set; }
+
     }
 }

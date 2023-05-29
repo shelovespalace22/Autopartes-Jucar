@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Direccion_DireccionFabrica" directorySegmentName="seg_0" id="314E8BEB-1FF3-A575-C237-1EF4B7E0BFF4">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:10:51 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>01155932-EB72-A919-8FC1-0269E5D04233</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>conformar una</nameOnSource>
+<nameOnTarget>conformada por una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B29F1BA0-0F8F-D04C-4BA8-E9EF99D2BD53</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>355D3104-F4CB-5B68-EF58-11746DAD8D20</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4463956B-508B-140D-C41A-22EECC3F94C4" name="Empleado">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4463956B-508B-140D-C41A-22EECC3F94C4" name="Usuario">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:49:03 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -15,23 +15,22 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="EmpleadoID" id="4E4D61BC-4B05-FE68-76E1-CAFE45DF0A77">
+<Attribute name="UsuarioID" id="4E4D61BC-4B05-FE68-76E1-CAFE45DF0A77">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:49:08 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="PrimerNombre" id="F00D3F70-A36B-69FB-CC6B-2BAADF83B65A">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:52:26 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,11 +43,10 @@
 <Attribute name="SegundoNombre" id="7C4E912F-9B4C-5C5F-357E-B1DEA6EC5F86">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:52:48 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -58,7 +56,7 @@
 <Attribute name="PrimerApellido" id="59A18392-AF50-62F2-FF3B-863E4C07866B">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:53:17 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -71,11 +69,10 @@
 <Attribute name="SegundoApellido" id="40428BD9-D2EE-081C-1EAC-DF004FAEF88E">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:53:31 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -85,20 +82,7 @@
 <Attribute name="DirecciónCorreo" id="60A40EC8-4E64-DE5E-6E03-E92F0F7869D5">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:54:05 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="DirecciónDomicilio" id="D6A0B4CD-1122-0E0A-A413-B74171C70659">
-<createdBy>Usuario</createdBy>
-<createdTime>2023-04-11 19:54:27 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -111,11 +95,10 @@
 <Attribute name="Sexo" id="89F5A0AA-A9DF-B551-5B6F-B9477BFA82A7">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:54:54 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -125,20 +108,45 @@
 <Attribute name="FechaNacimiento" id="B7D4BCED-1AAF-6B72-9D9B-101636D1A248">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:55:26 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="NombreUsuario" id="7A424185-5D33-0D72-3094-47DED192612C">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:41:13 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Hash" id="00AC30F4-710C-66F9-35D4-FDDF09B768D9">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:41:48 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Estado" id="3E3ECB5D-5290-9EE2-D2E9-FC0C10EDB9ED">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:04:39 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -148,12 +156,36 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="FechaCreacion" id="7D5F059B-8F5E-ACB1-B6E5-42147C768629">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:38:41 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificacion" id="65C2F9F3-C0C8-3486-7EA8-99F852079E13">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:38:55 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="62C2D0DB-AE9B-00FF-DB9C-AE706E152973" name="Empleado PK">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 19:52:25 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

@@ -2,7 +2,7 @@
 <Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pedido_DetallePedido" directorySegmentName="seg_0" id="42BACB17-569C-5F59-23E7-0E785DCBCF51">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:21:50 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

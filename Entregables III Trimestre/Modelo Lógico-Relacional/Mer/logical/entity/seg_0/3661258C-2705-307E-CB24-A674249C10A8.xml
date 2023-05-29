@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3661258C-2705-307E-CB24-A674249C10A8" name="TélefonosProveedor">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3661258C-2705-307E-CB24-A674249C10A8" name="TélefonoProveedor">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:53:51 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -15,23 +15,37 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="TélefonoID" id="5924948D-75F1-0199-B9CE-5DF5AA8821E3">
+<Attribute name="TelefonoProveedorID" id="5924948D-75F1-0199-B9CE-5DF5AA8821E3">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:54:02 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProveedorID" id="777E0331-43D6-A6AC-55A9-07D78AFFA540">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:48:20 UTC</createdTime>
+<generatorID>29D1BB87-A8A4-7724-B1AC-E329CC76D3E8</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="TipoTélefono" id="57592769-5273-6552-3DE2-EBCCA66D3B97">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:54:18 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,7 +58,7 @@
 <Attribute name="NumTélefono" id="C7D832B1-C742-C49B-D8B1-6D880BA72A33">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:54:36 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -54,34 +68,19 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ProveedorID" id="99F54103-F329-072F-0A2D-DA19F0A39352">
-<createdBy>Usuario</createdBy>
-<createdTime>2023-04-11 18:58:50 UTC</createdTime>
-<generatorID>5FB81E66-7769-0F37-4C00-FACE8DD2876C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<referedAttribute>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A5967F31-2612-9369-F2B7-D07B425DF000" name="TélefonosProveedor PK">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:54:16 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>5924948D-75F1-0199-B9CE-5DF5AA8821E3</attributeRef>
-<attributeRef>99F54103-F329-072F-0A2D-DA19F0A39352</attributeRef>
+<attributeRef>777E0331-43D6-A6AC-55A9-07D78AFFA540</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

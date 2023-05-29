@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8DCB44E8-8A73-C57B-591F-923949902AC0" name="Perdida">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:38:51 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,20 +18,34 @@
 <Attribute name="PerdidaID" id="465085F4-4752-D4CE-33B5-D65182BF6A26">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:38:56 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AutoparteID" id="E65E545F-7F1B-1342-B144-CF0CDA2D53BB">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-11 15:41:09 UTC</createdTime>
+<generatorID>B04FBD65-0641-0A78-0E4B-1E1C01A79513</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="CantidadPerdida" id="0A9EA699-E672-6D75-F18F-FC6FD8EC3868">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:39:38 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,7 +58,7 @@
 <Attribute name="ResponsablePerdida" id="F642DBBA-72E9-4E53-9D2B-1597099FF094">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:40:01 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -54,10 +68,23 @@
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Lugar" id="CB658D2A-2E94-A025-8CAD-A12596FFEC3D">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-27 15:21:50 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Motivo" id="D571B9FE-8012-1416-3617-F72797C66D90">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:39:08 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -70,7 +97,7 @@
 <Attribute name="FechaPerdida" id="C3877F37-3802-48D4-44ED-EEED8CA5F090">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:39:25 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -79,27 +106,12 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="AutoparteID" id="E65E545F-7F1B-1342-B144-CF0CDA2D53BB">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-11 15:41:09 UTC</createdTime>
-<generatorID>B04FBD65-0641-0A78-0E4B-1E1C01A79513</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="299E5AA1-303C-7E8C-4E89-82EADA34FBFA" name="Perdida PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:39:07 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

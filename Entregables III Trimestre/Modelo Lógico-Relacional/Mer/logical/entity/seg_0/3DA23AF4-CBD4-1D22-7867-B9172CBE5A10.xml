@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3DA23AF4-CBD4-1D22-7867-B9172CBE5A10" name="DetalleFactura">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:04:23 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -15,40 +15,51 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DetalleFacturaID" id="9EDF4363-8F16-2CD9-6878-8C9FE55C0AF2">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 04:01:42 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="FacturaID" id="F6C21170-43C5-62CD-33AE-428484AA243E">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:08:31 UTC</createdTime>
 <generatorID>6A74EBB8-2149-5D97-BF28-B4AFDD73B49C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>AE4E2B3F-19C1-E001-DCF4-A7A04C2D7294</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="AutoparteID" id="86D26030-232A-85B6-A9F5-CA1E6DD2F77F">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:08:01 UTC</createdTime>
 <generatorID>D8B3DE15-2BDD-8192-59B6-833AC8764BD0</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="NumItem" id="8531A00F-3F54-CFC5-D804-16A9D643A823">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:04:51 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -61,7 +72,7 @@
 <Attribute name="Cantidad" id="EE3DCA88-9942-A226-FDCB-B18FAF62DB38">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:05:58 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -76,14 +87,14 @@
 <identifier id="6E78F391-CBB4-E9F6-8E74-151CBBEE133C" name="DetalleFactura PK">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:04:44 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>F6C21170-43C5-62CD-33AE-428484AA243E</attributeRef>
-<attributeRef>8531A00F-3F54-CFC5-D804-16A9D643A823</attributeRef>
+<attributeRef>9EDF4363-8F16-2CD9-6878-8C9FE55C0AF2</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F835E4A1-27C5-321F-9C07-254E751902CE" name="MedioPago">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:55:44 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,20 +18,19 @@
 <Attribute name="MedioPagoID" id="424B9134-DCE6-96E8-0B4E-F3BC5FFE2DD9">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:56:01 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Remitente" id="42B8A80D-2F1D-5DB9-ED06-3A2B331ED0D1">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:56:24 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -46,7 +45,7 @@
 <identifier id="1741DC8B-2F3C-B439-AA3C-6703D4FF8C6E" name="MedioPago PK">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:56:20 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

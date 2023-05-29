@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E55F2D70-4A5E-FB91-EEAD-22CF044B842E" name="ClienteNatural">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:39:32 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -19,7 +19,7 @@
 <Attribute name="TipoDoc" id="C9B4963B-C4B8-97B9-4CF5-6E4A79E802FB">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:39:46 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -32,7 +32,7 @@
 <Attribute name="NumDoc" id="0D15B35E-8EE4-1530-2B26-B5BA9F0BBC2B">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:40:42 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -45,7 +45,7 @@
 <Attribute name="PrimerNombre" id="4582B955-1BE7-038E-7FD3-1DE47C6EE4A6">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:40:53 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -58,21 +58,33 @@
 <Attribute name="SegundoNombre" id="5434F6DE-687F-FFDD-6889-A8A55A4E6791">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:41:07 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Apellido" id="3FA6DF86-B091-50A8-1F54-8F662630C69D">
+<Attribute name="PrimerApellido" id="3FA6DF86-B091-50A8-1F54-8F662630C69D">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:41:27 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SegundoApellido" id="DBC2E43C-91B1-C774-BE54-36FA6C95EE89">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 02:50:24 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

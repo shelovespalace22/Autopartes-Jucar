@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5F82B981-0346-A144-B5C2-146E282B64E2" name="Factura">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:03:12 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,48 +18,19 @@
 <Attribute name="FacturaID" id="AE4E2B3F-19C1-E001-DCF4-A7A04C2D7294">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:03:17 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ClienteID" id="955BABA6-39B2-45A3-644A-F0ED45A906D2">
-<createdBy>Ambiente</createdBy>
-<createdTime>2023-04-11 21:47:26 UTC</createdTime>
-<generatorID>02AED2AE-CB47-3BA7-E24B-C6F0DFE07F44</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<referedAttribute>4F1E803F-A0E8-70FD-EAEA-946E648A5A09</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="N° Factura" id="B986B6DB-73D0-5CE7-5F80-1D8AE4F466F1">
-<createdBy>Ambiente</createdBy>
-<createdTime>2023-04-11 21:03:26 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Fecha" id="354474F2-BD63-D2FE-518B-F5F227192C4F">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:42:58 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -71,7 +42,7 @@
 <Attribute name="Dirección" id="5C3615D8-46C1-772B-99AB-62C6BF3C7695">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 03:19:09 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -84,7 +55,7 @@
 <Attribute name="Télefono" id="AB46E66D-66E4-8A94-1C0C-4EF218D13B26">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 03:19:23 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -94,12 +65,27 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="ClienteID" id="55DE4239-421E-080D-A34F-ADBC8CBFB1E3">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:51:40 UTC</createdTime>
+<generatorID>C266DBA5-A356-1834-5783-8918E3F4FD75</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>4F1E803F-A0E8-70FD-EAEA-946E648A5A09</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8D7F5D16-905B-CB76-8BC4-D582E589C1D1" name="Factura PK">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:03:25 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C24AE1BC-039C-0354-7265-36E2F1120450" name="DetallePedido">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:09:42 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,20 +18,19 @@
 <Attribute name="DetallePedidoID" id="0F2290AB-0FDE-FA4A-35AB-54951321D071">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:19:34 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ProductoSolicitado" id="942EB6F7-E44D-BFF7-7907-74E4F8D8C64C">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:19:55 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,7 +43,7 @@
 <Attribute name="CantidadSolicitada" id="710D1D89-C830-DF1E-3C84-186111D26797">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:20:15 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -58,45 +57,46 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:21:50 UTC</createdTime>
 <generatorID>42BACB17-569C-5F59-23E7-0E785DCBCF51</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>D2928B7F-E6F2-0615-9909-494ABE5E7472</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ProveedorID" id="BB1A27AF-C918-1C5C-5ACE-D47F91D7EDF5">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 02:22:40 UTC</createdTime>
-<generatorID>7007D1C0-4B66-8C62-3F72-47C017D346BC</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<Attribute name="ProveedorID" id="8B0633D7-27B8-B667-8351-AD4B71261572">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:49:14 UTC</createdTime>
+<generatorID>5612D638-AD7A-9B35-0C91-385DF08FE4BE</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="F2219E6C-2869-2B6C-5B35-4FF7E6C5A604" name="DetallePedido PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 02:19:53 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>0F2290AB-0FDE-FA4A-35AB-54951321D071</attributeRef>
 <attributeRef>538219BC-DF72-E3C2-2BA9-9DAB00EA7720</attributeRef>
+<attributeRef>8B0633D7-27B8-B667-8351-AD4B71261572</attributeRef>
+<attributeRef>0F2290AB-0FDE-FA4A-35AB-54951321D071</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

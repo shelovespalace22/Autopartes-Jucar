@@ -2,7 +2,7 @@
 <Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Stock_Estantería" directorySegmentName="seg_0" id="A29A2FC5-2357-4D6D-8019-518E8545BC64">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:25:10 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

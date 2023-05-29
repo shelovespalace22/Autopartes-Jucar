@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0906C16C-94EE-7EFD-2CB7-1C5D556EB682" name="Proveedor">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:45:25 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,20 +18,32 @@
 <Attribute name="ProveedorID" id="04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:45:31 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Correo" id="773E8092-34B1-726E-9CD7-8987760D1AAD">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:27:38 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="TipoProducto" id="F137F197-4EE7-F295-ED88-72782AA956F7">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:45:43 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,7 +56,7 @@
 <Attribute name="Estado" id="96DB3023-3379-FC58-9D0C-765F4AD4F0A5">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:46:06 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -54,12 +66,36 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="FechaCreación" id="D49AE294-C58E-C067-6A8F-BE1ABC83439C">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:29:10 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificacion" id="02354CD1-410E-2A39-8605-18542437188D">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:29:19 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="34DFD1DD-8190-A37E-4B2E-DE4A1448013C" name="Proveedor PK">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 18:45:41 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

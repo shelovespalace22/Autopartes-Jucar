@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Proveedor_DetallePedido" directorySegmentName="seg_0" id="5612D638-AD7A-9B35-0C91-385DF08FE4BE">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:49:14 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>34DFD1DD-8190-A37E-4B2E-DE4A1448013C</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>recibir un</nameOnSource>
+<nameOnTarget>enviado a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0906C16C-94EE-7EFD-2CB7-1C5D556EB682</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C24AE1BC-039C-0354-7265-36E2F1120450</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

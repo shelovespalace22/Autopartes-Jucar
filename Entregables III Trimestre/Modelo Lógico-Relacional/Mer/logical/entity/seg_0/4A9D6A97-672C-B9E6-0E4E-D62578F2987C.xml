@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4A9D6A97-672C-B9E6-0E4E-D62578F2987C" name="Aporte">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:54:30 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -18,20 +18,19 @@
 <Attribute name="AporteID" id="DA1AE67F-93BA-C868-A749-16BF2A29CB98">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:55:00 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="FechaAporte" id="09F6E288-2DE0-F905-4F8D-7ED80644B9EE">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:55:13 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -43,7 +42,7 @@
 <Attribute name="MontoAbonado" id="1494A522-A049-938C-39F8-C00F8A7BF0E0">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 11:09:05 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -56,29 +55,29 @@
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:09:04 UTC</createdTime>
 <generatorID>9996A998-19E1-3B36-CF89-563BEABBDC4C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>AE4E2B3F-19C1-E001-DCF4-A7A04C2D7294</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="MedioPagoID" id="2AB91A64-509F-DC24-41C4-A3A38C266FEF">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 21:41:16 UTC</createdTime>
 <generatorID>3E6830CE-6437-E961-3A3B-3D53BB5EC8D7</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <referedAttribute>424B9134-DCE6-96E8-0B4E-F3BC5FFE2DD9</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
@@ -87,7 +86,7 @@
 <identifier id="6007C75B-D262-C749-04D1-7BA2452ED12B" name="Aporte PK">
 <createdBy>Ambiente</createdBy>
 <createdTime>2023-04-11 20:55:10 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

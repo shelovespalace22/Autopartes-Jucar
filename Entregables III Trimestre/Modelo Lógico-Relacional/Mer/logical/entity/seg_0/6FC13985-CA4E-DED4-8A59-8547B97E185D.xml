@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6FC13985-CA4E-DED4-8A59-8547B97E185D" name="TélefonosEmpleado">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6FC13985-CA4E-DED4-8A59-8547B97E185D" name="TelefonoUsuario">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:13:02 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -15,23 +15,36 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="TélefonoID" id="56DF6244-0F2C-BBA4-58A9-E806223EA855">
+<Attribute name="TelefonoUsuarioID" id="56DF6244-0F2C-BBA4-58A9-E806223EA855">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:13:13 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="UsuarioID" id="4AF757A2-6DC4-A117-D27C-AAF90F0BFC8C">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:46:59 UTC</createdTime>
+<generatorID>862B5796-3082-80C3-5082-64C87BBE6946</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>4E4D61BC-4B05-FE68-76E1-CAFE45DF0A77</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="TipoTélefono" id="B449E25C-7224-57EC-2F43-FA7665A959F0">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:13:29 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -44,7 +57,7 @@
 <Attribute name="NumTélefono" id="9533D8D3-4CF7-E391-DAE8-CA9139EF6DCD">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:16:24 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
@@ -54,34 +67,19 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="EmpleadoID" id="9C34FD74-3BF8-41CF-7DBB-F513A3B72011">
-<createdBy>Usuario</createdBy>
-<createdTime>2023-04-11 20:17:05 UTC</createdTime>
-<generatorID>9A4AEB45-B20D-EF67-7FAF-11A3A8D03DD1</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<referedAttribute>4E4D61BC-4B05-FE68-76E1-CAFE45DF0A77</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="DDE8E221-26BE-136A-3CE8-44360222C351" name="TélefonosEmpleado PK">
 <createdBy>Usuario</createdBy>
 <createdTime>2023-04-11 20:13:27 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>56DF6244-0F2C-BBA4-58A9-E806223EA855</attributeRef>
-<attributeRef>9C34FD74-3BF8-41CF-7DBB-F513A3B72011</attributeRef>
+<attributeRef>4AF757A2-6DC4-A117-D27C-AAF90F0BFC8C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

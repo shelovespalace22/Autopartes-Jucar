@@ -3517,11 +3517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Miguel\\SENA\\Proyecto\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\JucarAutopartesCRUD.csproj",
+      "projectUniqueName": "F:\\Miguel\\SENA\\Proyecto Jucar Autopartes\\Entregables IV Trimestre\\CRUD\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\JucarAutopartesCRUD.csproj",
       "projectName": "JucarAutopartesCRUD",
-      "projectPath": "F:\\Miguel\\SENA\\Proyecto\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\JucarAutopartesCRUD.csproj",
+      "projectPath": "F:\\Miguel\\SENA\\Proyecto Jucar Autopartes\\Entregables IV Trimestre\\CRUD\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\JucarAutopartesCRUD.csproj",
       "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
-      "outputPath": "F:\\Miguel\\SENA\\Proyecto\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\obj\\",
+      "outputPath": "F:\\Miguel\\SENA\\Proyecto Jucar Autopartes\\Entregables IV Trimestre\\CRUD\\Visual Studio\\JucarAutopartesCRUD\\JucarAutopartesCRUD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6C97953F-BB83-9D8F-4033-1BDF964A53B1" name="DireccionProveedor">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-28 20:29:42 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DireccionProveedorID" id="2E5DD9B2-1558-E78A-861A-CE749B081F26">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:12:47 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificacion" id="53BD7829-5669-55E1-A214-1B014524CEC7">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:12:58 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DirecciónID" id="5D88CD9C-2785-E483-5E0D-979DF7ACC3FA">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:13:13 UTC</createdTime>
+<generatorID>6526CC56-8612-80F7-C87D-0900283D7A4A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>A42A61BE-0919-99C7-9BA3-5DDD1124EC7B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProveedorID" id="7BB8164D-B393-D526-9811-7D55045117F7">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:14:21 UTC</createdTime>
+<generatorID>2F056655-6884-DE3C-B59A-73D1E9D89BE4</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>04FF8AE0-EF1A-9C27-9D98-1CD5D85F145E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5B6A58B0-44DD-007E-194E-A028E1B73AF4" name="DireccionProveedor PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:12:56 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2E5DD9B2-1558-E78A-861A-CE749B081F26</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

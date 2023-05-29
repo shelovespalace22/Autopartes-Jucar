@@ -22,6 +22,97 @@ namespace JucarAutopartesCRUD.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Address", b =>
+                {
+                    b.Property<int>("AddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddressID"));
+
+                    b.Property<string>("AditionalInformation")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("AddressID");
+
+                    b.ToTable("Addresses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.AddressType", b =>
+                {
+                    b.Property<int>("AddressTypeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddressTypeID"));
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("AddressTypeID");
+
+                    b.ToTable("AddressTypes");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Addressee", b =>
+                {
+                    b.Property<int>("AddresseeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddresseeID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DocumentNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("DocumentType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstLastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SecondLastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("AddresseeID");
+
+                    b.ToTable("Addressees");
+                });
+
             modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPart", b =>
                 {
                     b.Property<int>("AutoPartID")
@@ -30,14 +121,31 @@ namespace JucarAutopartesCRUD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutoPartID"));
 
-                    b.Property<string>("Function")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("HeightCms")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("LenghtCms")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Performance")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("State")
                         .HasColumnType("bit");
@@ -50,6 +158,11 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("WeightKgs")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
                     b.HasKey("AutoPartID");
 
                     b.HasIndex("SubcategoryID");
@@ -57,47 +170,102 @@ namespace JucarAutopartesCRUD.Migrations
                     b.ToTable("AutoParts");
                 });
 
-            modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPartMeasurements", b =>
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPartMaterial", b =>
                 {
-                    b.Property<int>("AutoPartMeasurementsID")
+                    b.Property<int>("AutoPartMaterialID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutoPartMeasurementsID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutoPartMaterialID"));
 
-                    b.Property<int>("Height")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Length")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UnitMeasurement")
+                    b.Property<string>("AutoPartComposition")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("AutoPartMeasurementsID");
+                    b.Property<int>("AutopartID")
+                        .HasColumnType("int");
 
-                    b.ToTable("AutoPartMeasurements");
+                    b.Property<int>("RawMaterialID")
+                        .HasColumnType("int");
+
+                    b.HasKey("AutoPartMaterialID");
+
+                    b.HasIndex("AutopartID");
+
+                    b.HasIndex("RawMaterialID");
+
+                    b.ToTable("AutoPartMaterials");
                 });
 
-            modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPartWeight", b =>
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Bill", b =>
                 {
-                    b.Property<int>("AutoPartWeightID")
+                    b.Property<int>("BillID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutoPartWeightID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BillID"));
 
-                    b.Property<int>("Weight")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WeightUnit")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AutoPartWeightID");
+                    b.Property<DateTime>("ExpiditionDate")
+                        .HasColumnType("datetime2");
 
-                    b.ToTable("AutoPartWeights");
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BillID");
+
+                    b.ToTable("Bills");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.BillDetail", b =>
+                {
+                    b.Property<int>("BillDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BillDetailID"));
+
+                    b.Property<string>("ItemNumber")
+                        .IsRequired()
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
+
+                    b.Property<string>("Quantity")
+                        .IsRequired()
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
+
+                    b.HasKey("BillDetailID");
+
+                    b.ToTable("BillsDetail");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Building", b =>
+                {
+                    b.Property<int>("BuildingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BuildingID"));
+
+                    b.Property<string>("BuildingNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("BuildingType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("BuildingID");
+
+                    b.ToTable("Buildings");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Category", b =>
@@ -113,6 +281,12 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
@@ -121,13 +295,126 @@ namespace JucarAutopartesCRUD.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("JucarAutopartesCRUD.Models.Discount", b =>
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Compartment", b =>
                 {
-                    b.Property<int>("DiscountID")
+                    b.Property<int>("CompartmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiscountID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompartmentID"));
+
+                    b.Property<string>("CompartmentNumber")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("CompartmentID");
+
+                    b.ToTable("Compartments");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Contribution", b =>
+                {
+                    b.Property<int>("ContributionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContributionID"));
+
+                    b.Property<DateTime>("ContributionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("float");
+
+                    b.HasKey("ContributionID");
+
+                    b.ToTable("Contributions");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CustomerID");
+
+                    b.ToTable("Customers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Customer");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.CustomerAddress", b =>
+                {
+                    b.Property<int>("CustomerAddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerAddressID"));
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CustomerAddressID");
+
+                    b.ToTable("CustomerAddresses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Department", b =>
+                {
+                    b.Property<int>("DepartmentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
+
+                    b.Property<string>("Capital")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("DepartmentID");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.DiscountHistory", b =>
+                {
+                    b.Property<int>("DiscountHistoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiscountHistoryID"));
 
                     b.Property<double>("DiscountRate")
                         .HasColumnType("float");
@@ -141,9 +428,96 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
-                    b.HasKey("DiscountID");
+                    b.Property<double>("TemporalValue")
+                        .HasColumnType("float");
 
-                    b.ToTable("Discounts");
+                    b.HasKey("DiscountHistoryID");
+
+                    b.ToTable("DiscountsHistory");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Factory", b =>
+                {
+                    b.Property<int>("FactoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactoryID"));
+
+                    b.Property<string>("BusinessName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NIT")
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
+
+                    b.HasKey("FactoryID");
+
+                    b.ToTable("Factories");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.FactoryAddress", b =>
+                {
+                    b.Property<int>("FactoryAddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactoryAddressID"));
+
+                    b.Property<int>("ModificationDate")
+                        .HasColumnType("int");
+
+                    b.HasKey("FactoryAddressID");
+
+                    b.ToTable("FactoryAddresses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.FactoryPhone", b =>
+                {
+                    b.Property<int>("FactroyPhoneID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactroyPhoneID"));
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("PhoneType")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.HasKey("FactroyPhoneID");
+
+                    b.ToTable("FactoryPhones");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Inventory", b =>
+                {
+                    b.Property<int>("InventoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventoryID"));
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("QuantityAvailable")
+                        .HasColumnType("int");
+
+                    b.HasKey("InventoryID");
+
+                    b.ToTable("Inventories");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Loss", b =>
@@ -160,6 +534,11 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Property<DateTime>("DateLoss")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Place")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("Reason")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -172,16 +551,148 @@ namespace JucarAutopartesCRUD.Migrations
 
                     b.HasKey("LossID");
 
-                    b.ToTable("Losss");
+                    b.ToTable("Losses");
                 });
 
-            modelBuilder.Entity("JucarAutopartesCRUD.Models.Price", b =>
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Movement", b =>
                 {
-                    b.Property<int>("PriceID")
+                    b.Property<int>("MovementID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MovementID"));
+
+                    b.Property<DateTime>("MovementDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MovementType")
+                        .HasMaxLength(50)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("MovementID");
+
+                    b.ToTable("Movements");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Municipality", b =>
+                {
+                    b.Property<int>("MunicipalityID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MunicipalityID"));
+
+                    b.Property<bool>("Capital")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("MunicipalityID");
+
+                    b.ToTable("Municipalities");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Neighborhood", b =>
+                {
+                    b.Property<int>("NeighborhoodID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NeighborhoodID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("NeighborhoodID");
+
+                    b.ToTable("Neighborhoods");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("OrderDateBalance")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("OrderID");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.OrderDetail", b =>
+                {
+                    b.Property<int>("OrderDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"));
+
+                    b.Property<string>("Product")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Quantity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OrderDetailID");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.PaymentMethod", b =>
+                {
+                    b.Property<int>("PaymentMethodID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentMethodID"));
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sender")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("PaymentMethodID");
+
+                    b.ToTable("PaymentMethods");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("PaymentMethod");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.PriceHistory", b =>
+                {
+                    b.Property<int>("PriceHistoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceHistoryID"));
 
                     b.Property<DateTime>("FinalDate")
                         .HasColumnType("datetime2");
@@ -195,34 +706,184 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Property<double>("Value")
                         .HasColumnType("float");
 
-                    b.HasKey("PriceID");
+                    b.HasKey("PriceHistoryID");
 
-                    b.ToTable("Prices");
+                    b.ToTable("PricesHistory");
                 });
 
-            modelBuilder.Entity("JucarAutopartesCRUD.Models.Stock", b =>
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Provider", b =>
                 {
-                    b.Property<int>("StockID")
+                    b.Property<int>("ProviderID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderID"));
 
-                    b.Property<int>("AmountStock")
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ProviderID");
+
+                    b.ToTable("Providers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Provider");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.ProviderAddress", b =>
+                {
+                    b.Property<int>("ProviderAddressID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("InitialStocks")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderAddressID"));
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ProviderAddressID");
+
+                    b.ToTable("ProviderAddresses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.ProviderPhone", b =>
+                {
+                    b.Property<int>("ProviderPhoneID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("MaxInventory")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderPhoneID"));
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("PhoneType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("ProviderPhoneID");
+
+                    b.ToTable("ProviderPhones");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.RawMaterial", b =>
+                {
+                    b.Property<int>("RawMaterialID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("MinInventory")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RawMaterialID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("RawMaterialID");
+
+                    b.ToTable("RawMaterials");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Shelf", b =>
+                {
+                    b.Property<int>("ShelfID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.HasKey("StockID");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShelfID"));
 
-                    b.ToTable("Stocks");
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int>("HeightCms")
+                        .HasMaxLength(3)
+                        .HasColumnType("int");
+
+                    b.Property<int>("LenghtCms")
+                        .HasMaxLength(3)
+                        .HasColumnType("int");
+
+                    b.Property<string>("Material")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("MaxCapacityKgs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShelfID");
+
+                    b.ToTable("Shelves");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Street", b =>
+                {
+                    b.Property<int>("StreetID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StreetID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstNumber")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SecondNumber")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("StreetNumber")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<int>("StreetType")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<string>("Suffix")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.HasKey("StreetID");
+
+                    b.ToTable("Streets");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Subcategory", b =>
@@ -235,6 +896,12 @@ namespace JucarAutopartesCRUD.Migrations
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("State")
                         .HasColumnType("bit");
@@ -251,6 +918,264 @@ namespace JucarAutopartesCRUD.Migrations
                     b.ToTable("Subcategories");
                 });
 
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.User", b =>
+                {
+                    b.Property<int>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeID"));
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("FirstSurname")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("HomeAddress")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("SecondName")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("SecondSurname")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("Sex")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)");
+
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.UserAddress", b =>
+                {
+                    b.Property<int>("UserAddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserAddressID"));
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("UserAddressID");
+
+                    b.ToTable("UserAddresses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.UserPhone", b =>
+                {
+                    b.Property<int>("UserPhoneID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserPhoneID"));
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("PhoneType")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.HasKey("UserPhoneID");
+
+                    b.ToTable("UserPhones");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.UserPosition", b =>
+                {
+                    b.Property<int>("UserPositionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserPositionID"));
+
+                    b.HasKey("UserPositionID");
+
+                    b.ToTable("UserPositions");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Warehouse", b =>
+                {
+                    b.Property<int>("WarehouseID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WarehouseID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
+
+                    b.HasKey("WarehouseID");
+
+                    b.ToTable("Warehouses");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.LegalCustomer", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.Customer");
+
+                    b.Property<string>("BussinesName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("NIT")
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
+
+                    b.HasDiscriminator().HasValue("LegalCustomer");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.NaturalCustomer", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.Customer");
+
+                    b.Property<string>("DocumentNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("DocumentType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstLastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("SecondLastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasDiscriminator().HasValue("NaturalCustomer");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Cash", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.PaymentMethod");
+
+                    b.Property<string>("PaymentReceiver")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentUbication")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Cash");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.DigitalPlataform", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.PaymentMethod");
+
+                    b.Property<string>("BankingEntity")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("DestinationNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentReference")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("DigitalPlataform");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.LegalProvider", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.Provider");
+
+                    b.Property<string>("BussinesName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("NIT")
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
+
+                    b.HasDiscriminator().HasValue("LegalProvider");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.NaturalProvider", b =>
+                {
+                    b.HasBaseType("JucarAutopartesCRUD.Models.Provider");
+
+                    b.Property<string>("DocumentNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("DocumentType")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasDiscriminator().HasValue("NaturalProvider");
+                });
+
             modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPart", b =>
                 {
                     b.HasOne("JucarAutopartesCRUD.Models.Subcategory", "Subcategory")
@@ -262,6 +1187,25 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Navigation("Subcategory");
                 });
 
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPartMaterial", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.AutoPart", "AutoPart")
+                        .WithMany("autoPartMaterials")
+                        .HasForeignKey("AutopartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JucarAutopartesCRUD.Models.RawMaterial", "RawMaterial")
+                        .WithMany()
+                        .HasForeignKey("RawMaterialID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutoPart");
+
+                    b.Navigation("RawMaterial");
+                });
+
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Subcategory", b =>
                 {
                     b.HasOne("JucarAutopartesCRUD.Models.Category", "Category")
@@ -271,6 +1215,11 @@ namespace JucarAutopartesCRUD.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPart", b =>
+                {
+                    b.Navigation("autoPartMaterials");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Category", b =>

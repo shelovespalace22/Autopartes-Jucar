@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cliente_Factura" directorySegmentName="seg_0" id="C266DBA5-A356-1834-5783-8918E3F4FD75">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-05-29 03:51:40 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>E97A7645-3343-7446-2A08-A3A93F52B9E4</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>emitir una</nameOnSource>
+<nameOnTarget>pertenecer a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>70C99015-360C-04BE-677D-651E33586582</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5F82B981-0346-A144-B5C2-146E282B64E2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
