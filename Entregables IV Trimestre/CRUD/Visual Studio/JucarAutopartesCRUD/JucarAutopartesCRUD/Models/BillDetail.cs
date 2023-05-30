@@ -13,5 +13,9 @@ namespace JucarAutopartesCRUD.Models
 
         [Required(ErrorMessage = "¡Ingresa un valor!"), StringLength(2), RegularExpression("^[0-9]+$")]
         public string? Quantity { get; set; }
+
+        //Relación de 1:N desde AutoPart
+        public int AutoPartID { get; set; } //FK
+        public AutoPart? AutoPart { get; set; }
     }
 }

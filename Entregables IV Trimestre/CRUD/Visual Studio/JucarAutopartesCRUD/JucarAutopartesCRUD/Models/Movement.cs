@@ -17,5 +17,9 @@ namespace JucarAutopartesCRUD.Models
 
         [Required(ErrorMessage = "¡Ingrese una fecha!")]
         public DateTime MovementDate { get; set; }
+
+        //Relación de 1:N desde RawMaterial
+        public int RawMaterialID { get; set; }
+        public RawMaterial? RawMaterial { get; set; }
     }
 }

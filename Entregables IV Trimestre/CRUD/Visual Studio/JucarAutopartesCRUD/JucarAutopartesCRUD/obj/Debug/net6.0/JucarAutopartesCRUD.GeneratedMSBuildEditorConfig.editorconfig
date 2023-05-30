@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\Miguel\SENA\Proyecto Jucar Autopartes\Entregables IV Trimestre\CRUD\Visual Studio\JucarAutopartesCRUD\JucarAutopartesCRUD
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/AutoParts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1BhcnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/AutoParts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1BhcnRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/AutoParts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1BhcnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/AutoParts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1BhcnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/AutoParts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1BhcnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Miguel/SENA/Proyecto Jucar Autopartes/Entregables IV Trimestre/CRUD/Visual Studio/JucarAutopartesCRUD/JucarAutopartesCRUD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

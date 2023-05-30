@@ -15,6 +15,9 @@ namespace JucarAutopartesCRUD.Models
         [Required(ErrorMessage = "¡Ingrese una fecha!")]
         public DateTime LastUpdateDate { get; set; }
 
+        //Relación de 1:1 desde AutoPart
+        public int AutoPartID { get; set; } //FK
+        public AutoPart? AutoPart { get; set; }
 
 
     }

@@ -19,5 +19,16 @@ namespace JucarAutopartesCRUD.Models
 
         [Required]
         public DateTime ModificationDate { get; set; }
+
+        //Relación de 1:N con AutoPartMaterial
+        public ICollection<AutoPartMaterial>? autoPartMaterials { get; set; }
+
+        //Relación de 1:N con Movement
+        public ICollection<Movement>? movements { get; set; }
+
+        //Relación de 1:N con Stock
+        public ICollection<Stock>? stocks { get; set; }
+
+
     }
 }

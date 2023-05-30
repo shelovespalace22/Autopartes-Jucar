@@ -230,6 +230,9 @@ namespace JucarAutopartesCRUD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BillDetailID"));
 
+                    b.Property<int>("AutoPartID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ItemNumber")
                         .IsRequired()
                         .HasMaxLength(2)
@@ -241,6 +244,8 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasColumnType("nvarchar(2)");
 
                     b.HasKey("BillDetailID");
+
+                    b.HasIndex("AutoPartID");
 
                     b.ToTable("BillsDetail");
                 });
@@ -425,6 +430,9 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Property<DateTime>("InitialDiscountDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("PriceHistoryID")
+                        .HasColumnType("int");
+
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
@@ -432,6 +440,8 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("DiscountHistoryID");
+
+                    b.HasIndex("PriceHistoryID");
 
                     b.ToTable("DiscountsHistory");
                 });
@@ -509,6 +519,9 @@ namespace JucarAutopartesCRUD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventoryID"));
 
+                    b.Property<int>("AutoPartID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
@@ -516,6 +529,9 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("InventoryID");
+
+                    b.HasIndex("AutoPartID")
+                        .IsUnique();
 
                     b.ToTable("Inventories");
                 });
@@ -529,6 +545,9 @@ namespace JucarAutopartesCRUD.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LossID"));
 
                     b.Property<int>("AmountLoss")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AutoPartID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateLoss")
@@ -551,6 +570,8 @@ namespace JucarAutopartesCRUD.Migrations
 
                     b.HasKey("LossID");
 
+                    b.HasIndex("AutoPartID");
+
                     b.ToTable("Losses");
                 });
 
@@ -572,7 +593,12 @@ namespace JucarAutopartesCRUD.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<int>("RawMaterialID")
+                        .HasColumnType("int");
+
                     b.HasKey("MovementID");
+
+                    b.HasIndex("RawMaterialID");
 
                     b.ToTable("Movements");
                 });
@@ -694,6 +720,9 @@ namespace JucarAutopartesCRUD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceHistoryID"));
 
+                    b.Property<int>("AutoPartID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("FinalDate")
                         .HasColumnType("datetime2");
 
@@ -707,6 +736,8 @@ namespace JucarAutopartesCRUD.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("PriceHistoryID");
+
+                    b.HasIndex("AutoPartID");
 
                     b.ToTable("PricesHistory");
                 });
@@ -841,6 +872,55 @@ namespace JucarAutopartesCRUD.Migrations
                     b.HasKey("ShelfID");
 
                     b.ToTable("Shelves");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Stock", b =>
+                {
+                    b.Property<int>("StockID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InitialStocks")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("MaximumInventory")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("MinimumInventory")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<DateTime>("ModificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("QuantityAvailable")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<int>("RawMaterialID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReorderPoint")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.HasKey("StockID");
+
+                    b.HasIndex("RawMaterialID");
+
+                    b.ToTable("Stock");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Street", b =>
@@ -1196,12 +1276,89 @@ namespace JucarAutopartesCRUD.Migrations
                         .IsRequired();
 
                     b.HasOne("JucarAutopartesCRUD.Models.RawMaterial", "RawMaterial")
-                        .WithMany()
+                        .WithMany("autoPartMaterials")
                         .HasForeignKey("RawMaterialID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("AutoPart");
+
+                    b.Navigation("RawMaterial");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.BillDetail", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.AutoPart", "AutoPart")
+                        .WithMany("billDetails")
+                        .HasForeignKey("AutoPartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutoPart");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.DiscountHistory", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.PriceHistory", "PriceHistory")
+                        .WithMany("discountHistories")
+                        .HasForeignKey("PriceHistoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PriceHistory");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Inventory", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.AutoPart", "AutoPart")
+                        .WithOne("Inventory")
+                        .HasForeignKey("JucarAutopartesCRUD.Models.Inventory", "AutoPartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutoPart");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Loss", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.AutoPart", "AutoPart")
+                        .WithMany("losses")
+                        .HasForeignKey("AutoPartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutoPart");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Movement", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.RawMaterial", "RawMaterial")
+                        .WithMany("movements")
+                        .HasForeignKey("RawMaterialID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("RawMaterial");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.PriceHistory", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.AutoPart", "AutoPart")
+                        .WithMany("priceHistories")
+                        .HasForeignKey("AutoPartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutoPart");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.Stock", b =>
+                {
+                    b.HasOne("JucarAutopartesCRUD.Models.RawMaterial", "RawMaterial")
+                        .WithMany("stocks")
+                        .HasForeignKey("RawMaterialID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("RawMaterial");
                 });
@@ -1219,12 +1376,34 @@ namespace JucarAutopartesCRUD.Migrations
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.AutoPart", b =>
                 {
+                    b.Navigation("Inventory");
+
                     b.Navigation("autoPartMaterials");
+
+                    b.Navigation("billDetails");
+
+                    b.Navigation("losses");
+
+                    b.Navigation("priceHistories");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Category", b =>
                 {
                     b.Navigation("Subcategories");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.PriceHistory", b =>
+                {
+                    b.Navigation("discountHistories");
+                });
+
+            modelBuilder.Entity("JucarAutopartesCRUD.Models.RawMaterial", b =>
+                {
+                    b.Navigation("autoPartMaterials");
+
+                    b.Navigation("movements");
+
+                    b.Navigation("stocks");
                 });
 
             modelBuilder.Entity("JucarAutopartesCRUD.Models.Subcategory", b =>

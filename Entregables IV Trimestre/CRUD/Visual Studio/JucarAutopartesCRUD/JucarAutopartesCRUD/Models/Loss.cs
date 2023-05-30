@@ -22,5 +22,10 @@ namespace JucarAutopartesCRUD.Models
 
         [Required(ErrorMessage = "¡Ingrese un valor!")]
         public DateTime DateLoss { get; set; }
+
+        //Relación de 1:N desde AutoPart
+        public int AutoPartID { get; set; } //FK
+        public AutoPart? AutoPart { get; set; }
+
     }
 }

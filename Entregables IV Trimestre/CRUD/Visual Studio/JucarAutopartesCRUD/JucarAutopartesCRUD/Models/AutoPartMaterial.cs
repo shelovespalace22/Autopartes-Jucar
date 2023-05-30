@@ -11,14 +11,12 @@ namespace JucarAutopartesCRUD.Models
         [Required(ErrorMessage = "¡Describa la composición de la autoparte!"), StringLength(100)]
         public string? AutoPartComposition { get; set; }
 
-        //Otros atributos
-
-        public int AutopartID { get; set; }
-
+        //Relación de 1:N desde AutoPart 
+        public int AutopartID { get; set; } //FK
         public AutoPart? AutoPart { get; set; }
 
-        public int RawMaterialID { get; set; }
-
+        //Relación de 1:N desde RawMaterial
+        public int RawMaterialID { get; set; } //FK
         public RawMaterial? RawMaterial { get; set; }
     }
 }

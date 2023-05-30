@@ -19,5 +19,14 @@ namespace JucarAutopartesCRUD.Models
 
         [Required]
         public bool State { get; set; } = true;
+
+        //Relación de 1:N desde AutoPart
+        public int AutoPartID { get; set; } //FK
+        public AutoPart? AutoPart { get; set; }
+
+        //Relación de 1:N desde PriceHistory
+        public ICollection<DiscountHistory>? discountHistories { get; set; }
+
+
     }
 }

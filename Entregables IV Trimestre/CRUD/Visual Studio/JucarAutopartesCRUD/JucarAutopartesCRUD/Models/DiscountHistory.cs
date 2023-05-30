@@ -23,6 +23,9 @@ namespace JucarAutopartesCRUD.Models
         [Required]
         public bool State { get; set; } = true;
 
-        
+        //Relación de 1:N desde PriceHistory
+        public int PriceHistoryID { get; set; }
+        public PriceHistory? PriceHistory { get; set; }
+
     }
 }

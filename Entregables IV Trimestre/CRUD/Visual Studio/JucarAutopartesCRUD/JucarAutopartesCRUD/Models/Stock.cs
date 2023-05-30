@@ -29,5 +29,10 @@ namespace JucarAutopartesCRUD.Models
         [Required]
         public DateTime ModificationDate { get; set; }
 
+        //Relación de 1:N desde RawMaterial
+        public int RawMaterialID { get; set; }
+        public RawMaterial? RawMaterial { get; set; }
+
+
     }
 }

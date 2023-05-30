@@ -1,0 +1,89 @@
+﻿@model IEnumerable<JucarAutopartesCRUD.Models.AutoPart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Performance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightKgs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HeightCms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LenghtCms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleZone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModificationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subcategory)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Performance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightKgs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeightCms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LenghtCms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleZone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModificationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subcategory.SubcategoryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AutoPartID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AutoPartID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AutoPartID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

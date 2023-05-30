@@ -36,21 +36,25 @@ namespace JucarAutopartesCRUD.Models
         [Required]
         public DateTime ModificationDate { get; set; }
 
-        //ATRIBUTOS NUEVOS
-
-
-
-
-
-        //otros atributos 
-
-        public int SubcategoryID { get; set; }
+        //Relación de 1:N desde Subcategory
+        public int SubcategoryID { get; set; } //FK
 
         public Subcategory? Subcategory { get; set; }
 
-        //Relaciones
+        //Relación de 1:N con AutoPartMaterials
+        public ICollection<AutoPartMaterial>? autoPartMaterials { get; set; }
 
-        public ICollection<AutoPartMaterial> autoPartMaterials { get; set; }
+        //Relación de 1:N con PriceHistory
+        public ICollection<PriceHistory>? priceHistories { get; set; }
+
+        //Relación de 1:N con Loss
+        public ICollection<Loss>? losses { get; set; }
+
+        //Relación de 1:1 con Inventory
+        public Inventory? Inventory { get; set; }
+
+        //Relación de 1:N con BillDetail
+        public ICollection<BillDetail>? billDetails { get; set; }
         
 
     }

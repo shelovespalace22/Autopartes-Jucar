@@ -1,0 +1,77 @@
+﻿@model JucarAutopartesCRUD.Models.AutoPart
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AutoPart</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Performance" class="control-label"></label>
+                <input asp-for="Performance" class="form-control" />
+                <span asp-validation-for="Performance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeightKgs" class="control-label"></label>
+                <input asp-for="WeightKgs" class="form-control" />
+                <span asp-validation-for="WeightKgs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeightCms" class="control-label"></label>
+                <input asp-for="HeightCms" class="form-control" />
+                <span asp-validation-for="HeightCms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LenghtCms" class="control-label"></label>
+                <input asp-for="LenghtCms" class="form-control" />
+                <span asp-validation-for="LenghtCms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleZone" class="control-label"></label>
+                <input asp-for="VehicleZone" class="form-control" />
+                <span asp-validation-for="VehicleZone" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="State" /> @Html.DisplayNameFor(model => model.State)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModificationDate" class="control-label"></label>
+                <input asp-for="ModificationDate" class="form-control" />
+                <span asp-validation-for="ModificationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubcategoryID" class="control-label"></label>
+                <select asp-for="SubcategoryID" class ="form-control" asp-items="ViewBag.SubcategoryID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
