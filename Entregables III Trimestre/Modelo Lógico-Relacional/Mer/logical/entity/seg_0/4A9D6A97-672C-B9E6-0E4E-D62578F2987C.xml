@@ -27,18 +27,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="FechaAporte" id="09F6E288-2DE0-F905-4F8D-7ED80644B9EE">
-<createdBy>Ambiente</createdBy>
-<createdTime>2023-04-11 20:55:13 UTC</createdTime>
-<ownerDesignName>Mer</ownerDesignName>
-<engineerTo>
-<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="MontoAbonado" id="1494A522-A049-938C-39F8-C00F8A7BF0E0">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 11:09:05 UTC</createdTime>
@@ -51,20 +39,29 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="FacturaID" id="AA904D03-D692-78A2-9AC4-41FA4E832986">
+<Attribute name="FechaAporte" id="09F6E288-2DE0-F905-4F8D-7ED80644B9EE">
 <createdBy>Ambiente</createdBy>
-<createdTime>2023-04-11 21:09:04 UTC</createdTime>
-<generatorID>9996A998-19E1-3B36-CF89-563BEABBDC4C</generatorID>
+<createdTime>2023-04-11 20:55:13 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>
-<referedAttribute>AE4E2B3F-19C1-E001-DCF4-A7A04C2D7294</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaModificacion" id="53A6C0DC-502B-9EA7-CE35-1E629251056E">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 16:17:09 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="MedioPagoID" id="2AB91A64-509F-DC24-41C4-A3A38C266FEF">
 <createdBy>Ambiente</createdBy>
@@ -81,6 +78,34 @@
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="PedidoID" id="7D0F2D1D-F098-1B99-C70B-0AA4F6CA7A18">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 18:09:59 UTC</createdTime>
+<generatorID>43A8EC80-847D-86B1-51F9-FFAA810F242E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>334FAA82-92F6-24FF-15B0-3DBE58C60EB1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ClienteID" id="2385C4E1-760C-AAA1-D6B0-0C85815BCA37">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 18:22:19 UTC</createdTime>
+<generatorID>43A8EC80-847D-86B1-51F9-FFAA810F242E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>698F5353-4D35-B1EB-F2D5-901358F160A0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="6007C75B-D262-C749-04D1-7BA2452ED12B" name="Aporte PK">
@@ -93,6 +118,8 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>DA1AE67F-93BA-C868-A749-16BF2A29CB98</attributeRef>
+<attributeRef>7D0F2D1D-F098-1B99-C70B-0AA4F6CA7A18</attributeRef>
+<attributeRef>2385C4E1-760C-AAA1-D6B0-0C85815BCA37</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

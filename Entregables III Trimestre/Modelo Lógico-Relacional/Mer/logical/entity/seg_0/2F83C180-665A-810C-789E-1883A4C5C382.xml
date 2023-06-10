@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2F83C180-665A-810C-789E-1883A4C5C382" name="DetallePedido">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:38:36 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DetallePedidoID" id="7F877C56-E0FB-D197-6961-1FD6F7643220">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:38:43 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AutoparteID" id="A25696F8-4F25-6CDA-2578-02626749BA10">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:41:01 UTC</createdTime>
+<generatorID>C6A22073-CE25-6AF2-DDBB-F69101A111FC</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>0C10D217-B0EC-77F6-3721-1A3B6562AE15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Producto" id="4AA2F485-4F27-4C0B-904D-8CF7CE08383F">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 18:37:39 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad" id="C31AAB8C-4EB3-5EFD-8509-79ADBFBB8774">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:38:55 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PedidoID" id="3988FAD0-29A7-9A55-A66E-0A2F9A33306A">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:43:27 UTC</createdTime>
+<generatorID>8B21ADD1-91F0-D8B9-D8C3-8680E1A9F79C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>334FAA82-92F6-24FF-15B0-3DBE58C60EB1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ClienteID" id="3EECAE64-46D5-465A-3FFF-D68096470266">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 18:22:19 UTC</createdTime>
+<generatorID>8B21ADD1-91F0-D8B9-D8C3-8680E1A9F79C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<referedAttribute>698F5353-4D35-B1EB-F2D5-901358F160A0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F0A3DD4C-3752-7C99-9DC5-9C1971EE6589" name="DetallePedido PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:38:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7F877C56-E0FB-D197-6961-1FD6F7643220</attributeRef>
+<attributeRef>3988FAD0-29A7-9A55-A66E-0A2F9A33306A</attributeRef>
+<attributeRef>3EECAE64-46D5-465A-3FFF-D68096470266</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JucarAutopartesApplicationWeb", "JucarAutopartesApplicationWeb\JucarAutopartesApplicationWeb.csproj", "{C0563339-A16C-457E-A549-AF18B7C61D84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0563339-A16C-457E-A549-AF18B7C61D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0563339-A16C-457E-A549-AF18B7C61D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0563339-A16C-457E-A549-AF18B7C61D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0563339-A16C-457E-A549-AF18B7C61D84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {997B6B34-514E-42A3-B549-365BAC976A30}
+	EndGlobalSection
+EndGlobal

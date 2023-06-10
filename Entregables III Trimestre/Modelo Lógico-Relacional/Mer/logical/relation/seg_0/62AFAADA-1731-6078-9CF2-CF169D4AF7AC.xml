@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FormaPago_Factura" directorySegmentName="seg_0" id="62AFAADA-1731-6078-9CF2-CF169D4AF7AC">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 19:21:56 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>F2714C0F-8B6B-EC00-D630-0626C83DDA60</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>aparecer en una</nameOnSource>
+<nameOnTarget>tener una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6B5EFCB1-A22E-07B9-8541-05E614C9B1E0</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>5F82B981-0346-A144-B5C2-146E282B64E2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

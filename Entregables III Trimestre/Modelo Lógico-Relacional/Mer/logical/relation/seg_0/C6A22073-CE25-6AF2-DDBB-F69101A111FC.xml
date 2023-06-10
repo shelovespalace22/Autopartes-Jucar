@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autoparte_DetallePedido" directorySegmentName="seg_0" id="C6A22073-CE25-6AF2-DDBB-F69101A111FC">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-10 17:41:01 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
+</engineerTo>
+<sourcePk>F4C292C5-DF52-3965-3726-D2733568CF6E</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>aparecer en un</nameOnSource>
+<nameOnTarget>contener una </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E4A1BCA0-C8B4-152B-9972-5E463B570F1E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2F83C180-665A-810C-789E-1883A4C5C382</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
