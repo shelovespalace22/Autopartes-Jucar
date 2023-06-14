@@ -3,7 +3,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>B016DFDE-A777-FB00-7441-347BE8578A38</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -12,11 +12,10 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>8614E1AD-90D3-37AA-6BAF-6AFE089D1862</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -28,19 +27,18 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>74C175E7-BD4B-5C01-AFB8-403D67A2E337</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Nombre" id="766ECAA4-0780-7E50-8869-334D2142A83A">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>2F60CACE-2387-4212-AF15-FD0EBFEC2834</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -52,7 +50,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>0131EC84-25D6-A6E1-3C55-4DDEAE8BF050</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -66,7 +64,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>FDCE93B6-D41B-53C0-FBBA-3152365ACAD0</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -79,7 +77,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:30 UTC</createdTime>
 <generatorID>CDFA71FA-549F-231E-2334-87383267403C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

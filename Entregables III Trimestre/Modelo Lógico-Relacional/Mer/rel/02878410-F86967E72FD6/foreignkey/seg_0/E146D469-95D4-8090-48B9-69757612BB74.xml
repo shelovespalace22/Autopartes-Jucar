@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E146D469-95D4-8090-48B9-69757612BB74" containerWithKeyObject="D56D6162-F201-E5AD-D5B8-8E9407E516C9" localFKIndex="8656E09B-3F2F-EAE3-B7D5-E3251B0A6DE1" name="Inventario_Autoparte_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>243AB4C8-5613-24B1-60D0-0767F430277F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<referredTableLongName>Autoparte</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BFE62086-A4D6-AB5D-50F2-5B859D84886F</referredTableID>
+<keyObject>9939B431-12D5-2A27-59D2-5F3679D00696</keyObject>
+<referredKeyID>9939B431-12D5-2A27-59D2-5F3679D00696</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>AutoparteID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

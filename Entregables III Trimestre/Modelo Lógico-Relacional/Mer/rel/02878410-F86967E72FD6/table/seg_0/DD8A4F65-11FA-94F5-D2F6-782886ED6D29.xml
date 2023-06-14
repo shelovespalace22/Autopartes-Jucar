@@ -3,7 +3,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>D1AEB79C-8558-46FF-EDD9-C16078641DFD</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -12,19 +12,18 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>7C7CB417-4AE1-CE4E-47A6-B21127B1A43A</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Material" id="934FCA88-95C7-64E8-42F0-640A67F7A70A">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>66175FD1-BBEF-436F-72ED-8606ADBE5921</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -36,7 +35,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>7C46043D-1B6D-71EE-9833-616118C929A1</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -48,7 +47,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>62AEF467-4C14-BF09-4EDD-B662FA3C630C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -56,15 +55,14 @@
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Bodega_FabricaID" id="11A8EB0F-1914-55AA-1FC4-91CE3171A0A4">
+<Column name="Bodega_Fabrica_FabricaID" id="11A8EB0F-1914-55AA-1FC4-91CE3171A0A4">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>4F192499-7E2E-F00F-599E-182E9139F0A7</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -76,11 +74,10 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>59899FBF-42EC-A9B6-A7B1-BDD6121B9EFB</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -88,13 +85,37 @@
 <colAssociation fkAssociation="57AA2DA6-A3AA-BA05-1156-3DDF595B9B40" referredColumn="D5CE5034-0997-4CFB-8C70-0652AE1BED50"/>
 </associations>
 </Column>
+<Column name="AltoCm" id="9153885B-3BC8-5747-66C2-0E4DE963FC2E">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>96877A8F-0293-7BDA-CC47-D75A02F52E6A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LargoCm" id="5A5EE8C7-87C3-4F8B-681E-F45B1FE9E206">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>3EA67A17-074B-1189-32A1-D20D891652BC</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C0A54EB6-D1C1-0DDB-91B8-9D80ECAA77C7" name="EstanteOrganizador_PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>07ADD8D2-6118-FFBE-3EF6-DFE16CA04142</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -106,7 +127,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:30 UTC</createdTime>
 <generatorID>61EB00B4-3F73-6C98-3034-6E42E91AE154</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

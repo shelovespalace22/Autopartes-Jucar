@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="18B5486A-4B43-804C-86E3-2BBEE525B3B8" name="Municipio">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>357832AB-0405-817C-42FC-3BFA2D0B0331</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MunicipioID" id="B138CB53-645B-9A46-2B79-E0235D90D030">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>DEED2DED-232D-004B-9A01-B8E8E8DB62F6</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="BE7EA1C2-5F3E-3386-E931-98C0702312D9">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>3EC76468-575D-F1CD-1EDE-C79C3344238B</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Capital" id="999F8D6D-6D42-031B-2535-53A8053660B6">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>24BF3F22-24FC-4A5E-E50E-EC460F17A48E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Departamento_DepartamentoID" id="684535E6-D42B-980D-AC44-2532E343E1AE">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>CEAF8AC3-2EA3-2AB5-E8EC-D422A627807E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C7F27A0-CD59-915B-FD52-D78B8088BF17" referredColumn="89538CB1-8449-E419-5D83-9C8DA9730DFF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="20B505CD-DA85-83F3-D222-621767CD6E1E" name="Municipio_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>C4FACA76-D8D7-A717-5E59-2D91DF8B4077</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B138CB53-645B-9A46-2B79-E0235D90D030"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD7D6E10-C90A-29E9-0DCF-C05B203D1B90" name="Municipio_Departamento_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>F24483F4-9762-A52A-4CD2-5385FBF4421A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="684535E6-D42B-980D-AC44-2532E343E1AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

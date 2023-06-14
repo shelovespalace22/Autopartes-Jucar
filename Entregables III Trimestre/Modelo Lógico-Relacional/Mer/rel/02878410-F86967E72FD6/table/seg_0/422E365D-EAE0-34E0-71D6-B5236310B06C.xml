@@ -3,7 +3,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>17A19EC9-5F85-E74F-4020-9B840D10E0DD</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -12,19 +12,18 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>D8806E47-C55F-EB8B-3226-6E1933CD9E7E</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="NIT" id="7E8562C0-4E20-C290-F15A-14FB3F2E5332">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>56026307-F7F8-0673-726B-ADFD18DBDA9C</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -36,7 +35,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>180E4210-46D2-AA69-45AE-E58B7FFACFAC</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -48,7 +47,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>F4787578-BF4D-15C5-EB50-566807C421E0</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -62,7 +61,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>310A4ADB-0075-1172-14E6-6DB14F3A7F01</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>

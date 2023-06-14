@@ -3,7 +3,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>F835E4A1-27C5-321F-9C07-254E751902CE</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -12,24 +12,69 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>424B9134-DCE6-96E8-0B4E-F3BC5FFE2DD9</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Remitente" id="8B10C3BB-972F-4234-2D66-7108F2D6529D">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>42B8A80D-2F1D-5DB9-ED06-3A2B331ED0D1</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NombreMetodoPago" id="BFB15F79-7764-F535-841D-FC38966F2D6B">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>1E22A9CE-15CB-3BE2-94D5-19F1C8297417</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="7070FECE-6C6E-2285-44C5-D6D88C218286">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>0287DBA9-C215-DF7D-2447-34FB837F7525</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaCreacion" id="04C8A71B-F8DA-2973-2EA6-422BE3761183">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>064FDAEF-5081-39DA-C1AA-1E3CBE8F134A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaModificacion" id="D5217BBF-E62A-9729-0116-6F7DC84C0AC5">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>FAA50682-4705-8A27-D19D-DC81C4A3BC4D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -38,7 +83,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>1741DC8B-2F3C-B439-AA3C-6703D4FF8C6E</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>

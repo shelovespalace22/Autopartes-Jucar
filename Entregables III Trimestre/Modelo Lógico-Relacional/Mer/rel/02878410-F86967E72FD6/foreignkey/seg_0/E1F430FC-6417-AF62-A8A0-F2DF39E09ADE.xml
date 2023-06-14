@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E1F430FC-6417-AF62-A8A0-F2DF39E09ADE" containerWithKeyObject="C5959012-8F63-9639-55FA-7EF60C04EA6E" localFKIndex="DC9CD2C2-7804-E781-31C9-A8F01DEF44A1" name="Precio_Autoparte_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E1F430FC-6417-AF62-A8A0-F2DF39E09ADE" containerWithKeyObject="C5959012-8F63-9639-55FA-7EF60C04EA6E" localFKIndex="DC9CD2C2-7804-E781-31C9-A8F01DEF44A1" name="HistorialPrecio_Autoparte_FK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:30 UTC</createdTime>
 <generatorID>E9316332-3CFD-3330-B091-720991AF9871</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <referredTableLongName>Autoparte</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>BFE62086-A4D6-AB5D-50F2-5B859D84886F</referredTableID>

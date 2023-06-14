@@ -1,30 +1,29 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D56D6162-F201-E5AD-D5B8-8E9407E516C9" name="Stock">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D56D6162-F201-E5AD-D5B8-8E9407E516C9" name="Inventario">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>FCBBA9BE-C058-8CFA-1EB8-1F2BB46C7726</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="StockID" id="0B8821F5-8777-5750-CD65-BBA11BE4D9B7">
+<Column name="InventarioID" id="0B8821F5-8777-5750-CD65-BBA11BE4D9B7">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>D62E67B8-70A5-D30C-56A2-B48449FC9D0D</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Stock" id="EF490F1B-6A82-5E01-25D3-3B52700F1BFE">
+<Column name="CantidadDisponible" id="EF490F1B-6A82-5E01-25D3-3B52700F1BFE">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>08439190-2D39-ED4B-25CF-8250F30D1138</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -36,7 +35,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>EA7F1CBD-7345-77C1-31F3-9EFC32F99FFD</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -48,7 +47,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>3CB1B5B5-0FC8-E1FC-0E38-41F6E612F444</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -60,7 +59,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>7E6E87BA-6AFC-9FC1-5911-3496E3FD02B5</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -68,45 +67,67 @@
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Autoparte_AutoparteID" id="73158DD9-607A-FC4A-202A-E5B8730DDF31">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>77DC9731-C2D6-ABF7-8300-01C9190161A7</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<Column name="FechaUltimaActualización" id="5B5EC736-A0B1-2B15-A19A-7E179EAFFA6A">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>847F4422-36CA-9A1F-3F12-5FC2294AFE7A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Autoparte_AutoparteID2" id="CEEB991D-2676-37A1-1FD6-D8DEB2E64F9B">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>ED467D05-5D8B-7AB4-E88E-F99EAB38EF4D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="D9E234BA-DFB8-B013-CA1C-6C6493F99FDB" referredColumn="37BECEDF-C8EB-D8A0-0702-5023C70E3230"/>
+<colAssociation fkAssociation="E146D469-95D4-8090-48B9-69757612BB74" referredColumn="37BECEDF-C8EB-D8A0-0702-5023C70E3230"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="751562C7-261F-7130-7043-BCFBB257409F" name="Stock_PK">
+<ind_PK_UK id="751562C7-261F-7130-7043-BCFBB257409F" name="Inventario_PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>DD930389-2BFC-E09D-AE05-E54DFBD214F0</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="0B8821F5-8777-5750-CD65-BBA11BE4D9B7"/>
+<colUsage columnID="CEEB991D-2676-37A1-1FD6-D8DEB2E64F9B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A25DDE5A-4B3D-DF5F-1154-D1BC00BFE613" name="Stock_Autoparte_FK">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:30 UTC</createdTime>
-<generatorID>841E5962-1AEB-36BA-CFF9-A9AC1E0A38D6</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ind_PK_UK id="1E6AA334-44ED-F1BF-1858-C4C9F53C1A84" name="Inventario__IDX">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>243AB4C8-5613-24B1-60D0-0767F430277F</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="CEEB991D-2676-37A1-1FD6-D8DEB2E64F9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8656E09B-3F2F-EAE3-B7D5-E3251B0A6DE1" name="Inventario_Autoparte_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>243AB4C8-5613-24B1-60D0-0767F430277F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="73158DD9-607A-FC4A-202A-E5B8730DDF31"/>
+<colUsage columnID="CEEB991D-2676-37A1-1FD6-D8DEB2E64F9B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

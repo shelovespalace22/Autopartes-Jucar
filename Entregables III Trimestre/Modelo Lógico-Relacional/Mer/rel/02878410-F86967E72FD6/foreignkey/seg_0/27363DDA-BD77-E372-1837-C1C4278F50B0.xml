@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="27363DDA-BD77-E372-1837-C1C4278F50B0" containerWithKeyObject="7FA28012-DF26-F08D-0AAB-49F5D95D1A09" localFKIndex="512DB6E6-0BA2-50DC-0EE5-9C530EEF04FF" name="Dirección_TipoDirección_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>B034A520-B50F-2117-5984-1BD8DC4A5403</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<referredTableLongName>TipoDirección</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F8417C58-52EC-B175-6EDE-F44BDB4CFED4</referredTableID>
+<keyObject>D70EADAD-2660-4652-2EF9-2F48A95B0D89</keyObject>
+<referredKeyID>D70EADAD-2660-4652-2EF9-2F48A95B0D89</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>TipoDirecciónID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

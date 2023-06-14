@@ -1,46 +1,29 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7FA28012-DF26-F08D-0AAB-49F5D95D1A09" name="Ubicación">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7FA28012-DF26-F08D-0AAB-49F5D95D1A09" name="Dirección">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>B29F1BA0-0F8F-D04C-4BA8-E9EF99D2BD53</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Fabrica_FabricaID" id="1C70398E-726A-D913-1293-23CB1CAD4C44">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>F9758FCF-0B9B-6715-AE0E-1978D62DEDB2</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0C9674E0-1DF9-A6C4-F2A8-719947262DF9" referredColumn="CA99CCA7-BB72-E399-83B9-EEBD798E19C4"/>
-</associations>
-</Column>
-<Column name="UbicaciónID" id="7651E3A0-85A7-0378-EA75-EF4CD811602F">
+<Column name="DirecciónID" id="7651E3A0-85A7-0378-EA75-EF4CD811602F">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>A42A61BE-0919-99C7-9BA3-5DDD1124EC7B</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="País" id="D79B86CA-AFD2-A73D-BEC7-4921A04382AD">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>6787A6B4-58B4-D98B-FB95-6843B7E51B06</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -53,7 +36,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>82BAC5D7-F615-4AAE-DD57-E091EF7D7EC4</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -66,7 +49,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>D2DE9D77-6C3C-59A0-49E1-6026FEC94834</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -79,7 +62,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>1529C4D9-FF84-1D78-2AEA-C265055EF4A6</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -91,7 +74,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>3FA45E4A-0245-30F9-0008-AE2ACBC36DB9</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -103,7 +86,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>699BBB1B-A3DE-0A6F-18FE-9C827305288E</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -115,7 +98,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>8FAC985D-A493-1183-7B92-A0228F649A55</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -123,13 +106,107 @@
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="TipoDirección_TipoDirecciónID" id="5704EFDF-27C4-E4C3-795C-B1E09A22B786">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>DEF0E6C1-1D1D-12FF-E4F8-0A4892C71F8E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27363DDA-BD77-E372-1837-C1C4278F50B0" referredColumn="ECD6C3F0-3102-1D4D-365D-4D9F02ACD24C"/>
+</associations>
+</Column>
+<Column name="Vía_VíaID" id="0BF7E2E5-7308-07E5-081C-725CCB8C1E78">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>ACC53FDC-7D86-0727-2517-AA40BD420292</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="718781F5-3159-CB41-C6B2-DB25475B3B4A" referredColumn="A203D95A-84BF-DD71-3A17-5FE077070463"/>
+</associations>
+</Column>
+<Column name="Edificio_EdificioID" id="7F480F8D-B7E8-2678-6540-E7C7E21B290D">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>ABB7DD4C-7219-A397-B210-7A0A041E9FDF</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C873783-8001-3FCC-54FD-15DD7EB9A75E" referredColumn="23ACD535-9D3D-0FF8-3DA6-550B297E1F39"/>
+</associations>
+</Column>
+<Column name="Destinatario_DestinatarioID" id="E80C8F27-0265-3B9D-AC70-FE2D7229741E">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>2D019A35-481D-E8E6-802B-5049B79D2DCA</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E0D46A7-94C0-1373-69EF-C7DCEE0CE46D" referredColumn="6CDFA6C6-2819-BF41-43A9-46548E727B51"/>
+</associations>
+</Column>
+<Column name="InformaciónAdicional" id="87AF2BA5-3005-4C21-2241-D7F15EFDA29A">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>319E5495-F7B1-7C86-11CD-99BC0C6BFC8D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaCreación" id="78709885-387C-C64F-35FE-075FC911AF20">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>A0A816BE-86FA-9DE9-E3D4-AC69C664FC43</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaModificación" id="AF7D4536-3897-2790-B38D-8223BEBE3960">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>64CF49B5-E5FE-6756-F1D1-A13D4EB064A4</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="0FA3DDD0-F2CA-7F83-1E46-54A12D3ECE22" name="Ubicación_PK">
+<ind_PK_UK id="0FA3DDD0-F2CA-7F83-1E46-54A12D3ECE22" name="Dirección_PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>01155932-EB72-A919-8FC1-0269E5D04233</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -140,23 +217,53 @@
 <ind_PK_UK id="66A92AF3-D961-77AC-15F5-DF374D302DE6" name="Ubicación__IDX">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:30 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>6CF579C2-CCAA-83F7-6FEF-7AE7B71F19C3</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="1C70398E-726A-D913-1293-23CB1CAD4C44"/>
-</indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6A323D58-1BE8-0889-9FD5-E4ECBCB446FA" name="Ubicación_Fabrica_FK">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:30 UTC</createdTime>
-<generatorID>6CF579C2-CCAA-83F7-6FEF-7AE7B71F19C3</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ind_PK_UK id="A95915F1-E187-42E8-D764-DD3A76D9B790" name="Dirección_Destinatario_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>21D1969C-CFD6-DEB3-8E9C-6BDB36BC569E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1C70398E-726A-D913-1293-23CB1CAD4C44"/>
+<colUsage columnID="E80C8F27-0265-3B9D-AC70-FE2D7229741E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC361CA0-EB88-A64F-A0CF-51A2629AAD95" name="Dirección_Edificio_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>5A18A849-8974-1591-02D6-B82B0F00D644</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F480F8D-B7E8-2678-6540-E7C7E21B290D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="512DB6E6-0BA2-50DC-0EE5-9C530EEF04FF" name="Dirección_TipoDirección_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>B034A520-B50F-2117-5984-1BD8DC4A5403</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5704EFDF-27C4-E4C3-795C-B1E09A22B786"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA1C2D1C-7EA3-E630-0E85-A976F88D8E7A" name="Dirección_Vía_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>D0B7D92E-AB39-C229-6058-461493C60690</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BF7E2E5-7308-07E5-081C-725CCB8C1E78"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

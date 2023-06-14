@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="61357853-F35F-31EF-5911-C23F1D346522" name="DireccionUsuario">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>33B2BAF8-2411-8AB7-56AA-EB3C8E1B15CE</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DireccionUsuarioID" id="CF0AA40D-1CCB-2722-59B9-42239C756B43">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>870F0DB7-DA14-7EF2-9362-07FFDF8854B6</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dirección_DirecciónID" id="B70D666E-CB28-79B3-2279-42E563AE21DD">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>2224007D-97BE-6B17-9510-3E913F7DF5C9</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34949D89-D49C-7E89-2D20-56B7FFA82C6C" referredColumn="7651E3A0-85A7-0378-EA75-EF4CD811602F"/>
+</associations>
+</Column>
+<Column name="Usuario_UsuarioID" id="DCDE4C4A-9629-192A-C2EA-D079228BD3BA">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>0EC9697A-85C9-8471-D92F-A4283E9BDD24</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D738C7D-9A98-1957-7DEA-007F99DC2FEA" referredColumn="5CE82AB8-DFB9-B1E4-C8F5-DFA7AA6DE2F9"/>
+</associations>
+</Column>
+<Column name="FechaModificación" id="D5F32C98-C15B-F079-E69C-DDF42DC213A6">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>19AC8860-2270-7523-B826-098B4E4991A2</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E3D7D096-DDEE-DCF6-A0B9-1F8B5DAB48A0" name="DireccionUsuario_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>23379440-0E13-00F2-917D-E22EB7E94891</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF0AA40D-1CCB-2722-59B9-42239C756B43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07D38F9E-12AC-2F8C-A2D2-3B0071C0C4BD" name="DireccionUsuario_Dirección_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>D8E1B444-DB91-84A0-C734-EFE1745444DA</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B70D666E-CB28-79B3-2279-42E563AE21DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="208ACF5F-8965-3853-2258-C2B13063D7FE" name="DireccionUsuario_Usuario_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>3BF4BF9A-7198-0C89-AB19-CE40DA156A7F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCDE4C4A-9629-192A-C2EA-D079228BD3BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

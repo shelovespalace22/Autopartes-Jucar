@@ -1,30 +1,29 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B71230DA-6CEF-8D7B-F4AE-EECE2EE02CBC" name="Descuento">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B71230DA-6CEF-8D7B-F4AE-EECE2EE02CBC" name="HistorialDescuento">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>0CAF0BD6-3EF3-D715-90A0-276A616BCD4F</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="DescuentoID" id="7A669A1A-36CB-01D5-0B5A-F7439F184668">
+<Column name="HistorialDescuentoID" id="7A669A1A-36CB-01D5-0B5A-F7439F184668">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>11E13C80-341E-72A2-5BA0-A07B72C74884</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="PorcentajeDescuento" id="E83548F1-6560-C769-8269-30A68FD2201D">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>51876AC2-4BD1-DE68-7472-1072E58C3A7A</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT020</logicalDatatype>
@@ -35,7 +34,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>1E3F8323-A0F2-2DB8-9EF0-C0764C39A09A</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -46,7 +45,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>CE7C936F-6630-4FFF-1350-2BE681BB73E4</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -57,7 +56,7 @@
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>F1A9D368-3787-0AAD-F45D-3A56A04535FE</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -65,15 +64,14 @@
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Precio_PrecioID" id="B64D0237-D776-CE41-EE80-063CD59B32F9">
+<Column name="HistorialPrecio_HistorialPrecioID" id="B64D0237-D776-CE41-EE80-063CD59B32F9">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>1A875887-B933-AE8F-655C-C9BB95EAD076</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -81,13 +79,26 @@
 <colAssociation fkAssociation="A1EE14C0-EF98-B868-CF10-5B4E434FABE7" referredColumn="8C81567D-AE32-AA6E-D253-7AD89DA04AE6"/>
 </associations>
 </Column>
+<Column name="ValorTemporal" id="7E6C0593-DFF2-F1DC-1E22-954518080A1F">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>AF84E434-2F0A-D780-61C2-8955E708FAA0</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="1929A126-03C3-CD91-09B0-0D6BF0BA33FF" name="Descuento_PK">
+<ind_PK_UK id="1929A126-03C3-CD91-09B0-0D6BF0BA33FF" name="HistorialDescuento_PK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>EABB2CBD-7EE5-F58A-2984-8732A32562D8</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -96,11 +107,11 @@
 <colUsage columnID="B64D0237-D776-CE41-EE80-063CD59B32F9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="9EB9A3EC-A6AC-A34D-1F01-09C87A5AFE0E" name="Descuento_Precio_FK">
+<ind_PK_UK id="9EB9A3EC-A6AC-A34D-1F01-09C87A5AFE0E" name="HistorialDescuento_HistorialPrecio_FK">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:30 UTC</createdTime>
 <generatorID>047D0A1E-2C92-7910-F8B4-CC86AD84C782</generatorID>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
