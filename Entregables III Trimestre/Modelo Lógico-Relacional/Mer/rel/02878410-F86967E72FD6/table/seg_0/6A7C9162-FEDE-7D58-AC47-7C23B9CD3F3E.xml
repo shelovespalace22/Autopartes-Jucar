@@ -20,7 +20,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Cliente_ClienteID" id="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF">
+<Column name="ClienteID" id="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>698F5353-4D35-B1EB-F2D5-901358F160A0</generatorID>
@@ -96,7 +96,7 @@
 <colUsage columnID="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="62599AB2-3230-3482-F975-2E71C1D305AD" name="Pedidov1_Cliente_FK">
+<ind_PK_UK id="62599AB2-3230-3482-F975-2E71C1D305AD" name="Pedido_Cliente_FK">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>FA73D7BF-8C25-F787-171C-E7646168CA95</generatorID>

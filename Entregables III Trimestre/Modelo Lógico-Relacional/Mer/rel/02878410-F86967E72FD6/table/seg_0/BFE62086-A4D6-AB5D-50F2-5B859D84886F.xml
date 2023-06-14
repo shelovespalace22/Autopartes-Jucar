@@ -19,6 +19,38 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CategoríaID" id="CCADA230-0303-619F-F6ED-F7EE05B896E3">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>5D7ADB9C-9868-93B6-B201-277E28DEF33E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FCF16EF-970D-3D53-0FFB-377C4FC3FAC2" referredColumn="C416D8A2-F541-1FDC-1C91-ED8EDD515FD7"/>
+</associations>
+</Column>
+<Column name="SubcategoríaID" id="07C330B9-816F-7B1C-8379-5A7E93626138">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>B6B81465-105E-38F5-4837-FBB6C6875F05</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FCF16EF-970D-3D53-0FFB-377C4FC3FAC2" referredColumn="F54E3AEB-9041-9069-15D5-4E976405F607"/>
+</associations>
+</Column>
 <Column name="Nombre" id="F331002A-C88B-5E90-F538-8088862FC14B">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
@@ -66,38 +98,6 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Subcategoría_SubcategoríaID" id="07C330B9-816F-7B1C-8379-5A7E93626138">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>B6B81465-105E-38F5-4837-FBB6C6875F05</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="8FCF16EF-970D-3D53-0FFB-377C4FC3FAC2" referredColumn="F54E3AEB-9041-9069-15D5-4E976405F607"/>
-</associations>
-</Column>
-<Column name="Subcategoría_Categoría_CategoríaID" id="CCADA230-0303-619F-F6ED-F7EE05B896E3">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>5D7ADB9C-9868-93B6-B201-277E28DEF33E</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="8FCF16EF-970D-3D53-0FFB-377C4FC3FAC2" referredColumn="C416D8A2-F541-1FDC-1C91-ED8EDD515FD7"/>
-</associations>
 </Column>
 <Column name="PesoKgs" id="BD56E2EB-2C0F-C683-8DE6-49269A35F32F">
 <createdBy>MI PC</createdBy>

@@ -20,7 +20,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Autoparte_AutoparteID" id="D69E785D-07FC-A1C1-32A0-1373D0567DE2">
+<Column name="AutoparteID" id="D69E785D-07FC-A1C1-32A0-1373D0567DE2">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>A25696F8-4F25-6CDA-2578-02626749BA10</generatorID>
@@ -33,6 +33,36 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="559A55D7-B75B-7945-C4C5-7CD3CC474D2E" referredColumn="37BECEDF-C8EB-D8A0-0702-5023C70E3230"/>
+</associations>
+</Column>
+<Column name="ClienteID" id="2F2B3977-668C-435E-85C2-F9C619346DCE">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>3EECAE64-46D5-465A-3FFF-D68096470266</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="464EDF51-2407-74C9-5E18-942A28AD5DC4" referredColumn="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF"/>
+</associations>
+</Column>
+<Column name="PedidoID" id="C4CFD654-98CE-4398-D323-DA510F06A287">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>3988FAD0-29A7-9A55-A66E-0A2F9A33306A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="464EDF51-2407-74C9-5E18-942A28AD5DC4" referredColumn="15FC3CE1-6CD1-5477-907A-9E2E7D6D5659"/>
 </associations>
 </Column>
 <Column name="Producto" id="D7B73A3A-2725-C6E4-C000-F4A02737DC96">
@@ -59,36 +89,6 @@
 <ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Pedidov1_PedidoID" id="C4CFD654-98CE-4398-D323-DA510F06A287">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>3988FAD0-29A7-9A55-A66E-0A2F9A33306A</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="464EDF51-2407-74C9-5E18-942A28AD5DC4" referredColumn="15FC3CE1-6CD1-5477-907A-9E2E7D6D5659"/>
-</associations>
-</Column>
-<Column name="Pedidov1_Cliente_ClienteID" id="2F2B3977-668C-435E-85C2-F9C619346DCE">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>3EECAE64-46D5-465A-3FFF-D68096470266</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="464EDF51-2407-74C9-5E18-942A28AD5DC4" referredColumn="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="43148CF1-60FC-84A1-B319-F2C10E693EB4" name="DetallePedidov1_PK">
@@ -105,7 +105,7 @@
 <colUsage columnID="2F2B3977-668C-435E-85C2-F9C619346DCE"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="47B895FF-5A8A-A1FD-F944-44AB5C2B9BB9" name="DetallePedidov1_Autoparte_FK">
+<ind_PK_UK id="47B895FF-5A8A-A1FD-F944-44AB5C2B9BB9" name="DetallePedido_Autoparte_FK">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>C6A22073-CE25-6AF2-DDBB-F69101A111FC</generatorID>
@@ -116,7 +116,7 @@
 <colUsage columnID="D69E785D-07FC-A1C1-32A0-1373D0567DE2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6511A9BB-5303-F312-6B2E-C48E9C356BD3" name="DetallePedidov1_Pedidov1_FK">
+<ind_PK_UK id="6511A9BB-5303-F312-6B2E-C48E9C356BD3" name="DetallePedido_Pedido_FK">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>8B21ADD1-91F0-D8B9-D8C3-8680E1A9F79C</generatorID>

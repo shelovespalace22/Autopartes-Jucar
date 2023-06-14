@@ -19,6 +19,36 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FabricaID" id="11A8EB0F-1914-55AA-1FC4-91CE3171A0A4">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>4F192499-7E2E-F00F-599E-182E9139F0A7</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57AA2DA6-A3AA-BA05-1156-3DDF595B9B40" referredColumn="8FCD1B0F-9CFB-891D-280B-897375EFC1F8"/>
+</associations>
+</Column>
+<Column name="BodegaID" id="FCDF2E93-E7AD-E599-F556-5A9B930BBCD1">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>59899FBF-42EC-A9B6-A7B1-BDD6121B9EFB</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57AA2DA6-A3AA-BA05-1156-3DDF595B9B40" referredColumn="D5CE5034-0997-4CFB-8C70-0652AE1BED50"/>
+</associations>
+</Column>
 <Column name="Material" id="934FCA88-95C7-64E8-42F0-640A67F7A70A">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
@@ -54,36 +84,6 @@
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Bodega_Fabrica_FabricaID" id="11A8EB0F-1914-55AA-1FC4-91CE3171A0A4">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>4F192499-7E2E-F00F-599E-182E9139F0A7</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="57AA2DA6-A3AA-BA05-1156-3DDF595B9B40" referredColumn="8FCD1B0F-9CFB-891D-280B-897375EFC1F8"/>
-</associations>
-</Column>
-<Column name="Bodega_BodegaID" id="FCDF2E93-E7AD-E599-F556-5A9B930BBCD1">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>59899FBF-42EC-A9B6-A7B1-BDD6121B9EFB</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="57AA2DA6-A3AA-BA05-1156-3DDF595B9B40" referredColumn="D5CE5034-0997-4CFB-8C70-0652AE1BED50"/>
-</associations>
 </Column>
 <Column name="AltoCm" id="9153885B-3BC8-5747-66C2-0E4DE963FC2E">
 <createdBy>MI PC</createdBy>

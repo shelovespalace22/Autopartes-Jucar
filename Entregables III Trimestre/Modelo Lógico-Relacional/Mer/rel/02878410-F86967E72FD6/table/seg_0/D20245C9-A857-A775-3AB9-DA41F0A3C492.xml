@@ -19,6 +19,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FabricaID" id="477FAFA7-81E5-CFE5-8293-E9C5C8A441F3">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>C8BC3AA3-E48D-4A9C-33A1-B636BD2ACF83</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A7C59E5-8E1E-205F-7A62-1FF5FE5FDAF5" referredColumn="CA99CCA7-BB72-E399-83B9-EEBD798E19C4"/>
+</associations>
+</Column>
 <Column name="TipoTélefono" id="73B50D34-AE8D-7165-CD9B-1E0D40116FB7">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
@@ -42,22 +57,6 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Fabrica_FabricaID" id="477FAFA7-81E5-CFE5-8293-E9C5C8A441F3">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>C8BC3AA3-E48D-4A9C-33A1-B636BD2ACF83</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="9A7C59E5-8E1E-205F-7A62-1FF5FE5FDAF5" referredColumn="CA99CCA7-BB72-E399-83B9-EEBD798E19C4"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

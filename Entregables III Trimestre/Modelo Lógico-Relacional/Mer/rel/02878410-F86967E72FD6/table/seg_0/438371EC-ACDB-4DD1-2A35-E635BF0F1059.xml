@@ -19,19 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nombre" id="051199C8-B88B-B75D-201E-584101CD0CFA">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>47F1699E-189F-8097-A396-63E8A1285AF7</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50 CHAR</dataTypeSize>
-<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Municipio_MunicipioID" id="D1C55669-52D4-A0FA-A789-B6840ECF9EBD">
+<Column name="MunicipioID" id="D1C55669-52D4-A0FA-A789-B6840ECF9EBD">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>FF799C80-8F56-4786-5E71-1D73C57DD958</generatorID>
@@ -45,6 +33,18 @@
 <associations>
 <colAssociation fkAssociation="E9F43C7A-A25A-8CC6-4047-F01A62E9EDDF" referredColumn="B138CB53-645B-9A46-2B79-E0235D90D030"/>
 </associations>
+</Column>
+<Column name="Nombre" id="051199C8-B88B-B75D-201E-584101CD0CFA">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>47F1699E-189F-8097-A396-63E8A1285AF7</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

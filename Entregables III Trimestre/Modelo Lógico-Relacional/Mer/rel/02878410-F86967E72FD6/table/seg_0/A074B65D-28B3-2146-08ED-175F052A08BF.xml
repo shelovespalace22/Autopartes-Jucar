@@ -19,6 +19,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="MateriaPrimaID" id="913BA8AA-A074-E432-8E59-AF4F4125E02C">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>9BFDCF44-8362-2435-8575-23739307CBCF</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2FAACF72-9269-D2AF-D0DE-EA06BD2E317D" referredColumn="35D50930-1A26-5130-625E-A0D109C3EF14"/>
+</associations>
+</Column>
 <Column name="Cantidad" id="F0DDB637-B2AD-BA8D-3F30-29832D049A6E">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
@@ -52,21 +67,6 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="MateriaPrima_MateriaPrimaID" id="913BA8AA-A074-E432-8E59-AF4F4125E02C">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>9BFDCF44-8362-2435-8575-23739307CBCF</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="2FAACF72-9269-D2AF-D0DE-EA06BD2E317D" referredColumn="35D50930-1A26-5130-625E-A0D109C3EF14"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

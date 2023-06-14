@@ -19,28 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FechaAporte" id="E2E51E13-D12F-6684-836B-7653567776AB">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>09F6E288-2DE0-F905-4F8D-7ED80644B9EE</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="MontoAbonado" id="DC9F7E89-E271-6FF7-5B79-5B517D862649">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 11:08:17 UTC</createdTime>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT020</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="MedioPago_MedioPagoID" id="365806DF-8087-C582-83DF-8C586A79CC9D">
+<Column name="MedioPagoID" id="365806DF-8087-C582-83DF-8C586A79CC9D">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>2AB91A64-509F-DC24-41C4-A3A38C266FEF</generatorID>
@@ -55,29 +34,7 @@
 <colAssociation fkAssociation="FA9B5CC8-0CED-46E3-594B-D4BB212C4792" referredColumn="48CBD761-1741-B3B9-7631-C130CB2EE881"/>
 </associations>
 </Column>
-<Column name="MontoAbonado2" id="AD18A697-2F67-A011-5097-2C87D18AECDB">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>1494A522-A049-938C-39F8-C00F8A7BF0E0</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT020</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="FechaModificacion" id="49331841-8D52-3D2E-E7DF-22075A3D3353">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>53A6C0DC-502B-9EA7-CE35-1E629251056E</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Pedidov1_PedidoID" id="BA1CB304-8C66-6D98-FDBB-129461B0A425">
+<Column name="PedidoID" id="BA1CB304-8C66-6D98-FDBB-129461B0A425">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>7D0F2D1D-F098-1B99-C70B-0AA4F6CA7A18</generatorID>
@@ -92,7 +49,7 @@
 <colAssociation fkAssociation="CFB26E8B-E439-2186-1E81-189C28E7AE92" referredColumn="15FC3CE1-6CD1-5477-907A-9E2E7D6D5659"/>
 </associations>
 </Column>
-<Column name="Pedidov1_Cliente_ClienteID" id="EB6D6ADD-955D-F40D-9224-6B60240839B9">
+<Column name="ClienteID" id="EB6D6ADD-955D-F40D-9224-6B60240839B9">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>2385C4E1-760C-AAA1-D6B0-0C85815BCA37</generatorID>
@@ -106,6 +63,38 @@
 <associations>
 <colAssociation fkAssociation="CFB26E8B-E439-2186-1E81-189C28E7AE92" referredColumn="4D25FDA8-121C-778E-D2B3-DEBA3570DAEF"/>
 </associations>
+</Column>
+<Column name="MontoAbonado" id="DC9F7E89-E271-6FF7-5B79-5B517D862649">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 11:08:17 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaAporte" id="E2E51E13-D12F-6684-836B-7653567776AB">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>09F6E288-2DE0-F905-4F8D-7ED80644B9EE</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaModificacion" id="49331841-8D52-3D2E-E7DF-22075A3D3353">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>53A6C0DC-502B-9EA7-CE35-1E629251056E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -134,7 +123,7 @@
 <colUsage columnID="365806DF-8087-C582-83DF-8C586A79CC9D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="ABDB0C38-4CFB-95E9-CFDB-7BA760187727" name="Aporte_Pedidov1_FK">
+<ind_PK_UK id="ABDB0C38-4CFB-95E9-CFDB-7BA760187727" name="Aporte_Pedido_FK">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>43A8EC80-847D-86B1-51F9-FFAA810F242E</generatorID>

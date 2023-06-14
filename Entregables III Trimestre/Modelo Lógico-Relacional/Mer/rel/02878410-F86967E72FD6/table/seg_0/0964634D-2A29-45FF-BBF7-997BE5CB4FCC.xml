@@ -4,6 +4,7 @@
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>5AF189ED-9C80-88E6-BB35-6CF39677C4DE</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
+<ordsAlias>via</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -18,6 +19,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BarrioID" id="FDF798FF-2EAB-475A-F9E6-A46E64D40A1D">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>36500E4D-7E52-24E9-7B82-F984B9965E38</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C65D420-3E79-AF4C-76B6-68FD310A721A" referredColumn="C1CAC483-A12E-1F0E-119B-B16FCA5CF59A"/>
+</associations>
 </Column>
 <Column name="TipoCalle" id="47B0997B-F72A-B5BB-A5C6-8596B5DD39EA">
 <createdBy>MI PC</createdBy>
@@ -100,21 +116,6 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Barrio_BarrioID" id="FDF798FF-2EAB-475A-F9E6-A46E64D40A1D">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>36500E4D-7E52-24E9-7B82-F984B9965E38</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4C65D420-3E79-AF4C-76B6-68FD310A721A" referredColumn="C1CAC483-A12E-1F0E-119B-B16FCA5CF59A"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -19,6 +19,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="UsuarioID" id="3B7D5A56-D448-868E-D16F-AC4411A91C56">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>4AF757A2-6DC4-A117-D27C-AAF90F0BFC8C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BEDE2AB6-7CB9-7482-8F14-53B34AFEF90D" referredColumn="5CE82AB8-DFB9-B1E4-C8F5-DFA7AA6DE2F9"/>
+</associations>
+</Column>
 <Column name="TipoTélefono" id="2BD33457-BC68-6C26-75B8-3E7AECBB502C">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
@@ -42,21 +57,6 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Usuario_UsuarioID" id="3B7D5A56-D448-868E-D16F-AC4411A91C56">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>4AF757A2-6DC4-A117-D27C-AAF90F0BFC8C</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="BEDE2AB6-7CB9-7482-8F14-53B34AFEF90D" referredColumn="5CE82AB8-DFB9-B1E4-C8F5-DFA7AA6DE2F9"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

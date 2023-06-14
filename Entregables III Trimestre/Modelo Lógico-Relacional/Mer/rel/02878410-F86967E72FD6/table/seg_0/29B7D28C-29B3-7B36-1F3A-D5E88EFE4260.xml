@@ -4,6 +4,7 @@
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>3661258C-2705-307E-CB24-A674249C10A8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
+<ordsAlias>telefonoproveedor</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -18,6 +19,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ProveedorID" id="B2CA0764-857E-082E-20E7-3173C047A179">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>777E0331-43D6-A6AC-55A9-07D78AFFA540</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D124535-82CB-3664-A18A-02D9CE822DBF" referredColumn="E96DA16C-E193-FA39-8A1E-96D478B36C0D"/>
+</associations>
 </Column>
 <Column name="TipoTélefono" id="297CBDD8-768E-68BF-3718-ACB28BA4A845">
 <createdBy>LENOVO</createdBy>
@@ -42,21 +58,6 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Proveedor_ProveedorID2" id="B2CA0764-857E-082E-20E7-3173C047A179">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>777E0331-43D6-A6AC-55A9-07D78AFFA540</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="3D124535-82CB-3664-A18A-02D9CE822DBF" referredColumn="E96DA16C-E193-FA39-8A1E-96D478B36C0D"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

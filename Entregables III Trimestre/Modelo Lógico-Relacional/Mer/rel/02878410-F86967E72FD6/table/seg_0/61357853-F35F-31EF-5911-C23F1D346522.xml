@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Dirección_DirecciónID" id="B70D666E-CB28-79B3-2279-42E563AE21DD">
+<Column name="DirecciónID" id="B70D666E-CB28-79B3-2279-42E563AE21DD">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>2224007D-97BE-6B17-9510-3E913F7DF5C9</generatorID>
@@ -34,7 +34,7 @@
 <colAssociation fkAssociation="34949D89-D49C-7E89-2D20-56B7FFA82C6C" referredColumn="7651E3A0-85A7-0378-EA75-EF4CD811602F"/>
 </associations>
 </Column>
-<Column name="Usuario_UsuarioID" id="DCDE4C4A-9629-192A-C2EA-D079228BD3BA">
+<Column name="UsuarioID" id="DCDE4C4A-9629-192A-C2EA-D079228BD3BA">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>0EC9697A-85C9-8471-D92F-A4283E9BDD24</generatorID>
@@ -48,6 +48,36 @@
 <associations>
 <colAssociation fkAssociation="1D738C7D-9A98-1957-7DEA-007F99DC2FEA" referredColumn="5CE82AB8-DFB9-B1E4-C8F5-DFA7AA6DE2F9"/>
 </associations>
+</Column>
+<Column name="EdificioID" id="03106B93-E900-29F0-DC0C-4C71258185B1">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 14:05:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VíaID" id="7DF1CC8B-32F9-A589-D101-4AE8D4D9B69F">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 14:05:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoDirecciónID" id="770607F5-F95C-36B8-6A0C-495E52213B6A">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 14:05:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="FechaModificación" id="D5F32C98-C15B-F079-E69C-DDF42DC213A6">
 <createdBy>MI PC</createdBy>

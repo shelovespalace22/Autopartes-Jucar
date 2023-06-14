@@ -8,7 +8,18 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="MateriaPrima_MateriaPrimaID" id="A763B114-B5B5-3FDA-B42F-C4F5AC684FBF">
+<Column name="MaterialAutoparteID" id="9FDEC637-7A7A-BDB2-9F74-BEB7CE95A3FF">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>43E49C60-DC4A-78BD-F6B2-5E6787CF7A6C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MateriaPrimaID" id="A763B114-B5B5-3FDA-B42F-C4F5AC684FBF">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>B01CA08D-5FDF-C506-818C-0DA670D73D79</generatorID>
@@ -23,7 +34,7 @@
 <colAssociation fkAssociation="A71AD9BC-D910-0B30-50B0-79B430A3BFA8" referredColumn="35D50930-1A26-5130-625E-A0D109C3EF14"/>
 </associations>
 </Column>
-<Column name="Autoparte_AutoparteID" id="E8095CFD-8F41-16FF-BFDB-92656F5CC525">
+<Column name="AutoparteID" id="E8095CFD-8F41-16FF-BFDB-92656F5CC525">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>C62D0A5D-9ACB-846D-2ECC-679361FD390A</generatorID>
@@ -31,24 +42,12 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="67A267F4-F916-2555-3DAA-1BE5C2EEB921" referredColumn="37BECEDF-C8EB-D8A0-0702-5023C70E3230"/>
 </associations>
-</Column>
-<Column name="MaterialAutoparteID" id="9FDEC637-7A7A-BDB2-9F74-BEB7CE95A3FF">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>43E49C60-DC4A-78BD-F6B2-5E6787CF7A6C</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ComposiciónAutoparte" id="5AA34E16-28D3-F280-D3AA-CABBBD5A31F2">
 <createdBy>MI PC</createdBy>

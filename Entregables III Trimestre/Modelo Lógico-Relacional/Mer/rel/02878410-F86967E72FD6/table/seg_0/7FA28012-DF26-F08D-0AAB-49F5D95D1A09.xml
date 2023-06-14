@@ -4,6 +4,7 @@
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>B29F1BA0-0F8F-D04C-4BA8-E9EF99D2BD53</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
+<ordsAlias>direccion</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -18,6 +19,66 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoDirecciónID" id="5704EFDF-27C4-E4C3-795C-B1E09A22B786">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>DEF0E6C1-1D1D-12FF-E4F8-0A4892C71F8E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27363DDA-BD77-E372-1837-C1C4278F50B0" referredColumn="ECD6C3F0-3102-1D4D-365D-4D9F02ACD24C"/>
+</associations>
+</Column>
+<Column name="VíaID" id="0BF7E2E5-7308-07E5-081C-725CCB8C1E78">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>ACC53FDC-7D86-0727-2517-AA40BD420292</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="718781F5-3159-CB41-C6B2-DB25475B3B4A" referredColumn="A203D95A-84BF-DD71-3A17-5FE077070463"/>
+</associations>
+</Column>
+<Column name="EdificioID" id="7F480F8D-B7E8-2678-6540-E7C7E21B290D">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>ABB7DD4C-7219-A397-B210-7A0A041E9FDF</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C873783-8001-3FCC-54FD-15DD7EB9A75E" referredColumn="23ACD535-9D3D-0FF8-3DA6-550B297E1F39"/>
+</associations>
+</Column>
+<Column name="DestinatarioID" id="E80C8F27-0265-3B9D-AC70-FE2D7229741E">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>2D019A35-481D-E8E6-802B-5049B79D2DCA</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E0D46A7-94C0-1373-69EF-C7DCEE0CE46D" referredColumn="6CDFA6C6-2819-BF41-43A9-46548E727B51"/>
+</associations>
 </Column>
 <Column name="País" id="D79B86CA-AFD2-A73D-BEC7-4921A04382AD">
 <createdBy>LENOVO</createdBy>
@@ -106,66 +167,6 @@
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TipoDirección_TipoDirecciónID" id="5704EFDF-27C4-E4C3-795C-B1E09A22B786">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>DEF0E6C1-1D1D-12FF-E4F8-0A4892C71F8E</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="27363DDA-BD77-E372-1837-C1C4278F50B0" referredColumn="ECD6C3F0-3102-1D4D-365D-4D9F02ACD24C"/>
-</associations>
-</Column>
-<Column name="Vía_VíaID" id="0BF7E2E5-7308-07E5-081C-725CCB8C1E78">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>ACC53FDC-7D86-0727-2517-AA40BD420292</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="718781F5-3159-CB41-C6B2-DB25475B3B4A" referredColumn="A203D95A-84BF-DD71-3A17-5FE077070463"/>
-</associations>
-</Column>
-<Column name="Edificio_EdificioID" id="7F480F8D-B7E8-2678-6540-E7C7E21B290D">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>ABB7DD4C-7219-A397-B210-7A0A041E9FDF</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5C873783-8001-3FCC-54FD-15DD7EB9A75E" referredColumn="23ACD535-9D3D-0FF8-3DA6-550B297E1F39"/>
-</associations>
-</Column>
-<Column name="Destinatario_DestinatarioID" id="E80C8F27-0265-3B9D-AC70-FE2D7229741E">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>2D019A35-481D-E8E6-802B-5049B79D2DCA</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5E0D46A7-94C0-1373-69EF-C7DCEE0CE46D" referredColumn="6CDFA6C6-2819-BF41-43A9-46548E727B51"/>
-</associations>
-</Column>
 <Column name="InformaciónAdicional" id="87AF2BA5-3005-4C21-2241-D7F15EFDA29A">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
@@ -221,6 +222,9 @@
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>6CF579C2-CCAA-83F7-6FEF-7AE7B71F19C3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7651E3A0-85A7-0378-EA75-EF4CD811602F"/>
+</indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="A95915F1-E187-42E8-D764-DD3A76D9B790" name="Dirección_Destinatario_FK">
 <createdBy>MI PC</createdBy>

@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CFB26E8B-E439-2186-1E81-189C28E7AE92" containerWithKeyObject="91CD9F6B-C01B-EDC6-7A96-00168B3E2E61" localFKIndex="ABDB0C38-4CFB-95E9-CFDB-7BA760187727" name="Aporte_Pedidov1_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CFB26E8B-E439-2186-1E81-189C28E7AE92" containerWithKeyObject="91CD9F6B-C01B-EDC6-7A96-00168B3E2E61" localFKIndex="ABDB0C38-4CFB-95E9-CFDB-7BA760187727" name="Aporte_Pedido_FK">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>43A8EC80-847D-86B1-51F9-FFAA810F242E</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
-<referredTableLongName>Pedidov1</referredTableLongName>
+<referredTableLongName>Pedido</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>6A7C9162-FEDE-7D58-AC47-7C23B9CD3F3E</referredTableID>
 <keyObject>2BE3A8FD-0BE0-E010-D6A7-C18933C163C7</keyObject>
 <referredKeyID>2BE3A8FD-0BE0-E010-D6A7-C18933C163C7</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>PedidoID,Cliente_ClienteID</refColNames>
+<refColNames>PedidoID,ClienteID</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

@@ -4,6 +4,7 @@
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>7F3987C6-71D3-D08A-9610-697E6300EFA4</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
+<ordsAlias>proveedorjuridico</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>

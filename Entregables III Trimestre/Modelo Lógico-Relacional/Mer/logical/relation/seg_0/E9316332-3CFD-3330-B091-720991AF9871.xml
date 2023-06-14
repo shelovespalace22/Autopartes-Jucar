@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autoparte_Precio" directorySegmentName="seg_0" id="E9316332-3CFD-3330-B091-720991AF9871">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autoparte_HistorialPrecio" directorySegmentName="seg_0" id="E9316332-3CFD-3330-B091-720991AF9871">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-11 15:29:14 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="02878410-4FFC-8D82-6311-F86967E72FD6" value="true"/>
 </engineerTo>

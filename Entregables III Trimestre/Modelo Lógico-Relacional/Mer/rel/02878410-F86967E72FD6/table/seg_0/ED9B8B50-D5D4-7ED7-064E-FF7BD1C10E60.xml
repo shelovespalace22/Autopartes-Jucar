@@ -8,22 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Cargo_CargoID" id="FFFC0596-443A-26A3-DA65-591594A9EE35">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>829ED7F6-DACD-AA89-A151-247840E209D7</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="137459C1-16A5-7677-B353-4F49BD2DC1AD" referredColumn="FAEBBF22-F075-EFDA-3327-24531E015EDC"/>
-</associations>
-</Column>
 <Column name="UsuarioCargoID" id="48EBDD3F-DABC-517F-B4E7-652280DC2761">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
@@ -35,7 +19,22 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Usuario_UsuarioID" id="05BA15FD-B3F3-5145-7A44-2986A9CB4C8F">
+<Column name="CargoID" id="FFFC0596-443A-26A3-DA65-591594A9EE35">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>829ED7F6-DACD-AA89-A151-247840E209D7</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="137459C1-16A5-7677-B353-4F49BD2DC1AD" referredColumn="FAEBBF22-F075-EFDA-3327-24531E015EDC"/>
+</associations>
+</Column>
+<Column name="UsuarioID" id="05BA15FD-B3F3-5145-7A44-2986A9CB4C8F">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>00C10F83-D008-C579-3A02-918B4BA3B49A</generatorID>

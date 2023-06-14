@@ -75,8 +75,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="PedidoID" id="7D0F2D1D-F098-1B99-C70B-0AA4F6CA7A18">
 <createdBy>MI PC</createdBy>
@@ -121,6 +120,7 @@
 <attributeRef>DA1AE67F-93BA-C868-A749-16BF2A29CB98</attributeRef>
 <attributeRef>7D0F2D1D-F098-1B99-C70B-0AA4F6CA7A18</attributeRef>
 <attributeRef>2385C4E1-760C-AAA1-D6B0-0C85815BCA37</attributeRef>
+<attributeRef>2AB91A64-509F-DC24-41C4-A3A38C266FEF</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

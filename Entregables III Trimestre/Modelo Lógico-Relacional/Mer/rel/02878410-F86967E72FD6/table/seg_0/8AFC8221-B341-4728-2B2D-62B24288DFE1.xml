@@ -8,7 +8,18 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Factura_FacturaID" id="0DB10D75-0B04-2D31-F480-384231913319">
+<Column name="DetalleFacturaID" id="EC6C938F-A034-8071-7A60-B56F10A321F5">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>9EDF4363-8F16-2CD9-6878-8C9FE55C0AF2</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FacturaID" id="0DB10D75-0B04-2D31-F480-384231913319">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>F6C21170-43C5-62CD-33AE-428484AA243E</generatorID>
@@ -23,7 +34,7 @@
 <colAssociation fkAssociation="907D2A80-7EEC-0600-A045-062D1CE7601D" referredColumn="1CEEC0BA-8C14-BB9E-0F66-7921F50F0B20"/>
 </associations>
 </Column>
-<Column name="Autoparte_AutoparteID" id="84EBADA0-5D41-87B8-5E25-DF5EB5CDC4E2">
+<Column name="AutoparteID" id="84EBADA0-5D41-87B8-5E25-DF5EB5CDC4E2">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>86D26030-232A-85B6-A9F5-CA1E6DD2F77F</generatorID>
@@ -31,8 +42,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<dataTypeSize>5 CHAR</dataTypeSize>
-<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -61,17 +71,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>3 CHAR</dataTypeSize>
 <ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="DetalleFacturaID" id="EC6C938F-A034-8071-7A60-B56F10A321F5">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>9EDF4363-8F16-2CD9-6878-8C9FE55C0AF2</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ValorUnitario" id="BFAE92B0-59D5-2EBB-1026-F47A7708D597">

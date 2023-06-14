@@ -19,18 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FechaModificacion" id="ED24DDAF-D5D3-F8E8-48E7-90F4658B5D05">
-<createdBy>MI PC</createdBy>
-<createdTime>2023-06-14 04:00:15 UTC</createdTime>
-<generatorID>53BD7829-5669-55E1-A214-1B014524CEC7</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Dirección_DirecciónID" id="3F7A26BD-60CD-5549-6CDF-A967B3BAA477">
+<Column name="DirecciónID" id="3F7A26BD-60CD-5549-6CDF-A967B3BAA477">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>5D88CD9C-2785-E483-5E0D-979DF7ACC3FA</generatorID>
@@ -45,7 +34,7 @@
 <colAssociation fkAssociation="79638492-35AC-1184-CED8-CCD2E07EF664" referredColumn="7651E3A0-85A7-0378-EA75-EF4CD811602F"/>
 </associations>
 </Column>
-<Column name="Proveedor_ProveedorID" id="C6091BB8-9200-C477-F210-BC34F697FD10">
+<Column name="ProveedorID" id="C6091BB8-9200-C477-F210-BC34F697FD10">
 <createdBy>MI PC</createdBy>
 <createdTime>2023-06-14 04:00:15 UTC</createdTime>
 <generatorID>7BB8164D-B393-D526-9811-7D55045117F7</generatorID>
@@ -59,6 +48,37 @@
 <associations>
 <colAssociation fkAssociation="0E25A4D0-E128-B3B9-6FD2-825B0E2FE315" referredColumn="E96DA16C-E193-FA39-8A1E-96D478B36C0D"/>
 </associations>
+</Column>
+<Column name="VíaID" id="4E71727C-419B-78E7-AFFB-DDCDE18CD891">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 14:05:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoDirecciónID" id="1867F6C8-B3FE-DC06-3060-D6C8DA786DC4">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 14:05:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaModificacion" id="ED24DDAF-D5D3-F8E8-48E7-90F4658B5D05">
+<createdBy>MI PC</createdBy>
+<createdTime>2023-06-14 04:00:15 UTC</createdTime>
+<generatorID>53BD7829-5669-55E1-A214-1B014524CEC7</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

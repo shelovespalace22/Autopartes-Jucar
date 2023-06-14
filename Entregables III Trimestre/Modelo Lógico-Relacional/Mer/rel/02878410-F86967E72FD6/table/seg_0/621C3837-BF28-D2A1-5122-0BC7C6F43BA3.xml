@@ -8,7 +8,18 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Fabrica_FabricaID" id="8FCD1B0F-9CFB-891D-280B-897375EFC1F8">
+<Column name="BodegaID" id="D5CE5034-0997-4CFB-8C70-0652AE1BED50">
+<createdBy>LENOVO</createdBy>
+<createdTime>2023-04-12 04:04:29 UTC</createdTime>
+<generatorID>74C175E7-BD4B-5C01-AFB8-403D67A2E337</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FabricaID" id="8FCD1B0F-9CFB-891D-280B-897375EFC1F8">
 <createdBy>LENOVO</createdBy>
 <createdTime>2023-04-12 04:04:29 UTC</createdTime>
 <generatorID>8614E1AD-90D3-37AA-6BAF-6AFE089D1862</generatorID>
@@ -22,17 +33,6 @@
 <associations>
 <colAssociation fkAssociation="B46CF32C-081C-9F29-CA28-DF4B52020A36" referredColumn="CA99CCA7-BB72-E399-83B9-EEBD798E19C4"/>
 </associations>
-</Column>
-<Column name="BodegaID" id="D5CE5034-0997-4CFB-8C70-0652AE1BED50">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-12 04:04:29 UTC</createdTime>
-<generatorID>74C175E7-BD4B-5C01-AFB8-403D67A2E337</generatorID>
-<ownerDesignName>Mer</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Nombre" id="766ECAA4-0780-7E50-8869-334D2142A83A">
 <createdBy>LENOVO</createdBy>
