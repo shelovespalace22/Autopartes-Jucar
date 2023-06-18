@@ -1380,7 +1380,7 @@ BEGIN
 
         SET @NewProveedorID = SCOPE_IDENTITY();
 
-        -- Insertar en la tabla ProveedorJuridico utilizando el nuevo ProveedorID
+        -- Insertar en la tabla ProveedorNatural utilizando el nuevo ProveedorID
         INSERT INTO ProveedorNatural (ProveedorID, TipoDoc, NumDoc, PrimerNombre, SegundoNombre,
 			PrimeApellido, SegundoApellido)
         VALUES (@NewProveedorID, @TipoDoc, @NumDoc, @PrimerN, @SegundoN, @PrimerA, @SegundoA);
@@ -1551,3 +1551,915 @@ BEGIN
 END
 
 GO
+
+-- ***** CRUD CARGO *****
+
+CREATE PROCEDURE CRUD_Cargo
+(
+    @Operation NVARCHAR(10),
+	@CargoID INT = NULL,
+	@Nombre VARCHAR (30) = NULL,
+	@Estado VARCHAR (10) = NULL
+
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO Cargo (NombreCargo, Estado, FechaCreación, FechaModificación)
+        VALUES (@Nombre ,'Activo/a', GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM Cargo WHERE CargoID = @CargoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM Cargo;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE Cargo
+        SET NombreCargo = @Nombre,
+			Estado = @Estado,
+            FechaModificación = GETDATE()
+        WHERE CargoID = @CargoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM Cargo WHERE CargoID = @CargoID;
+    END
+END
+
+GO
+
+-- ***** CRUD USUARIOCARGO *****
+
+CREATE PROCEDURE CRUD_UsuarioCargo
+(
+    @Operation NVARCHAR(10),
+	@UsuarioCargoID INT = NULL,
+	@CargoID INT = NULL,
+	@UsuarioID INT = NULL
+
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO UsuarioCargo (CargoID, UsuarioID, FechaCreación, FechaModificación)
+        VALUES (@CargoID, @UsuarioID, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM UsuarioCargo WHERE UsuarioCargoID = @UsuarioCargoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM UsuarioCargo;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE UsuarioCargo
+        SET CargoID = @CargoID,
+			UsuarioID = @UsuarioID,
+            FechaModificación = GETDATE()
+        WHERE UsuarioCargoID = @UsuarioCargoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM UsuarioCargo WHERE UsuarioCargoID = @UsuarioCargoID;
+    END
+END
+
+GO
+
+-- ***** CRUD TELEFONOUSUARIO *****
+
+CREATE PROCEDURE CRUD_TelefonoUsuario
+(
+    @Operation NVARCHAR(10),
+	@TelefonoUsuarioID INT = NULL,
+	@UsuarioID INT = NULL,
+	@Tipo VARCHAR (20) = NULL,
+	@Num VARCHAR (10) = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO TelefonoUsuario (UsuarioID, TipoTélefono, NumTélefono, FechaCreación, FechaModificación)
+        VALUES (@UsuarioID, @Tipo, @Num, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM TelefonoUsuario WHERE TelefonoUsuarioID = @TelefonoUsuarioID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM TelefonoUsuario;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE TelefonoUsuario
+        SET UsuarioID = @UsuarioID,
+			TipoTélefono = @Tipo,
+			NumTélefono = @Num,
+            FechaModificación = GETDATE()
+        WHERE TelefonoUsuarioID = TelefonoUsuarioID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM TelefonoUsuario WHERE TelefonoUsuarioID = @TelefonoUsuarioID;
+    END
+END
+
+GO
+
+-- ***** CRUD CLIENTENATURAL *****
+
+CREATE PROCEDURE CRUD_ClienteNatural
+(
+    @Operation NVARCHAR(10),
+	@ClienteID INT = NULL,
+	@Correo VARCHAR (30) = NULL,
+	@Pais VARCHAR (30) = NULL,
+	@Ciudad VARCHAR (30) = NULL,
+	@Estado VARCHAR (10) = NULL,
+	@TipoDoc VARCHAR (30) = NULL,
+	@NumDoc VARCHAR (15) = NULL,
+	@PrimerN VARCHAR (30) = NULL,
+	@SegundoN VARCHAR (30) = NULL,
+	@PrimerA VARCHAR (30) = NULL,
+	@SegundoA VARCHAR (50) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+		-- Variable para insertar en las dos tablas
+
+        DECLARE @NewClienteID INT
+
+        -- Insertar en la tabla Cliente para obtener el nuevo ClienteID
+        INSERT INTO Cliente (Correo, País, Ciudad, Estado, FechaCreación, FechaModificación)
+        VALUES (@Correo, @Pais, @Ciudad, 'Activo/a', GETDATE(), GETDATE());
+
+        SET @NewClienteID = SCOPE_IDENTITY();
+
+        -- Insertar en la tabla ClienteNatural utilizando el nuevo ClienteID
+        INSERT INTO ClienteNatural (ClienteID, TipoDoc, NumDoc, PrimerNombre, SegundoNombre,
+			PrimerApellido, SegundoApellido)
+        VALUES (@NewClienteID, @TipoDoc, @NumDoc, @PrimerN, @SegundoN, @PrimerA, @SegundoA);
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT C.*, CN.TipoDoc, CN.NumDoc, CN. PrimerNombre, CN.SegundoNombre, CN.PrimerApellido, CN.SegundoApellido
+        FROM Cliente AS C
+        INNER JOIN ClienteNatural AS CN ON C.ClienteID = CN.ClienteID
+        WHERE C.ClienteID = @ClienteID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT C.*, CN.TipoDoc, CN.NumDoc, CN. PrimerNombre, CN.SegundoNombre, CN.PrimerApellido, CN.SegundoApellido
+        FROM Cliente AS C
+        INNER JOIN ClienteNatural AS CN ON C.ClienteID = CN.ClienteID
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE ClienteNatural
+        SET 
+            TipoDoc = @TipoDoc,
+            NumDoc = @NumDoc,
+            PrimerNombre = @PrimerN,
+			SegundoNombre = @SegundoN,
+			PrimerApellido = @PrimerA,
+			SegundoApellido = @SegundoA
+        WHERE ClienteID = @ClienteID;
+
+        -- Actualizar los campos correspondientes en la tabla Cliente
+        UPDATE Cliente
+        SET Correo = @Correo,
+			País = @Pais,
+			Ciudad = @Ciudad,
+            Estado = @Estado,
+            FechaModificación = GETDATE()
+        WHERE ClienteID = @ClienteID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM ClienteNatural WHERE ClienteID = @ClienteID;
+        DELETE FROM Cliente WHERE ClienteID = @ClienteID;
+    END
+END
+
+GO
+
+-- ***** CRUD CLIENTEJURIDICO *****
+
+CREATE PROCEDURE CRUD_ClienteJuridico
+(
+    @Operation NVARCHAR(10),
+	@ClienteID INT = NULL,
+	@Correo VARCHAR (30) = NULL,
+	@Pais VARCHAR (30) = NULL,
+	@Ciudad VARCHAR (30) = NULL,
+	@Estado VARCHAR (10) = NULL,
+	@RazonSocial VARCHAR (30) = NULL,
+	@NIT VARCHAR (30) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+		-- Variable para insertar en las dos tablas
+
+        DECLARE @NewClienteID INT
+
+        -- Insertar en la tabla Cliente para obtener el nuevo ClienteID
+        INSERT INTO Cliente (Correo, País, Ciudad, Estado, FechaCreación, FechaModificación)
+        VALUES (@Correo, @Pais, @Ciudad, 'Activo/a', GETDATE(), GETDATE());
+
+        SET @NewClienteID = SCOPE_IDENTITY();
+
+        -- Insertar en la tabla ClienteJuridico utilizando el nuevo ClienteID
+        INSERT INTO ClienteJurídico (ClienteID, RazónSocial, NIT)
+        VALUES (@NewClienteID, @RazonSocial, @NIT);
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT C.*, CJ.RazónSocial, CJ.NIT
+        FROM Cliente AS C
+        INNER JOIN ClienteJurídico AS CJ ON C.ClienteID = CJ.ClienteID
+        WHERE C.ClienteID = @ClienteID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT C.*, CJ.RazónSocial, CJ.NIT
+        FROM Cliente AS C
+        INNER JOIN ClienteJurídico AS CJ ON C.ClienteID = CJ.ClienteID
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE ClienteJurídico
+        SET 
+            RazónSocial = @RazonSocial,
+			NIT = @NIT
+        WHERE ClienteID = @ClienteID;
+
+        -- Actualizar los campos correspondientes en la tabla Cliente
+        UPDATE Cliente
+        SET Correo = @Correo,
+			País = @Pais,
+			Ciudad = @Ciudad,
+            Estado = @Estado,
+            FechaModificación = GETDATE()
+        WHERE ClienteID = @ClienteID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM ClienteJurídico WHERE ClienteID = @ClienteID;
+        DELETE FROM Cliente WHERE ClienteID = @ClienteID;
+    END
+END
+
+GO
+
+-- ***** CRUD MEDIOPAGO *****
+
+CREATE PROCEDURE CRUD_Mediopago
+(
+    @Operation NVARCHAR(10),
+	@MediopagoID INT = NULL,
+	@Remitente VARCHAR (30) = NULL,
+	@Nombre VARCHAR (50) = NULL,
+	@Estado BIT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO MedioPago (Remitente,  NombreMetodoPago, Estado, FechaCreación, FechaModificación)
+        VALUES (@Remitente ,@Nombre ,'Activo/a', GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM MedioPago WHERE MedioPagoID = @MediopagoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM MedioPago;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE MedioPago
+        SET Remitente = @Remitente,
+			NombreMetodoPago = @Nombre,
+			Estado = @Estado,
+            FechaModificación = GETDATE()
+        WHERE MedioPagoID = @MediopagoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM MedioPago WHERE MedioPagoID = @MediopagoID;
+    END
+END
+
+GO
+
+-- ***** CRUD PEDIDO *****
+
+CREATE PROCEDURE CRUD_Pedido
+(
+    @Operation NVARCHAR(10),
+	@PedidoID INT = NULL,
+	@ClienteID INT = NULL,
+	@Lugar VARCHAR (50) = NULL,
+	@Estado BIT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO Pedido (ClienteID, Lugar , Estado, FechaCreación, FechaModificación)
+        VALUES (@ClienteID, @Lugar, 1, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM Pedido WHERE PedidoID = @PedidoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM Pedido;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE Pedido
+        SET ClienteID = @ClienteID,
+			Lugar = @Lugar,
+			Estado = @Estado,
+            FechaModificación = GETDATE()
+        WHERE PedidoID = @PedidoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM Pedido WHERE PedidoID = @PedidoID;
+    END
+END
+
+GO
+
+-- ***** CRUD APORTE *****
+
+CREATE PROCEDURE CRUD_Aporte
+(
+    @Operation NVARCHAR(10),
+	@AporteID INT = NULL,
+	@MedioPagoID INT = NULL,
+	@PedidoID INT = NULL,
+	@ClientID INT = NULL,
+	@Monto BIGINT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO Aporte (MedioPagoID, PedidoID, ClienteID, MontoAbonado, FechaAporte, FechaModificacion)
+        VALUES (@MedioPagoID, @PedidoID, @ClientID, @Monto, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM Aporte WHERE AporteID = @AporteID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM Aporte;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE Aporte
+        SET MedioPagoID = @MedioPagoID,
+			PedidoID = @PedidoID,
+			ClienteID = @ClientID,
+			MontoAbonado = @Monto,
+            FechaModificacion = GETDATE()
+        WHERE AporteID = @AporteID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM Aporte WHERE AporteID = @AporteID;
+    END
+END
+
+GO
+
+-- ***** CRUD DETALLEPEDIDO *****
+
+CREATE PROCEDURE CRUD_DetallePedido
+(
+    @Operation NVARCHAR(10),
+	@DetallePedidoID INT = NULL,
+	@AutoparteID INT = NULL,
+	@ClienteID INT = NULL,
+	@PedidoID INT = NULL,
+	@Producto VARCHAR (50) = NULL,
+	@Cantidad VARCHAR (3) = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DetallePedido (AutoparteID, ClienteID, PedidoID, Producto, Cantidad)
+        VALUES (@AutoparteID, @ClienteID, @PedidoID, @Producto, @Cantidad);
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DetallePedido WHERE DetallePedidoID = @DetallePedidoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DetallePedido;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DetallePedido
+        SET AutoparteID = @AutoparteID,
+			ClienteID = @ClienteID,
+			PedidoID = @PedidoID,
+			Producto = Producto,
+			Cantidad = @Cantidad
+        WHERE DetallePedidoID = @DetallePedidoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DetallePedido WHERE DetallePedidoID = @DetallePedidoID;
+    END
+END
+
+GO
+
+-- ***** CRUD FACTURA *****
+
+CREATE PROCEDURE CRUD_Factura
+(
+    @Operation NVARCHAR(10),
+	@FacturaID INT = NULL,
+	@PedidoID INT = NULL,
+	@ClienteID INT = NULL,
+	@UsuarioID INT = NULL,
+	@FormaPagoID INT = NULL,
+	@Direccion VARCHAR (30) = NULL,
+	@Tel VARCHAR (15) = NULL,
+	@NumF VARCHAR (5) = NULL,
+	@Cliente VARCHAR (50) = NULL,
+	@CC VARCHAR (10) = NULL,
+	@NIT VARCHAR (9) = NULL,
+	@TelCli VARCHAR (10) = NULL,
+	@Observacion VARCHAR (150) = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO Factura (PedidoID, ClienteID, UsuarioID, FormaPagoID, Dirección, Télefono, NumFacturaVenta, 
+			Cliente, CC, NIT, TeléfonoCliente, Observación, FechaCreación, FechaModificación)
+        VALUES (@PedidoID, @ClienteID, @UsuarioID, @FormaPagoID, @Direccion, @Tel, @NumF, @Cliente, @CC,
+			@NIT, @TelCli, @Observacion, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM Factura WHERE FacturaID = @FacturaID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM Factura;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE Factura
+        SET PedidoID = @PedidoID,
+			ClienteID = @ClienteID,
+			UsuarioID = @UsuarioID,
+			FormaPagoID = @FormaPagoID,
+			Dirección = @Direccion,
+			Télefono = @Tel,
+			NumFacturaVenta = @NumF,
+			Cliente = @Cliente,
+			CC = @CC,
+			NIT =  @NIT,
+			TeléfonoCliente = @TelCli,
+			Observación = @Observacion,
+            FechaModificación = GETDATE()
+        WHERE FacturaID = @FacturaID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM Factura WHERE FacturaID = @FacturaID;
+    END
+END
+
+GO
+
+-- ***** CRUD FORMAPAGO *****
+
+CREATE PROCEDURE CRUD_FormaPago
+(
+    @Operation NVARCHAR(10),
+	@FormaPagoID INT = NULL,
+	@Nombre VARCHAR (50) = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO FormaPago (NombreFormaPago, FechaCreación, FechaModificación)
+        VALUES (@Nombre, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM FormaPago WHERE FormaPagoID = @FormaPagoID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM FormaPago;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE FormaPago
+        SET NombreFormaPago = @Nombre,
+            FechaModificación = GETDATE()
+        WHERE FormaPagoID = @FormaPagoID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM FormaPago WHERE FormaPagoID = @FormaPagoID;
+    END
+END
+
+GO
+
+-- ***** CRUD DETALLEFACTURA *****
+
+CREATE PROCEDURE CRUD_DetalleFactura
+(
+    @Operation NVARCHAR(10),
+	@DetalleFacturaID INT = NULL,
+	@FacturaID INT = NULL,
+	@AutoparteID INT = NULL,
+	@NumItem VARCHAR (3) = NULL,
+	@Cantidad VARCHAR (3) = NULL,
+	@ValorU BIGINT = NULL,
+	@IVA BIGINT = NULL,
+	@ValorSub BIGINT = NULL,
+	@ValorTot BIGINT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DetalleFactura (FacturaID, AutoparteID, NumItem, Cantidad, ValorUnitario, IVA, ValorSubtotal, ValorTotal)
+        VALUES (@FacturaID, @AutoparteID, @NumItem, @Cantidad, @ValorU, @IVA, @ValorSub, @ValorTot);
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DetalleFactura WHERE DetalleFacturaID = @DetalleFacturaID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DetalleFactura;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DetalleFactura
+        SET FacturaID = @FacturaID,
+			AutoparteID = @AutoparteID,
+			NumItem = @NumItem, 
+			Cantidad = @Cantidad,
+			ValorUnitario = @ValorU,
+			IVA = @IVA,
+			ValorSubtotal = @ValorSub,
+			ValorTotal = @ValorTot
+        WHERE DetalleFacturaID = @DetalleFacturaID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DetalleFactura WHERE DetalleFacturaID = @DetalleFacturaID;
+    END
+END
+
+GO
+
+-- ***** CRUD DIRECCIONCLIENTE *****
+
+CREATE PROCEDURE CRUD_DireccionCliente
+(
+    @Operation NVARCHAR(10),
+	@DireccionClienteID INT = NULL,
+	@DireccionID INT = NULL,
+	@ClienteID INT = NULL,
+	@TipoID INT = NULL,
+	@DestinatarioID INT = NULL,
+	@EdificioID INT = NULL,
+	@ViaID INT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DireccionCliente (DirecciónID, ClienteID, TipoDirecciónID, DestinatarioID, 
+			EdificioID, VíaID, FechaCreación, FechaModificación)
+        VALUES (@DireccionID, @ClienteID, @TipoID, @DestinatarioID, @EdificioID, @ViaID, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DireccionCliente WHERE DireccionClienteID = @DireccionClienteID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DireccionCliente;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DireccionCliente
+        SET DirecciónID = @DireccionID,
+			ClienteID = @ClienteID,
+			TipoDirecciónID = @TipoID,
+			DestinatarioID = @DestinatarioID,
+			EdificioID = @EdificioID,
+			VíaID = @ViaID,
+            FechaModificación = GETDATE()
+        WHERE DireccionClienteID = @DireccionClienteID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DireccionCliente WHERE DireccionClienteID = @DireccionClienteID;
+    END
+END
+
+GO
+
+-- ***** CRUD DIRECCIONFABRICA *****
+
+CREATE PROCEDURE CRUD_DireccionFabrica
+(
+    @Operation NVARCHAR(10),
+	@DireccionFabricaID INT = NULL,
+	@DireccionID INT = NULL,
+	@FabricaID INT = NULL,
+	@EdificioID INT = NULL,
+	@ViaID INT = NULL,
+	@TipoID INT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DireccionFabrica (DirecciónID, FabricaID, EdificioID, VíaID, TipoDirecciónID, 
+			FechaCreación, FechaModificación)
+        VALUES (@DireccionID, @FabricaID, @EdificioID, @ViaID, @TipoID, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DireccionFabrica WHERE DireccionFabricaID = @DireccionFabricaID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DireccionFabrica;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DireccionFabrica
+        SET DirecciónID = @DireccionID,
+			FabricaID = @FabricaID,
+			EdificioID = @EdificioID,
+			VíaID = @ViaID,
+			TipoDirecciónID = @TipoID,
+            FechaModificación = GETDATE()
+        WHERE DireccionFabricaID = @DireccionFabricaID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DireccionFabrica WHERE DireccionFabricaID = @DireccionFabricaID;
+    END
+END
+
+GO
+
+-- ***** CRUD DIRECCIONPROVEEDOR *****
+
+CREATE PROCEDURE CRUD_DireccionProveedor
+(
+    @Operation NVARCHAR(10),
+	@DireccionProveedorID INT = NULL,
+	@DireccionID INT = NULL,
+	@ProveedorID INT = NULL,
+	@ViaID INT = NULL,
+	@TipoID INT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DireccionProveedor (DirecciónID, ProveedorID, VíaID, TipoDirecciónID, 
+			FechaCreación, FechaModificación)
+        VALUES (@DireccionID, @ProveedorID, @ViaID, @TipoID, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DireccionProveedor WHERE DireccionProveedorID = @DireccionProveedorID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DireccionProveedor;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DireccionProveedor
+        SET DirecciónID = @DireccionID,
+			ProveedorID = @ProveedorID,
+			VíaID = @ViaID,
+			TipoDirecciónID = @TipoID,
+            FechaModificación = GETDATE()
+        WHERE DireccionProveedorID = @DireccionProveedorID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DireccionProveedor WHERE DireccionProveedorID = @DireccionProveedorID;
+    END
+END
+
+GO
+
+-- ***** CRUD DIRECCIONUSUARIO *****
+
+CREATE PROCEDURE CRUD_DireccionUsuario
+(
+    @Operation NVARCHAR(10),
+	@DireccionUsuarioID INT = NULL,
+	@DireccionID INT = NULL,
+	@UsuarioID INT = NULL,
+	@EdificioID INT = NULL,
+	@ViaID INT = NULL,
+	@TipoID INT = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    -- Crear un nuevo registro
+    IF @Operation = 'CREATE'
+    BEGIN
+        INSERT INTO DireccionUsuario (DirecciónID, UsuarioID, EdificioID, VíaID, 
+			TipoDirecciónID, FechaCreación, FechaModificación)
+        VALUES (@DireccionID, @UsuarioID, @EdificioID, @ViaID, @TipoID, GETDATE(), GETDATE());
+    END
+    -- Leer un registro
+    ELSE IF @Operation = 'READ'
+    BEGIN
+        SELECT * FROM DireccionUsuario WHERE DireccionUsuarioID = @DireccionUsuarioID;
+    END
+	-- Leer todos los registros
+	ELSE IF @Operation = 'READ ALL'
+	BEGIN
+		SELECT * FROM DireccionUsuario;
+	END
+    -- Actualizar un registro
+    ELSE IF @Operation = 'UPDATE'
+    BEGIN
+        UPDATE DireccionUsuario
+        SET DirecciónID = @DireccionID,
+			UsuarioID = @UsuarioID,
+			EdificioID = @EdificioID,
+			VíaID = @ViaID,
+			TipoDirecciónID = @TipoID,
+            FechaModificación = GETDATE()
+        WHERE DireccionUsuarioID = @DireccionUsuarioID;
+    END
+    -- Eliminar un registro
+    ELSE IF @Operation = 'DELETE'
+    BEGIN
+        DELETE FROM DireccionUsuario WHERE DireccionUsuarioID = @DireccionUsuarioID;
+    END
+END
+
+GO
+
