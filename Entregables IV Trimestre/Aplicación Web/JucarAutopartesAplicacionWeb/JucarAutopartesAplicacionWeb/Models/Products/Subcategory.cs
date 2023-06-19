@@ -13,7 +13,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese un nombre para la subcategoría!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
@@ -45,7 +45,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
         public Category? Category { get; set; }
 
         //Autopart
-        public ICollection<Autopart> Autoparts { get; set; }
+        public ICollection<Autopart>? Autoparts { get; set; }
 
     }
 }
