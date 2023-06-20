@@ -1,4 +1,4 @@
-﻿namespace JucarAutopartesAplicacionWeb.Services
+﻿namespace JucarAutopartesAplicacionWeb.Services.Email
 {
     public class AuthMessageSenderOptions
     {

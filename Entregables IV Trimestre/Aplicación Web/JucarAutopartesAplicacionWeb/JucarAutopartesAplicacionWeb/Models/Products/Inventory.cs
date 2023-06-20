@@ -42,7 +42,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         //Shelving
 
-        public ICollection<Shelving> Shelvings { get; set; }
+        public ICollection<Shelving>? Shelvings { get; set; }
 
     }
 }

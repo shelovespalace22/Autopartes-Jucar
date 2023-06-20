@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
-namespace JucarAutopartesAplicacionWeb.Services
+namespace JucarAutopartesAplicacionWeb.Services.Email
 {
     public class EmailSender : IEmailSender
     {

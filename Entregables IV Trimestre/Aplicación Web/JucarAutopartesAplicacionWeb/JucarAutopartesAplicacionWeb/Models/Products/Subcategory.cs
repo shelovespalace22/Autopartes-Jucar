@@ -42,6 +42,8 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         //Category
         public int CategoryID { get; set; }
+
+        [DisplayName("Categoría")]
         public Category? Category { get; set; }
 
         //Autopart

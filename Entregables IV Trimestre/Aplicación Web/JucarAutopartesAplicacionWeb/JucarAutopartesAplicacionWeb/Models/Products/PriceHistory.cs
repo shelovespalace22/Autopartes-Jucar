@@ -45,7 +45,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         //DiscountHistory
 
-        public ICollection<DiscountHistory> DiscountHistories { get; set; }
+        public ICollection<DiscountHistory>? DiscountHistories { get; set; }
 
     }
 }

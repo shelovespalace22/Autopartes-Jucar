@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
-namespace JucarAutopartesAplicacionWeb.Models.ViewModels
+namespace JucarAutopartesAplicacionWeb.Models.ViewModels.Users
 {
     public class UserRegistrationViewModel
     {
@@ -69,7 +69,7 @@ namespace JucarAutopartesAplicacionWeb.Models.ViewModels
 
         //Propiedades de UserPhone.cs
 
-        
+
         //Propiedades de UserPosition.cs
     }
 }

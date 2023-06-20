@@ -7,6 +7,7 @@ using JucarAutopartesAplicacionWeb.Models.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts;
 
 namespace JucarAutopartesAplicacionWeb.Data
 {
@@ -65,6 +66,7 @@ namespace JucarAutopartesAplicacionWeb.Data
         public DbSet<Shelf> Shelves { get; set; }
         public DbSet<Shelving> Shelvings { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts.AutopartsViewModel> NewAutopartViewModel { get; set; } = default!;
 
 
 

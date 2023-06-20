@@ -1,0 +1,149 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts.AutopartsViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Autopart</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Subcategory" class="control-label"></label>
+                <select asp-for="Subcategory" asp-items="ViewBag.SubcategoryID" class="form-control"></select>
+                <span asp-validation-for="Subcategory" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WeightKgs" class="control-label"></label>
+                <input asp-for="WeightKgs" class="form-control" />
+                <span asp-validation-for="WeightKgs" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HeightCm" class="control-label"></label>
+                <input asp-for="HeightCm" class="form-control" />
+                <span asp-validation-for="HeightCm" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LengthCm" class="control-label"></label>
+                <input asp-for="LengthCm" class="form-control" />
+                <span asp-validation-for="LengthCm" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="VehicleZone" class="control-label"></label>
+                <input asp-for="VehicleZone" class="form-control" />
+                <span asp-validation-for="VehicleZone" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="MainMaterial" class="control-label"></label>
+                <select asp-for="MainMaterial" asp-items="@GetRawMaterials()" class="form-control"></select>
+                <span asp-validation-for="MainMaterial" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SecondaryMaterial" class="control-label"></label>
+                <select asp-for="SecondaryMaterial" asp-items="@GetRawMaterials()" class="form-control"></select>
+                <span asp-validation-for="SecondaryMaterial" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Other" class="control-label"></label>
+                <select asp-for="Other" asp-items="@GetRawMaterials()" class="form-control"></select>
+                <span asp-validation-for="Other" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <label asp-for="QuantityAvailable" class="control-label"></label>
+                <input asp-for="QuantityAvailable" class="form-control" />
+                <span asp-validation-for="QuantityAvailable" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Value" class="control-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ModificationDate" class="control-label"></label>
+                <input asp-for="ModificationDate" class="form-control" />
+                <span asp-validation-for="ModificationDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+@{
+    //List<SelectListItem> GetSubcategories()
+    //{
+    //    List<SelectListItem> subcategories = new List<SelectListItem>();
+    //    // Aquí debes obtener las subcategorías de alguna fuente de datos, como una base de datos, para rellenar la lista desplegable
+    //    // Puedes usar LINQ para obtener las subcategorías del contexto o cualquier otra forma de obtener los datos.
+    //    // Por ejemplo, supongamos que tienes una lista de subcategorías llamada "subcategoryList":
+    //    foreach (var subcategory in subcategoryList)
+    //    {
+    //        subcategories.Add(new SelectListItem { Value = subcategory.SubcategoryID.ToString(), Text = subcategory.Name });
+    //    }
+    //    return subcategories;
+    //}
+
+    //List<SelectListItem> GetRawMaterials()
+    //{
+    //    List<SelectListItem> rawMaterials = new List<SelectListItem>();
+    //    // Aquí debes obtener las materias primas de alguna fuente de datos, como una base de datos, para rellenar la lista desplegable
+    //    // Puedes usar LINQ para obtener las materias primas del contexto o cualquier otra forma de obtener los datos.
+    //    // Por ejemplo, supongamos que tienes una lista de materias primas llamada "rawMaterialList":
+    //    foreach (var rawMaterial in rawMaterialList)
+    //    {
+    //        rawMaterials.Add(new SelectListItem { Value = rawMaterial.RawMaterialID.ToString(), Text = rawMaterial.Name });
+    //    }
+    //    return rawMaterials;
+    //}
+}

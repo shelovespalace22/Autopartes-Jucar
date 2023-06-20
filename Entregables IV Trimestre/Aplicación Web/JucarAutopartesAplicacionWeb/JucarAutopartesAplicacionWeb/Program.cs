@@ -1,5 +1,7 @@
+using AutoMapper;
 using JucarAutopartesAplicacionWeb.Data;
-using JucarAutopartesAplicacionWeb.Services;
+using JucarAutopartesAplicacionWeb.Services.Automapper;
+using JucarAutopartesAplicacionWeb.Services.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -16,11 +18,25 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount=true)
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+
 //Servicio de Identity
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+
+
+
+// Servicio de AutoMapper
+
+var configuration = new MapperConfiguration(cfg =>
+{
+    cfg.AddProfile<MapperProfile>();
+});
+IMapper mapper = configuration.CreateMapper();
+
+
 
 var app = builder.Build();
 
