@@ -12,13 +12,13 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la Materia Prima!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un nombre válido!")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el tipo de la Materia Prima!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un tipo válido!")]
         [DisplayName("Tipo")]
         public string? Type { get; set; }
 
@@ -27,7 +27,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
         public bool State { get; set; }
 
         [Required]
-        [DisplayName("Creaciíon del Regístro")]
+        [DisplayName("Creación del Regístro")]
         public DateTime CreationDate { get; set; }
 
         [Required]
@@ -47,15 +47,15 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         //AutopartMaterial
 
-        public ICollection<AutopartMaterial> AutopartMaterials { get; set; }
+        public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
 
         //Stock
 
-        public ICollection<Stock> Stocks { get; set; }
+        public ICollection<Stock>? Stocks { get; set; }
 
         //Movement
 
-        public ICollection<Movement> Movements { get; set; }
+        public ICollection<Movement>? Movements { get; set; }
 
 
     }

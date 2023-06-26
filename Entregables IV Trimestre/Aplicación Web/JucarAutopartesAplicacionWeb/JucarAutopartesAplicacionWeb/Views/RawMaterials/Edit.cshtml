@@ -1,0 +1,72 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.RawMaterials.RawMaterialsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Raw Material</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="RawMaterial.RawMaterialID" />
+
+            <div class="form-group">
+                <label asp-for="RawMaterial.Name"></label>
+                <input class="form-control" asp-for="RawMaterial.Name" />
+                <span asp-validation-for="RawMaterial.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RawMaterial.Type" class="control-label"></label>
+                <select asp-for="RawMaterial.Type" class="form-control">
+                    <option value="">-- Seleccione un tipo --</option>
+                    <option value="Vegetal">Vegetal</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Fósil">Fósil</option>
+                    <option value="Mineral">Mineral</option>
+                </select>
+                <span asp-validation-for="RawMaterial.Type" class="text-danger"></span>
+            </div>
+
+            <!-- Add other fields for RawMaterial as needed -->
+
+            <div class="form-group">
+                <label asp-for="Stock.QuantityAvailable"></label>
+                <input class="form-control" asp-for="Stock.QuantityAvailable" />
+                <span asp-validation-for="Stock.QuantityAvailable" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Stock.InitialStock"></label>
+                <input class="form-control" asp-for="Stock.InitialStock" />
+                <span asp-validation-for="Stock.InitialStock" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Stock.ReorderPoint"></label>
+                <input class="form-control" asp-for="Stock.ReorderPoint" />
+                <span asp-validation-for="Stock.ReorderPoint" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Stock.MinimumInventory"></label>
+                <input class="form-control" asp-for="Stock.MinimumInventory" />
+                <span asp-validation-for="Stock.MinimumInventory" class="text-danger"></span>
+            </div>
+
+            <!-- Add other fields for Stock as needed -->
+
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a Inicio</a>
+</div>
+
+
+
