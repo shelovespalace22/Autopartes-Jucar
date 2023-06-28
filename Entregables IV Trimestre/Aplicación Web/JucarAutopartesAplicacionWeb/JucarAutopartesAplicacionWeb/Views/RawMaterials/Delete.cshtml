@@ -1,0 +1,41 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.RawMaterials.RawMaterialsViewModel
+
+<h2>Delete</h2>
+
+<h4>Are you sure you want to delete this record?</h4>
+<hr />
+<div>
+    <h4>Raw Material</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.RawMaterial.Name</dd>
+        <dt class="col-sm-2">Type</dt>
+        <dd class="col-sm-10">@Model.RawMaterial.Type</dd>
+    </dl>
+</div>
+
+<h4>Stock</h4>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Quantity Available</dt>
+        <dd class="col-sm-10">@Model.Stock.QuantityAvailable</dd>
+        <dt class="col-sm-2">Initial Stock</dt>
+        <dd class="col-sm-10">@Model.Stock.InitialStock</dd>
+        <dt class="col-sm-2">Reorder Point</dt>
+        <dd class="col-sm-10">@Model.Stock.ReorderPoint</dd>
+        <dt class="col-sm-2">Minimum Inventory</dt>
+        <dd class="col-sm-10">@Model.Stock.MinimumInventory</dd>
+        <dt class="col-sm-2">Maximum Inventory</dt>
+        <dd class="col-sm-10">@Model.Stock.MaximumInventory</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="RawMaterial.RawMaterialID" />
+    <input type="hidden" asp-for="Stock.StockID" />
+    <div class="form-group">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index">Cancelar</a>
+    </div>
+</form>

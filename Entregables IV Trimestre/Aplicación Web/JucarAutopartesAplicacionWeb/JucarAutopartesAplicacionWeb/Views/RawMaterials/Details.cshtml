@@ -1,0 +1,88 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.RawMaterials.RawMaterialsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Materia Prima</h4>
+    <hr />
+    <div class="row">
+
+        @*Campo para Nombre de Materia Prima*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Name)
+        </dd>
+
+        @*Campo para Tipo de Materia Prima*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Type)
+        </dd>
+    </div>
+    <br />
+    <br />
+    <h4>Existencias</h4>
+    <hr />
+    <div class="row">
+
+        @*Campo para Cantidad Disponible en Existencia*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.QuantityAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.QuantityAvailable)
+        </dd>
+
+        @*Campo para Existencia Inicial en Existencia*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.InitialStock)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.InitialStock)
+        </dd>
+
+        @*Campo para Punto de Reorden en Existencia*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.ReorderPoint)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.ReorderPoint)
+        </dd>
+
+        @*Campo para Inventario Minimo en Existencia*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.MinimumInventory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.MinimumInventory)
+        </dd>
+
+        @*Campo para Inventario Máximo en Existencia*@
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.MaximumInventory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.MaximumInventory)
+        </dd>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.RawMaterial.RawMaterialID">Editar</a> |
+    <a asp-action="Index">Regresar al Inicio</a>
+</div>

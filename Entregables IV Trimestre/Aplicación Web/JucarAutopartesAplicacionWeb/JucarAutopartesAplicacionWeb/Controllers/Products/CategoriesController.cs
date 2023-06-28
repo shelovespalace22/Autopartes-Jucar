@@ -106,6 +106,7 @@ namespace JucarAutopartesAplicacionWeb.Controllers.Products
             {
                 return NotFound();
             }
+
             return View(category);
         }
 
