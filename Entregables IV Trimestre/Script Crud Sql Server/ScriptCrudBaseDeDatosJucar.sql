@@ -469,7 +469,7 @@ CREATE PROCEDURE CRUD_Subcategoria
     @Operation NVARCHAR(10),
 	@SubcategoriaID INT = NULL,
 	@CategoriaID INT = NULL,
-	@NomSubc VARCHAR (10) = NULL,
+	@NomSubc VARCHAR (50) = NULL,
 	@Estado VARCHAR (10) = NULL
 )
 AS
@@ -536,7 +536,7 @@ BEGIN
     BEGIN
         INSERT INTO Autoparte (CategoríaID, SubcategoríaID, Nombre, Función, 
 			ZonaVehículo, Estado, PesoKgs, AltoCm, LargoCm, FechaCreación, FechaModificación)
-        VALUES (@CategoriaID, @SubcategoriaID, @Nombre, @Funcion, @ZonaV, @Estado, @PesoKgs, 
+        VALUES (@CategoriaID, @SubcategoriaID, @Nombre, @Funcion, @ZonaV, 'Activo/a', @PesoKgs, 
 			@AltoCm, @LargoCm, GETDATE(), GETDATE());
     END
     -- Leer un registro
@@ -595,8 +595,8 @@ BEGIN
     IF @Operation = 'CREATE'
     BEGIN
         INSERT INTO HistorialPrecio (AutoparteID, Valor, Estado, FechaIniciialPrecio,
-			FechaCreación, FechaModificación)
-        VALUES (@AutoparteID, @Valor, @Estado, @FechaInicial, GETDATE(), GETDATE());
+			FechaFinalPrecio, FechaCreación, FechaModificación)
+        VALUES (@AutoparteID, @Valor, 'Activo/a', GETDATE(), GETDATE(), GETDATE(), GETDATE());
     END
     -- Leer un registro
     ELSE IF @Operation = 'READ'
