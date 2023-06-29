@@ -73,7 +73,7 @@ SELECT
     MP.NombreMetodoPago,
     F.N_Factura,
     CASE
-        WHEN CN.CC IS NULL THEN 'N/N'
+        WHEN CN.NumDoc IS NULL THEN 'N/N'
         ELSE F.CC
     END AS CC,
     CASE

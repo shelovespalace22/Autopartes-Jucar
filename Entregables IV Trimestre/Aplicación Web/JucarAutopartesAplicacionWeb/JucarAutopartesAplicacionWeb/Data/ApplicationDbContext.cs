@@ -11,19 +11,13 @@ using JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts;
 
 namespace JucarAutopartesAplicacionWeb.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions options)
             :base(options)
         {
                 
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<AutopartsViewModel>().HasNoKey();
-        }
-
         public DbSet<User> Userss { get; set; }
         public DbSet<UserPhone> UserPhones { get; set; }
         public DbSet<Position> Positions { get; set; }
@@ -71,7 +65,6 @@ namespace JucarAutopartesAplicacionWeb.Data
         public DbSet<Shelf> Shelves { get; set; }
         public DbSet<Shelving> Shelvings { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
-        public DbSet<JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts.AutopartsViewModel> NewAutopartViewModel { get; set; } = default!;
 
 
 

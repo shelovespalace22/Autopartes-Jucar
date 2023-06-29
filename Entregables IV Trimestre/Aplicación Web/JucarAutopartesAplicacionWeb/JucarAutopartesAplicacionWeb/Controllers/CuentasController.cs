@@ -1,180 +1,157 @@
-﻿using JucarAutopartesAplicacionWeb.Models.ViewModels;
-using Microsoft.AspNetCore.Identity.UI.Services;
+﻿using JucarAutopartesAplicacionWeb.Data;
+using JucarAutopartesAplicacionWeb.Models.Users;
+using JucarAutopartesAplicacionWeb.Models.ViewModels.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using JucarAutopartesAplicacionWeb.Models.Users;
 
 namespace JucarAutopartesAplicacionWeb.Controllers
 {
-    public class CuentasController : Controller
-    {
+	public class CuentasController : Controller
+	{
+		//Inyecciones de dependencia
 
-        //    private readonly UserManager<IdentityUser> _userManager;
-        //    private readonly SignInManager<IdentityUser> _signInManager;
-        //    private readonly IEmailSender _emailSender;
+		private readonly UserManager<IdentityUser> _userManager;
+		private readonly SignInManager<IdentityUser> _signInManager;
+		private readonly ApplicationDbContext _context;
 
+		public CuentasController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
+		{
+			_userManager = userManager;
+			_signInManager = signInManager;
+			_context = context;
 
-        //    public CuentasController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IEmailSender emailSender)
-        //    {
-        //        this._signInManager = signInManager;
-        //        this._userManager = userManager;
-        //        _emailSender = emailSender;
+		}
 
+		public IActionResult Index()
+		{
+			return View();
+		}
 
-        //    }
-        //    public IActionResult Index()
-        //    {
-        //        return View();
-        //    }
+		[HttpGet]
+		public IActionResult Registro(string returnurl = null)
+		{
+			ViewData["ReturnUrl"] = returnurl;
+			RegisterViewModel registerViewModel = new RegisterViewModel();
+			return View(registerViewModel);
+		}
 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Registro(RegisterViewModel registerViewModel, string returnurl = null)
+		{
+			ViewData["ReturnUrl"] = returnurl;
+			returnurl = returnurl ?? Url.Content("~/");
+			if (ModelState.IsValid)
+			{
+				var newUser = new User
+				{
+					UserName = registerViewModel.Email,
+					Email = registerViewModel.Email,
+					FirstName = registerViewModel.FirstName,
+					SecondName = registerViewModel.SecondName,
+					FirstSurname = registerViewModel.FirstSurname,
+					SecondSurname = registerViewModel.SecondSurname,
+					DocumentType = registerViewModel.DocumentType,
+					DocumentNumber = registerViewModel.DocumentNumber,
+					Sex = registerViewModel.Sex,
+					BirthDate = registerViewModel.BirthDate,
+					BirthCity = registerViewModel.BirthCity,
+					CityResidence = registerViewModel.CityResidence,
+					State = true,
+					CreationDate = DateTime.Now,
+					ModificationDate = DateTime.Now
+				};
 
-        //    // ***** METODO DE REGISTRO *****
+				//var userID = newUser.Id;
 
-        //    [HttpGet]
-        //    public async Task<IActionResult> Registro(string returnurl = null)
-        //    {
-        //        ViewData["ReturnUrl"] = returnurl;
-        //        UserRegistrationViewModel registroVM = new UserRegistrationViewModel();
-        //        return View(registroVM);
-        //    }
+				var newUserPhone = new UserPhone
+				{
+					//UserID = userID,
+					PhoneType = registerViewModel.PhoneType,
+					PhoneNumber = registerViewModel.PhoneNumber,
+					CreationDate = DateTime.Now,
+					ModificationDate = DateTime.Now
+				};
 
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public async Task<IActionResult> Registro(UserRegistrationViewModel rgViewModel, string returnurl = null)
-        //    {
-        //        ViewData["ReturnUrl"] = returnurl;
-        //        returnurl = returnurl ?? Url.Content("~/");
+				_context.Add(newUserPhone);
+				await _context.SaveChangesAsync();
 
-        //        if (ModelState.IsValid)
-        //        {
-        //            // Nueva instancia de un Usuario (Arreglar)
-        //            var user = new User
-        //            {
-        //                //UserName = rgViewModel.Email,
-        //                //Email = rgViewModel.Email,
-        //                //Nombres = rgViewModel.Nombres,
-        //                //Apellidos = rgViewModel.Apellidos,
-        //                //Pais = rgViewModel.Pais,
-        //                //Ciudad = rgViewModel.Ciudad,
-        //                //Direccion = rgViewModel.Direccion,
-        //                //FechaNacimiento = rgViewModel.FechaNacimiento,
-        //                //Estado = true //rgViewModel.Estado
-        //            };
+				var resultado = await _userManager.CreateAsync(newUser, registerViewModel.Password);
 
-        //            // Creación de un usuario en la base de datos (Arreglar)
-        //            var resultado = await _userManager.CreateAsync(usuario, rgViewModel.Password);
+				if (resultado.Succeeded)
+				{
+					await _signInManager.SignInAsync(newUser, isPersistent: false);
 
-        //            if (resultado.Succeeded)
-        //            {
-        //                // Enviar confirmación de Email (Arreglar)
-        //                var code = await _userManager.GenerateEmailConfirmationTokenAsync(usuario);
-        //                var urlRetorno = Url.Action("ConfirmarEmail", "Cuentas", new { userId = usuario.Id, code = code }, protocol: HttpContext.Request.Scheme);
-        //                await _emailSender.SendEmailAsync(rgViewModel.Email, "Confirmar su cuenta - Proyecto Identity", "Por favor confirme su cuenta dando click aquí: <a href=\"" + urlRetorno + "\">enlace</a>");
+					return LocalRedirect(returnurl);
+				}
+				ValidarErrores(resultado);
+			}
 
-        //                // Loguear un usuario (Arreglar)
-        //                await _signInManager.SignInAsync(usuario, isPersistent: false);
+			return View(registerViewModel);
+		}
 
-        //                // Redireccionar a página de inicio
-        //                return LocalRedirect(returnurl);
-        //            }
+		[HttpGet]
+		public IActionResult Acceso(string returnurl = null)
+		{
+			ViewData["ReturnUrl"] = returnurl;
+			return View();
+		}
 
-        //            // Validation failed
-        //            ValidarErrores(resultado);
-        //        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Acceso(AccesoViewModel accesoViewModel, string returnurl = null)
+		{
+			ViewData["ReturnUrl"] = returnurl;
+			returnurl = returnurl ?? Url.Content("~/");
+			if (ModelState.IsValid)
+			{
+				var resultado = await _signInManager.PasswordSignInAsync(accesoViewModel.Email, accesoViewModel.Password, accesoViewModel.RememberMe, lockoutOnFailure: true);
 
-        //        return View(rgViewModel);
-        //    }
+				if (resultado.Succeeded)
+				{
+					return LocalRedirect(returnurl);
+				}
 
-        //    // ***** MANEJADOR DE ERRORES *****
-        //    private void ValidarErrores(IdentityResult resultado)
-        //    {
-        //        foreach (var error in resultado.Errors)
-        //        {
-        //            ModelState.AddModelError(String.Empty, error.Description);
-        //        }
-        //    }
+				else if (resultado.IsLockedOut)
+				{
+					return View("Bloqueado");
+				}
 
+				else
+				{
+					ModelState.AddModelError(string.Empty, "Acceso inválido.");
+					return View(accesoViewModel);
+				}
+			}
+			return View(accesoViewModel);
+		}
 
-        //    // ***** METODO DE LOGUEAR *****
+		/* METODO DE LOGOUT */
 
-        //    [HttpGet]
-        //    public IActionResult Acceso(string returnurl = null)
-        //    {
-        //        ViewData["ReturnUrl"] = returnurl;
-        //        return View();
-        //    }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> SalirAplicacion()
+		{
+			await _signInManager.SignOutAsync();
+			return RedirectToAction(nameof(HomeController.Index), "Home");
+		}
 
+		/* METODO DE OLVIDO PASSWORD */
 
+		[HttpGet]
+		public IActionResult OlvidoPassword()
+		{
+			return View();
+		}
 
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public async Task<IActionResult> Acceso(LogIn accViewModel, string returnurl = null)
-        //    {
-        //        ViewData["ReturnUrl"] = returnurl;
-        //        returnurl = returnurl ?? Url.Content("~/");
-        //        if (ModelState.IsValid)
-        //        {
-        //            var resultado = await _signInManager.PasswordSignInAsync(accViewModel.Email, accViewModel.Password, accViewModel.RememberMe, lockoutOnFailure: true);
+		/* MANEJADOR DE ERRORES */
 
-        //            if (resultado.Succeeded)
-        //            {
-        //                //return RedirectToAction("Index", "Home");
-        //                return LocalRedirect(returnurl);
-        //            }
-        //            if (resultado.IsLockedOut)
-        //            {
-        //                return View("Bloqueado");
-        //            }
-        //            else
-        //            {
-        //                ModelState.AddModelError(string.Empty, "Acceso inválido");
-        //                return View(accViewModel);
-        //            }
-        //        }
-        //        return View(accViewModel);
-        //    }
-
-        //    // ***** METODO PARA SALIR DE LA APP *****
-
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public async Task<IActionResult> SalirAplicacion()
-        //    {
-        //        await _signInManager.SignOutAsync();
-        //        return View(nameof(HomeController.Index), "Home");
-        //    }
-
-
-        //    // ***** METODO OLVIDARPASSWORD *****
-
-        //    [HttpGet]
-        //    public IActionResult OlvidoPassword()
-        //    {
-        //        return View();
-        //    }
-
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public async Task<IActionResult> OlvidoPassword(ForgotPassword opViewModel)
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            var usuario = await _userManager.FindByEmailAsync(opViewModel.Email);
-        //            if (usuario == null)
-        //            {
-        //                return RedirectToAction("ConfirmacionOlvidoPassword");
-        //            }
-
-        //            var codigo = await _userManager.GeneratePasswordResetTokenAsync(usuario);
-        //            var urlRetorno = Url.Action("ResetPassword", "Cuentas", new { userId = usuario.Id, code = codigo }, protocol: HttpContext.Request.Scheme);
-
-        //            await _emailSender.SendEmailAsync(opViewModel.Email, "Recuperar contraseña - Proyecto Identity",
-        //                "Por favor recupere su contraseña dando click aquí: <a href=\"" + urlRetorno + "\">enlace</a>");
-
-        //            return RedirectToAction("ConfirmacionOlvidoPassword");
-        //        }
-
-        //        return View(opViewModel);
-        //    }
-    }
+		private void ValidarErrores(IdentityResult result)
+		{
+			foreach (var error in result.Errors)
+			{
+				ModelState.AddModelError(String.Empty, error.Description);
+			}
+		}
+	}
 }

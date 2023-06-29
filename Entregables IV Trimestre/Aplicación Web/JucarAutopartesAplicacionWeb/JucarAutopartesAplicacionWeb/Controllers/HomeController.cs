@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using JucarAutopartesAplicacionWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JucarAutopartesAplicacionWeb.Controllers
@@ -18,6 +19,7 @@ namespace JucarAutopartesAplicacionWeb.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

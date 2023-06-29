@@ -178,6 +178,7 @@ namespace JucarAutopartesAplicacionWeb.Controllers.Products
 
         /* METODO DELETE PARA ELIMINAR INSTANCIAS*/
 
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             var rawMaterial = _context.RawMaterials

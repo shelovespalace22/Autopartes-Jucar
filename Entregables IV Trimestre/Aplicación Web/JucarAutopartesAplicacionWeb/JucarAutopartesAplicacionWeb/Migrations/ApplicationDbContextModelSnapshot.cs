@@ -1488,8 +1488,9 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneType")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -1860,9 +1861,10 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("DocumentType")
+                    b.Property<string>("DocumentType")
+                        .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -1885,9 +1887,10 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Sex")
+                    b.Property<string>("Sex")
+                        .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<bool>("State")
                         .HasColumnType("bit");

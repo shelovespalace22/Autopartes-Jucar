@@ -378,13 +378,13 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DocumentType = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    DocumentType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DocumentNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SecondName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     FirstSurname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SecondSurname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Sex = table.Column<int>(type: "int", maxLength: 10, nullable: false),
+                    Sex = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BirthCity = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CityResidence = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
@@ -597,7 +597,7 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                 {
                     UserPhoneID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PhoneType = table.Column<int>(type: "int", nullable: false),
+                    PhoneType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -647,10 +647,10 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                     AutopartID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    WeightKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
-                    HeightCm = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
-                    LengthCm = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    WeightKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
+                    HeightCm = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
+                    LengthCm = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
                     VehicleZone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),

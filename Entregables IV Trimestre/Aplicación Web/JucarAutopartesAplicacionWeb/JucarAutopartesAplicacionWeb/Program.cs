@@ -1,6 +1,4 @@
-using AutoMapper;
 using JucarAutopartesAplicacionWeb.Data;
-using JucarAutopartesAplicacionWeb.Services.Automapper;
 using JucarAutopartesAplicacionWeb.Services.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -15,26 +13,29 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount=true)
-//    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-
-
 //Servicio de Identity
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
-builder.Services.AddTransient<IEmailSender, EmailSender>();
+//builder.Services.AddTransient<IEmailSender, EmailSender>();
 
+//Url de retorno 
 
-
-// Servicio de AutoMapper
-
-var configuration = new MapperConfiguration(cfg =>
+builder.Services.ConfigureApplicationCookie(options =>
 {
-    cfg.AddProfile<MapperProfile>();
+	options.LoginPath = new PathString("/Cuentas/Acceso");
+	options.AccessDeniedPath = new PathString("/Cuentas/Bloqueado");
 });
-IMapper mapper = configuration.CreateMapper();
+
+//Configuraciones contraseña más segura
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+	options.Password.RequiredLength = 8; //La contraseña debe tener minimo 8 caracteres
+	options.Password.RequireLowercase = true; //Requiere letras minusculas
+	options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1); //Tiempo de bloqueo de un minuto, si no ingresa bien las credenciales
+	options.Lockout.MaxFailedAccessAttempts = 3; //Intentos máximos para fallar la contraseña 
+});
 
 
 

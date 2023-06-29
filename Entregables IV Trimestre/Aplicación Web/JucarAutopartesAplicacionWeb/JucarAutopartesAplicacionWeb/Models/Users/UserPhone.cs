@@ -13,7 +13,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Users
 
         [Required(ErrorMessage = "¡Escoga una opción de tipo de teléfono!")]
         [DisplayName("Tipo Teléfono")]
-        public PhoneType PhoneType { get; set; }
+        public string? PhoneType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número teléfonico!")]
         [DisplayName("Numero Teléfono")]
@@ -39,7 +39,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Users
 
         //Relaciones con otros modelos 
 
-        //public int UserID { get; set; }
+        public string? UserID { get; set; }
         public User? User { get; set; }
 
     }
