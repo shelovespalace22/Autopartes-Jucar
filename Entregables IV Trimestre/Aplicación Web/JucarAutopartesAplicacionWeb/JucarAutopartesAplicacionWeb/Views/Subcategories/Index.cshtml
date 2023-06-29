@@ -4,14 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Subcategorías</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Nueva Subcategoría</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -24,15 +27,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.ModificationDate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -46,12 +49,9 @@
                 @Html.DisplayFor(modelItem => item.ModificationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SubcategoryID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SubcategoryID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SubcategoryID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.SubcategoryID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.SubcategoryID">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.SubcategoryID">Eliminar</a>
             </td>
         </tr>
 }

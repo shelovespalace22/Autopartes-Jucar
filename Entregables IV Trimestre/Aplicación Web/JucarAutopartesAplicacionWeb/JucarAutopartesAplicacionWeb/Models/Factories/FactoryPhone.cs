@@ -1,5 +1,4 @@
-﻿using JucarAutopartesAplicacionWeb.Models.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
@@ -14,7 +13,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Factories
 
         [Required(ErrorMessage = "¡Ingresa el tipo de teléfono!")]
         [DisplayName("Tipo de Teléfono")]
-        public PhoneType PhoneType { get; set; }
+        public string? PhoneType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número de teléfono!")]
         [DisplayName("Número de Teléfono")]

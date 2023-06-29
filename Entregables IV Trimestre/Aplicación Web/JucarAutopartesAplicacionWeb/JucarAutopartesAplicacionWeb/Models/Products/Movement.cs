@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JucarAutopartesAplicacionWeb.Models.Enums;
+
 
 namespace JucarAutopartesAplicacionWeb.Models.Products
 {
@@ -21,7 +21,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
         [MaxLength(20)]
         [RegularExpression("^[A-Za-z\\s]+$")]
         [DisplayName("Tipo de Movimiento")]
-        public MovementType MovementType { get; set; }
+        public string? MovementType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la fecha del movimiento!")]
         [DisplayName("Fecha del Movimiento")]
@@ -46,6 +46,8 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
         //Relaciones con otros modelos
 
         public int RawMaterialID { get; set; }
+
+        [DisplayName("Materia Prima")]
         public RawMaterial? RawMaterial { get; set; }
 
 

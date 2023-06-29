@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JucarAutopartesAplicacionWeb.Models.Enums;
 using JucarAutopartesAplicacionWeb.Models.Sales;
 using Microsoft.AspNetCore.Identity;
 

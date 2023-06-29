@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using JucarAutopartesAplicacionWeb.Models.Enums;
 
 namespace JucarAutopartesAplicacionWeb.Models.Sales
 {
@@ -8,7 +7,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Sales
     {
         [Required(ErrorMessage = "¡Escoga el tipo de documento!")]
         [DisplayName("Tipo de Documento")]
-        public DocumentType DocumentType { get; set; }
+        public string? DocumentType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número de documento!")]
         [MaxLength(10)]

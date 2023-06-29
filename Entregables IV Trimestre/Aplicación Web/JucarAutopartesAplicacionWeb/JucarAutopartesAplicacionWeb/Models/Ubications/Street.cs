@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JucarAutopartesAplicacionWeb.Models.Enums;
 
 namespace JucarAutopartesAplicacionWeb.Models.Ubications
 {
@@ -13,7 +12,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Ubications
 
         [Required(ErrorMessage = "¡Ingresa el tipo de calle!")]
         [DisplayName("Tipo de Calle")]
-        public StreetType StreetType { get; set; }
+        public string? StreetType { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el número de calle!")]
         [MaxLength(5)]

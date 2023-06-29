@@ -1,0 +1,104 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts.AutopartsViewModel
+
+@{
+    ViewData["Title"] = "Creación Autopartes";
+}
+
+@{
+	ViewData["Title"] = "Registro de Usuarios";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+	<div class="card-body">
+		<h3 class="card-title text-center">Nueva Autoparte</h3>
+		<form asp-controller="Autoparts" asp-action="Create" method="post">
+			<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+			<div class="row mt-4">
+
+				<div class="col-sm-6">
+
+					<div class="form-group">
+						<label asp-for="Autopart.SubcategoryID" class="control-label"></label>
+						<select asp-for="Autopart.SubcategoryID" class="form-control" asp-items="ViewBag.SubcategoryID"></select>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.Name" class="col-md-4"></label>
+						<input asp-for="Autopart.Name" class="form-control" placeholder="Nombre*" />
+						<span asp-validation-for="Autopart.Name" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.Description" class="col-md-4"></label>
+						<input asp-for="Autopart.Description" class="form-control" placeholder="Descripción*" />
+						<span asp-validation-for="Autopart.Description" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.WeightKgs" class="col-md-4"></label>
+						<input asp-for="Autopart.WeightKgs" class="form-control" placeholder="Peso*" />
+						<span asp-validation-for="Autopart.WeightKgs" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.HeightCm" class="col-md-4"></label>
+						<input asp-for="Autopart.HeightCm" class="form-control" placeholder="Altura*" />
+						<span asp-validation-for="Autopart.HeightCm" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.LengthCm" class="col-md-4"></label>
+						<input asp-for="Autopart.LengthCm" class="form-control" placeholder="Largo*" />
+						<span asp-validation-for="Autopart.LengthCm" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="Autopart.VehicleZone" class="col-md-4"></label>
+						<input asp-for="Autopart.VehicleZone" class="form-control" placeholder="Zona*" />
+						<span asp-validation-for="Autopart.VehicleZone" class="text-danger"></span>
+					</div>
+					<br />
+
+				</div>
+
+				<div class="col-sm-6">
+
+					<div class="mb-3">
+						<label asp-for="Inventory.QuantityAvailable" class="col-md-4"></label>
+						<input asp-for="Inventory.QuantityAvailable" class="form-control" placeholder="Cantidad*" />
+						<span asp-validation-for="Inventory.QuantityAvailable" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="mb-3">
+						<label asp-for="PriceHistory.Value" class="col-md-4"></label>
+						<input asp-for="PriceHistory.Value" class="form-control" placeholder="Valor*" />
+						<span asp-validation-for="PriceHistory.Value" class="text-danger"></span>
+					</div>
+					<br />
+					<div class="form-group">
+						<label asp-for="AutopartMaterial.RawMaterialID" class="control-label"></label>
+						<select asp-for="AutopartMaterial.RawMaterialID" class="form-control" asp-items="ViewBag.RawMaterialID"></select>
+					</div>
+					<br />
+
+				</div>
+
+				<div class="row">
+					<div class="col-sm-10 offset-2">
+						<button type="submit" class="btn btn-success w-75 btn-lg">Guardar Autoparte</button>
+					</div>
+				</div>
+
+			</div>
+
+		</form>
+	</div>
+</div>
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -4,6 +4,7 @@ using JucarAutopartesAplicacionWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JucarAutopartesAplicacionWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230629031934_migration2")]
+    partial class migration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,9 +114,8 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PhoneType")
+                        .HasColumnType("int");
 
                     b.HasKey("FactoryPhoneID");
 
@@ -315,11 +317,24 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("MainMaterial")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("OtherMaterial")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<int>("RawMaterialID")
                         .HasColumnType("int");
+
+                    b.Property<string>("SecondaryMaterial")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("AutopartMaterialID");
 
@@ -490,10 +505,9 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                     b.Property<DateTime>("MovementDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MovementType")
-                        .IsRequired()
+                    b.Property<int>("MovementType")
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Quantity")
                         .IsRequired()
@@ -743,10 +757,9 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("PhoneType")
-                        .IsRequired()
+                    b.Property<int>("PhoneType")
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("int");
 
                     b.Property<int>("ProviderID")
                         .HasColumnType("int");
@@ -988,10 +1001,9 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("PhoneType")
-                        .IsRequired()
+                    b.Property<int>("PhoneType")
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("int");
 
                     b.HasKey("CustomerPhoneID");
 
@@ -1209,9 +1221,8 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("DocumntType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DocumntType")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -1390,9 +1401,8 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<string>("StreetType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("StreetType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Sufix")
                         .HasMaxLength(10)
@@ -1755,9 +1765,8 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("DocumentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DocumentType")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -1806,9 +1815,8 @@ namespace JucarAutopartesAplicacionWeb.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("DocumentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DocumentType")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstName")
                         .IsRequired()

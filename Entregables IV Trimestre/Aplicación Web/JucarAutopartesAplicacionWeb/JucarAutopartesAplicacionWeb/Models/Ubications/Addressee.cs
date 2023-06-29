@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JucarAutopartesAplicacionWeb.Models.Enums;
 
 namespace JucarAutopartesAplicacionWeb.Models.Ubications
 {
@@ -35,7 +34,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Ubications
 
         [Required]
         [DisplayName("Tipo de Documento")]
-        public DocumentType DocumntType { get; set; }
+        public string? DocumntType { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el número de documento!")]
         [MaxLength(10)]

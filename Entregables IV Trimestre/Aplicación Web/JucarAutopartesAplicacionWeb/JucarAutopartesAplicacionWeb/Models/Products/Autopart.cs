@@ -13,13 +13,13 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la autoparte!")]
         [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[a-zA-Z0-9\\s]+$")]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese una descripción para la autoparte!")]
         [MaxLength(200, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
         [DisplayName("Descripción")]
         public string? Description { get; set; }
 
@@ -40,7 +40,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese la zona del vehiculo a la que pertenece!")]
         [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
         [DisplayName("Zona del Vehículo")]
         public string? VehicleZone { get; set; }
 

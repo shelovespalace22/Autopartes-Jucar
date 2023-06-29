@@ -1,5 +1,4 @@
-﻿using JucarAutopartesAplicacionWeb.Models.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
 namespace JucarAutopartesAplicacionWeb.Models.Providers
@@ -8,7 +7,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Providers
     {
         [Required(ErrorMessage = "¡Escoga el tipo de documento!")]
         [DisplayName("Tipo de Documento")]
-        public DocumentType DocumentType { get; set; }
+        public string? DocumentType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número de documento!")]
         [MaxLength(10)]

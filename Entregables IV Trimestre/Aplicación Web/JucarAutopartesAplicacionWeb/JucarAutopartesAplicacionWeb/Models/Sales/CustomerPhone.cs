@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JucarAutopartesAplicacionWeb.Models.Enums;
 
 namespace JucarAutopartesAplicacionWeb.Models.Sales
 {
@@ -15,7 +14,7 @@ namespace JucarAutopartesAplicacionWeb.Models.Sales
         [MaxLength(30)]
         [RegularExpression("^[A-Za-z\\s]+$")]
         [DisplayName("Tipo de Teléfono")]
-        public PhoneType PhoneType { get; set; }
+        public string? PhoneType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número de teléfono!")]
         [MaxLength(10)]
