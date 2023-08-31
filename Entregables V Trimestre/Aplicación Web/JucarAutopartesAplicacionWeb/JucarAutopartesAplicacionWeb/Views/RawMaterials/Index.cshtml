@@ -1,0 +1,67 @@
+﻿@model IEnumerable<JucarAutopartesAplicacionWeb.Models.Products.RawMaterial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Materias Primas</h1>
+
+<p>
+    <a asp-action="Create">Nueva Materia Prima</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModificationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @if (item.State)
+                    {
+                        <text>Activo/a</text>
+                    }
+                    else
+                    {
+                        <text>Inactivo/a</text>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModificationDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RawMaterialID">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.RawMaterialID">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RawMaterialID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
