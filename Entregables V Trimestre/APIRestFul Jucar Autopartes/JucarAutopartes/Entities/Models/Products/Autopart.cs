@@ -98,7 +98,7 @@ namespace Entities.Models.Products
 
         public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
 
-        //BillDetail
+        BillDetail
 
         public ICollection<BillDetail>? BillDetails { get; set; }
 
