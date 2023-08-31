@@ -1,0 +1,126 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.Autoparts.AutopartsViewModel
+
+@{
+	ViewData["Title"] = "Actualización de Autopartes";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4>Materias Prima y Existencias</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Autopart.AutopartID" />
+            <input type="hidden" asp-for="AutopartMaterial.AutopartMaterialID" />
+            <input type="hidden" asp-for="Inventory.InventoryID" />
+            <input type="hidden" asp-for="PriceHistory.PriceHistoryID" />
+
+            @*Input subcategoria*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.SubcategoryID" class="control-label"></label>
+                <select asp-for="Autopart.SubcategoryID" class="form-control" asp-items="ViewBag.SubcategoryID"></select>
+            </div>
+
+            @*Input para actualizar el Nombre*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.Name"></label>
+                <input class="form-control" asp-for="Autopart.Name" />
+                <span asp-validation-for="Autopart.Name" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar la Descripcion*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.Description"></label>
+                <input class="form-control" asp-for="Autopart.Description" />
+                <span asp-validation-for="Autopart.Description" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Peso*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.WeightKgs"></label>
+                <input class="form-control" asp-for="Autopart.WeightKgs" />
+                <span asp-validation-for="Autopart.WeightKgs" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar la Altura*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.HeightCm"></label>
+                <input class="form-control" asp-for="Autopart.HeightCm" />
+                <span asp-validation-for="Autopart.HeightCm" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Largo*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.LengthCm"></label>
+                <input class="form-control" asp-for="Autopart.LengthCm" />
+                <span asp-validation-for="Autopart.LengthCm" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar la Zona*@
+
+            <div class="form-group">
+                <label asp-for="Autopart.VehicleZone"></label>
+                <input class="form-control" asp-for="Autopart.VehicleZone" />
+                <span asp-validation-for="Autopart.VehicleZone" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar la Cantidad*@
+
+            <div class="form-group">
+                <label asp-for="Inventory.QuantityAvailable"></label>
+                <input class="form-control" asp-for="Inventory.QuantityAvailable" />
+                <span asp-validation-for="Inventory.QuantityAvailable" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Valor*@
+
+            <div class="form-group">
+                <label asp-for="PriceHistory.Value"></label>
+                <input class="form-control" asp-for="PriceHistory.Value" />
+                <span asp-validation-for="PriceHistory.Value" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Material*@
+
+            <div class="form-group">
+                <label asp-for="PriceHistory.Value"></label>
+                <input class="form-control" asp-for="PriceHistory.Value" />
+                <span asp-validation-for="PriceHistory.Value" class="text-danger"></span>
+            </div>
+
+            @*Input material*@
+
+            <div class="form-group">
+                <label asp-for="AutopartMaterial.RawMaterialID" class="control-label"></label>
+                <select asp-for="AutopartMaterial.RawMaterialID" class="form-control" asp-items="ViewBag.RawMaterialID"></select>
+            </div>
+
+            @*Boton para guardar cambios*@
+
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a Inicio</a>
+</div>
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
