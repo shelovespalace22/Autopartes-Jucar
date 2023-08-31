@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JucarAutopartes", "JucarAutopartes\JucarAutopartes.csproj", "{7D1EF4B9-C7D1-42D0-9EEF-23CB84259A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JucarAutopartes", "JucarAutopartes\JucarAutopartes.csproj", "{7D1EF4B9-C7D1-42D0-9EEF-23CB84259A10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{7D5D389D-6CEA-444E-8681-8489F0A27B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{C01B961B-F2E8-4E70-AD2A-117B67681BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7D1EF4B9-C7D1-42D0-9EEF-23CB84259A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D1EF4B9-C7D1-42D0-9EEF-23CB84259A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D1EF4B9-C7D1-42D0-9EEF-23CB84259A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5D389D-6CEA-444E-8681-8489F0A27B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5D389D-6CEA-444E-8681-8489F0A27B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5D389D-6CEA-444E-8681-8489F0A27B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5D389D-6CEA-444E-8681-8489F0A27B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01B961B-F2E8-4E70-AD2A-117B67681BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01B961B-F2E8-4E70-AD2A-117B67681BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01B961B-F2E8-4E70-AD2A-117B67681BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01B961B-F2E8-4E70-AD2A-117B67681BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
