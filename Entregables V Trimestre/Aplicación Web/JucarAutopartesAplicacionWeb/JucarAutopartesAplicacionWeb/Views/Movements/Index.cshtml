@@ -1,0 +1,66 @@
+﻿@model IEnumerable<JucarAutopartesAplicacionWeb.Models.Products.Movement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movimientos Materias Prima</h1>
+
+<p>
+    <a asp-action="Create">Nuevo Movimiento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovementType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovementDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModificationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RawMaterial.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovementType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovementDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModificationDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MovementID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.MovementID">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.MovementID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

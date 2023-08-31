@@ -1,0 +1,96 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.RawMaterials.RawMaterialsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Materias Prima y Existencias</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RawMaterial.RawMaterialID" />
+            <input type="hidden" asp-for="Stock.StockID" />
+
+            @*Input para actualizar el Nombre*@
+
+            <div class="form-group">
+                <label asp-for="RawMaterial.Name"></label>
+                <input class="form-control" asp-for="RawMaterial.Name" />
+                <span asp-validation-for="RawMaterial.Name" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Tipo*@
+
+            <div class="form-group">
+                <label asp-for="RawMaterial.Type" class="control-label"></label>
+                <select asp-for="RawMaterial.Type" class="form-control">
+                    <option value="">-- Seleccione un tipo --</option>
+                    <option value="Vegetal">Vegetal</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Fósil">Fósil</option>
+                    <option value="Mineral">Mineral</option>
+                </select>
+                <span asp-validation-for="RawMaterial.Type" class="text-danger"></span>
+            </div>
+
+           @*Input para actualizar la Cantidad Disponible*@
+
+            <div class="form-group">
+                <label asp-for="Stock.QuantityAvailable"></label>
+                <input class="form-control" asp-for="Stock.QuantityAvailable" />
+                <span asp-validation-for="Stock.QuantityAvailable" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar la Existencia Inicial*@
+
+            <div class="form-group">
+                <label asp-for="Stock.InitialStock"></label>
+                <input class="form-control" asp-for="Stock.InitialStock" />
+                <span asp-validation-for="Stock.InitialStock" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Punto de Reorden*@
+
+            <div class="form-group">
+                <label asp-for="Stock.ReorderPoint"></label>
+                <input class="form-control" asp-for="Stock.ReorderPoint" />
+                <span asp-validation-for="Stock.ReorderPoint" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Inventario Minimo*@
+
+            <div class="form-group">
+                <label asp-for="Stock.MinimumInventory"></label>
+                <input class="form-control" asp-for="Stock.MinimumInventory" />
+                <span asp-validation-for="Stock.MinimumInventory" class="text-danger"></span>
+            </div>
+
+            @*Input para actualizar el Inventario Máximo*@
+
+            <div class="form-group">
+                <label asp-for="Stock.MaximumInventory"></label>
+                <input class="form-control" asp-for="Stock.MaximumInventory" />
+                <span asp-validation-for="Stock.MaximumInventory" class="text-danger"></span>
+            </div>
+
+            @*Boton para guardar cambios*@
+
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a Inicio</a>
+</div>
+
+
+

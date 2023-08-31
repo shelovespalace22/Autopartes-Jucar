@@ -1,0 +1,74 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.ViewModels.RawMaterials.RawMaterialsViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h4>¿Estás seguro de eliminar esta Materia Prima?</h4>
+<hr />
+<div>
+    <h4>Matería Prima</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Type)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Existencias</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.QuantityAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.QuantityAvailable)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.InitialStock)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.InitialStock)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.ReorderPoint)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.ReorderPoint)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.MinimumInventory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.MinimumInventory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.MaximumInventory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.MaximumInventory)
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="RawMaterial.RawMaterialID" />
+    <input type="hidden" asp-for="Stock.StockID" />
+    <div class="form-group">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index">Cancelar</a>
+    </div>
+</form>

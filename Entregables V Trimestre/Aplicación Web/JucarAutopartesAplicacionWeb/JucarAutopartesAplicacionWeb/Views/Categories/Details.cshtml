@@ -1,0 +1,43 @@
+﻿@model JucarAutopartesAplicacionWeb.Models.Products.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles del Registro</h1>
+
+<div>
+    <h4>Categoría</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.State)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModificationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModificationDate)
+        </dd>
+    </dl>
+</div>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CategoryID">Ir a Editar</a> |
+    <a asp-action="Index">Regresar al Inicio</a>
+</div>
