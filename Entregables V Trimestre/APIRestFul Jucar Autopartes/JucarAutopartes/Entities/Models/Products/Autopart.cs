@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Sales;
 
 namespace Entities.Models.Products
 {
@@ -98,7 +99,7 @@ namespace Entities.Models.Products
 
         public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
 
-        BillDetail
+        //BillDetail
 
         public ICollection<BillDetail>? BillDetails { get; set; }
 
