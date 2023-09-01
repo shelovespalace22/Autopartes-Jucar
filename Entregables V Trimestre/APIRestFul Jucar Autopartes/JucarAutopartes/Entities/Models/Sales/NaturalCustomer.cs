@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Models.Sales
 {
-    public class NaturalCustomer
+    public class NaturalCustomer : Customer
     {
         [Required(ErrorMessage = "¡Escoga el tipo de documento!")]
         [DisplayName("Tipo de Documento")]

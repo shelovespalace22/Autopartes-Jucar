@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Models.Sales
 {
-    public class LegalCustomer
+    public class LegalCustomer : Customer
     {
         [Required(ErrorMessage = "¡Ingresa la razón social!")]
         [MaxLength(50)]

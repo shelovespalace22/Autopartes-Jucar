@@ -27,6 +27,5 @@ namespace Entities.Models.Providers
         [RegularExpression("^[A-Za-z\\s]+$")]
         [DisplayName("Representante Legal")]
         public string? LegalRepresentative { get; set; }
-
     }
 }

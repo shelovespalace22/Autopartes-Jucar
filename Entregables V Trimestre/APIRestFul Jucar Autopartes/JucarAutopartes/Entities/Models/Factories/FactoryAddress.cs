@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Ubications;
 
 namespace Entities.Models.Factories
 {
