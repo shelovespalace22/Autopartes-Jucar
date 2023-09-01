@@ -1,3 +1,4 @@
+using Contracts;
 using JucarAutopartes.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
@@ -11,27 +12,41 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(),
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
-
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureSqlContext(builder.Configuration);
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program));
+
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-    app.UseDeveloperExceptionPage();
-else
+var logger = app.Services.GetRequiredService<ILoggerManager>();
+
+app.ConfigureExceptionHandler(logger);
+
+if (app.Environment.IsProduction())
     app.UseHsts();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+
+//if (app.Environment.IsDevelopment())
+//    app.UseDeveloperExceptionPage();
+//else
+//    app.UseHsts();
+
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
 app.UseHttpsRedirection();
 

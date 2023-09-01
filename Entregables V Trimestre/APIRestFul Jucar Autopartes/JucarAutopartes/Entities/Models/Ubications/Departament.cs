@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int DepartmentID { get; set; }
+        public Guid DepartmentID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el nombre del departamento!")]
         [MaxLength(50)]

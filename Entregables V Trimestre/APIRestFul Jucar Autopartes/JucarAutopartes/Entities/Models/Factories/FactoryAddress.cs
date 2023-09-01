@@ -15,7 +15,7 @@ namespace Entities.Models.Factories
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int FactoryAddressID { get; set; }
+        public Guid FactoryAddressID { get; set; }
 
         [Required]
         [DisplayName("Estado")]
@@ -41,12 +41,12 @@ namespace Entities.Models.Factories
 
         //Factory
 
-        public int FactoryID { get; set; }
+        public Guid FactoryID { get; set; }
         public Factory? Factory { get; set; }
 
         //Address
 
-        public int AddressID { get; set; }
+        public Guid AddressID { get; set; }
         public Address? Address { get; set; }
     }
 }

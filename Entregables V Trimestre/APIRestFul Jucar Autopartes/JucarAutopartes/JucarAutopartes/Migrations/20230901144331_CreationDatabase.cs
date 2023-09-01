@@ -15,8 +15,7 @@ namespace JucarAutopartes.Migrations
                 name: "Addressees",
                 columns: table => new
                 {
-                    AddresseeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddresseeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SecondName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     FirstSurname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -35,8 +34,7 @@ namespace JucarAutopartes.Migrations
                 name: "AddressTypes",
                 columns: table => new
                 {
-                    AddressTypeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddressTypeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -50,8 +48,7 @@ namespace JucarAutopartes.Migrations
                 name: "Buildings",
                 columns: table => new
                 {
-                    BuildingID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BuildingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BuildingType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     BuildingNumber = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -66,8 +63,7 @@ namespace JucarAutopartes.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -79,27 +75,10 @@ namespace JucarAutopartes.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerPhones",
-                columns: table => new
-                {
-                    CustomerPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PhoneType = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerPhones", x => x.CustomerPhoneID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
-                    CustomerID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -122,8 +101,7 @@ namespace JucarAutopartes.Migrations
                 name: "Departments",
                 columns: table => new
                 {
-                    DepartmentID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DepartmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Capital = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -138,8 +116,7 @@ namespace JucarAutopartes.Migrations
                 name: "Factories",
                 columns: table => new
                 {
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     NIT = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     BusinessName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -156,8 +133,7 @@ namespace JucarAutopartes.Migrations
                 name: "PaymentMethods",
                 columns: table => new
                 {
-                    PaymentMethodID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PaymentMethodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PaymentMethodName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -172,8 +148,7 @@ namespace JucarAutopartes.Migrations
                 name: "Positions",
                 columns: table => new
                 {
-                    PositionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PositionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -188,8 +163,7 @@ namespace JucarAutopartes.Migrations
                 name: "Providers",
                 columns: table => new
                 {
-                    ProviderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
@@ -215,8 +189,7 @@ namespace JucarAutopartes.Migrations
                 name: "RawMaterials",
                 columns: table => new
                 {
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RawMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
@@ -232,8 +205,7 @@ namespace JucarAutopartes.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DocumentType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DocumentNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -257,13 +229,12 @@ namespace JucarAutopartes.Migrations
                 name: "Subcategories",
                 columns: table => new
                 {
-                    SubcategoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SubcategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CategoryID = table.Column<int>(type: "int", nullable: false)
+                    CategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -277,16 +248,37 @@ namespace JucarAutopartes.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CustomerPhones",
+                columns: table => new
+                {
+                    CustomerPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PhoneType = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerPhones", x => x.CustomerPhoneID);
+                    table.ForeignKey(
+                        name: "FK_CustomerPhones_Customers_CustomerID",
+                        column: x => x.CustomerID,
+                        principalTable: "Customers",
+                        principalColumn: "CustomerID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
-                    OrderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Place = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", nullable: false)
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -303,13 +295,12 @@ namespace JucarAutopartes.Migrations
                 name: "Municipalities",
                 columns: table => new
                 {
-                    MunicipalityID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MunicipalityID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Capital = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DepartmentID = table.Column<int>(type: "int", nullable: false)
+                    DepartmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -326,13 +317,12 @@ namespace JucarAutopartes.Migrations
                 name: "FactoryPhones",
                 columns: table => new
                 {
-                    FactoryPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
+                    FactoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -349,13 +339,12 @@ namespace JucarAutopartes.Migrations
                 name: "Warehouses",
                 columns: table => new
                 {
-                    WarehouseID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WarehouseID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
+                    FactoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -372,13 +361,12 @@ namespace JucarAutopartes.Migrations
                 name: "ProviderPhones",
                 columns: table => new
                 {
-                    ProviderPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProviderID = table.Column<int>(type: "int", nullable: false)
+                    ProviderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -395,14 +383,13 @@ namespace JucarAutopartes.Migrations
                 name: "Movements",
                 columns: table => new
                 {
-                    MovementID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MovementID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     MovementType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     MovementDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    RawMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -419,8 +406,7 @@ namespace JucarAutopartes.Migrations
                 name: "Stocks",
                 columns: table => new
                 {
-                    StockID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StockID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     QuantityAvailable = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     InitialStock = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     ReorderPoint = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
@@ -428,7 +414,7 @@ namespace JucarAutopartes.Migrations
                     MaximumInventory = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    RawMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -445,13 +431,12 @@ namespace JucarAutopartes.Migrations
                 name: "UserPhones",
                 columns: table => new
                 {
-                    UserPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true)
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -467,12 +452,11 @@ namespace JucarAutopartes.Migrations
                 name: "UserPositions",
                 columns: table => new
                 {
-                    UserPositionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserPositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true),
-                    PositionID = table.Column<int>(type: "int", nullable: false)
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -494,8 +478,7 @@ namespace JucarAutopartes.Migrations
                 name: "Autoparts",
                 columns: table => new
                 {
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     WeightKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
@@ -505,7 +488,7 @@ namespace JucarAutopartes.Migrations
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SubcategoryID = table.Column<int>(type: "int", nullable: false)
+                    SubcategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -522,8 +505,7 @@ namespace JucarAutopartes.Migrations
                 name: "Bills",
                 columns: table => new
                 {
-                    BillID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BillID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SalesInvoiceNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Customer = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DocumentNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -532,8 +514,8 @@ namespace JucarAutopartes.Migrations
                     Observation = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true)
+                    OrderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -555,14 +537,13 @@ namespace JucarAutopartes.Migrations
                 name: "Contributions",
                 columns: table => new
                 {
-                    ContributionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContributionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AmountPaid = table.Column<double>(type: "float", maxLength: 5, nullable: false),
                     ContributionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentMethodID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false)
+                    PaymentMethodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -585,12 +566,11 @@ namespace JucarAutopartes.Migrations
                 name: "Neighborhoods",
                 columns: table => new
                 {
-                    NeighborhoodID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NeighborhoodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MunicipalityID = table.Column<int>(type: "int", nullable: false)
+                    MunicipalityID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -607,8 +587,7 @@ namespace JucarAutopartes.Migrations
                 name: "Shelves",
                 columns: table => new
                 {
-                    ShelfID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ShelfID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ShelfNumber = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     Material = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -617,7 +596,7 @@ namespace JucarAutopartes.Migrations
                     MaxCapacityKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    WarehouseID = table.Column<int>(type: "int", nullable: false)
+                    WarehouseID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -634,12 +613,11 @@ namespace JucarAutopartes.Migrations
                 name: "AutopartMaterials",
                 columns: table => new
                 {
-                    AutopartMaterialID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AutopartMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RawMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -662,12 +640,11 @@ namespace JucarAutopartes.Migrations
                 name: "Inventories",
                 columns: table => new
                 {
-                    InventoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    InventoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     QuantityAvailable = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UltimateModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -684,8 +661,7 @@ namespace JucarAutopartes.Migrations
                 name: "Losses",
                 columns: table => new
                 {
-                    LossID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LossID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AmountLoss = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Responsible = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Place = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -693,7 +669,7 @@ namespace JucarAutopartes.Migrations
                     LossDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -710,14 +686,13 @@ namespace JucarAutopartes.Migrations
                 name: "OrderDetails",
                 columns: table => new
                 {
-                    OrderDetailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderDetailID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Product = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -740,13 +715,12 @@ namespace JucarAutopartes.Migrations
                 name: "PriceHistories",
                 columns: table => new
                 {
-                    PriceHistoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PriceHistoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Value = table.Column<double>(type: "float", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -763,8 +737,7 @@ namespace JucarAutopartes.Migrations
                 name: "BillDetails",
                 columns: table => new
                 {
-                    BillDetailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BillDetailID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ItemNumber = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     UnitValue = table.Column<double>(type: "float", maxLength: 10, nullable: false),
@@ -773,8 +746,8 @@ namespace JucarAutopartes.Migrations
                     TotalValue = table.Column<double>(type: "float", maxLength: 10, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    BillID = table.Column<int>(type: "int", nullable: false)
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BillID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -797,12 +770,11 @@ namespace JucarAutopartes.Migrations
                 name: "WayToPays",
                 columns: table => new
                 {
-                    WayToPayID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WayToPayID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     WayToPayName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BillID = table.Column<int>(type: "int", nullable: false)
+                    BillID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -819,8 +791,7 @@ namespace JucarAutopartes.Migrations
                 name: "Streets",
                 columns: table => new
                 {
-                    StreetID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StreetID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StreetType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StreetNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Sufix = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
@@ -828,7 +799,7 @@ namespace JucarAutopartes.Migrations
                     SecondNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NeighborhoodID = table.Column<int>(type: "int", nullable: false)
+                    NeighborhoodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -845,14 +816,13 @@ namespace JucarAutopartes.Migrations
                 name: "Shelvings",
                 columns: table => new
                 {
-                    ShelvingID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ShelvingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ShelvingNumber = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     ProductType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InventoryID = table.Column<int>(type: "int", nullable: false),
-                    ShelfID = table.Column<int>(type: "int", nullable: false)
+                    InventoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ShelfID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -875,8 +845,7 @@ namespace JucarAutopartes.Migrations
                 name: "DiscountHistories",
                 columns: table => new
                 {
-                    DiscountHistoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DiscountHistoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DiscountRate = table.Column<double>(type: "float", nullable: false),
                     TemporalValue = table.Column<double>(type: "float", nullable: false),
                     InitialDiscountDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -884,7 +853,7 @@ namespace JucarAutopartes.Migrations
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PriceHistoryID = table.Column<int>(type: "int", nullable: false)
+                    PriceHistoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -901,15 +870,14 @@ namespace JucarAutopartes.Migrations
                 name: "Addresses",
                 columns: table => new
                 {
-                    AddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AditionalInformation = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StreetID = table.Column<int>(type: "int", nullable: false),
-                    AddresseeID = table.Column<int>(type: "int", nullable: false),
-                    BuildingID = table.Column<int>(type: "int", nullable: false),
-                    AddressTypeID = table.Column<int>(type: "int", nullable: false)
+                    StreetID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddresseeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BuildingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressTypeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -944,13 +912,12 @@ namespace JucarAutopartes.Migrations
                 name: "CustomerAddresses",
                 columns: table => new
                 {
-                    CustomerAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -973,13 +940,12 @@ namespace JucarAutopartes.Migrations
                 name: "FactoryAddresses",
                 columns: table => new
                 {
-                    FactoryAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    FactoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1002,13 +968,12 @@ namespace JucarAutopartes.Migrations
                 name: "ProviderAddresses",
                 columns: table => new
                 {
-                    ProviderAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProviderID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    ProviderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1031,13 +996,12 @@ namespace JucarAutopartes.Migrations
                 name: "UserAddresses",
                 columns: table => new
                 {
-                    UserAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1129,6 +1093,11 @@ namespace JucarAutopartes.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_CustomerAddresses_CustomerID",
                 table: "CustomerAddresses",
+                column: "CustomerID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CustomerPhones_CustomerID",
+                table: "CustomerPhones",
                 column: "CustomerID");
 
             migrationBuilder.CreateIndex(

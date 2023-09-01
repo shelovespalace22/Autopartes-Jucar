@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StockID { get; set; }
+        public Guid StockID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la cantidad disponible!")]
         [MaxLength(3)]
@@ -63,7 +63,7 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        public int RawMaterialID { get; set; }
+        public Guid RawMaterialID { get; set; }
         public RawMaterial? RawMaterial { get; set; }
     }
 }

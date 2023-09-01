@@ -13,7 +13,7 @@ namespace Entities.Models.Users
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserPhoneID { get; set; }
+        public Guid UserPhoneID { get; set; }
 
         [Required(ErrorMessage = "¡Escoga una opción de tipo de teléfono!")]
         [DisplayName("Tipo Teléfono")]

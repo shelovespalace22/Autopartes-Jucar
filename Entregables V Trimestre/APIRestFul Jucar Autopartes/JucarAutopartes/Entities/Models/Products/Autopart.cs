@@ -14,7 +14,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AutopartID { get; set; }
+        public Guid AutopartID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la autoparte!")]
         [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
@@ -77,7 +77,7 @@ namespace Entities.Models.Products
         //Relaciones con otros modelos
 
         //Subcategory
-        public int SubcategoryID { get; set; }
+        public Guid SubcategoryID { get; set; }
 
         [DisplayName("Subcategoría")]
         public Subcategory? Subcategory { get; set; }
