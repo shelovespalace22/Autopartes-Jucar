@@ -26,6 +26,7 @@ namespace Repository
         {
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
         }
 
         /* Factories */

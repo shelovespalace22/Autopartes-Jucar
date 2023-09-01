@@ -17,37 +17,37 @@ namespace Repository.Configuration
             (
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 1,
                     Name = "PIN"
                 },
 
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 2,
                     Name = "ARANDELA"
                 },
 
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 3,
                     Name = "LAINA"
                 },
 
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 4,
                     Name = "EMPAQUE CARNAZA"
                 },
 
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 5,
                     Name = "TELEFONO CAUCHO"
                 },
 
                 new Category
                 {
-                    CategoryID = Guid.NewGuid(),
+                    CategoryID = 6,
                     Name = "MEDIA LUNA"
                 }
             );
