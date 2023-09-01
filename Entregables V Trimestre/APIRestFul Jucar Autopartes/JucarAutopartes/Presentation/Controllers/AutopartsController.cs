@@ -20,17 +20,9 @@ namespace Presentation.Controllers
         [HttpGet]
         public IActionResult GetAutoparts()
         {
-            try
-            {
-                var autoparts = _service.AutopartService.GetAllAutoparts(trackChanges: false);
+            var autoparts = _service.AutopartService.GetAllAutoparts(trackChanges: false);
 
-                return Ok(autoparts);
-            }
-            catch
-            {
-
-                return StatusCode(500, "Internal server error");
-            }
+            return Ok(autoparts);
         }
     }
 }

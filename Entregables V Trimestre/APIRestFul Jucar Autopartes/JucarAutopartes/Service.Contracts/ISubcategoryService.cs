@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Models.Products;
+using Shared.DataTransferObjects;
 
 namespace Service.Contracts
 {
     public interface ISubcategoryService
     {
-        IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges);
+        IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
     }
 }

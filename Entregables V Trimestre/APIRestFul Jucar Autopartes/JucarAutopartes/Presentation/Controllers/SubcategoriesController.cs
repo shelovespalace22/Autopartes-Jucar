@@ -20,17 +20,9 @@ namespace Presentation.Controllers
         [HttpGet]
         public IActionResult GetSubcategories()
         {
-            try
-            {
-                var subcategories = _service.SubcategoryService.GetAllSubcategories(trackChanges: false);
+            var subcategories = _service.SubcategoryService.GetAllSubcategories(trackChanges: false);
 
-                return Ok(subcategories);
-            }
-            catch
-            {
-
-                return StatusCode(500, "Internal server error");
-            }
+            return Ok(subcategories);
         }
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Contracts;
 using Entities.Models.Products;
 using Service.Contracts;
+using Shared.DataTransferObjects;
 
 namespace Service
 {
@@ -13,27 +15,22 @@ namespace Service
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
+        private readonly IMapper _mapper;
 
-        public CategoryService(IRepositoryManager repository, ILoggerManager logger)
+        public CategoryService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
+            _mapper = mapper;
         }
 
-        public IEnumerable<Category> GetAllCategories(bool trackChanges)
+        public IEnumerable<CategoryDto> GetAllCategories(bool trackChanges)
         {
-            try
-            {
-                var categories = _repository.Category.GetAllCategories(trackChanges);
-                return categories;
-            }
-            catch (Exception ex)
-            {
+            var categories = _repository.Category.GetAllCategories(trackChanges);
 
-                _logger.LogError($"Something went wrong in the {nameof(GetAllCategories)} service method {ex} ");
+            var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories);
 
-                throw;
-            }
+            return categoriesDto;
         }
 
     }
