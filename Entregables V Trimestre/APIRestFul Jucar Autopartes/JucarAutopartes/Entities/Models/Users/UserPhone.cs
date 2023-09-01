@@ -43,7 +43,7 @@ namespace Entities.Models.Users
 
         //Relaciones con otros modelos 
 
-        public string? UserID { get; set; }
+        //public string? UserId { get; set; }
         public User? User { get; set; }
 
     }

@@ -6,11 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Models.Sales;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models.Users
 {
     public class User
     {
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el tipo de documento!")]
         [MaxLength(50)]
