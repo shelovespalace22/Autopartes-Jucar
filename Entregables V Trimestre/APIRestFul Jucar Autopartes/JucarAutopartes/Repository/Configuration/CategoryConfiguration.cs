@@ -10,47 +10,47 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Repository.Configuration
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
-    {
+    { 
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasData
             (
                 new Category
                 {
-                    CategoryID = 1,
+                    CategoryID = Guid.NewGuid(),
                     Name = "PIN"
                 },
 
                 new Category
                 {
-                    CategoryID = 2,
+                    CategoryID = Guid.NewGuid(),
                     Name = "ARANDELA"
                 },
 
                 new Category
                 {
-                    CategoryID = 3,
+                    CategoryID = Guid.NewGuid(),
                     Name = "LAINA"
                 },
 
                 new Category
                 {
-                    CategoryID = 4,
+                    CategoryID = Guid.NewGuid(),
                     Name = "EMPAQUE CARNAZA"
                 },
 
                 new Category
                 {
-                    CategoryID = 5,
+                    CategoryID = Guid.NewGuid(),
                     Name = "TELEFONO CAUCHO"
                 },
 
                 new Category
                 {
-                    CategoryID = 6,
+                    CategoryID = Guid.NewGuid(),
                     Name = "MEDIA LUNA"
                 }
             );
-        }
+        } 
     }
 }

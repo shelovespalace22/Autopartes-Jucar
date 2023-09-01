@@ -13,7 +13,7 @@ namespace Entities.Models.Users
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PositionID { get; set; }
+        public Guid PositionID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre del cargo!")]
         [DisplayName("Nombre Cargo")]

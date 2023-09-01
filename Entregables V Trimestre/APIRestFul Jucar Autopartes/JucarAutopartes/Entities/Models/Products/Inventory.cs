@@ -14,7 +14,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int InventoryID { get; set; }
+        public Guid InventoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la cantidad disponible del producto!")]
         [MaxLength(3)]
@@ -42,7 +42,7 @@ namespace Entities.Models.Products
 
         //Autopart
 
-        public int AutopartID { get; set; }
+        public Guid AutopartID { get; set; }
         public Autopart? Autopart { get; set; }
 
         //Shelving

@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerPhoneID { get; set; }
+        public Guid CustomerPhoneID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el tipo de teléfono!")]
         [MaxLength(30)]
@@ -42,5 +42,12 @@ namespace Entities.Models.Sales
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
         }
+
+        //Relaciones con otros modelos 
+
+        //Customer 
+
+        public Guid CustomerID { get; set; }
+        public Customer? Customer { get; set; }
     }
 }

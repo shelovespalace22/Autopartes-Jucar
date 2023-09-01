@@ -17,7 +17,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AddressID { get; set; }
+        public Guid AddressID { get; set; }
 
         [MaxLength(200)]
         [RegularExpression("^[A-Za-z\\s]+$")]
@@ -60,22 +60,22 @@ namespace Entities.Models.Ubications
 
         //Street
 
-        public int StreetID { get; set; }
+        public Guid StreetID { get; set; }
         public Street? Street { get; set; }
 
         //Addressee
 
-        public int AddresseeID { get; set; }
+        public Guid AddresseeID { get; set; }
         public Addressee? Addressee { get; set; }
 
         //Building
 
-        public int BuildingID { get; set; }
+        public Guid BuildingID { get; set; }
         public Building? Building { get; set; }
 
         //AddressType
 
-        public int AddressTypeID { get; set; }
+        public Guid AddressTypeID { get; set; }
         public AddressType? AddressType { get; set; }
     }
 }

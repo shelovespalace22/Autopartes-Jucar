@@ -13,7 +13,7 @@ namespace Entities.Models.Factories
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int FactoryID { get; set; }
+        public Guid FactoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el numero NIT!")]
         [MaxLength(9)]

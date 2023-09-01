@@ -24,11 +24,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.Factory", b =>
                 {
-                    b.Property<int>("FactoryID")
+                    b.Property<Guid>("FactoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactoryID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BusinessName")
                         .IsRequired()
@@ -60,20 +58,18 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.FactoryAddress", b =>
                 {
-                    b.Property<int>("FactoryAddressID")
+                    b.Property<Guid>("FactoryAddressID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactoryAddressID"));
-
-                    b.Property<int>("AddressID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FactoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("FactoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -92,17 +88,15 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.FactoryPhone", b =>
                 {
-                    b.Property<int>("FactoryPhoneID")
+                    b.Property<Guid>("FactoryPhoneID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FactoryPhoneID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FactoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("FactoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -124,11 +118,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.Shelf", b =>
                 {
-                    b.Property<int>("ShelfID")
+                    b.Property<Guid>("ShelfID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShelfID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -166,8 +158,8 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
-                    b.Property<int>("WarehouseID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("WarehouseID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ShelfID");
 
@@ -178,17 +170,15 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.Shelving", b =>
                 {
-                    b.Property<int>("ShelvingID")
+                    b.Property<Guid>("ShelvingID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShelvingID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InventoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("InventoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -198,8 +188,8 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("ShelfID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ShelfID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ShelvingNumber")
                         .IsRequired()
@@ -217,17 +207,15 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Factories.Warehouse", b =>
                 {
-                    b.Property<int>("WarehouseID")
+                    b.Property<Guid>("WarehouseID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WarehouseID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FactoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("FactoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -249,11 +237,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
                 {
-                    b.Property<int>("AutopartID")
+                    b.Property<Guid>("AutopartID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutopartID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -282,8 +268,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
-                    b.Property<int>("SubcategoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("SubcategoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("VehicleZone")
                         .IsRequired()
@@ -299,160 +285,16 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("SubcategoryID");
 
                     b.ToTable("Autoparts");
-
-                    b.HasData(
-                        new
-                        {
-                            AutopartID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4822),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4823),
-                            Name = "PIN CRUCETA 334",
-                            State = true,
-                            SubcategoryID = 1,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4828),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4828),
-                            Name = "PIN TUERCA HOUSING 950 PLANO",
-                            State = true,
-                            SubcategoryID = 2,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4831),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4832),
-                            Name = "PIN DISCO QUINTA RUEDA",
-                            State = true,
-                            SubcategoryID = 3,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 4,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4834),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4834),
-                            Name = "PIN LEVA 1 1/4",
-                            State = true,
-                            SubcategoryID = 4,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 5,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4837),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4837),
-                            Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
-                            State = true,
-                            SubcategoryID = 5,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 6,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4839),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4840),
-                            Name = "ARANDELA LEVA 3/4",
-                            State = true,
-                            SubcategoryID = 6,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 7,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4843),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4843),
-                            Name = "LAINA SPLINDER NPR",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 8,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4846),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4846),
-                            Name = "LAINA SPLINDER KENWORTH",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 9,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4849),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4849),
-                            Name = "LAINA SPLINDER HINO FC 500",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 10,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4853),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4853),
-                            Name = "LAINA SPLINDER NISSAN MT 3000",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.AutopartMaterial", b =>
                 {
-                    b.Property<int>("AutopartMaterialID")
+                    b.Property<Guid>("AutopartMaterialID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutopartMaterialID"));
-
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -460,8 +302,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("RawMaterialID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RawMaterialID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("AutopartMaterialID");
 
@@ -474,11 +316,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<Guid>("CategoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -501,49 +341,49 @@ namespace JucarAutopartes.Migrations
                     b.HasData(
                         new
                         {
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3488),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3502),
+                            CategoryID = new Guid("1ddb1b04-b87e-4a48-b997-79357cd39669"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9786),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9830),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
-                            CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3506),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3506),
+                            CategoryID = new Guid("0ae5b20f-564c-4186-8ce8-11f80369a94a"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9862),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9863),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3508),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3508),
+                            CategoryID = new Guid("2bbbd7a7-eb2e-4354-9efe-aeea69dae563"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9865),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9866),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = 4,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3510),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3511),
+                            CategoryID = new Guid("584aa268-9449-4730-9279-f88f6e45d739"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9868),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9869),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = 5,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3513),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3514),
+                            CategoryID = new Guid("57ae325e-cd5d-4cfc-be8c-5ffb026001c9"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9885),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9886),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
-                            CategoryID = 6,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3515),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3516),
+                            CategoryID = new Guid("0ed5cd10-b1a9-4fed-beab-738d6cd50e44"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9888),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9889),
                             Name = "MEDIA LUNA",
                             State = true
                         });
@@ -551,11 +391,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.DiscountHistory", b =>
                 {
-                    b.Property<int>("DiscountHistoryID")
+                    b.Property<Guid>("DiscountHistoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiscountHistoryID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -572,8 +410,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PriceHistoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PriceHistoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("State")
                         .HasColumnType("bit");
@@ -590,14 +428,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
                 {
-                    b.Property<int>("InventoryID")
+                    b.Property<Guid>("InventoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventoryID"));
-
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -620,19 +456,17 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Loss", b =>
                 {
-                    b.Property<int>("LossID")
+                    b.Property<Guid>("LossID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LossID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AmountLoss")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -667,11 +501,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Movement", b =>
                 {
-                    b.Property<int>("MovementID")
+                    b.Property<Guid>("MovementID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MovementID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -692,8 +524,8 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
-                    b.Property<int>("RawMaterialID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RawMaterialID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("MovementID");
 
@@ -704,14 +536,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.PriceHistory", b =>
                 {
-                    b.Property<int>("PriceHistoryID")
+                    b.Property<Guid>("PriceHistoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceHistoryID"));
-
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -734,11 +564,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.RawMaterial", b =>
                 {
-                    b.Property<int>("RawMaterialID")
+                    b.Property<Guid>("RawMaterialID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RawMaterialID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -766,11 +594,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
                 {
-                    b.Property<int>("StockID")
+                    b.Property<Guid>("StockID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -798,8 +624,8 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
-                    b.Property<int>("RawMaterialID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RawMaterialID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ReorderPoint")
                         .IsRequired()
@@ -815,14 +641,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Products.Subcategory", b =>
                 {
-                    b.Property<int>("SubcategoryID")
+                    b.Property<Guid>("SubcategoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubcategoryID"));
-
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CategoryID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -847,64 +671,64 @@ namespace JucarAutopartes.Migrations
                     b.HasData(
                         new
                         {
-                            SubcategoryID = 1,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4269),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4271),
+                            SubcategoryID = new Guid("0965157a-9da8-4f9e-8ca2-f692b30dbe05"),
+                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(605),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(608),
                             Name = "PIN CRUCETA",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 2,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4296),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4297),
+                            SubcategoryID = new Guid("07bb7e86-05e3-4815-9e89-81976d902938"),
+                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(640),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(641),
                             Name = "PIN TUERCA",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 3,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4298),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4299),
+                            SubcategoryID = new Guid("7aa3fe83-92ff-4c8a-ad67-5452117d824b"),
+                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
                             Name = "PIN DISCO",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 4,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4300),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4301),
+                            SubcategoryID = new Guid("1df165e9-cd41-448e-b143-77c32e895087"),
+                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(710),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(711),
                             Name = "PIN LEVA",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 5,
-                            CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4302),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4303),
+                            SubcategoryID = new Guid("85f0b298-b551-450b-9961-1e019e13a679"),
+                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(714),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(715),
                             Name = "ARANDELA CACHO",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 6,
-                            CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4305),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4305),
+                            SubcategoryID = new Guid("7f1ad2af-9341-4b54-bb13-bce52110de80"),
+                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
                             Name = "ARANDELA LEVA",
                             State = true
                         },
                         new
                         {
-                            SubcategoryID = 7,
-                            CategoryID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4306),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4307),
+                            SubcategoryID = new Guid("c4564044-3f5d-47b0-8c15-a5d36d6c946a"),
+                            CategoryID = new Guid("655a812b-f7b0-42cc-b438-8d06ece10291"),
+                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(729),
+                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(730),
                             Name = "LAINA SPLINDER",
                             State = true
                         });
@@ -912,11 +736,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>
                 {
-                    b.Property<int>("ProviderID")
+                    b.Property<Guid>("ProviderID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -951,14 +773,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderAddress", b =>
                 {
-                    b.Property<int>("ProviderAddressID")
+                    b.Property<Guid>("ProviderAddressID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderAddressID"));
-
-                    b.Property<int>("AddressID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -966,8 +786,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProviderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProviderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("State")
                         .HasColumnType("bit");
@@ -983,11 +803,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderPhone", b =>
                 {
-                    b.Property<int>("ProviderPhoneID")
+                    b.Property<Guid>("ProviderPhoneID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderPhoneID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1005,8 +823,8 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("ProviderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProviderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ProviderPhoneID");
 
@@ -1017,11 +835,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.Bill", b =>
                 {
-                    b.Property<int>("BillID")
+                    b.Property<Guid>("BillID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BillID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1051,16 +867,16 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SalesInvoiceNumber")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("BillID");
 
@@ -1074,17 +890,15 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.BillDetail", b =>
                 {
-                    b.Property<int>("BillDetailID")
+                    b.Property<Guid>("BillDetailID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BillDetailID"));
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BillID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BillID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1129,11 +943,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.Contribution", b =>
                 {
-                    b.Property<int>("ContributionID")
+                    b.Property<Guid>("ContributionID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContributionID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("AmountPaid")
                         .HasMaxLength(5)
@@ -1148,11 +960,11 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("PaymentMethodID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PaymentMethodID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ContributionID");
 
@@ -1165,11 +977,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.Customer", b =>
                 {
-                    b.Property<int>("CustomerID")
+                    b.Property<Guid>("CustomerID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1196,20 +1006,18 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerAddress", b =>
                 {
-                    b.Property<int>("CustomerAddressID")
+                    b.Property<Guid>("CustomerAddressID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerAddressID"));
-
-                    b.Property<int>("AddressID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CustomerID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -1228,14 +1036,15 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerPhone", b =>
                 {
-                    b.Property<int>("CustomerPhoneID")
+                    b.Property<Guid>("CustomerPhoneID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerPhoneID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CustomerID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -1252,22 +1061,22 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("CustomerPhoneID");
 
+                    b.HasIndex("CustomerID");
+
                     b.ToTable("CustomerPhones");
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Order", b =>
                 {
-                    b.Property<int>("OrderID")
+                    b.Property<Guid>("OrderID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CustomerID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -1289,14 +1098,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.OrderDetail", b =>
                 {
-                    b.Property<int>("OrderDetailID")
+                    b.Property<Guid>("OrderDetailID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"));
-
-                    b.Property<int>("AutopartID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AutopartID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1304,8 +1111,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Product")
                         .IsRequired()
@@ -1328,11 +1135,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.PaymentMethod", b =>
                 {
-                    b.Property<int>("PaymentMethodID")
+                    b.Property<Guid>("PaymentMethodID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentMethodID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1355,14 +1160,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.WayToPay", b =>
                 {
-                    b.Property<int>("WayToPayID")
+                    b.Property<Guid>("WayToPayID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WayToPayID"));
-
-                    b.Property<int>("BillID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BillID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1385,24 +1188,22 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Address", b =>
                 {
-                    b.Property<int>("AddressID")
+                    b.Property<Guid>("AddressID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddressID"));
+                    b.Property<Guid>("AddressTypeID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AddressTypeID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AddresseeID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddresseeID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AditionalInformation")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("BuildingID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("BuildingID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1410,8 +1211,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("StreetID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StreetID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("AddressID");
 
@@ -1428,11 +1229,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.AddressType", b =>
                 {
-                    b.Property<int>("AddressTypeID")
+                    b.Property<Guid>("AddressTypeID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddressTypeID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1452,11 +1251,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Addressee", b =>
                 {
-                    b.Property<int>("AddresseeID")
+                    b.Property<Guid>("AddresseeID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AddresseeID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1498,11 +1295,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Building", b =>
                 {
-                    b.Property<int>("BuildingID")
+                    b.Property<Guid>("BuildingID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BuildingID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BuildingNumber")
                         .IsRequired()
@@ -1527,11 +1322,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Department", b =>
                 {
-                    b.Property<int>("DepartmentID")
+                    b.Property<Guid>("DepartmentID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Capital")
                         .IsRequired()
@@ -1556,11 +1349,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Municipality", b =>
                 {
-                    b.Property<int>("MunicipalityID")
+                    b.Property<Guid>("MunicipalityID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MunicipalityID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Capital")
                         .HasColumnType("bit");
@@ -1568,8 +1359,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DepartmentID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DepartmentID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -1588,11 +1379,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
                 {
-                    b.Property<int>("NeighborhoodID")
+                    b.Property<Guid>("NeighborhoodID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NeighborhoodID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1600,8 +1389,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("MunicipalityID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("MunicipalityID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1617,11 +1406,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Street", b =>
                 {
-                    b.Property<int>("StreetID")
+                    b.Property<Guid>("StreetID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StreetID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1634,8 +1421,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("NeighborhoodID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("NeighborhoodID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SecondNumber")
                         .IsRequired()
@@ -1664,11 +1451,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Users.Position", b =>
                 {
-                    b.Property<int>("PositionID")
+                    b.Property<Guid>("PositionID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PositionID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1690,11 +1475,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Users.User", b =>
                 {
-                    b.Property<int>("UserID")
+                    b.Property<Guid>("UserID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BirthCity")
                         .IsRequired()
@@ -1758,14 +1541,12 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Users.UserAddress", b =>
                 {
-                    b.Property<int>("UserAddressID")
+                    b.Property<Guid>("UserAddressID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserAddressID"));
-
-                    b.Property<int>("AddressID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AddressID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1776,8 +1557,8 @@ namespace JucarAutopartes.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserAddressID");
 
@@ -1790,11 +1571,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Users.UserPhone", b =>
                 {
-                    b.Property<int>("UserPhoneID")
+                    b.Property<Guid>("UserPhoneID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserPhoneID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1810,8 +1589,8 @@ namespace JucarAutopartes.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserPhoneID");
 
@@ -1822,11 +1601,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Users.UserPosition", b =>
                 {
-                    b.Property<int>("UserPositionID")
+                    b.Property<Guid>("UserPositionID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserPositionID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1834,11 +1611,11 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PositionID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("PositionID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserPositionID");
 
@@ -2234,6 +2011,17 @@ namespace JucarAutopartes.Migrations
                         .IsRequired();
 
                     b.Navigation("Address");
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Entities.Models.Sales.CustomerPhone", b =>
+                {
+                    b.HasOne("Entities.Models.Sales.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
                 });
