@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -11,9 +12,11 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230901030203_DatosCategory")]
+    partial class DatosCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -299,148 +302,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("SubcategoryID");
 
                     b.ToTable("Autoparts");
-
-                    b.HasData(
-                        new
-                        {
-                            AutopartID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4822),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4823),
-                            Name = "PIN CRUCETA 334",
-                            State = true,
-                            SubcategoryID = 1,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4828),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4828),
-                            Name = "PIN TUERCA HOUSING 950 PLANO",
-                            State = true,
-                            SubcategoryID = 2,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4831),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4832),
-                            Name = "PIN DISCO QUINTA RUEDA",
-                            State = true,
-                            SubcategoryID = 3,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 4,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4834),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4834),
-                            Name = "PIN LEVA 1 1/4",
-                            State = true,
-                            SubcategoryID = 4,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 5,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4837),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4837),
-                            Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
-                            State = true,
-                            SubcategoryID = 5,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 6,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4839),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4840),
-                            Name = "ARANDELA LEVA 3/4",
-                            State = true,
-                            SubcategoryID = 6,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 7,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4843),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4843),
-                            Name = "LAINA SPLINDER NPR",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 8,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4846),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4846),
-                            Name = "LAINA SPLINDER KENWORTH",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 9,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4849),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4849),
-                            Name = "LAINA SPLINDER HINO FC 500",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        },
-                        new
-                        {
-                            AutopartID = 10,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4853),
-                            Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4853),
-                            Name = "LAINA SPLINDER NISSAN MT 3000",
-                            State = true,
-                            SubcategoryID = 7,
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.AutopartMaterial", b =>
@@ -502,48 +363,48 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3488),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3502),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3239),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3312),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
                             CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3506),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3506),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3320),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3320),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
                             CategoryID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3508),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3508),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3322),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3323),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
                             CategoryID = 4,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3510),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3511),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3324),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3325),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
                             CategoryID = 5,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3513),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3514),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3326),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3327),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
                             CategoryID = 6,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3515),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(3516),
+                            CreationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3328),
+                            ModificationDate = new DateTime(2023, 8, 31, 22, 2, 3, 413, DateTimeKind.Local).AddTicks(3329),
                             Name = "MEDIA LUNA",
                             State = true
                         });
@@ -843,71 +704,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Subcategories");
-
-                    b.HasData(
-                        new
-                        {
-                            SubcategoryID = 1,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4269),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4271),
-                            Name = "PIN CRUCETA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 2,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4296),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4297),
-                            Name = "PIN TUERCA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 3,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4298),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4299),
-                            Name = "PIN DISCO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 4,
-                            CategoryID = 1,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4300),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4301),
-                            Name = "PIN LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 5,
-                            CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4302),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4303),
-                            Name = "ARANDELA CACHO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 6,
-                            CategoryID = 2,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4305),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4305),
-                            Name = "ARANDELA LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = 7,
-                            CategoryID = 3,
-                            CreationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4306),
-                            ModificationDate = new DateTime(2023, 8, 31, 22, 27, 23, 427, DateTimeKind.Local).AddTicks(4307),
-                            Name = "LAINA SPLINDER",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>

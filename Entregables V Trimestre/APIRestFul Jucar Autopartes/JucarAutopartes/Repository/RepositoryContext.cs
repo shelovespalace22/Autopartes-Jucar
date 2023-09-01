@@ -10,6 +10,7 @@ using Entities.Models.Sales;
 using Entities.Models.Ubications;
 using Entities.Models.Users;
 using Microsoft.EntityFrameworkCore;
+using Repository.Configuration;
 
 namespace Repository
 {
@@ -19,6 +20,13 @@ namespace Repository
             :base(options)
         {
             
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
         }
 
         /* Factories */
