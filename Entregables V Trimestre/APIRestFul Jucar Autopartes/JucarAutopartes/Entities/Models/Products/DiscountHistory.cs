@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid DiscountHistoryID { get; set; }
+        public int DiscountHistoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el porcentaje de descuento!")]
         [RegularExpression("^[0-9]+$")]
@@ -54,7 +54,7 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        public Guid PriceHistoryID { get; set; }
+        public int PriceHistoryID { get; set; }
         public PriceHistory? PriceHistory { get; set; }
     }
 }

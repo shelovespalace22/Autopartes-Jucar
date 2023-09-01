@@ -12,8 +12,8 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230901151640_DataSubcategories")]
-    partial class DataSubcategories
+    [Migration("20230901173858_CreationDatabase")]
+    partial class CreationDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -340,56 +340,6 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryID = new Guid("1ddb1b04-b87e-4a48-b997-79357cd39669"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9786),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9830),
-                            Name = "PIN",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("0ae5b20f-564c-4186-8ce8-11f80369a94a"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9862),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9863),
-                            Name = "ARANDELA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("2bbbd7a7-eb2e-4354-9efe-aeea69dae563"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9865),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9866),
-                            Name = "LAINA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("584aa268-9449-4730-9279-f88f6e45d739"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9868),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9869),
-                            Name = "EMPAQUE CARNAZA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("57ae325e-cd5d-4cfc-be8c-5ffb026001c9"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9885),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9886),
-                            Name = "TELEFONO CAUCHO",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("0ed5cd10-b1a9-4fed-beab-738d6cd50e44"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9888),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9889),
-                            Name = "MEDIA LUNA",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.DiscountHistory", b =>
@@ -670,71 +620,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Subcategories");
-
-                    b.HasData(
-                        new
-                        {
-                            SubcategoryID = new Guid("0965157a-9da8-4f9e-8ca2-f692b30dbe05"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(605),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(608),
-                            Name = "PIN CRUCETA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("07bb7e86-05e3-4815-9e89-81976d902938"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(640),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(641),
-                            Name = "PIN TUERCA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("7aa3fe83-92ff-4c8a-ad67-5452117d824b"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
-                            Name = "PIN DISCO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("1df165e9-cd41-448e-b143-77c32e895087"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(710),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(711),
-                            Name = "PIN LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("85f0b298-b551-450b-9961-1e019e13a679"),
-                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(714),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(715),
-                            Name = "ARANDELA CACHO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("7f1ad2af-9341-4b54-bb13-bce52110de80"),
-                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
-                            Name = "ARANDELA LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("c4564044-3f5d-47b0-8c15-a5d36d6c946a"),
-                            CategoryID = new Guid("655a812b-f7b0-42cc-b438-8d06ece10291"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(729),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(730),
-                            Name = "LAINA SPLINDER",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>

@@ -13,7 +13,7 @@ namespace Entities.Models.Factories
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ShelfID { get; set; }
+        public int ShelfID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número!")]
         [MaxLength(3)]
@@ -75,7 +75,7 @@ namespace Entities.Models.Factories
 
         //Warehouse
 
-        public Guid WarehouseID { get; set; }
+        public int WarehouseID { get; set; }
         public Warehouse? Warehouse { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Repository.Configuration
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
-    { 
+    {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasData
@@ -51,6 +51,6 @@ namespace Repository.Configuration
                     Name = "MEDIA LUNA"
                 }
             );
-        } 
+        }
     }
 }

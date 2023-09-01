@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid AddressTypeID { get; set; }
+        public int AddressTypeID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el tipo de dirección!")]
         [MaxLength(50)]

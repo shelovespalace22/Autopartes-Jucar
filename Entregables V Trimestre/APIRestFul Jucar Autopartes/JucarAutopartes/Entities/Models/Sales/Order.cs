@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid OrderID { get; set; }
+        public int OrderID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el lugar del pedido!")]
         [MaxLength(50)]
@@ -46,7 +46,7 @@ namespace Entities.Models.Sales
 
         //Customer
 
-        public Guid CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public Customer? Customer { get; set; }
 
         //OrderDetail

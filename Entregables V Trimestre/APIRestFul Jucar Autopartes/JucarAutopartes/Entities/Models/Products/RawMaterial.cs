@@ -14,7 +14,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid RawMaterialID { get; set; }
+        public int RawMaterialID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la Materia Prima!")]
         [MaxLength(50)]

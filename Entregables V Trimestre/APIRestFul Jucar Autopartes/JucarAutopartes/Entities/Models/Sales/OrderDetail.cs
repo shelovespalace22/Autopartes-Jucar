@@ -14,7 +14,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid OrderDetailID { get; set; }
+        public int OrderDetailID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el producto solicitado!")]
         [MaxLength(50)]
@@ -48,12 +48,12 @@ namespace Entities.Models.Sales
 
         //Autopart
 
-        public Guid AutopartID { get; set; }
+        public int AutopartID { get; set; }
         public Autopart? Autopart { get; set; }
 
         //OrderDetail
 
-        public Guid OrderID { get; set; }
+        public int OrderID { get; set; }
         public Order? Order { get; set; }
     }
 }

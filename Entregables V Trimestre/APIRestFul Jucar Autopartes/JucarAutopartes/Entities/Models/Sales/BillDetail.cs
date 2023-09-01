@@ -14,7 +14,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid BillDetailID { get; set; }
+        public int BillDetailID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el número del item!")]
         [MaxLength(2)]
@@ -70,12 +70,12 @@ namespace Entities.Models.Sales
         //Relaciones con otros modelos
 
         //Autopart
-        public Guid AutopartID { get; set; }
+        public int AutopartID { get; set; }
         public Autopart? Autopart { get; set; }
 
         //Bill
 
-        public Guid BillID { get; set; }
+        public int BillID { get; set; }
         public Bill? Bill { get; set; }
     }
 }

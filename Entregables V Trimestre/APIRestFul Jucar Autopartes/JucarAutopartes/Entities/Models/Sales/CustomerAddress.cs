@@ -15,7 +15,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid CustomerAddressID { get; set; }
+        public int CustomerAddressID { get; set; }
 
         [Required]
         [DisplayName("Estado")]
@@ -41,12 +41,12 @@ namespace Entities.Models.Sales
 
         //Customer 
 
-        public Guid CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public Customer? Customer { get; set; }
 
         //Address
 
-        public Guid AddressID { get; set; }
+        public int AddressID { get; set; }
         public Address? Address { get; set; }
     }
 }
