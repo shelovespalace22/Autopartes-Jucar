@@ -20,5 +20,9 @@ namespace Repository
             FindAll(trackChanges)
             .OrderBy(c => c.Name)
             .ToList();
+
+        public Subcategory GetSubcategory(int subcategoryId, bool trackChanges) =>
+            FindByCondition(s => s.SubcategoryID.Equals(subcategoryId), trackChanges)
+            .SingleOrDefault();
     }
 }

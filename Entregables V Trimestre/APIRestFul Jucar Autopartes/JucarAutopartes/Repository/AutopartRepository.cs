@@ -20,5 +20,9 @@ namespace Repository
             FindAll(trackChanges)
             .OrderBy(c => c.Name)
             .ToList();
+
+        public Autopart GetAutopart(int autopartId, bool trackChanges) =>
+            FindByCondition(a => a.AutopartID.Equals(autopartId), trackChanges)
+            .SingleOrDefault();
     }
 }

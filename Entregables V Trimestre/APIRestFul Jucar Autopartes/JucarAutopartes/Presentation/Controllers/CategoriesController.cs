@@ -26,5 +26,13 @@ namespace Presentation.Controllers
 
             return Ok(categories);
         }
+
+        [HttpGet("{id:int}", Name = "categotyById")]
+        public IActionResult GetCategory(int companyId)
+        {
+            var category = _service.CategoryService.GetCategory(companyId, trackChanges: false);
+
+            return Ok(category);
+        }
     }
 }

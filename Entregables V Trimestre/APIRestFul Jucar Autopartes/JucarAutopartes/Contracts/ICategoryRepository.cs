@@ -10,5 +10,7 @@ namespace Contracts
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories(bool trackChanges);
+
+        Category GetCategory(int categoryId, bool trackChanges);
     }
 }
