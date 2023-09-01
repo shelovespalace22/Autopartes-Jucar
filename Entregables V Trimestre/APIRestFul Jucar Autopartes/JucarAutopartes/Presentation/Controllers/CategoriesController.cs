@@ -27,10 +27,10 @@ namespace Presentation.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("{id:int}", Name = "categotyById")]
-        public IActionResult GetCategory(int companyId)
+        [HttpGet("{id:int}")]
+        public IActionResult GetCategory(int id)
         {
-            var category = _service.CategoryService.GetCategory(companyId, trackChanges: false);
+            var category = _service.CategoryService.GetCategory(id, trackChanges: false);
 
             return Ok(category);
         }
