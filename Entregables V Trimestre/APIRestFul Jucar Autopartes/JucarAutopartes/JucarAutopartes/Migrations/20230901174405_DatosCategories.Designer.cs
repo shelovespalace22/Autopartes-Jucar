@@ -12,8 +12,8 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230901145102_DataCategories")]
-    partial class DataCategories
+    [Migration("20230901174405_DatosCategories")]
+    partial class DatosCategories
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -344,49 +344,49 @@ namespace JucarAutopartes.Migrations
                     b.HasData(
                         new
                         {
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9766),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9845),
+                            CategoryID = new Guid("b9aeaff4-3070-4222-8c80-996f4077d6ee"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7485),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7499),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9877),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9877),
+                            CategoryID = new Guid("eabf6ea8-6d8f-4852-b267-54850987a246"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7521),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7521),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("655a812b-f7b0-42cc-b438-8d06ece10291"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9880),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9881),
+                            CategoryID = new Guid("bced38bb-809e-405b-ac09-9a472c3d694d"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7523),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7523),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("f063d736-8543-4fc5-b571-f1295e0e9ea0"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9883),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9884),
+                            CategoryID = new Guid("84bbabc8-ac5a-4947-803e-cb6de7fefa46"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7524),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7524),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("14f34865-27aa-478f-bbf5-e4c33aa6c4a7"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9886),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9887),
+                            CategoryID = new Guid("7188d63b-d793-4172-9b6e-80ed770a2f30"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7526),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7526),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("e0ce962a-a844-4b9e-ae36-d00ccd6c8dfa"),
-                            CreationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9889),
-                            ModificationDate = new DateTime(2023, 9, 1, 9, 51, 1, 662, DateTimeKind.Local).AddTicks(9890),
+                            CategoryID = new Guid("43481b37-96ed-46cd-9b6a-219a608d5ec4"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7527),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7527),
                             Name = "MEDIA LUNA",
                             State = true
                         });

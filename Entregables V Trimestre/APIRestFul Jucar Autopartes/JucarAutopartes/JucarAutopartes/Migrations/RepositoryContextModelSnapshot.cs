@@ -53,7 +53,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("FactoryID");
 
-                    b.ToTable("Factories");
+                    b.ToTable("Factories", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Factories.FactoryAddress", b =>
@@ -83,7 +83,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("FactoryID");
 
-                    b.ToTable("FactoryAddresses");
+                    b.ToTable("FactoryAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Factories.FactoryPhone", b =>
@@ -113,7 +113,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("FactoryID");
 
-                    b.ToTable("FactoryPhones");
+                    b.ToTable("FactoryPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Factories.Shelf", b =>
@@ -165,7 +165,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("WarehouseID");
 
-                    b.ToTable("Shelves");
+                    b.ToTable("Shelves", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Factories.Shelving", b =>
@@ -202,7 +202,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("ShelfID");
 
-                    b.ToTable("Shelvings");
+                    b.ToTable("Shelvings", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Factories.Warehouse", b =>
@@ -232,7 +232,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("FactoryID");
 
-                    b.ToTable("Warehouses");
+                    b.ToTable("Warehouses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
@@ -284,7 +284,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("SubcategoryID");
 
-                    b.ToTable("Autoparts");
+                    b.ToTable("Autoparts", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.AutopartMaterial", b =>
@@ -311,7 +311,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("RawMaterialID");
 
-                    b.ToTable("AutopartMaterials");
+                    b.ToTable("AutopartMaterials", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
@@ -336,54 +336,54 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
                         {
-                            CategoryID = new Guid("1ddb1b04-b87e-4a48-b997-79357cd39669"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9786),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9830),
+                            CategoryID = new Guid("b9aeaff4-3070-4222-8c80-996f4077d6ee"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7485),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7499),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("0ae5b20f-564c-4186-8ce8-11f80369a94a"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9862),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9863),
+                            CategoryID = new Guid("eabf6ea8-6d8f-4852-b267-54850987a246"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7521),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7521),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("2bbbd7a7-eb2e-4354-9efe-aeea69dae563"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9865),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9866),
+                            CategoryID = new Guid("bced38bb-809e-405b-ac09-9a472c3d694d"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7523),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7523),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("584aa268-9449-4730-9279-f88f6e45d739"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9868),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9869),
+                            CategoryID = new Guid("84bbabc8-ac5a-4947-803e-cb6de7fefa46"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7524),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7524),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("57ae325e-cd5d-4cfc-be8c-5ffb026001c9"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9885),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9886),
+                            CategoryID = new Guid("7188d63b-d793-4172-9b6e-80ed770a2f30"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7526),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7526),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
-                            CategoryID = new Guid("0ed5cd10-b1a9-4fed-beab-738d6cd50e44"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9888),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 557, DateTimeKind.Local).AddTicks(9889),
+                            CategoryID = new Guid("43481b37-96ed-46cd-9b6a-219a608d5ec4"),
+                            CreationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7527),
+                            ModificationDate = new DateTime(2023, 9, 1, 12, 44, 5, 627, DateTimeKind.Local).AddTicks(7527),
                             Name = "MEDIA LUNA",
                             State = true
                         });
@@ -423,7 +423,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("PriceHistoryID");
 
-                    b.ToTable("DiscountHistories");
+                    b.ToTable("DiscountHistories", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
@@ -451,7 +451,7 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("AutopartID")
                         .IsUnique();
 
-                    b.ToTable("Inventories");
+                    b.ToTable("Inventories", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Loss", b =>
@@ -496,7 +496,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("AutopartID");
 
-                    b.ToTable("Losses");
+                    b.ToTable("Losses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Movement", b =>
@@ -531,7 +531,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("RawMaterialID");
 
-                    b.ToTable("Movements");
+                    b.ToTable("Movements", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.PriceHistory", b =>
@@ -559,7 +559,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("AutopartID");
 
-                    b.ToTable("PriceHistories");
+                    b.ToTable("PriceHistories", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.RawMaterial", b =>
@@ -589,7 +589,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("RawMaterialID");
 
-                    b.ToTable("RawMaterials");
+                    b.ToTable("RawMaterials", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
@@ -636,7 +636,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("RawMaterialID");
 
-                    b.ToTable("Stocks");
+                    b.ToTable("Stocks", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Subcategory", b =>
@@ -666,72 +666,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Subcategories");
-
-                    b.HasData(
-                        new
-                        {
-                            SubcategoryID = new Guid("0965157a-9da8-4f9e-8ca2-f692b30dbe05"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(605),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(608),
-                            Name = "PIN CRUCETA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("07bb7e86-05e3-4815-9e89-81976d902938"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(640),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(641),
-                            Name = "PIN TUERCA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("7aa3fe83-92ff-4c8a-ad67-5452117d824b"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(705),
-                            Name = "PIN DISCO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("1df165e9-cd41-448e-b143-77c32e895087"),
-                            CategoryID = new Guid("7aa51602-6cfa-4b17-b1b8-853f0e0388c6"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(710),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(711),
-                            Name = "PIN LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("85f0b298-b551-450b-9961-1e019e13a679"),
-                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(714),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(715),
-                            Name = "ARANDELA CACHO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("7f1ad2af-9341-4b54-bb13-bce52110de80"),
-                            CategoryID = new Guid("b78ff6fb-eeea-4685-940e-5aa3b2de64f1"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(719),
-                            Name = "ARANDELA LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("c4564044-3f5d-47b0-8c15-a5d36d6c946a"),
-                            CategoryID = new Guid("655a812b-f7b0-42cc-b438-8d06ece10291"),
-                            CreationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(729),
-                            ModificationDate = new DateTime(2023, 9, 1, 10, 16, 39, 558, DateTimeKind.Local).AddTicks(730),
-                            Name = "LAINA SPLINDER",
-                            State = true
-                        });
+                    b.ToTable("Subcategories", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>
@@ -764,7 +699,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("ProviderID");
 
-                    b.ToTable("Providers");
+                    b.ToTable("Providers", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Provider");
 
@@ -798,7 +733,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("ProviderID");
 
-                    b.ToTable("ProviderAddresses");
+                    b.ToTable("ProviderAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderPhone", b =>
@@ -830,7 +765,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("ProviderID");
 
-                    b.ToTable("ProviderPhones");
+                    b.ToTable("ProviderPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Bill", b =>
@@ -885,7 +820,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Bills");
+                    b.ToTable("Bills", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.BillDetail", b =>
@@ -938,7 +873,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("BillID");
 
-                    b.ToTable("BillDetails");
+                    b.ToTable("BillDetails", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Contribution", b =>
@@ -972,7 +907,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("PaymentMethodID");
 
-                    b.ToTable("Contributions");
+                    b.ToTable("Contributions", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Customer", b =>
@@ -997,7 +932,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Customer");
 
@@ -1031,7 +966,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("CustomerAddresses");
+                    b.ToTable("CustomerAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerPhone", b =>
@@ -1063,7 +998,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("CustomerPhones");
+                    b.ToTable("CustomerPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Order", b =>
@@ -1093,7 +1028,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.OrderDetail", b =>
@@ -1130,7 +1065,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("OrderID");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.PaymentMethod", b =>
@@ -1155,7 +1090,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("PaymentMethodID");
 
-                    b.ToTable("PaymentMethods");
+                    b.ToTable("PaymentMethods", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.WayToPay", b =>
@@ -1183,7 +1118,7 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("BillID")
                         .IsUnique();
 
-                    b.ToTable("WayToPays");
+                    b.ToTable("WayToPays", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Address", b =>
@@ -1224,7 +1159,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("StreetID");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.AddressType", b =>
@@ -1246,7 +1181,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("AddressTypeID");
 
-                    b.ToTable("AddressTypes");
+                    b.ToTable("AddressTypes", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Addressee", b =>
@@ -1290,7 +1225,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("AddresseeID");
 
-                    b.ToTable("Addressees");
+                    b.ToTable("Addressees", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Building", b =>
@@ -1317,7 +1252,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("BuildingID");
 
-                    b.ToTable("Buildings");
+                    b.ToTable("Buildings", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Department", b =>
@@ -1344,7 +1279,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("DepartmentID");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Municipality", b =>
@@ -1374,7 +1309,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("DepartmentID");
 
-                    b.ToTable("Municipalities");
+                    b.ToTable("Municipalities", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
@@ -1401,7 +1336,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("MunicipalityID");
 
-                    b.ToTable("Neighborhoods");
+                    b.ToTable("Neighborhoods", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Street", b =>
@@ -1446,7 +1381,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("NeighborhoodID");
 
-                    b.ToTable("Streets");
+                    b.ToTable("Streets", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.Position", b =>
@@ -1470,7 +1405,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("PositionID");
 
-                    b.ToTable("Positions");
+                    b.ToTable("Positions", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.User", b =>
@@ -1536,7 +1471,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("UserID");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.UserAddress", b =>
@@ -1566,7 +1501,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("UserAddresses");
+                    b.ToTable("UserAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.UserPhone", b =>
@@ -1596,7 +1531,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("UserPhones");
+                    b.ToTable("UserPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.UserPosition", b =>
@@ -1623,7 +1558,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("UserPositions");
+                    b.ToTable("UserPositions", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.LegalProvider", b =>

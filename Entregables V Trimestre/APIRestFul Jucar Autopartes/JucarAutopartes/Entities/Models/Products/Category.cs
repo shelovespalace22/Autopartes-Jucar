@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid CategoryID { get; set; }
+        public int CategoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la categoría!")]
         [MaxLength(50)]

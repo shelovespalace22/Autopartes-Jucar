@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid AutopartMaterialID { get; set; }
+        public int AutopartMaterialID { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -35,12 +35,12 @@ namespace Entities.Models.Products
 
         //Autopart 
 
-        public Guid AutopartID { get; set; }
+        public int AutopartID { get; set; }
         public Autopart? Autopart { get; set; }
 
         //RawMaterial
 
-        public Guid RawMaterialID { get; set; }
+        public int RawMaterialID { get; set; }
         public RawMaterial? RawMaterial { get; set; }
     }
 }

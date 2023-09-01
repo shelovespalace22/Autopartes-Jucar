@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid LossID { get; set; }
+        public int LossID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la cantidad perdida!")]
         [MaxLength(5)]
@@ -61,7 +61,7 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        public Guid AutopartID { get; set; }
+        public int AutopartID { get; set; }
         public Autopart? Autopart { get; set; }
     }
 }

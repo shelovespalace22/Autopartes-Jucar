@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid PaymentMethodID { get; set; }
+        public int PaymentMethodID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre del metodo de pago!")]
         [MaxLength(50)]

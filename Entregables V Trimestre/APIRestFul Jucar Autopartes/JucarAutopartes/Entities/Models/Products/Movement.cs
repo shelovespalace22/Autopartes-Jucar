@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid MovementID { get; set; }
+        public int MovementID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la cantidad del movimiento!")]
         [MaxLength(3)]
@@ -49,7 +49,7 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        public Guid RawMaterialID { get; set; }
+        public int RawMaterialID { get; set; }
 
         [DisplayName("Materia Prima")]
         public RawMaterial? RawMaterial { get; set; }

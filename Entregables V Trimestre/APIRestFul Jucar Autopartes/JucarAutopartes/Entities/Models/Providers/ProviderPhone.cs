@@ -13,7 +13,7 @@ namespace Entities.Models.Providers
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ProviderPhoneID { get; set; }
+        public int ProviderPhoneID { get; set; }
 
         [Required(ErrorMessage = "¡Escoga el tipo de teléfono!")]
         [MaxLength(20)]
@@ -46,7 +46,7 @@ namespace Entities.Models.Providers
 
         //Relaciones con otros modelos
 
-        public Guid ProviderID { get; set; }
+        public int ProviderID { get; set; }
         public Provider? Provider { get; set; }
     }
 }

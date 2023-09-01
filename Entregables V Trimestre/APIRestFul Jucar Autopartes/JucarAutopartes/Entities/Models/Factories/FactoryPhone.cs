@@ -14,7 +14,7 @@ namespace Entities.Models.Factories
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid FactoryPhoneID { get; set; }
+        public int FactoryPhoneID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el tipo de teléfono!")]
         [DisplayName("Tipo de Teléfono")]
@@ -42,7 +42,7 @@ namespace Entities.Models.Factories
 
         //Relaciones con otros modelos
 
-        public Guid FactoryID { get; set; }
+        public int FactoryID { get; set; }
         public Factory? Factory { get; set; }
     }
 }

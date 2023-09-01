@@ -13,7 +13,7 @@ namespace Entities.Models.Providers
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ProviderID { get; set; }
+        public int ProviderID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese un correo electrónico!")]
         [EmailAddress(ErrorMessage = "¡Ingrese una cuenta de correo electrónico válida!")]

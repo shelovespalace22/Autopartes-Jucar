@@ -14,7 +14,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid NeighborhoodID { get; set; }
+        public int NeighborhoodID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el nombre del barrio!")]
         [MaxLength(50)]
@@ -42,7 +42,7 @@ namespace Entities.Models.Ubications
 
         //Municipality
 
-        public Guid MunicipalityID { get; set; }
+        public int MunicipalityID { get; set; }
         public Municipality? Municipality { get; set; }
 
         //Stret

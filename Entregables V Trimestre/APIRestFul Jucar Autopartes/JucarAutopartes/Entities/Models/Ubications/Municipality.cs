@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid MunicipalityID { get; set; }
+        public int MunicipalityID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el nombre del municipio!")]
         [MaxLength(50)]
@@ -45,7 +45,7 @@ namespace Entities.Models.Ubications
 
         //Department
 
-        public Guid DepartmentID { get; set; }
+        public int DepartmentID { get; set; }
         public Department? Department { get; set; }
 
         //Neighborhood

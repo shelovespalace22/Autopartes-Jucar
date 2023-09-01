@@ -15,7 +15,7 @@ namespace Entities.Models.Users
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid UserID { get; set; }
+        public int UserID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el tipo de documento!")]
         [MaxLength(50)]
