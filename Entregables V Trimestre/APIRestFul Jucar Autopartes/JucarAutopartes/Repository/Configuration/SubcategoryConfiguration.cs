@@ -10,64 +10,58 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Repository.Configuration
 {
     public class SubcategoryConfiguration : IEntityTypeConfiguration<Subcategory>
-    {
-        private readonly RepositoryContext _repositoryContext;
-
-        public SubcategoryConfiguration(RepositoryContext repositoryContext)
-        {
-            _repositoryContext = repositoryContext;
-        }
+    { 
         public void Configure(EntityTypeBuilder<Subcategory> builder)
         {
             builder.HasData
             (
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 1,
                     Name = "PIN CRUCETA",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "PIN").CategoryID
+                    CategoryID = 1
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 2,
                     Name = "PIN TUERCA",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "PIN").CategoryID
+                    CategoryID = 1
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 3,
                     Name = "PIN DISCO",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "PIN").CategoryID
+                    CategoryID = 1
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 4,
                     Name = "PIN LEVA",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "PIN").CategoryID
+                    CategoryID = 1
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 5,
                     Name = "ARANDELA CACHO",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "ARANDELA").CategoryID
+                    CategoryID = 2
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 6,
                     Name = "ARANDELA LEVA",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "ARANDELA").CategoryID
+                    CategoryID = 2
                 },
 
                 new Subcategory
                 {
-                    SubcategoryID = Guid.NewGuid(),
+                    SubcategoryID = 7,
                     Name = "LAINA SPLINDER",
-                    CategoryID = _repositoryContext.Categories.Single(c => c.Name == "LAINA").CategoryID
+                    CategoryID = 3 
                 }
             );
         }
