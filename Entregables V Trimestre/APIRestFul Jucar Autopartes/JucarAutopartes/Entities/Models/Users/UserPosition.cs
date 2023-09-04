@@ -13,7 +13,7 @@ namespace Entities.Models.Users
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserPositionID { get; set; }
+        public Guid UserPositionID { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -35,11 +35,11 @@ namespace Entities.Models.Users
         //Relaciones con otros modelos 
 
         //User
-        //public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public User? User { get; set; }
 
         //Position
-        public int PositionID { get; set; }
+        public Guid PositionID { get; set; }
         public Position? Position { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ContributionID { get; set; }
+        public Guid ContributionID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el monto aportado!")]
         [MaxLength(5)]
@@ -45,12 +45,12 @@ namespace Entities.Models.Sales
 
         //PaymentMethod
 
-        public int PaymentMethodID { get; set; }
+        public Guid PaymentMethodId { get; set; }
         public PaymentMethod? PaymentMethod { get; set; }
 
         //Order
 
-        public int OrderID { get; set; }
+        public Guid OrderId { get; set; }
         public Order? Order { get; set; }
     }
 }

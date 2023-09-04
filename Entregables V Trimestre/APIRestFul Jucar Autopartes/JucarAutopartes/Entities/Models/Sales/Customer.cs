@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerID { get; set; }
+        public Guid CustomerID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese un correo electónico!")]
         [EmailAddress(ErrorMessage = "¡Ingrese una cuenta de correo válida!")]

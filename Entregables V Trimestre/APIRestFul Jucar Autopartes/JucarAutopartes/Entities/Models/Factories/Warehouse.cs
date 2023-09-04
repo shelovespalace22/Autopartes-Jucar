@@ -13,7 +13,7 @@ namespace Entities.Models.Factories
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int WarehouseID { get; set; }
+        public Guid WarehouseID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el nombre de la bodega!")]
         [MaxLength(50)]
@@ -46,7 +46,7 @@ namespace Entities.Models.Factories
 
         //Factory
 
-        public int FactoryID { get; set; }
+        public Guid FactoryId { get; set; }
         public Factory? Factory { get; set; }
 
         //Shelf 

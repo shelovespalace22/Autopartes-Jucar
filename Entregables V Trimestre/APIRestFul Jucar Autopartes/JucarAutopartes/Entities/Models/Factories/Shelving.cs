@@ -14,7 +14,7 @@ namespace Entities.Models.Factories
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ShelvingID { get; set; }
+        public Guid ShelvingID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el número de la estanteria!")]
         [MaxLength(3)]
@@ -48,12 +48,12 @@ namespace Entities.Models.Factories
 
         //Inventory 
 
-        public int InventoryID { get; set; }
+        public Guid InventoryId { get; set; }
         public Inventory? Inventory { get; set; }
 
         //Shelf
 
-        public int ShelfID { get; set; }
+        public Guid ShelfId { get; set; }
         public Shelf? Shelf { get; set; }
 
     }

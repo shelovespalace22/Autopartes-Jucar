@@ -15,7 +15,7 @@ namespace Entities.Models.Users
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserAddressID { get; set; }
+        public Guid UserAddressID { get; set; }
 
         [Required]
         [DisplayName("Estado")]
@@ -41,12 +41,12 @@ namespace Entities.Models.Users
 
         //User
 
-        //public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public User? User { get; set; }
 
         //Address
 
-        public int AddressID { get; set; }
+        public Guid AddressId { get; set; }
         public Address? Address { get; set; }
     }
 }

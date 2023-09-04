@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StreetID { get; set; }
+        public Guid StreetID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el tipo de calle!")]
         [DisplayName("Tipo de Calle")]
@@ -62,7 +62,7 @@ namespace Entities.Models.Ubications
 
         //Neighborhood
 
-        public int NeighborhoodID { get; set; }
+        public Guid NeighborhoodId { get; set; }
         public Neighborhood? Neighborhood { get; set; }
 
         //Address

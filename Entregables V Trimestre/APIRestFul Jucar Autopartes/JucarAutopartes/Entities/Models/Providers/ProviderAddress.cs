@@ -14,7 +14,7 @@ namespace Entities.Models.Providers
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProviderAddressID { get; set; }
+        public Guid ProviderAddressID { get; set; }
 
         [Required]
         [DisplayName("Estado")]
@@ -40,12 +40,12 @@ namespace Entities.Models.Providers
 
         //Provider
 
-        public int ProviderID { get; set; }
+        public Guid ProviderId { get; set; }
         public Provider? Provider { get; set; }
 
         //Address
 
-        public int AddressID { get; set; }
+        public Guid AddressId { get; set; }
         public Address? Address { get; set; }
     }
 }

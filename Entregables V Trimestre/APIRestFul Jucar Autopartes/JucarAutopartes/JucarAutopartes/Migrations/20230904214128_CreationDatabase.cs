@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JucarAutopartes.Migrations
 {
     /// <inheritdoc />
-    public partial class CreatingDatabase : Migration
+    public partial class CreationDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,8 +15,7 @@ namespace JucarAutopartes.Migrations
                 name: "Addressees",
                 columns: table => new
                 {
-                    AddresseeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddresseeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SecondName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     FirstSurname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -35,8 +34,7 @@ namespace JucarAutopartes.Migrations
                 name: "AddressTypes",
                 columns: table => new
                 {
-                    AddressTypeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddressTypeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -50,8 +48,7 @@ namespace JucarAutopartes.Migrations
                 name: "Buildings",
                 columns: table => new
                 {
-                    BuildingID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BuildingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BuildingType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     BuildingNumber = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -66,8 +63,7 @@ namespace JucarAutopartes.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -82,8 +78,7 @@ namespace JucarAutopartes.Migrations
                 name: "Customers",
                 columns: table => new
                 {
-                    CustomerID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -106,8 +101,7 @@ namespace JucarAutopartes.Migrations
                 name: "Departments",
                 columns: table => new
                 {
-                    DepartmentID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DepartmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Capital = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -122,8 +116,7 @@ namespace JucarAutopartes.Migrations
                 name: "Factories",
                 columns: table => new
                 {
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     NIT = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     BusinessName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -140,8 +133,7 @@ namespace JucarAutopartes.Migrations
                 name: "PaymentMethods",
                 columns: table => new
                 {
-                    PaymentMethodID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PaymentMethodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PaymentMethodName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -156,8 +148,7 @@ namespace JucarAutopartes.Migrations
                 name: "Positions",
                 columns: table => new
                 {
-                    PositionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PositionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -172,8 +163,7 @@ namespace JucarAutopartes.Migrations
                 name: "Providers",
                 columns: table => new
                 {
-                    ProviderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
@@ -199,8 +189,7 @@ namespace JucarAutopartes.Migrations
                 name: "RawMaterials",
                 columns: table => new
                 {
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RawMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
@@ -216,8 +205,7 @@ namespace JucarAutopartes.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DocumentType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DocumentNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -241,20 +229,19 @@ namespace JucarAutopartes.Migrations
                 name: "Subcategories",
                 columns: table => new
                 {
-                    SubcategoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SubcategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CategoryID = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Subcategories", x => x.SubcategoryID);
                     table.ForeignKey(
-                        name: "FK_Subcategories_Categories_CategoryID",
-                        column: x => x.CategoryID,
+                        name: "FK_Subcategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -264,20 +251,19 @@ namespace JucarAutopartes.Migrations
                 name: "CustomerPhones",
                 columns: table => new
                 {
-                    CustomerPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", nullable: false)
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerPhones", x => x.CustomerPhoneID);
                     table.ForeignKey(
-                        name: "FK_CustomerPhones_Customers_CustomerID",
-                        column: x => x.CustomerID,
+                        name: "FK_CustomerPhones_Customers_CustomerId",
+                        column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "CustomerID",
                         onDelete: ReferentialAction.Cascade);
@@ -287,20 +273,19 @@ namespace JucarAutopartes.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    OrderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Place = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", nullable: false)
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.OrderID);
                     table.ForeignKey(
-                        name: "FK_Orders_Customers_CustomerID",
-                        column: x => x.CustomerID,
+                        name: "FK_Orders_Customers_CustomerId",
+                        column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "CustomerID",
                         onDelete: ReferentialAction.Cascade);
@@ -310,20 +295,19 @@ namespace JucarAutopartes.Migrations
                 name: "Municipalities",
                 columns: table => new
                 {
-                    MunicipalityID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MunicipalityID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Capital = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DepartmentID = table.Column<int>(type: "int", nullable: false)
+                    DepartmentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Municipalities", x => x.MunicipalityID);
                     table.ForeignKey(
-                        name: "FK_Municipalities_Departments_DepartmentID",
-                        column: x => x.DepartmentID,
+                        name: "FK_Municipalities_Departments_DepartmentId",
+                        column: x => x.DepartmentId,
                         principalTable: "Departments",
                         principalColumn: "DepartmentID",
                         onDelete: ReferentialAction.Cascade);
@@ -333,20 +317,19 @@ namespace JucarAutopartes.Migrations
                 name: "FactoryPhones",
                 columns: table => new
                 {
-                    FactoryPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
+                    FactoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FactoryPhones", x => x.FactoryPhoneID);
                     table.ForeignKey(
-                        name: "FK_FactoryPhones_Factories_FactoryID",
-                        column: x => x.FactoryID,
+                        name: "FK_FactoryPhones_Factories_FactoryId",
+                        column: x => x.FactoryId,
                         principalTable: "Factories",
                         principalColumn: "FactoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -356,20 +339,19 @@ namespace JucarAutopartes.Migrations
                 name: "Warehouses",
                 columns: table => new
                 {
-                    WarehouseID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WarehouseID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false)
+                    FactoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Warehouses", x => x.WarehouseID);
                     table.ForeignKey(
-                        name: "FK_Warehouses_Factories_FactoryID",
-                        column: x => x.FactoryID,
+                        name: "FK_Warehouses_Factories_FactoryId",
+                        column: x => x.FactoryId,
                         principalTable: "Factories",
                         principalColumn: "FactoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -379,20 +361,19 @@ namespace JucarAutopartes.Migrations
                 name: "ProviderPhones",
                 columns: table => new
                 {
-                    ProviderPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProviderID = table.Column<int>(type: "int", nullable: false)
+                    ProviderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProviderPhones", x => x.ProviderPhoneID);
                     table.ForeignKey(
-                        name: "FK_ProviderPhones_Providers_ProviderID",
-                        column: x => x.ProviderID,
+                        name: "FK_ProviderPhones_Providers_ProviderId",
+                        column: x => x.ProviderId,
                         principalTable: "Providers",
                         principalColumn: "ProviderID",
                         onDelete: ReferentialAction.Cascade);
@@ -402,21 +383,20 @@ namespace JucarAutopartes.Migrations
                 name: "Movements",
                 columns: table => new
                 {
-                    MovementID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MovementID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     MovementType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     MovementDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    RawMaterialId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Movements", x => x.MovementID);
                     table.ForeignKey(
-                        name: "FK_Movements_RawMaterials_RawMaterialID",
-                        column: x => x.RawMaterialID,
+                        name: "FK_Movements_RawMaterials_RawMaterialId",
+                        column: x => x.RawMaterialId,
                         principalTable: "RawMaterials",
                         principalColumn: "RawMaterialID",
                         onDelete: ReferentialAction.Cascade);
@@ -426,8 +406,7 @@ namespace JucarAutopartes.Migrations
                 name: "Stocks",
                 columns: table => new
                 {
-                    StockID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StockID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     QuantityAvailable = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     InitialStock = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     ReorderPoint = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
@@ -435,14 +414,14 @@ namespace JucarAutopartes.Migrations
                     MaximumInventory = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    RawMaterialId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Stocks", x => x.StockID);
                     table.ForeignKey(
-                        name: "FK_Stocks_RawMaterials_RawMaterialID",
-                        column: x => x.RawMaterialID,
+                        name: "FK_Stocks_RawMaterials_RawMaterialId",
+                        column: x => x.RawMaterialId,
                         principalTable: "RawMaterials",
                         principalColumn: "RawMaterialID",
                         onDelete: ReferentialAction.Cascade);
@@ -452,34 +431,33 @@ namespace JucarAutopartes.Migrations
                 name: "UserPhones",
                 columns: table => new
                 {
-                    UserPhoneID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserPhoneID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserPhones", x => x.UserPhoneID);
                     table.ForeignKey(
-                        name: "FK_UserPhones_Users_UserID",
-                        column: x => x.UserID,
+                        name: "FK_UserPhones_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserID");
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "UserPositions",
                 columns: table => new
                 {
-                    UserPositionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserPositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true),
-                    PositionID = table.Column<int>(type: "int", nullable: false)
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PositionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -494,15 +472,15 @@ namespace JucarAutopartes.Migrations
                         name: "FK_UserPositions_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
-                        principalColumn: "UserID");
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Autoparts",
                 columns: table => new
                 {
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AutopartID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     WeightKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
@@ -512,14 +490,14 @@ namespace JucarAutopartes.Migrations
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SubcategoryID = table.Column<int>(type: "int", nullable: false)
+                    SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Autoparts", x => x.AutopartID);
                     table.ForeignKey(
-                        name: "FK_Autoparts_Subcategories_SubcategoryID",
-                        column: x => x.SubcategoryID,
+                        name: "FK_Autoparts_Subcategories_SubcategoryId",
+                        column: x => x.SubcategoryId,
                         principalTable: "Subcategories",
                         principalColumn: "SubcategoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -529,8 +507,7 @@ namespace JucarAutopartes.Migrations
                 name: "Bills",
                 columns: table => new
                 {
-                    BillID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BillID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SalesInvoiceNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Customer = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DocumentNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -539,15 +516,15 @@ namespace JucarAutopartes.Migrations
                     Observation = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true)
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bills", x => x.BillID);
                     table.ForeignKey(
-                        name: "FK_Bills_Orders_OrderID",
-                        column: x => x.OrderID,
+                        name: "FK_Bills_Orders_OrderId",
+                        column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderID",
                         onDelete: ReferentialAction.Cascade);
@@ -562,27 +539,26 @@ namespace JucarAutopartes.Migrations
                 name: "Contributions",
                 columns: table => new
                 {
-                    ContributionID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContributionID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AmountPaid = table.Column<double>(type: "float", maxLength: 5, nullable: false),
                     ContributionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentMethodID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false)
+                    PaymentMethodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contributions", x => x.ContributionID);
                     table.ForeignKey(
-                        name: "FK_Contributions_Orders_OrderID",
-                        column: x => x.OrderID,
+                        name: "FK_Contributions_Orders_OrderId",
+                        column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Contributions_PaymentMethods_PaymentMethodID",
-                        column: x => x.PaymentMethodID,
+                        name: "FK_Contributions_PaymentMethods_PaymentMethodId",
+                        column: x => x.PaymentMethodId,
                         principalTable: "PaymentMethods",
                         principalColumn: "PaymentMethodID",
                         onDelete: ReferentialAction.Cascade);
@@ -592,19 +568,18 @@ namespace JucarAutopartes.Migrations
                 name: "Neighborhoods",
                 columns: table => new
                 {
-                    NeighborhoodID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NeighborhoodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MunicipalityID = table.Column<int>(type: "int", nullable: false)
+                    MunicipalityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Neighborhoods", x => x.NeighborhoodID);
                     table.ForeignKey(
-                        name: "FK_Neighborhoods_Municipalities_MunicipalityID",
-                        column: x => x.MunicipalityID,
+                        name: "FK_Neighborhoods_Municipalities_MunicipalityId",
+                        column: x => x.MunicipalityId,
                         principalTable: "Municipalities",
                         principalColumn: "MunicipalityID",
                         onDelete: ReferentialAction.Cascade);
@@ -614,8 +589,7 @@ namespace JucarAutopartes.Migrations
                 name: "Shelves",
                 columns: table => new
                 {
-                    ShelfID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ShelfID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ShelfNumber = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     Material = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -624,14 +598,14 @@ namespace JucarAutopartes.Migrations
                     MaxCapacityKgs = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    WarehouseID = table.Column<int>(type: "int", nullable: false)
+                    WarehouseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shelves", x => x.ShelfID);
                     table.ForeignKey(
-                        name: "FK_Shelves_Warehouses_WarehouseID",
-                        column: x => x.WarehouseID,
+                        name: "FK_Shelves_Warehouses_WarehouseId",
+                        column: x => x.WarehouseId,
                         principalTable: "Warehouses",
                         principalColumn: "WarehouseID",
                         onDelete: ReferentialAction.Cascade);
@@ -641,25 +615,24 @@ namespace JucarAutopartes.Migrations
                 name: "AutopartMaterials",
                 columns: table => new
                 {
-                    AutopartMaterialID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AutopartMaterialID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    RawMaterialID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RawMaterialId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AutopartMaterials", x => x.AutopartMaterialID);
                     table.ForeignKey(
-                        name: "FK_AutopartMaterials_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_AutopartMaterials_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AutopartMaterials_RawMaterials_RawMaterialID",
-                        column: x => x.RawMaterialID,
+                        name: "FK_AutopartMaterials_RawMaterials_RawMaterialId",
+                        column: x => x.RawMaterialId,
                         principalTable: "RawMaterials",
                         principalColumn: "RawMaterialID",
                         onDelete: ReferentialAction.Cascade);
@@ -669,19 +642,18 @@ namespace JucarAutopartes.Migrations
                 name: "Inventories",
                 columns: table => new
                 {
-                    InventoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    InventoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     QuantityAvailable = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UltimateModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Inventories", x => x.InventoryID);
                     table.ForeignKey(
-                        name: "FK_Inventories_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_Inventories_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
@@ -691,8 +663,7 @@ namespace JucarAutopartes.Migrations
                 name: "Losses",
                 columns: table => new
                 {
-                    LossID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LossID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AmountLoss = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Responsible = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Place = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -700,14 +671,14 @@ namespace JucarAutopartes.Migrations
                     LossDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Losses", x => x.LossID);
                     table.ForeignKey(
-                        name: "FK_Losses_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_Losses_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
@@ -717,27 +688,26 @@ namespace JucarAutopartes.Migrations
                 name: "OrderDetails",
                 columns: table => new
                 {
-                    OrderDetailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderDetailID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Product = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrderDetails", x => x.OrderDetailID);
                     table.ForeignKey(
-                        name: "FK_OrderDetails_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_OrderDetails_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderDetails_Orders_OrderID",
-                        column: x => x.OrderID,
+                        name: "FK_OrderDetails_Orders_OrderId",
+                        column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderID",
                         onDelete: ReferentialAction.Cascade);
@@ -747,20 +717,19 @@ namespace JucarAutopartes.Migrations
                 name: "PriceHistories",
                 columns: table => new
                 {
-                    PriceHistoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PriceHistoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Value = table.Column<double>(type: "float", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PriceHistories", x => x.PriceHistoryID);
                     table.ForeignKey(
-                        name: "FK_PriceHistories_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_PriceHistories_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
@@ -770,8 +739,7 @@ namespace JucarAutopartes.Migrations
                 name: "BillDetails",
                 columns: table => new
                 {
-                    BillDetailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BillDetailID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ItemNumber = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     UnitValue = table.Column<double>(type: "float", maxLength: 10, nullable: false),
@@ -780,21 +748,21 @@ namespace JucarAutopartes.Migrations
                     TotalValue = table.Column<double>(type: "float", maxLength: 10, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AutopartID = table.Column<int>(type: "int", nullable: false),
-                    BillID = table.Column<int>(type: "int", nullable: false)
+                    AutopartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillDetails", x => x.BillDetailID);
                     table.ForeignKey(
-                        name: "FK_BillDetails_Autoparts_AutopartID",
-                        column: x => x.AutopartID,
+                        name: "FK_BillDetails_Autoparts_AutopartId",
+                        column: x => x.AutopartId,
                         principalTable: "Autoparts",
                         principalColumn: "AutopartID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BillDetails_Bills_BillID",
-                        column: x => x.BillID,
+                        name: "FK_BillDetails_Bills_BillId",
+                        column: x => x.BillId,
                         principalTable: "Bills",
                         principalColumn: "BillID",
                         onDelete: ReferentialAction.Cascade);
@@ -804,19 +772,18 @@ namespace JucarAutopartes.Migrations
                 name: "WayToPays",
                 columns: table => new
                 {
-                    WayToPayID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WayToPayID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     WayToPayName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BillID = table.Column<int>(type: "int", nullable: false)
+                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WayToPays", x => x.WayToPayID);
                     table.ForeignKey(
-                        name: "FK_WayToPays_Bills_BillID",
-                        column: x => x.BillID,
+                        name: "FK_WayToPays_Bills_BillId",
+                        column: x => x.BillId,
                         principalTable: "Bills",
                         principalColumn: "BillID",
                         onDelete: ReferentialAction.Cascade);
@@ -826,8 +793,7 @@ namespace JucarAutopartes.Migrations
                 name: "Streets",
                 columns: table => new
                 {
-                    StreetID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StreetID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StreetType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StreetNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Sufix = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
@@ -835,14 +801,14 @@ namespace JucarAutopartes.Migrations
                     SecondNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NeighborhoodID = table.Column<int>(type: "int", nullable: false)
+                    NeighborhoodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Streets", x => x.StreetID);
                     table.ForeignKey(
-                        name: "FK_Streets_Neighborhoods_NeighborhoodID",
-                        column: x => x.NeighborhoodID,
+                        name: "FK_Streets_Neighborhoods_NeighborhoodId",
+                        column: x => x.NeighborhoodId,
                         principalTable: "Neighborhoods",
                         principalColumn: "NeighborhoodID",
                         onDelete: ReferentialAction.Cascade);
@@ -852,27 +818,26 @@ namespace JucarAutopartes.Migrations
                 name: "Shelvings",
                 columns: table => new
                 {
-                    ShelvingID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ShelvingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ShelvingNumber = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     ProductType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InventoryID = table.Column<int>(type: "int", nullable: false),
-                    ShelfID = table.Column<int>(type: "int", nullable: false)
+                    InventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ShelfId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shelvings", x => x.ShelvingID);
                     table.ForeignKey(
-                        name: "FK_Shelvings_Inventories_InventoryID",
-                        column: x => x.InventoryID,
+                        name: "FK_Shelvings_Inventories_InventoryId",
+                        column: x => x.InventoryId,
                         principalTable: "Inventories",
                         principalColumn: "InventoryID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Shelvings_Shelves_ShelfID",
-                        column: x => x.ShelfID,
+                        name: "FK_Shelvings_Shelves_ShelfId",
+                        column: x => x.ShelfId,
                         principalTable: "Shelves",
                         principalColumn: "ShelfID",
                         onDelete: ReferentialAction.Cascade);
@@ -882,8 +847,7 @@ namespace JucarAutopartes.Migrations
                 name: "DiscountHistories",
                 columns: table => new
                 {
-                    DiscountHistoryID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DiscountHistoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DiscountRate = table.Column<double>(type: "float", nullable: false),
                     TemporalValue = table.Column<double>(type: "float", nullable: false),
                     InitialDiscountDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -891,14 +855,14 @@ namespace JucarAutopartes.Migrations
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PriceHistoryID = table.Column<int>(type: "int", nullable: false)
+                    PriceHistoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DiscountHistories", x => x.DiscountHistoryID);
                     table.ForeignKey(
-                        name: "FK_DiscountHistories_PriceHistories_PriceHistoryID",
-                        column: x => x.PriceHistoryID,
+                        name: "FK_DiscountHistories_PriceHistories_PriceHistoryId",
+                        column: x => x.PriceHistoryId,
                         principalTable: "PriceHistories",
                         principalColumn: "PriceHistoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -908,40 +872,39 @@ namespace JucarAutopartes.Migrations
                 name: "Addresses",
                 columns: table => new
                 {
-                    AddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AditionalInformation = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StreetID = table.Column<int>(type: "int", nullable: false),
-                    AddresseeID = table.Column<int>(type: "int", nullable: false),
-                    BuildingID = table.Column<int>(type: "int", nullable: false),
-                    AddressTypeID = table.Column<int>(type: "int", nullable: false)
+                    StreetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddresseeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BuildingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Addresses", x => x.AddressID);
                     table.ForeignKey(
-                        name: "FK_Addresses_AddressTypes_AddressTypeID",
-                        column: x => x.AddressTypeID,
+                        name: "FK_Addresses_AddressTypes_AddressTypeId",
+                        column: x => x.AddressTypeId,
                         principalTable: "AddressTypes",
                         principalColumn: "AddressTypeID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Addresses_Addressees_AddresseeID",
-                        column: x => x.AddresseeID,
+                        name: "FK_Addresses_Addressees_AddresseeId",
+                        column: x => x.AddresseeId,
                         principalTable: "Addressees",
                         principalColumn: "AddresseeID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Addresses_Buildings_BuildingID",
-                        column: x => x.BuildingID,
+                        name: "FK_Addresses_Buildings_BuildingId",
+                        column: x => x.BuildingId,
                         principalTable: "Buildings",
                         principalColumn: "BuildingID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Addresses_Streets_StreetID",
-                        column: x => x.StreetID,
+                        name: "FK_Addresses_Streets_StreetId",
+                        column: x => x.StreetId,
                         principalTable: "Streets",
                         principalColumn: "StreetID",
                         onDelete: ReferentialAction.Cascade);
@@ -951,26 +914,25 @@ namespace JucarAutopartes.Migrations
                 name: "CustomerAddresses",
                 columns: table => new
                 {
-                    CustomerAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerAddresses", x => x.CustomerAddressID);
                     table.ForeignKey(
-                        name: "FK_CustomerAddresses_Addresses_AddressID",
-                        column: x => x.AddressID,
+                        name: "FK_CustomerAddresses_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "AddressID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CustomerAddresses_Customers_CustomerID",
-                        column: x => x.CustomerID,
+                        name: "FK_CustomerAddresses_Customers_CustomerId",
+                        column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "CustomerID",
                         onDelete: ReferentialAction.Cascade);
@@ -980,26 +942,25 @@ namespace JucarAutopartes.Migrations
                 name: "FactoryAddresses",
                 columns: table => new
                 {
-                    FactoryAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FactoryAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FactoryID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    FactoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FactoryAddresses", x => x.FactoryAddressID);
                     table.ForeignKey(
-                        name: "FK_FactoryAddresses_Addresses_AddressID",
-                        column: x => x.AddressID,
+                        name: "FK_FactoryAddresses_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "AddressID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FactoryAddresses_Factories_FactoryID",
-                        column: x => x.FactoryID,
+                        name: "FK_FactoryAddresses_Factories_FactoryId",
+                        column: x => x.FactoryId,
                         principalTable: "Factories",
                         principalColumn: "FactoryID",
                         onDelete: ReferentialAction.Cascade);
@@ -1009,26 +970,25 @@ namespace JucarAutopartes.Migrations
                 name: "ProviderAddresses",
                 columns: table => new
                 {
-                    ProviderAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProviderAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProviderID = table.Column<int>(type: "int", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    ProviderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProviderAddresses", x => x.ProviderAddressID);
                     table.ForeignKey(
-                        name: "FK_ProviderAddresses_Addresses_AddressID",
-                        column: x => x.AddressID,
+                        name: "FK_ProviderAddresses_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "AddressID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProviderAddresses_Providers_ProviderID",
-                        column: x => x.ProviderID,
+                        name: "FK_ProviderAddresses_Providers_ProviderId",
+                        column: x => x.ProviderId,
                         principalTable: "Providers",
                         principalColumn: "ProviderID",
                         onDelete: ReferentialAction.Cascade);
@@ -1038,20 +998,19 @@ namespace JucarAutopartes.Migrations
                 name: "UserAddresses",
                 columns: table => new
                 {
-                    UserAddressID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserAddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: true),
-                    AddressID = table.Column<int>(type: "int", nullable: false)
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserAddresses", x => x.UserAddressID);
                     table.ForeignKey(
-                        name: "FK_UserAddresses_Addresses_AddressID",
-                        column: x => x.AddressID,
+                        name: "FK_UserAddresses_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "AddressID",
                         onDelete: ReferentialAction.Cascade);
@@ -1059,58 +1018,59 @@ namespace JucarAutopartes.Migrations
                         name: "FK_UserAddresses_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
-                        principalColumn: "UserID");
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_AddresseeID",
+                name: "IX_Addresses_AddresseeId",
                 table: "Addresses",
-                column: "AddresseeID");
+                column: "AddresseeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_AddressTypeID",
+                name: "IX_Addresses_AddressTypeId",
                 table: "Addresses",
-                column: "AddressTypeID");
+                column: "AddressTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_BuildingID",
+                name: "IX_Addresses_BuildingId",
                 table: "Addresses",
-                column: "BuildingID");
+                column: "BuildingId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_StreetID",
+                name: "IX_Addresses_StreetId",
                 table: "Addresses",
-                column: "StreetID");
+                column: "StreetId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AutopartMaterials_AutopartID",
+                name: "IX_AutopartMaterials_AutopartId",
                 table: "AutopartMaterials",
-                column: "AutopartID");
+                column: "AutopartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AutopartMaterials_RawMaterialID",
+                name: "IX_AutopartMaterials_RawMaterialId",
                 table: "AutopartMaterials",
-                column: "RawMaterialID");
+                column: "RawMaterialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Autoparts_SubcategoryID",
+                name: "IX_Autoparts_SubcategoryId",
                 table: "Autoparts",
-                column: "SubcategoryID");
+                column: "SubcategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BillDetails_AutopartID",
+                name: "IX_BillDetails_AutopartId",
                 table: "BillDetails",
-                column: "AutopartID");
+                column: "AutopartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BillDetails_BillID",
+                name: "IX_BillDetails_BillId",
                 table: "BillDetails",
-                column: "BillID");
+                column: "BillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bills_OrderID",
+                name: "IX_Bills_OrderId",
                 table: "Bills",
-                column: "OrderID",
+                column: "OrderId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -1119,145 +1079,145 @@ namespace JucarAutopartes.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contributions_OrderID",
+                name: "IX_Contributions_OrderId",
                 table: "Contributions",
-                column: "OrderID");
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contributions_PaymentMethodID",
+                name: "IX_Contributions_PaymentMethodId",
                 table: "Contributions",
-                column: "PaymentMethodID");
+                column: "PaymentMethodId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddresses_AddressID",
+                name: "IX_CustomerAddresses_AddressId",
                 table: "CustomerAddresses",
-                column: "AddressID");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CustomerAddresses_CustomerID",
+                name: "IX_CustomerAddresses_CustomerId",
                 table: "CustomerAddresses",
-                column: "CustomerID");
+                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CustomerPhones_CustomerID",
+                name: "IX_CustomerPhones_CustomerId",
                 table: "CustomerPhones",
-                column: "CustomerID");
+                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DiscountHistories_PriceHistoryID",
+                name: "IX_DiscountHistories_PriceHistoryId",
                 table: "DiscountHistories",
-                column: "PriceHistoryID");
+                column: "PriceHistoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FactoryAddresses_AddressID",
+                name: "IX_FactoryAddresses_AddressId",
                 table: "FactoryAddresses",
-                column: "AddressID");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FactoryAddresses_FactoryID",
+                name: "IX_FactoryAddresses_FactoryId",
                 table: "FactoryAddresses",
-                column: "FactoryID");
+                column: "FactoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FactoryPhones_FactoryID",
+                name: "IX_FactoryPhones_FactoryId",
                 table: "FactoryPhones",
-                column: "FactoryID");
+                column: "FactoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Inventories_AutopartID",
+                name: "IX_Inventories_AutopartId",
                 table: "Inventories",
-                column: "AutopartID",
+                column: "AutopartId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Losses_AutopartID",
+                name: "IX_Losses_AutopartId",
                 table: "Losses",
-                column: "AutopartID");
+                column: "AutopartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movements_RawMaterialID",
+                name: "IX_Movements_RawMaterialId",
                 table: "Movements",
-                column: "RawMaterialID");
+                column: "RawMaterialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Municipalities_DepartmentID",
+                name: "IX_Municipalities_DepartmentId",
                 table: "Municipalities",
-                column: "DepartmentID");
+                column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Neighborhoods_MunicipalityID",
+                name: "IX_Neighborhoods_MunicipalityId",
                 table: "Neighborhoods",
-                column: "MunicipalityID");
+                column: "MunicipalityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_AutopartID",
+                name: "IX_OrderDetails_AutopartId",
                 table: "OrderDetails",
-                column: "AutopartID");
+                column: "AutopartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_OrderID",
+                name: "IX_OrderDetails_OrderId",
                 table: "OrderDetails",
-                column: "OrderID");
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_CustomerID",
+                name: "IX_Orders_CustomerId",
                 table: "Orders",
-                column: "CustomerID");
+                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PriceHistories_AutopartID",
+                name: "IX_PriceHistories_AutopartId",
                 table: "PriceHistories",
-                column: "AutopartID");
+                column: "AutopartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProviderAddresses_AddressID",
+                name: "IX_ProviderAddresses_AddressId",
                 table: "ProviderAddresses",
-                column: "AddressID");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProviderAddresses_ProviderID",
+                name: "IX_ProviderAddresses_ProviderId",
                 table: "ProviderAddresses",
-                column: "ProviderID");
+                column: "ProviderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProviderPhones_ProviderID",
+                name: "IX_ProviderPhones_ProviderId",
                 table: "ProviderPhones",
-                column: "ProviderID");
+                column: "ProviderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shelves_WarehouseID",
+                name: "IX_Shelves_WarehouseId",
                 table: "Shelves",
-                column: "WarehouseID");
+                column: "WarehouseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shelvings_InventoryID",
+                name: "IX_Shelvings_InventoryId",
                 table: "Shelvings",
-                column: "InventoryID");
+                column: "InventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shelvings_ShelfID",
+                name: "IX_Shelvings_ShelfId",
                 table: "Shelvings",
-                column: "ShelfID");
+                column: "ShelfId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Stocks_RawMaterialID",
+                name: "IX_Stocks_RawMaterialId",
                 table: "Stocks",
-                column: "RawMaterialID");
+                column: "RawMaterialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Streets_NeighborhoodID",
+                name: "IX_Streets_NeighborhoodId",
                 table: "Streets",
-                column: "NeighborhoodID");
+                column: "NeighborhoodId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subcategories_CategoryID",
+                name: "IX_Subcategories_CategoryId",
                 table: "Subcategories",
-                column: "CategoryID");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAddresses_AddressID",
+                name: "IX_UserAddresses_AddressId",
                 table: "UserAddresses",
-                column: "AddressID");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserAddresses_UserID",
@@ -1265,9 +1225,9 @@ namespace JucarAutopartes.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserPhones_UserID",
+                name: "IX_UserPhones_UserId",
                 table: "UserPhones",
-                column: "UserID");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserPositions_PositionID",
@@ -1280,14 +1240,14 @@ namespace JucarAutopartes.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Warehouses_FactoryID",
+                name: "IX_Warehouses_FactoryId",
                 table: "Warehouses",
-                column: "FactoryID");
+                column: "FactoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WayToPays_BillID",
+                name: "IX_WayToPays_BillId",
                 table: "WayToPays",
-                column: "BillID",
+                column: "BillId",
                 unique: true);
         }
 
