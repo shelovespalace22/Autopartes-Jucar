@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BuildingID { get; set; }
+        public Guid BuildingID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el tipo del edificio!")]
         [MaxLength(50)]

@@ -24,5 +24,13 @@ namespace Presentation.Controllers
 
             return Ok(subcategories);
         }
+
+        [HttpGet("{id:int}")]
+        public IActionResult GetSubcategory(int subcategoryId)
+        {
+            var subcategory = _service.SubcategoryService.GetSubcategory(subcategoryId, trackChanges: false);
+
+            return Ok(subcategory);
+        }
     }
 }

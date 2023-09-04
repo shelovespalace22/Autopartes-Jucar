@@ -13,7 +13,7 @@ namespace Entities.Models.Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PriceHistoryID { get; set; }
+        public Guid PriceHistoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el valor de la autoparte!")]
         [RegularExpression("^[0-9]+$")]
@@ -45,7 +45,7 @@ namespace Entities.Models.Products
 
         //Autopart 
 
-        public int AutopartID { get; set; }
+        public Guid AutopartId { get; set; }
         public Autopart? Autopart { get; set; }
 
         //DiscountHistory

@@ -32,5 +32,14 @@ namespace Service
 
             return autopartsDto;
         }
+
+        public AutopartDto GetAutopart(int id, bool trackChanges)
+        {
+            var autopart = _repository.Autopart.GetAutopart(id, trackChanges);
+
+            var autopartDto = _mapper.Map<AutopartDto>(autopart);
+
+            return autopartDto;
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace Service.Contracts
     public interface ISubcategoryService
     {
         IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
+
+        SubcategoryDto GetSubcategory(int subcategoryId, bool trackChanges);
     }
 }

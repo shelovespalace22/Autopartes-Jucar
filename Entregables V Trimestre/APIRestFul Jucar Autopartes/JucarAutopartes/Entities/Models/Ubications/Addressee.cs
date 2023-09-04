@@ -13,7 +13,7 @@ namespace Entities.Models.Ubications
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AddresseeID { get; set; }
+        public Guid AddresseeID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el primer nombre!")]
         [MaxLength(50)]

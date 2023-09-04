@@ -24,5 +24,13 @@ namespace Presentation.Controllers
 
             return Ok(autoparts);
         }
+
+        [HttpGet("{id:int}")]
+        public IActionResult GetAutopart(int autopartId)
+        {
+            var autopart = _service.AutopartService.GetAutopart(autopartId, trackChanges: false);
+
+            return Ok(autopart);
+        }
     }
 }

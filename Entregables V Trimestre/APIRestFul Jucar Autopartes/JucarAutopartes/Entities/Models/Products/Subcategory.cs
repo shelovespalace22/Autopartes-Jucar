@@ -14,7 +14,7 @@ namespace Entities.Models.Products
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SubcategoryID { get; set; }
+        public Guid SubcategoryID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese un nombre para la subcategoría!")]
         [MaxLength(50)]
@@ -46,10 +46,7 @@ namespace Entities.Models.Products
         //Relaciones con otros modelos
 
         //Category
-        [ForeignKey(nameof(Category))]
-        public int CategoryID { get; set; }
-
-        [DisplayName("Categoría")]
+        public Guid CategoryId { get; set; }
         public Category? Category { get; set; }
 
         //Autopart

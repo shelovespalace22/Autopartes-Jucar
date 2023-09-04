@@ -13,7 +13,7 @@ namespace Entities.Models.Sales
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int WayToPayID { get; set; }
+        public Guid WayToPayID { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el nombre!")]
         [MaxLength(50)]
@@ -39,7 +39,7 @@ namespace Entities.Models.Sales
 
         //Relaciones con otros modelos
 
-        public int BillID { get; set; }
+        public Guid BillId { get; set; }
         public Bill? Bill { get; set; }
     }
 }

@@ -11,5 +11,7 @@ namespace Service.Contracts
     public interface IAutopartService
     {
         IEnumerable<AutopartDto> GetAllAutoparts(bool trackChanges);
+
+        AutopartDto GetAutopart(int autopartId, bool trackChanges);
     }
 }

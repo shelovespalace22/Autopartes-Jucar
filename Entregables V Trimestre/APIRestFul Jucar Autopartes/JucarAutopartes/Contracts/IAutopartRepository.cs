@@ -10,5 +10,7 @@ namespace Contracts
     public interface IAutopartRepository
     {
         IEnumerable<Autopart> GetAllAutoparts(bool trackChanges);
+
+        Autopart GetAutopart(int autopartId, bool trackChanges);
     }
 }

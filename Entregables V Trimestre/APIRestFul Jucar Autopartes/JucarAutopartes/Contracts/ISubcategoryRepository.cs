@@ -10,5 +10,7 @@ namespace Contracts
     public interface ISubcategoryRepository
     {
         IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges);
+
+        Subcategory GetSubcategory(int subcategoryId, bool trackChanges);
     }
 }

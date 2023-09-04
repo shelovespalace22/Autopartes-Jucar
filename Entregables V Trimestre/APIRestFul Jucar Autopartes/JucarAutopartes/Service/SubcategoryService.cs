@@ -32,5 +32,14 @@ namespace Service
 
             return subcategoriesDto;
         }
+
+        public SubcategoryDto GetSubcategory(int id, bool trackChanges)
+        {
+            var subcategory = _repository.Subcategory.GetSubcategory(id, trackChanges);
+
+            var subcategoryDto = _mapper.Map<SubcategoryDto>(subcategory);
+
+            return subcategoryDto;
+        }
     }
 }
