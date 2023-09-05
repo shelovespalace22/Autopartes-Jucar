@@ -25,10 +25,10 @@ namespace Presentation.Controllers
             return Ok(subcategories);
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult GetSubcategory(int subcategoryId)
+        [HttpGet("{id:guid}")]
+        public IActionResult GetSubcategory(Guid id)
         {
-            var subcategory = _service.SubcategoryService.GetSubcategory(subcategoryId, trackChanges: false);
+            var subcategory = _service.SubcategoryService.GetSubcategory(id, trackChanges: false);
 
             return Ok(subcategory);
         }

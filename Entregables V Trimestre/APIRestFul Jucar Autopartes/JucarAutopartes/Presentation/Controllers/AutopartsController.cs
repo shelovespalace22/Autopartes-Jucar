@@ -25,10 +25,10 @@ namespace Presentation.Controllers
             return Ok(autoparts);
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult GetAutopart(int autopartId)
+        [HttpGet("{id:guid}")]
+        public IActionResult GetAutopart(Guid id)
         {
-            var autopart = _service.AutopartService.GetAutopart(autopartId, trackChanges: false);
+            var autopart = _service.AutopartService.GetAutopart(id, trackChanges: false);
 
             return Ok(autopart);
         }

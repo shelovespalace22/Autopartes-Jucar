@@ -11,7 +11,7 @@ using Shared.DataTransferObjects;
 
 namespace Service
 {
-    public class SubcategoryService : ISubcategoryService
+    internal sealed class SubcategoryService : ISubcategoryService
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;

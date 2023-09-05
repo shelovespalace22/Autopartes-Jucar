@@ -11,7 +11,7 @@ using Shared.DataTransferObjects;
 
 namespace Service
 {
-    public class AutopartService : IAutopartService
+    internal sealed class AutopartService : IAutopartService
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;

@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects
 {
-    public record SubcategoryDto(int SubcategoryID, string Name, bool State, DateTime CreationDate, DateTime ModificationDate, int CategoryID);
+    public record SubcategoryDto(Guid SubcategoryID, string Name, bool State, DateTime CreationDate, DateTime ModificationDate);
 }
