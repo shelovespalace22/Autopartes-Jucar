@@ -12,6 +12,6 @@ namespace Service.Contracts
     {
         IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
 
-        SubcategoryDto GetSubcategory(int subcategoryId, bool trackChanges);
+        SubcategoryDto GetSubcategory(Guid subcategoryId, bool trackChanges);
     }
 }

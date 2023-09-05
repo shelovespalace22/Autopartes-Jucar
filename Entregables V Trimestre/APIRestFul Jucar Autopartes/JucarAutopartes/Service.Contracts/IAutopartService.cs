@@ -12,6 +12,6 @@ namespace Service.Contracts
     {
         IEnumerable<AutopartDto> GetAllAutoparts(bool trackChanges);
 
-        AutopartDto GetAutopart(int autopartId, bool trackChanges);
+        AutopartDto GetAutopart(Guid autopartId, bool trackChanges);
     }
 }

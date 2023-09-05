@@ -33,7 +33,7 @@ namespace Service
             return autopartsDto;
         }
 
-        public AutopartDto GetAutopart(int id, bool trackChanges)
+        public AutopartDto GetAutopart(Guid id, bool trackChanges)
         {
             var autopart = _repository.Autopart.GetAutopart(id, trackChanges);
 

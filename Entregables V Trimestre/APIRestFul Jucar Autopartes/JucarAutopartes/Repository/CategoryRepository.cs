@@ -21,7 +21,7 @@ namespace Repository
             .OrderBy(c => c.Name)
             .ToList();
 
-        public Category GetCategory(int categoryId, bool trackChanges) =>
+        public Category GetCategory(Guid categoryId, bool trackChanges) =>
             FindByCondition(c => c.CategoryID.Equals(categoryId), trackChanges)
             .SingleOrDefault();
     }

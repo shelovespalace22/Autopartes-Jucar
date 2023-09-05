@@ -27,8 +27,8 @@ namespace Presentation.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult GetCategory(int id)
+        [HttpGet("{id:guid}")]
+        public IActionResult GetCategory(Guid id)
         {
             var category = _service.CategoryService.GetCategory(id, trackChanges: false);
 

@@ -33,7 +33,7 @@ namespace Service
             return categoriesDto;
         }
 
-        public CategoryDto GetCategory(int id, bool trackChanges) 
+        public CategoryDto GetCategory(Guid id, bool trackChanges) 
         {
             var category = _repository.Category.GetCategory(id, trackChanges);
 

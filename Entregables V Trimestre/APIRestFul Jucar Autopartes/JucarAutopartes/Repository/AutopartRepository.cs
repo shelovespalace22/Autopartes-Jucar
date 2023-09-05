@@ -21,7 +21,7 @@ namespace Repository
             .OrderBy(c => c.Name)
             .ToList();
 
-        public Autopart GetAutopart(int autopartId, bool trackChanges) =>
+        public Autopart GetAutopart(Guid autopartId, bool trackChanges) =>
             FindByCondition(a => a.AutopartID.Equals(autopartId), trackChanges)
             .SingleOrDefault();
     }
