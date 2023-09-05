@@ -11,6 +11,6 @@ namespace Contracts
     {
         IEnumerable<Autopart> GetAllAutoparts(bool trackChanges);
 
-        Autopart GetAutopart(int autopartId, bool trackChanges);
+        Autopart GetAutopart(Guid autopartId, bool trackChanges);
     }
 }

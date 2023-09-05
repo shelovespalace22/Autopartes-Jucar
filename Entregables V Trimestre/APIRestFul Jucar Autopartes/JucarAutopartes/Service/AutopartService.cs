@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models.Products;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
 namespace Service
 {
-    public class AutopartService : IAutopartService
+    internal sealed class AutopartService : IAutopartService
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
@@ -33,9 +34,12 @@ namespace Service
             return autopartsDto;
         }
 
-        public AutopartDto GetAutopart(int id, bool trackChanges)
+        public AutopartDto GetAutopart(Guid id, bool trackChanges)
         {
             var autopart = _repository.Autopart.GetAutopart(id, trackChanges);
+
+            if (autopart is null)
+                throw new AutopartNotFoundException(id);
 
             var autopartDto = _mapper.Map<AutopartDto>(autopart);
 

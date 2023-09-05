@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models.Products;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
 namespace Service
 {
-    public class CategoryService : ICategoryService
+    internal sealed class CategoryService : ICategoryService
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
@@ -33,9 +34,12 @@ namespace Service
             return categoriesDto;
         }
 
-        public CategoryDto GetCategory(int id, bool trackChanges) 
+        public CategoryDto GetCategory(Guid id, bool trackChanges) 
         {
             var category = _repository.Category.GetCategory(id, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(id);
 
             var categoryDto = _mapper.Map<CategoryDto>(category);   
 

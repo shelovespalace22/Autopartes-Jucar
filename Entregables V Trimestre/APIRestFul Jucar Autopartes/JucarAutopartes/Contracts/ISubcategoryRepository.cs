@@ -11,6 +11,6 @@ namespace Contracts
     {
         IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges);
 
-        Subcategory GetSubcategory(int subcategoryId, bool trackChanges);
+        Subcategory GetSubcategory(Guid subcategoryId, bool trackChanges);
     }
 }

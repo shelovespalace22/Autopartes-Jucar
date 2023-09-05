@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models.Products;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
 namespace Service
 {
-    public class SubcategoryService : ISubcategoryService
+    internal sealed class SubcategoryService : ISubcategoryService
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
@@ -33,9 +34,12 @@ namespace Service
             return subcategoriesDto;
         }
 
-        public SubcategoryDto GetSubcategory(int id, bool trackChanges)
+        public SubcategoryDto GetSubcategory(Guid id, bool trackChanges)
         {
             var subcategory = _repository.Subcategory.GetSubcategory(id, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(id);
 
             var subcategoryDto = _mapper.Map<SubcategoryDto>(subcategory);
 
