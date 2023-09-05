@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models.Products;
 using Service.Contracts;
 using Shared.DataTransferObjects;
@@ -36,6 +37,9 @@ namespace Service
         public AutopartDto GetAutopart(Guid id, bool trackChanges)
         {
             var autopart = _repository.Autopart.GetAutopart(id, trackChanges);
+
+            if (autopart is null)
+                throw new AutopartNotFoundException(id);
 
             var autopartDto = _mapper.Map<AutopartDto>(autopart);
 

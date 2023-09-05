@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models.Products;
 using Service.Contracts;
 using Shared.DataTransferObjects;
@@ -36,6 +37,9 @@ namespace Service
         public SubcategoryDto GetSubcategory(Guid id, bool trackChanges)
         {
             var subcategory = _repository.Subcategory.GetSubcategory(id, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(id);
 
             var subcategoryDto = _mapper.Map<SubcategoryDto>(subcategory);
 
