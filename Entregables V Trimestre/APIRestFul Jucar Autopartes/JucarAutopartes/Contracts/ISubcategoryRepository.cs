@@ -16,7 +16,9 @@ namespace Contracts
         Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges);
 
         /* Obtener todas las Subcategorias de una Categoria */
-
         IEnumerable<Subcategory> GetSubcategories(Guid subcategoryId, bool trackChanges);
+
+        /* Obtener una Subcategoria especifica de una Categoria */
+        Subcategory GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges);
     }
 }

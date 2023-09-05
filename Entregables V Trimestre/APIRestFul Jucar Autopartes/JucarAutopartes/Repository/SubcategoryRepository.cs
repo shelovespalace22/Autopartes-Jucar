@@ -32,5 +32,9 @@ namespace Repository
             FindByCondition(s => s.CategoryId.Equals(categoryId), trackChanges)
             .OrderBy(s => s.Name)
             .ToList();
+
+        public Subcategory GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges) =>
+            FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
+            .SingleOrDefault();
     }
 }

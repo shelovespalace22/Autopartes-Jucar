@@ -18,5 +18,8 @@ namespace Service.Contracts
 
         /* Obtener todas las subcategorias de una Categoria */
         IEnumerable<SubcategoryDto> GetSubcategories(Guid categoryId, bool trackChanges);
+
+        /* Obtener una Subcategoria especifica de una Categoria */
+        SubcategoryDto GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges);
     }
 }
