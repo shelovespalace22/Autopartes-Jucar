@@ -9,8 +9,14 @@ namespace Contracts
 {
     public interface ISubcategoryRepository
     {
+        /* Obtener todas las Subcategorias en general*/
         IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges);
 
-        Subcategory GetSubcategory(Guid subcategoryId, bool trackChanges);
+        /* Obtener una Subcategoria por su Id */
+        Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges);
+
+        /* Obtener todas las Subcategorias de una Categoria */
+
+        IEnumerable<Subcategory> GetSubcategories(Guid subcategoryId, bool trackChanges);
     }
 }
