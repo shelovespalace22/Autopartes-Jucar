@@ -8,7 +8,8 @@ using Service.Contracts;
 
 namespace Presentation.Controllers
 {
-    [Route("api/subcategories")]
+    //[Route("api/subcategories")]
+    [Route("api/categories/{categoryId}/subcategories")]
     [ApiController]
     public class SubcategoriesController : ControllerBase
     {
@@ -17,7 +18,8 @@ namespace Presentation.Controllers
         public SubcategoriesController(IServiceManager service) =>
             _service = service;
 
-        [HttpGet]
+        /* Obtener todas las Subcategorias en general*/
+        [HttpGet("/api/subcategories")]
         public IActionResult GetSubcategories()
         {
             var subcategories = _service.SubcategoryService.GetAllSubcategories(trackChanges: false);
@@ -25,10 +27,29 @@ namespace Presentation.Controllers
             return Ok(subcategories);
         }
 
-        [HttpGet("{id:guid}")]
-        public IActionResult GetSubcategory(Guid id)
+        /* Obtener una Subcategoria por su Id */
+        [HttpGet("/api/subcategories/{id:guid}")]
+        public IActionResult GetSubcategoryById(Guid id)
         {
-            var subcategory = _service.SubcategoryService.GetSubcategory(id, trackChanges: false);
+            var subcategory = _service.SubcategoryService.GetSubcategoryById(id, trackChanges: false);
+
+            return Ok(subcategory);
+        }
+
+        /* Obtener todas las Subcategorias de una Categoria */
+
+        public IActionResult GetSubcategoriesForCategory(Guid categoryId) 
+        {
+            var subcategories = _service.SubcategoryService.GetSubcategories(categoryId, trackChanges: false);
+
+            return Ok(subcategories);
+        }
+
+        /* Obtener una Subcategoria especifica de una Categoria */
+        [HttpGet("{id:guid}", Name = "SubcategoryById")]
+        public IActionResult GetSubcategoryByCategory(Guid categoryId, Guid id)
+        {
+            var subcategory = _service.SubcategoryService.GetSubcategoryByCategory(categoryId, id, trackChanges: false);
 
             return Ok(subcategory);
         }

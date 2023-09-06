@@ -10,8 +10,16 @@ namespace Service.Contracts
 {
     public interface ISubcategoryService
     {
+        /* Obtener todas las Subcategorias en general*/
         IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
 
-        SubcategoryDto GetSubcategory(Guid subcategoryId, bool trackChanges);
+        /* Obtener una Subcategoria por su Id */
+        SubcategoryDto GetSubcategoryById(Guid subcategoryId, bool trackChanges);
+
+        /* Obtener todas las subcategorias de una Categoria */
+        IEnumerable<SubcategoryDto> GetSubcategories(Guid categoryId, bool trackChanges);
+
+        /* Obtener una Subcategoria especifica de una Categoria */
+        SubcategoryDto GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
     }
 }

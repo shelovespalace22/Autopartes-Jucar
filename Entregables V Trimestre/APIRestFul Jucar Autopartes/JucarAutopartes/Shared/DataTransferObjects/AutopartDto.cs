@@ -6,5 +6,17 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects
 {
-    public record AutopartDto(Guid AutopartID, string Name, string Description, string WeightKgs, string HeightCm, string LengthCm, string VehicleZone, bool State, DateTime CreationDate, DateTime ModificationDate);
+    public record AutopartDto
+    {
+        public Guid AutopartID { get; init; }
+        public string? Name { get; init; }
+        public string? Description { get; init; }
+        public string? WeightKgs { get; init; }
+        public string? HeightCm { get; init; }
+        public string? LengthCm { get; init; }
+        public string? VehicleZone { get; init; }
+        public bool State { get; init; }
+        public DateTime CreationDate { get; init; }
+        public DateTime ModificationDate { get; init; }
+    }
 } 

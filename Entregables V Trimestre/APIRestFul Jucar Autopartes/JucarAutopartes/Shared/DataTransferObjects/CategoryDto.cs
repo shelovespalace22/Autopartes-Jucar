@@ -6,5 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects
 {
-    public record CategoryDto(Guid CategoryId, string Name, bool State, DateTime CreationDate, DateTime ModificationDate);
+    public record CategoryDto 
+    {
+        public Guid CategoryId { get; init; }
+        public string? Name { get; init; }
+        public bool State { get; init; }
+        public DateTime CreationDate { get; init; }
+        public DateTime ModificationDate { get; init; }
+    } 
 }
