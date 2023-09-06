@@ -18,5 +18,8 @@ namespace Contracts
 
         /* Obteniendo Colección de Categorias */
         IEnumerable<Category> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+
+        /* Eliminar Categoria */
+        void DeleteCategory(Category category);
     }
 }

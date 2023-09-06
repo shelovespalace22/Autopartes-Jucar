@@ -95,5 +95,17 @@ namespace Service
             return (categories: categoryCollectionToReturn, ids: ids);
         }
 
+        public void DeleteCategory(Guid categoryId, bool trackChanges)
+        {
+            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(categoryId);
+
+            _repository.Category.DeleteCategory(category);
+
+            _repository.Save();
+        }
+
     }
 }

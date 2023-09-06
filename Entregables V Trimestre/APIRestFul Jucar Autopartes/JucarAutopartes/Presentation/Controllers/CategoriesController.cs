@@ -64,5 +64,13 @@ namespace Presentation.Controllers
 
             return CreatedAtRoute("CategoryCollection", new { result.ids }, result.categories);
         }
+
+        [HttpDelete("{id:guid}")]
+        public IActionResult DeleteCategory(Guid id) 
+        {
+            _service.CategoryService.DeleteCategory(id, trackChanges: false);
+
+            return NoContent();
+        }
     }
 }

@@ -17,9 +17,15 @@ namespace Service.Contracts
         /* Crear Categoria */
         CategoryDto CreateCategory(CategoryForCreationDto category);
 
+        /* Obtener Collección de Categorias */
         IEnumerable<CategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
 
+        /* Crear Collección de Categorias */
         (IEnumerable<CategoryDto> categories, string ids) CreateCategoryCollection
             (IEnumerable<CategoryForCreationDto> categoryCollection);
+
+        /* Eliminar una Categoria */
+        void DeleteCategory(Guid categoryId, bool trackChanges);
+
     }
 }
