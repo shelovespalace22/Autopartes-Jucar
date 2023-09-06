@@ -66,5 +66,14 @@ namespace Presentation.Controllers
 
             return CreatedAtRoute("GetSubcategoryByCategory", new { categoryId, id = subcategoryToReturn.SubcategoryId }, subcategoryToReturn);
         }
+
+        /* Eliminar una Subcategoria */
+        [HttpDelete("{id:guid}")]
+        public IActionResult DeleteSubcategoryForCategory(Guid categoryId, Guid id) 
+        {
+            _service.SubcategoryService.DeleteSubcategoryForCategory(categoryId, id, trackChanges: false);
+
+            return NoContent();
+        }
     }
 }

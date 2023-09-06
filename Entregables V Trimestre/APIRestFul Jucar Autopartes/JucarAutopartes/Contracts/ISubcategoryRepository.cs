@@ -23,5 +23,8 @@ namespace Contracts
 
         /* Crear una Subcategoria */
         void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory);
+
+        /* Eliminar una Subcategoria */
+        void DeleteSubcategory(Subcategory subcategory);
     }
 }

@@ -45,5 +45,8 @@ namespace Repository
 
             Create(subcategory);
         }
+
+        /* Eliminar una Subcategoria */
+        public void DeleteSubcategory(Subcategory subcategory) => Delete(subcategory);
     }
 }

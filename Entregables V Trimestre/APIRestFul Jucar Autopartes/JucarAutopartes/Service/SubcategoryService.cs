@@ -102,5 +102,23 @@ namespace Service
 
             return subcategoryToReturn;
         }
+
+        /* Eliminar una Subcategoria */
+        public void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges) 
+        {
+            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(categoryId);
+
+            var subcategoryForCategory = _repository.Subcategory.GetSubcategoryByCategory(categoryId, id, trackChanges);
+
+            if (subcategoryForCategory is null)
+                throw new SubcategoryNotFoundException(id);
+
+            _repository.Subcategory.DeleteSubcategory(subcategoryForCategory);
+
+            _repository.Save();
+        }
     }
 }

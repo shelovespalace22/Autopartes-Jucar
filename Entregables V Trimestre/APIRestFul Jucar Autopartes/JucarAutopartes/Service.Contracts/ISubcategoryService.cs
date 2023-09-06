@@ -24,5 +24,8 @@ namespace Service.Contracts
 
         /* Crear Subcategoria */
         SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges);
+
+        /* Eliminar una Subcategoria */
+        void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges);
     }
 }
