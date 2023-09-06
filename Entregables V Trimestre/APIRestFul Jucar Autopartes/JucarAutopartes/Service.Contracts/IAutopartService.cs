@@ -24,5 +24,8 @@ namespace Service.Contracts
 
         /* Crear autoparte */
         AutopartDto CreateAutopartForSubcategory(Guid subcategoryId, AutopartForCreationDto autopartForCreation, bool trackChanges);
+
+        /* Actualizar una Autoparte */
+        void UpdateAutopartForSubcategory(Guid subcategoryId, Guid id, AutopartForUpdateDto autopartForUpdate, bool subcTrackChanges, bool trackChanges);
     }
 }

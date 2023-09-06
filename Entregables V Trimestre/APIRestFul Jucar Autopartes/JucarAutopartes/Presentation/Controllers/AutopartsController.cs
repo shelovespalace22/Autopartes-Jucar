@@ -65,5 +65,17 @@ namespace Presentation.Controllers
 
             return CreatedAtRoute("GetAutopartBySubcategory", new { subcategoryId, id = autopartToReturn.AutopartID }, autopartToReturn);
         }
+
+        /* Actualizar una Autoparte */
+        [HttpPut("{id:guid}")]
+        public IActionResult UpdateAutopartForSubcategory(Guid subcategoryId, Guid id, [FromBody] AutopartForUpdateDto autopart)
+        {
+            if (autopart is null)
+                return BadRequest("AutopartForUpdateDto object is null.");
+
+            _service.AutopartService.UpdateAutopartForSubcategory(subcategoryId, id, autopart, subcTrackChanges: false, trackChanges: false);
+
+            return NoContent();
+        }
     }
 }
