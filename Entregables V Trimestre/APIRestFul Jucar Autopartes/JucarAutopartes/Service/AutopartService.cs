@@ -102,5 +102,23 @@ namespace Service
 
             return autopartToReturn;
         }
+
+        /* Actualizar una Autoparte */
+        public void UpdateAutopartForSubcategory(Guid subcategoryId, Guid id, AutopartForUpdateDto autopartForUpdate, bool subcTrackChanges, bool trackChanges)
+        {
+            var subcategory = _repository.Subcategory.GetSubcategoryById(subcategoryId, subcTrackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(subcategoryId);
+
+            var autopartEntity = _repository.Autopart.GetAutopartBySubcategory(subcategoryId, id, trackChanges);
+
+            if (autopartEntity is null)
+                throw new AutopartNotFoundException(id);
+
+            _mapper.Map(autopartForUpdate, autopartEntity);
+
+            _repository.Save();
+        }
     }
 }

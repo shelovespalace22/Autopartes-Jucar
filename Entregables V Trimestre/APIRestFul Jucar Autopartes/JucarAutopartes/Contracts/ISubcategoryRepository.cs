@@ -20,5 +20,11 @@ namespace Contracts
 
         /* Obtener una Subcategoria especifica de una Categoria */
         Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
+
+        /* Crear una Subcategoria */
+        void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory);
+
+        /* Eliminar una Subcategoria */
+        void DeleteSubcategory(Subcategory subcategory);
     }
 }

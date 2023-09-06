@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
+using Shared.DataTransferObjects;
 
 namespace Presentation.Controllers
 {
@@ -46,12 +47,33 @@ namespace Presentation.Controllers
         }
 
         /* Obtener una Subcategoria especifica de una Categoria */
-        [HttpGet("{id:guid}", Name = "SubcategoryById")]
+        [HttpGet("{id:guid}", Name = "GetSubcategoryByCategory")]
         public IActionResult GetSubcategoryByCategory(Guid categoryId, Guid id)
         {
             var subcategory = _service.SubcategoryService.GetSubcategoryByCategory(categoryId, id, trackChanges: false);
 
             return Ok(subcategory);
+        }
+
+        /* Crear una subcategoria */
+        [HttpPost]
+        public IActionResult CreateSubcategoryForCategory(Guid categoryId, [FromBody] SubcategoryForCreationDto subcategory)
+        {
+            if (subcategory is null)
+                return BadRequest("SubcategoryForCreationDto object is null");
+
+            var subcategoryToReturn = _service.SubcategoryService.CreateSubcategoryForCategory(categoryId, subcategory, trackChanges: false);
+
+            return CreatedAtRoute("GetSubcategoryByCategory", new { categoryId, id = subcategoryToReturn.SubcategoryId }, subcategoryToReturn);
+        }
+
+        /* Eliminar una Subcategoria */
+        [HttpDelete("{id:guid}")]
+        public IActionResult DeleteSubcategoryForCategory(Guid categoryId, Guid id) 
+        {
+            _service.SubcategoryService.DeleteSubcategoryForCategory(categoryId, id, trackChanges: false);
+
+            return NoContent();
         }
     }
 }
