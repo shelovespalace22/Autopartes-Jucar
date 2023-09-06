@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Service.Contracts;
 using Shared.DataTransferObjects;
+using Presentation.ModelBinders;
 
 namespace Presentation.Controllers
 {
@@ -45,6 +47,22 @@ namespace Presentation.Controllers
             var createdCategory = _service.CategoryService.CreateCategory(category);
 
             return CreatedAtRoute("CategoryById", new { id = createdCategory.CategoryId}, createdCategory);
+        }
+
+        [HttpGet("collection/({ids})", Name = "CategoryCollection")]
+        public IActionResult GetCategoryCollection([ModelBinder(BinderType = typeof(ArraryModelBinder))] IEnumerable<Guid> ids)
+        {
+            var categories = _service.CategoryService.GetByIds(ids, trackChanges: false);
+
+            return Ok(categories);
+        }
+
+        [HttpPost("collection")]
+        public IActionResult CreateCategoryCollection([FromBody] IEnumerable<CategoryForCreationDto> categoryCollection)
+        {
+            var result = _service.CategoryService.CreateCategoryCollection(categoryCollection);
+
+            return CreatedAtRoute("CategoryCollection", new { result.ids }, result.categories);
         }
     }
 }

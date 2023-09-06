@@ -26,5 +26,9 @@ namespace Repository
             .SingleOrDefault();
 
         public void CreateCategory(Category category) => Create(category);
+
+        public IEnumerable<Category> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+            FindByCondition(x => ids.Contains(x.CategoryID), trackChanges)
+            .ToList();
     }
 }

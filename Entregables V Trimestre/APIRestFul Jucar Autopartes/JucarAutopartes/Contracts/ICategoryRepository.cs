@@ -15,5 +15,8 @@ namespace Contracts
 
         /* Crear Categoria */
         void CreateCategory(Category category);
+
+        /* Obteniendo Colección de Categorias */
+        IEnumerable<Category> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
     }
 }
