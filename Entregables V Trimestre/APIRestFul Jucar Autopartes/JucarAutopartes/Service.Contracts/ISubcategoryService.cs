@@ -20,6 +20,6 @@ namespace Service.Contracts
         IEnumerable<SubcategoryDto> GetSubcategories(Guid categoryId, bool trackChanges);
 
         /* Obtener una Subcategoria especifica de una Categoria */
-        SubcategoryDto GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges);
+        SubcategoryDto GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
     }
 }

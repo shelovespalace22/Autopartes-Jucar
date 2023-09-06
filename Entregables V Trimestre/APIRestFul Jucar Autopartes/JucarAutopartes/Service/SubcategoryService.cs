@@ -66,14 +66,14 @@ namespace Service
 
         /* Obtener una Subcategoria especifica de una Categoria */
 
-        public SubcategoryDto GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges)
+        public SubcategoryDto GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges)
         {
             var category = _repository.Category.GetCategory(categoryId, trackChanges);
 
             if (category is null)
                 throw new CategoryNotFoundException(categoryId);
 
-            var subcategoryDb = _repository.Subcategory.GetSubcategoryByCompany(categoryId, id, trackChanges);
+            var subcategoryDb = _repository.Subcategory.GetSubcategoryByCategory(categoryId, id, trackChanges);
 
             if (subcategoryDb is null)
                 throw new SubcategoryNotFoundException(id);

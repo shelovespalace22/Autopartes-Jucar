@@ -10,8 +10,19 @@ namespace Service.Contracts
 {
     public interface IAutopartService
     {
+        /* Obteniendo todas las Autopartes en general */
         IEnumerable<AutopartDto> GetAllAutoparts(bool trackChanges);
 
-        AutopartDto GetAutopart(Guid autopartId, bool trackChanges);
+        /* Obteniendo Autoparte por su Id */
+        AutopartDto GetAutopartById(Guid autopartId, bool trackChanges);
+
+        /* Obtener todas las Autopartes de una Subcategoria */
+        IEnumerable<AutopartDto> GetAutoparts(Guid subcategoryId, bool trackChanges);
+
+        /* Obtener una Autopartes especifica de una Subcategoria */
+        AutopartDto GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges);
+
+        /* Crear autoparte */
+        AutopartDto CreateAutopartForSubcategory(Guid subcategoryId, AutopartForCreationDto autopartForCreation, bool trackChanges);
     }
 }

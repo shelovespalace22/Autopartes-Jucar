@@ -33,7 +33,8 @@ namespace Repository
             .OrderBy(s => s.Name)
             .ToList();
 
-        public Subcategory GetSubcategoryByCompany(Guid categoryId, Guid id, bool trackChanges) =>
+        /* Obteniendo una Subcategoria especifica de la Categoria */
+        public Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges) =>
             FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
             .SingleOrDefault();
     }

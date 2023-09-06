@@ -16,13 +16,33 @@ namespace Repository
             
         }
 
+        /* Obteniendo todas las Autopartes en general */
         public IEnumerable<Autopart> GetAllAutoparts(bool trackChanges) =>
             FindAll(trackChanges)
             .OrderBy(c => c.Name)
             .ToList();
 
-        public Autopart GetAutopart(Guid autopartId, bool trackChanges) =>
+        /* Obteniendo Autoparte por su Id */
+        public Autopart GetAutopartById(Guid autopartId, bool trackChanges) =>
             FindByCondition(a => a.AutopartID.Equals(autopartId), trackChanges)
             .SingleOrDefault();
+
+        /* Obtener todas las Autopartes de una Subcategoria */
+        public IEnumerable<Autopart> GetAutoparts(Guid subcategoryId, bool trackChanges) =>
+            FindByCondition(a => a.SubcategoryId.Equals(subcategoryId), trackChanges)
+            .OrderBy(a => a.Name)
+            .ToList();
+
+        /* Obteniendo una Autopartes especifica de la Subcategoria */
+        public Autopart GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges) =>
+            FindByCondition(a => a.SubcategoryId.Equals(subcategoryId) && a.AutopartID.Equals(id), trackChanges)
+            .SingleOrDefault();
+
+        public void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart)
+        {
+            autopart.SubcategoryId = subcategoryId;
+
+            Create(autopart);
+        }
     }
 }

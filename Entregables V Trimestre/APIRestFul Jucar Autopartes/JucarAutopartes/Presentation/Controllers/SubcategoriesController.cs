@@ -46,10 +46,10 @@ namespace Presentation.Controllers
         }
 
         /* Obtener una Subcategoria especifica de una Categoria */
-        [HttpGet("{id:guid}")]
-        public IActionResult GetSubcategoryByCompany(Guid categoryId, Guid id)
+        [HttpGet("{id:guid}", Name = "SubcategoryById")]
+        public IActionResult GetSubcategoryByCategory(Guid categoryId, Guid id)
         {
-            var subcategory = _service.SubcategoryService.GetSubcategoryByCompany(categoryId, id, trackChanges: false);
+            var subcategory = _service.SubcategoryService.GetSubcategoryByCategory(categoryId, id, trackChanges: false);
 
             return Ok(subcategory);
         }
