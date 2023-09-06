@@ -24,5 +24,7 @@ namespace Repository
         public Category GetCategory(Guid categoryId, bool trackChanges) =>
             FindByCondition(c => c.CategoryID.Equals(categoryId), trackChanges)
             .SingleOrDefault();
+
+        public void CreateCategory(Category category) => Create(category);
     }
 }

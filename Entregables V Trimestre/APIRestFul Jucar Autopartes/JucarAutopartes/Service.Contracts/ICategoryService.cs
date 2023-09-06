@@ -13,5 +13,8 @@ namespace Service.Contracts
         IEnumerable<CategoryDto> GetAllCategories(bool trackChanges);
 
         CategoryDto GetCategory(Guid categoryId, bool trackChanges);
+
+        /* Crear Categoria */
+        CategoryDto CreateCategory(CategoryForCreationDto category);
     }
 }

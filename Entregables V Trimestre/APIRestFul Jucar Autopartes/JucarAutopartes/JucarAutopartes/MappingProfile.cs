@@ -15,6 +15,8 @@ namespace JucarAutopartes
             CreateMap<Autopart, AutopartDto>();
 
             CreateMap<AutopartForCreationDto, Autopart>();
+
+            CreateMap<CategoryForCreationDto, Category>();
         }
     }
 }

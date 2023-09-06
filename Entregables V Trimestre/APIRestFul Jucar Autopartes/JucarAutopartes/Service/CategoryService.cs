@@ -46,5 +46,18 @@ namespace Service
             return categoryDto;
         }
 
+        public CategoryDto CreateCategory(CategoryForCreationDto category)
+        {
+            var categoryEntity = _mapper.Map<Category>(category);
+
+            _repository.Category.CreateCategory(categoryEntity);
+
+            _repository.Save();
+
+            var categoryToReturn = _mapper.Map<CategoryDto>(categoryEntity);
+
+            return categoryToReturn;
+        }
+
     }
 }

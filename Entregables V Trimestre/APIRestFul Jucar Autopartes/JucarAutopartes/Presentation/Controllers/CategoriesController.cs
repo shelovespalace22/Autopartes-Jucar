@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
+using Shared.DataTransferObjects;
 
 namespace Presentation.Controllers
 {
@@ -33,6 +34,17 @@ namespace Presentation.Controllers
             var category = _service.CategoryService.GetCategory(id, trackChanges: false);
 
             return Ok(category);
+        }
+
+        [HttpPost]
+        public IActionResult CreateCategory([FromBody] CategoryForCreationDto category)
+        {
+            if (category is null)
+                return BadRequest("CategoryForCreationDto object is null");
+
+            var createdCategory = _service.CategoryService.CreateCategory(category);
+
+            return CreatedAtRoute("CategoryById", new { id = createdCategory.CategoryId}, createdCategory);
         }
     }
 }
