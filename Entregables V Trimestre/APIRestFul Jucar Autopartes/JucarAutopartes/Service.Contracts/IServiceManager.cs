@@ -11,5 +11,7 @@ namespace Service.Contracts
         ICategoryService CategoryService { get; }
         ISubcategoryService SubcategoryService { get; }
         IAutopartService AutopartService { get; }
+        IFactoryService FactoryServices { get; }
+
     }
 }
