@@ -38,6 +38,7 @@ namespace Repository
             FindByCondition(a => a.SubcategoryId.Equals(subcategoryId) && a.AutopartID.Equals(id), trackChanges)
             .SingleOrDefault();
 
+        /* Crear una Autoparte */
         public void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart)
         {
             autopart.SubcategoryId = subcategoryId;

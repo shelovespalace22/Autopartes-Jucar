@@ -82,5 +82,25 @@ namespace Service
 
             return subcategory;
         }
+
+        /* Crear una autoparte */
+
+        public SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges)
+        {
+            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(categoryId);
+
+            var subcategoryEntity = _mapper.Map<Subcategory>(subcategoryForCreation);
+
+            _repository.Subcategory.CreateSubcategoryForCategory(categoryId, subcategoryEntity);
+
+            _repository.Save();
+
+            var subcategoryToReturn = _mapper.Map<SubcategoryDto>(subcategoryEntity);
+
+            return subcategoryToReturn;
+        }
     }
 }

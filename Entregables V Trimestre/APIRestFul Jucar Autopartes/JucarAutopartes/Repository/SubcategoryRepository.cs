@@ -37,5 +37,13 @@ namespace Repository
         public Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges) =>
             FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
             .SingleOrDefault();
+
+        /* Crear una autoparte */
+        public void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory)
+        {
+            subcategory.CategoryId = categoryId;
+
+            Create(subcategory);
+        }
     }
 }

@@ -21,5 +21,8 @@ namespace Service.Contracts
 
         /* Obtener una Subcategoria especifica de una Categoria */
         SubcategoryDto GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
+
+        /* Crear Subcategoria */
+        SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges);
     }
 }
