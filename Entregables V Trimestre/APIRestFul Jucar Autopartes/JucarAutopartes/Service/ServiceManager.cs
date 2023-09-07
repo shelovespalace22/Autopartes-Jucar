@@ -15,7 +15,7 @@ namespace Service
         private readonly Lazy<ISubcategoryService> _subcategoryService;
         private readonly Lazy<IAutopartService> _autopartService;
         private readonly Lazy<IFactoryService> _factoryService;
-       
+
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
         {
@@ -37,7 +37,7 @@ namespace Service
         public ICategoryService CategoryService => _categoryService.Value;
         public ISubcategoryService SubcategoryService => _subcategoryService.Value;
         public IAutopartService AutopartService => _autopartService.Value;
-        public IFactoryService FactoryService => _factoryService.Value;
+        public IFactoryService FactoryService =>_factoryService.Value;
 
         
     }

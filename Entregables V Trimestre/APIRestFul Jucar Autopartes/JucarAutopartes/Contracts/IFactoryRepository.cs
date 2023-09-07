@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Models.Factories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace Contracts
 {
     public interface IFactoryRepository
     {
+        IEnumerable<Factory> GetAllFactories(bool trakChanges);
+
     }
 }
