@@ -1,4 +1,4 @@
-﻿using Contracts;
+﻿using Contracts.Factory;
 using Entities.Models.Factories;
 using Entities.Models.Products;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
@@ -8,23 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository
+namespace Repository.Factory
 {
-  
+
     public class FactoryRepository : RepositoryBase<Factory>, IFactoryRepository
     {
-         public IEnumerable<Factory> GetAllFactories(bool trakChanges) =>
+        public FactoryRepository(RepositoryContext repositoryContext)
+            : base(repositoryContext)
+        {
+
+        }
+
+        public IEnumerable<Factory> GetAllFactories(bool trakChanges) =>
           FindAll(trakChanges)
           .OrderBy(c => c.BusinessName)
           .ToList();
 
-        public FactoryRepository(RepositoryContext repositoryContext)
-            : base(repositoryContext)
-        {
-          
-        }
 
-       
 
 
     }

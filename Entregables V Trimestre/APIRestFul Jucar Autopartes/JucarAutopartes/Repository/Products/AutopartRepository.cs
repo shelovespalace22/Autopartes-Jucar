@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Contracts;
+using Contracts.Products;
 using Entities.Models.Products;
 
-namespace Repository
+namespace Repository.Products
 {
     public class AutopartRepository : RepositoryBase<Autopart>, IAutopartRepository
     {
         public AutopartRepository(RepositoryContext repositoryContext)
-            :base(repositoryContext)
+            : base(repositoryContext)
         {
-            
+
         }
 
         /* Obteniendo todas las Autopartes en general */
