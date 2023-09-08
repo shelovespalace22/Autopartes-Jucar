@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Contracts;
+using Contracts.Products;
 using Entities.Models.Products;
 
-namespace Repository
+namespace Repository.Products
 {
     public class SubcategoryRepository : RepositoryBase<Subcategory>, ISubcategoryRepository
     {
         public SubcategoryRepository(RepositoryContext repositoryContext)
-            :base(repositoryContext)
+            : base(repositoryContext)
         {
-            
+
         }
 
         /* Obtener todas las Subcategorias en general*/
