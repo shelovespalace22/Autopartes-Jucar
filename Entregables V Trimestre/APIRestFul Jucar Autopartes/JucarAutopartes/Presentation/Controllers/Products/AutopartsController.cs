@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.Products;
 
-namespace Presentation.Controllers
+namespace Presentation.Controllers.Products
 {
     [Route("api/subcategories/{subcategoryId}/autoparts")]
     [ApiController]

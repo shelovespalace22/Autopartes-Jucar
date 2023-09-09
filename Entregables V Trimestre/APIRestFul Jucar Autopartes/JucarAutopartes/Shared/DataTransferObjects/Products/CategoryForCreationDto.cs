@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contracts.Factory
+namespace Shared.DataTransferObjects.Products
 {
-    public interface IShelfRepository
-    {
-    }
+    public record CategoryForCreationDto(string Name);
 }

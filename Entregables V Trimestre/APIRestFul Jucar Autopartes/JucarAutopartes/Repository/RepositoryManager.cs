@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts;
-using Contracts.Factory;
+//using Contracts.Factory;
 using Contracts.Products;
+using Repository.Products;
 
 namespace Repository
 {
@@ -15,7 +16,7 @@ namespace Repository
         private readonly Lazy<ICategoryRepository> _categoryRepository;
         private readonly Lazy<ISubcategoryRepository> _subcategoryRepository;
         private readonly Lazy<IAutopartRepository> _autopartRepository;
-        private readonly Lazy<IFactoryRepository> _factoryRepository;
+        //private readonly Lazy<IFactoryRepository> _factoryRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -23,7 +24,7 @@ namespace Repository
             _categoryRepository = new Lazy<ICategoryRepository>(() => new CategoryRepository(repositoryContext));
             _subcategoryRepository = new Lazy<ISubcategoryRepository>(() => new SubcategoryRepository(repositoryContext));
             _autopartRepository = new Lazy<IAutopartRepository>(() => new AutopartRepository(repositoryContext));
-            _factoryRepository = new Lazy<IFactoryRepository>(() => new FactoryRepository(repositoryContext));
+            //_factoryRepository = new Lazy<IFactoryRepository>(() => new FactoryRepository(repositoryContext));
         }
 
         public ICategoryRepository Category => _categoryRepository.Value;
@@ -32,7 +33,7 @@ namespace Repository
 
         public IAutopartRepository Autopart => _autopartRepository.Value;
         
-        public IFactoryRepository Factory => _factoryRepository.Value;
+        //public IFactoryRepository Factory => _factoryRepository.Value;
 
         
 

@@ -16,21 +16,26 @@ namespace Repository.Products
         {
         }
 
+        /* Crear categoria */
+        public void CreateCategory(Category category) => Create(category);
+
+        /* Obtener todos los registros de la tabla */
         public IEnumerable<Category> GetAllCategories(bool trackChanges) =>
             FindAll(trackChanges)
             .OrderBy(c => c.Name)
             .ToList();
 
+        /* Obtener un registro especifico */
         public Category GetCategory(Guid categoryId, bool trackChanges) =>
             FindByCondition(c => c.CategoryID.Equals(categoryId), trackChanges)
             .SingleOrDefault();
 
-        public void CreateCategory(Category category) => Create(category);
-
+        /* Obtener una colección de registros */
         public IEnumerable<Category> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
             FindByCondition(x => ids.Contains(x.CategoryID), trackChanges)
             .ToList();
 
+        /* Eliminar un registro y sus hijos*/
         public void DeleteCategory(Category category) => Delete(category);
     }
 }

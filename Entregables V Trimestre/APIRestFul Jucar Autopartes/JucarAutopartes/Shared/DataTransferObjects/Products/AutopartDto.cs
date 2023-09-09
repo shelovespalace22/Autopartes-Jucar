@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.DataTransferObjects
+namespace Shared.DataTransferObjects.Products
 {
     public record AutopartDto
     {
@@ -19,4 +19,4 @@ namespace Shared.DataTransferObjects
         public DateTime CreationDate { get; init; }
         public DateTime ModificationDate { get; init; }
     }
-} 
+}

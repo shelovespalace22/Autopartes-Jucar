@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.Products;
 using System.Text;
 
 namespace JucarAutopartes

@@ -7,10 +7,10 @@ using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
 using Entities.Models.Products;
-using Service.Contracts;
-using Shared.DataTransferObjects;
+using Service.Contracts.Products;
+using Shared.DataTransferObjects.Products;
 
-namespace Service
+namespace Service.Products
 {
     internal sealed class SubcategoryService : ISubcategoryService
     {
@@ -18,7 +18,7 @@ namespace Service
         private readonly ILoggerManager _logger;
         private readonly IMapper _mapper;
 
-        public SubcategoryService(IRepositoryManager repository, ILoggerManager logger,IMapper mapper)
+        public SubcategoryService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
@@ -54,7 +54,7 @@ namespace Service
         {
             var category = _repository.Category.GetCategory(categoryId, trackChanges);
 
-            if(category is null)
+            if (category is null)
                 throw new CategoryNotFoundException(categoryId);
 
             var subcategoriesFromDb = _repository.Subcategory.GetSubcategories(categoryId, trackChanges);
@@ -104,7 +104,7 @@ namespace Service
         }
 
         /* Eliminar una Subcategoria */
-        public void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges) 
+        public void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges)
         {
             var category = _repository.Category.GetCategory(categoryId, trackChanges);
 

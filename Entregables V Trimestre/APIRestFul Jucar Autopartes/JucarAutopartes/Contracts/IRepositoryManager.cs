@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Contracts.Factory;
+//using Contracts.Factories;
 using Contracts.Products;
 
 namespace Contracts
@@ -13,7 +13,7 @@ namespace Contracts
         ICategoryRepository Category { get; }
         ISubcategoryRepository Subcategory { get; }
         IAutopartRepository Autopart { get; }
-        IFactoryRepository Factory { get; }
+        //IFactoryRepository Factory { get; }
         
 
         void Save();

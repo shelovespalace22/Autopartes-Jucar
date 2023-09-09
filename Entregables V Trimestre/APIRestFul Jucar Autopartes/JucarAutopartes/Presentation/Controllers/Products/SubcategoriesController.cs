@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.Products;
 
-namespace Presentation.Controllers
+namespace Presentation.Controllers.Products
 {
     //[Route("api/subcategories")]
     [Route("api/categories/{categoryId}/subcategories")]
@@ -39,7 +39,7 @@ namespace Presentation.Controllers
 
         /* Obtener todas las Subcategorias de una Categoria */
 
-        public IActionResult GetSubcategoriesForCategory(Guid categoryId) 
+        public IActionResult GetSubcategoriesForCategory(Guid categoryId)
         {
             var subcategories = _service.SubcategoryService.GetSubcategories(categoryId, trackChanges: false);
 
@@ -69,7 +69,7 @@ namespace Presentation.Controllers
 
         /* Eliminar una Subcategoria */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteSubcategoryForCategory(Guid categoryId, Guid id) 
+        public IActionResult DeleteSubcategoryForCategory(Guid categoryId, Guid id)
         {
             _service.SubcategoryService.DeleteSubcategoryForCategory(categoryId, id, trackChanges: false);
 

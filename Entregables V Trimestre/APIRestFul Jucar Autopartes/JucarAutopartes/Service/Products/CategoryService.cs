@@ -7,10 +7,10 @@ using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
 using Entities.Models.Products;
-using Service.Contracts;
-using Shared.DataTransferObjects;
+using Service.Contracts.Products;
+using Shared.DataTransferObjects.Products;
 
-namespace Service
+namespace Service.Products
 {
     internal sealed class CategoryService : ICategoryService
     {
@@ -25,27 +25,7 @@ namespace Service
             _mapper = mapper;
         }
 
-        public IEnumerable<CategoryDto> GetAllCategories(bool trackChanges)
-        {
-            var categories = _repository.Category.GetAllCategories(trackChanges);
-
-            var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories);
-
-            return categoriesDto;
-        }
-
-        public CategoryDto GetCategory(Guid id, bool trackChanges) 
-        {
-            var category = _repository.Category.GetCategory(id, trackChanges);
-
-            if (category is null)
-                throw new CategoryNotFoundException(id);
-
-            var categoryDto = _mapper.Map<CategoryDto>(category);   
-
-            return categoryDto;
-        }
-
+        /* Crear Categoria */
         public CategoryDto CreateCategory(CategoryForCreationDto category)
         {
             var categoryEntity = _mapper.Map<Category>(category);
@@ -59,21 +39,7 @@ namespace Service
             return categoryToReturn;
         }
 
-        public IEnumerable<CategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
-        {
-            if (ids is null)
-                throw new IdParametersBadRequestException();
-
-            var categoryEntities = _repository.Category.GetByIds(ids, trackChanges);
-
-            if (ids.Count() != categoryEntities.Count())
-                throw new CollectionByIdsBadRequestException();
-
-            var categoriesToReturn = _mapper.Map<IEnumerable<CategoryDto>>(categoryEntities);
-
-            return categoriesToReturn;
-        }
-
+        /* Crear una colección */
         public (IEnumerable<CategoryDto> categories, string ids) CreateCategoryCollection(IEnumerable<CategoryForCreationDto> categoryCollection)
         {
             if (categoryCollection is null)
@@ -92,9 +58,64 @@ namespace Service
 
             var ids = string.Join(",", categoryCollectionToReturn.Select(c => c.CategoryId));
 
-            return (categories: categoryCollectionToReturn, ids: ids);
+            return (categories: categoryCollectionToReturn, ids);
         }
 
+        /* Obtener todos los registros de la tabla */
+        public IEnumerable<CategoryDto> GetAllCategories(bool trackChanges)
+        {
+            var categories = _repository.Category.GetAllCategories(trackChanges);
+
+            var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories);
+
+            return categoriesDto;
+        }
+
+        /* Obtener un registro especifico */
+        public CategoryDto GetCategory(Guid id, bool trackChanges)
+        {
+            var category = _repository.Category.GetCategory(id, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(id);
+
+            var categoryDto = _mapper.Map<CategoryDto>(category);
+
+            return categoryDto;
+        }
+
+        /* Obtener una colección de registros */
+
+        public IEnumerable<CategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        {
+            if (ids is null)
+                throw new IdParametersBadRequestException();
+
+            var categoryEntities = _repository.Category.GetByIds(ids, trackChanges);
+
+            if (ids.Count() != categoryEntities.Count())
+                throw new CollectionByIdsBadRequestException();
+
+            var categoriesToReturn = _mapper.Map<IEnumerable<CategoryDto>>(categoryEntities);
+
+            return categoriesToReturn;
+        }
+
+        /* Actualizar una categoria */
+
+        public void UpdateCategory(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges)
+        {
+            var categoryEntity = _repository.Category.GetCategory(categoryId, trackChanges);
+
+            if(categoryEntity is null)
+                throw new CategoryNotFoundException(categoryId);
+
+            _mapper.Map(categoryForUpdate, categoryEntity);
+
+            _repository.Save();
+        }
+
+        /* Eliminar una categoría */
         public void DeleteCategory(Guid categoryId, bool trackChanges)
         {
             var category = _repository.Category.GetCategory(categoryId, trackChanges);

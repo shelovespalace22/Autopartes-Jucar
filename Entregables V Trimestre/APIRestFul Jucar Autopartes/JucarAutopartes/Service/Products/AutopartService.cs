@@ -7,10 +7,10 @@ using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
 using Entities.Models.Products;
-using Service.Contracts;
-using Shared.DataTransferObjects;
+using Service.Contracts.Products;
+using Shared.DataTransferObjects.Products;
 
-namespace Service
+namespace Service.Products
 {
     internal sealed class AutopartService : IAutopartService
     {

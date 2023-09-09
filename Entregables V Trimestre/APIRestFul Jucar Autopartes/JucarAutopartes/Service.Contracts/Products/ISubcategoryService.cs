@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Models.Products;
-using Shared.DataTransferObjects;
+using Shared.DataTransferObjects.Products;
 
-namespace Service.Contracts
+namespace Service.Contracts.Products
 {
     public interface ISubcategoryService
     {
