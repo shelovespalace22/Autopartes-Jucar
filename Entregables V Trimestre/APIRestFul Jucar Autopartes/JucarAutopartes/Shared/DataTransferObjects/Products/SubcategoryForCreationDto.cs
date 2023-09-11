@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects.Products
 {
-    public record SubcategoryForCreationDto(string Name, IEnumerable<AutopartForCreationDto> Autoparts);
+    public record SubcategoryForCreationDto(string Name, IEnumerable<AutopartForCreationDto>? Autoparts);
 }

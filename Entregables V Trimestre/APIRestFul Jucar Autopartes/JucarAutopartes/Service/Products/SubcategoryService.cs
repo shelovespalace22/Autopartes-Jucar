@@ -25,6 +25,26 @@ namespace Service.Products
             _mapper = mapper;
         }
 
+        /* Crear una subcategoria */
+
+        public SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges)
+        {
+            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(categoryId);
+
+            var subcategoryEntity = _mapper.Map<Subcategory>(subcategoryForCreation);
+
+            _repository.Subcategory.CreateSubcategoryForCategory(categoryId, subcategoryEntity);
+
+            _repository.Save();
+
+            var subcategoryToReturn = _mapper.Map<SubcategoryDto>(subcategoryEntity);
+
+            return subcategoryToReturn;
+        }
+
         /* Obtener todas las Subcategorias en general*/
         public IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges)
         {
@@ -35,7 +55,7 @@ namespace Service.Products
             return subcategoriesDto;
         }
 
-        /* Obtener una Subcategoria por su Id */
+        /* Obtener una Subcategoria especifica */
         public SubcategoryDto GetSubcategoryById(Guid id, bool trackChanges)
         {
             var subcategory = _repository.Subcategory.GetSubcategoryById(id, trackChanges);
@@ -83,25 +103,42 @@ namespace Service.Products
             return subcategory;
         }
 
-        /* Crear una autoparte */
+        /* Obtener una colección de registros */
 
-        public SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges)
+        public IEnumerable<SubcategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
         {
-            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+            if (ids is null)
+                throw new IdParametersBadRequestException();
+
+            var subcategoryEntities = _repository.Subcategory.GetByIds(ids, trackChanges);
+
+            if (ids.Count() != subcategoryEntities.Count())
+                throw new CollectionByIdsBadRequestException();
+
+            var subcategoriesToReturn = _mapper.Map<IEnumerable<SubcategoryDto>>(subcategoryEntities);
+
+            return subcategoriesToReturn;
+        }
+
+        /* Actualizar una Subcategoría */
+
+        public void UpdateSubcategoryForCategory(Guid categoryId, Guid id, SubcategoryForUpdateDto subcategoryForUpdate, bool catTrackChanges, bool subTrackChanges)
+        {
+            var category = _repository.Category.GetCategory(categoryId, catTrackChanges);
 
             if (category is null)
                 throw new CategoryNotFoundException(categoryId);
 
-            var subcategoryEntity = _mapper.Map<Subcategory>(subcategoryForCreation);
+            var subcategoryEntity = _repository.Subcategory.GetSubcategoryByCategory(categoryId, id, subTrackChanges);
 
-            _repository.Subcategory.CreateSubcategoryForCategory(categoryId, subcategoryEntity);
+            if (subcategoryEntity is null)
+                throw new SubcategoryNotFoundException(id);
+
+            _mapper.Map(subcategoryForUpdate, subcategoryEntity);
 
             _repository.Save();
-
-            var subcategoryToReturn = _mapper.Map<SubcategoryDto>(subcategoryEntity);
-
-            return subcategoryToReturn;
         }
+
 
         /* Eliminar una Subcategoria */
         public void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges)

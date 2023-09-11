@@ -16,13 +16,21 @@ namespace Repository.Products
 
         }
 
+        /* Crear una Subcategoria */
+        public void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory)
+        {
+            subcategory.CategoryId = categoryId;
+
+            Create(subcategory);
+        }
+
         /* Obtener todas las Subcategorias en general*/
         public IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges) =>
             FindAll(trackChanges)
             .OrderBy(c => c.Name)
             .ToList();
 
-        /* Obtener una Subcategoria por su Id */
+        /* Obteber una Subcategoria */
         public Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges) =>
             FindByCondition(s => s.SubcategoryID.Equals(subcategoryId), trackChanges)
             .SingleOrDefault();
@@ -38,13 +46,14 @@ namespace Repository.Products
             FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
             .SingleOrDefault();
 
-        /* Crear una autoparte */
-        public void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory)
-        {
-            subcategory.CategoryId = categoryId;
+        /* Obtener una colección de Subcategorías de una Categoría*/
+        public IEnumerable<Subcategory> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+            FindByCondition(x => ids.Contains(x.SubcategoryID), trackChanges)
+            .ToList();
 
-            Create(subcategory);
-        }
+        /* Actualizar una Subcategoría */
+
+
 
         /* Eliminar una Subcategoria */
         public void DeleteSubcategory(Subcategory subcategory) => Delete(subcategory);
