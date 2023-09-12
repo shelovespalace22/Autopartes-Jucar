@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
+using Entities.Exceptions.NotFound.Products;
 using Entities.Models.Products;
 using Service.Contracts.Products;
 using Shared.DataTransferObjects.Products;

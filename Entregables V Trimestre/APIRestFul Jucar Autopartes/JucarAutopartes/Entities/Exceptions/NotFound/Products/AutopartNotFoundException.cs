@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Exceptions
+namespace Entities.Exceptions.NotFound.Products
 {
     public sealed class AutopartNotFoundException : NotFoundException
     {
         public AutopartNotFoundException(Guid autopartId)
-            :base($"The Autopart with ID: {autopartId} doesn´t exist in the database.")
+            : base($"The Autopart with ID: {autopartId} doesn´t exist in the database.")
         {
-            
+
         }
     }
 }

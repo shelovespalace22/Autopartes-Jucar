@@ -17,6 +17,7 @@ namespace Service
         private readonly Lazy<ICategoryService> _categoryService;
         private readonly Lazy<ISubcategoryService> _subcategoryService;
         private readonly Lazy<IAutopartService> _autopartService;
+        private readonly Lazy<IRawMaterialService> _rawMaterialService;
         //private readonly Lazy<IFactoryService> _factoryService;
 
 
@@ -30,6 +31,9 @@ namespace Service
 
             _autopartService = new Lazy<IAutopartService>(() =>
                 new AutopartService(repositoryManager, logger, mapper));
+
+            _rawMaterialService = new Lazy<IRawMaterialService>(() =>
+                new RawMaterialService(repositoryManager, logger, mapper));
             //_factoryService = new Lazy<IFactoryService>(() =>
             //    new FactoryService(repositoryManager, logger, mapper));
 
@@ -40,6 +44,7 @@ namespace Service
         public ICategoryService CategoryService => _categoryService.Value;
         public ISubcategoryService SubcategoryService => _subcategoryService.Value;
         public IAutopartService AutopartService => _autopartService.Value;
+        public IRawMaterialService RawMaterialService => _rawMaterialService.Value;
         //public IFactoryService FactoryService =>_factoryService.Value;
 
         
