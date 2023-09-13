@@ -42,6 +42,11 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        public void setModificationDate()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos
 
         public ICollection<Subcategory>? Subcategories { get; set; }

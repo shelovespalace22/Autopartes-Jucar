@@ -51,10 +51,6 @@ namespace Repository.Products
             FindByCondition(x => ids.Contains(x.SubcategoryID), trackChanges)
             .ToList();
 
-        /* Actualizar una Subcategoría */
-
-
-
         /* Eliminar una Subcategoria */
         public void DeleteSubcategory(Subcategory subcategory) => Delete(subcategory);
     }

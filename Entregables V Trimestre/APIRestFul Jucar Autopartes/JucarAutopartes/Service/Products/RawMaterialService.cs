@@ -132,6 +132,8 @@ namespace Service.Products
 
             _mapper.Map(rawMaterialForUpdate, rawMaterialEntity);
 
+            rawMaterialEntity.setModificationDate();
+
             _repository.Save();
         }
     }

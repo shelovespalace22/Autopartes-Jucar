@@ -27,10 +27,6 @@ namespace Contracts.Products
         /* Obtener una colección de Subcategorías de una Categoría*/
         IEnumerable<Subcategory> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
 
-        /* Actualizar una Subcategoría */
-
-
-
         /* Eliminar una Subcategoria */
         void DeleteSubcategory(Subcategory subcategory);
     }

@@ -26,6 +26,26 @@ namespace Service.Products
             _mapper = mapper;
         }
 
+        /* Crear una autoparte */
+
+        public AutopartDto CreateAutopartForSubcategory(Guid subcategoryId, AutopartForCreationDto autopartForCreation, bool trackChanges)
+        {
+            var subcategory = _repository.Subcategory.GetSubcategoryById(subcategoryId, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(subcategoryId);
+
+            var autopartEntity = _mapper.Map<Autopart>(autopartForCreation);
+
+            _repository.Autopart.CreateAutopartForSubcategory(subcategoryId, autopartEntity);
+
+            _repository.Save();
+
+            var autopartToReturn = _mapper.Map<AutopartDto>(autopartEntity);
+
+            return autopartToReturn;
+        }
+
         /* Obteniendo todas las Autopartes en general */
         public IEnumerable<AutopartDto> GetAllAutoparts(bool trackChanges)
         {
@@ -84,24 +104,21 @@ namespace Service.Products
             return autopart;
         }
 
-        /* Crear una autoparte */
+        /* Obtener una colección de registros */
 
-        public AutopartDto CreateAutopartForSubcategory(Guid subcategoryId, AutopartForCreationDto autopartForCreation, bool trackChanges)
+        public IEnumerable<AutopartDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
         {
-            var subcategory = _repository.Subcategory.GetSubcategoryById(subcategoryId, trackChanges);
+            if (ids is null)
+                throw new IdParametersBadRequestException();
 
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(subcategoryId);
+            var autopartEntities = _repository.Autopart.GetByIds(ids, trackChanges);
 
-            var autopartEntity = _mapper.Map<Autopart>(autopartForCreation);
+            if (ids.Count() != autopartEntities.Count())
+                throw new CollectionByIdsBadRequestException();
 
-            _repository.Autopart.CreateAutopartForSubcategory(subcategoryId, autopartEntity);
+            var autopartsToReturn = _mapper.Map<IEnumerable<AutopartDto>>(autopartEntities);
 
-            _repository.Save();
-
-            var autopartToReturn = _mapper.Map<AutopartDto>(autopartEntity);
-
-            return autopartToReturn;
+            return autopartsToReturn;
         }
 
         /* Actualizar una Autoparte */
@@ -118,6 +135,26 @@ namespace Service.Products
                 throw new AutopartNotFoundException(id);
 
             _mapper.Map(autopartForUpdate, autopartEntity);
+
+            autopartEntity.setModificationDate();
+
+            _repository.Save();
+        }
+
+        /* Eliminar una Autoparte */
+        public void DeleteAutopartForSubcategory(Guid subcategoryId, Guid id, bool trackChanges)
+        {
+            var subcategory = _repository.Subcategory.GetSubcategoryById(subcategoryId, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(subcategoryId);
+
+            var autopartForSubcategory = _repository.Autopart.GetAutopartBySubcategory(subcategoryId, id, trackChanges);
+
+            if (autopartForSubcategory is null)
+                throw new AutopartNotFoundException(id);
+
+            _repository.Autopart.DeleteAutopart(autopartForSubcategory);
 
             _repository.Save();
         }

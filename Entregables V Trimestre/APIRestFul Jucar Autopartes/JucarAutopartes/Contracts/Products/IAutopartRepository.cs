@@ -9,6 +9,9 @@ namespace Contracts.Products
 {
     public interface IAutopartRepository
     {
+        /* Crear una Autoparte */
+        void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart);
+
         /* Obteniendo todas las Autopartes en general */
         IEnumerable<Autopart> GetAllAutoparts(bool trackChanges);
 
@@ -21,7 +24,10 @@ namespace Contracts.Products
         /* Obtener una Autopartes especifica de una Subcategoria */
         Autopart GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges);
 
-        /* Crear una Autoparte */
-        void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart);
+        /* Obtener una colección de Autopartes de una Subcategoría*/
+        IEnumerable<Autopart> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+
+        /* Eliminar una Autoparte */
+        void DeleteAutopart(Autopart autopart);
     }
 }

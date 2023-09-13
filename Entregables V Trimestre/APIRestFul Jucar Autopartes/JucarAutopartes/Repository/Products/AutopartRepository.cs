@@ -16,6 +16,14 @@ namespace Repository.Products
 
         }
 
+        /* Crear una Autoparte */
+        public void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart)
+        {
+            autopart.SubcategoryId = subcategoryId;
+
+            Create(autopart);
+        }
+
         /* Obteniendo todas las Autopartes en general */
         public IEnumerable<Autopart> GetAllAutoparts(bool trackChanges) =>
             FindAll(trackChanges)
@@ -33,17 +41,17 @@ namespace Repository.Products
             .OrderBy(a => a.Name)
             .ToList();
 
-        /* Obteniendo una Autopartes especifica de la Subcategoria */
+        /* Obteniendo una Autoparte especifica de la Subcategoria */
         public Autopart GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges) =>
             FindByCondition(a => a.SubcategoryId.Equals(subcategoryId) && a.AutopartID.Equals(id), trackChanges)
             .SingleOrDefault();
 
-        /* Crear una Autoparte */
-        public void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart)
-        {
-            autopart.SubcategoryId = subcategoryId;
+        /* Obtener una colección de Autopartes de una Subcategoría*/
+        public IEnumerable<Autopart> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+            FindByCondition(x => ids.Contains(x.AutopartID), trackChanges)
+            .ToList();
 
-            Create(autopart);
-        }
+        /* Eliminar una Autoparts */
+        public void DeleteAutopart(Autopart autopart) => Delete(autopart);
     }
 }

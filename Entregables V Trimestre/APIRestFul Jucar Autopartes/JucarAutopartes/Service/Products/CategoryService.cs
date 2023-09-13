@@ -114,6 +114,8 @@ namespace Service.Products
 
             _mapper.Map(categoryForUpdate, categoryEntity);
 
+            categoryEntity.setModificationDate();
+
             _repository.Save();
         }
 
