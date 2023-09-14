@@ -14,6 +14,7 @@ namespace Contracts
         ISubcategoryRepository Subcategory { get; }
         IAutopartRepository Autopart { get; }
         IRawMaterialRepository RawMaterial { get; }
+        IAutopartMaterialRepository AutopartMaterial { get; }
         
 
         void Save();
