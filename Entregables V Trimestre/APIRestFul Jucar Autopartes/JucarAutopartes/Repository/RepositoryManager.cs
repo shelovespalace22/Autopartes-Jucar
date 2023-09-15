@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts;
-//using Contracts.Factory;
 using Contracts.Products;
 using Repository.Products;
 
@@ -13,11 +12,14 @@ namespace Repository
     public class RepositoryManager : IRepositoryManager
     {
         private readonly RepositoryContext _repositoryContext;
+
         private readonly Lazy<ICategoryRepository> _categoryRepository;
+
         private readonly Lazy<ISubcategoryRepository> _subcategoryRepository;
+
         private readonly Lazy<IAutopartRepository> _autopartRepository;
+
         private readonly Lazy<IRawMaterialRepository> _rawMaterialRepository;
-        //private readonly Lazy<IFactoryRepository> _factoryRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -25,10 +27,13 @@ namespace Repository
 
 
             _categoryRepository = new Lazy<ICategoryRepository>(() => new CategoryRepository(repositoryContext));
+
             _subcategoryRepository = new Lazy<ISubcategoryRepository>(() => new SubcategoryRepository(repositoryContext));
+
             _autopartRepository = new Lazy<IAutopartRepository>(() => new AutopartRepository(repositoryContext));
+
             _rawMaterialRepository = new Lazy<IRawMaterialRepository>(() => new RawMaterialRepository(repositoryContext));
-            //_factoryRepository = new Lazy<IFactoryRepository>(() => new FactoryRepository(repositoryContext));
+
         }
 
         public ICategoryRepository Category => _categoryRepository.Value;
@@ -36,9 +41,9 @@ namespace Repository
         public ISubcategoryRepository Subcategory => _subcategoryRepository.Value;
 
         public IAutopartRepository Autopart => _autopartRepository.Value;
+
         public IRawMaterialRepository RawMaterial => _rawMaterialRepository.Value;
         
-        //public IFactoryRepository Factory => _factoryRepository.Value;
 
         
 

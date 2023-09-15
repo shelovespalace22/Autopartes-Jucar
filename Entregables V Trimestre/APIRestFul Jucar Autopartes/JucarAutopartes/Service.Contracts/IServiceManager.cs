@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Service.Contracts.Factories;
 using Service.Contracts.Products;
 
 namespace Service.Contracts
@@ -14,8 +13,6 @@ namespace Service.Contracts
         ISubcategoryService SubcategoryService { get; }
         IAutopartService AutopartService { get; }
         IRawMaterialService RawMaterialService { get; }
-        
-        //IFactoryService FactoryService { get; }
 
     }
 }

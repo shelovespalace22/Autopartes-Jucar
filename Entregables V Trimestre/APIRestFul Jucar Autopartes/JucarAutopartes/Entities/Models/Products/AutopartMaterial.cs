@@ -31,6 +31,11 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        public void setModificationDto()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos 
 
         //Autopart 

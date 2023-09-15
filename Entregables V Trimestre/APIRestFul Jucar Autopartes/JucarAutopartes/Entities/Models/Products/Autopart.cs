@@ -72,6 +72,9 @@ namespace Entities.Models.Products
             State = true;
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
+
+            // Inicializar AutopartMaterials como una lista vacía
+            AutopartMaterials = new List<AutopartMaterial>();
         }
 
         public void setModificationDate()

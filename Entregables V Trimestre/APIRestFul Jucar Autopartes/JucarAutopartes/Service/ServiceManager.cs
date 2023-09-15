@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
 using Service.Contracts;
-//using Service.Contracts.Factories;
 using Service.Contracts.Products;
 using Service.Products;
 
@@ -15,10 +14,12 @@ namespace Service
     public sealed class ServiceManager : IServiceManager
     {
         private readonly Lazy<ICategoryService> _categoryService;
+
         private readonly Lazy<ISubcategoryService> _subcategoryService;
+
         private readonly Lazy<IAutopartService> _autopartService;
+
         private readonly Lazy<IRawMaterialService> _rawMaterialService;
-        //private readonly Lazy<IFactoryService> _factoryService;
 
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
@@ -34,10 +35,6 @@ namespace Service
 
             _rawMaterialService = new Lazy<IRawMaterialService>(() =>
                 new RawMaterialService(repositoryManager, logger, mapper));
-            //_factoryService = new Lazy<IFactoryService>(() =>
-            //    new FactoryService(repositoryManager, logger, mapper));
-
-
 
         }
 
@@ -45,8 +42,5 @@ namespace Service
         public ISubcategoryService SubcategoryService => _subcategoryService.Value;
         public IAutopartService AutopartService => _autopartService.Value;
         public IRawMaterialService RawMaterialService => _rawMaterialService.Value;
-        //public IFactoryService FactoryService =>_factoryService.Value;
-
-        
     }
 }
