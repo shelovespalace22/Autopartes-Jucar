@@ -96,7 +96,8 @@ namespace Entities.Models.Products
 
         //PriceHistory
 
-        public ICollection<PriceHistory>? PriceHistories { get; set; }
+        [DisplayName("Precio")] 
+        public PriceHistory? PriceHistorie { get; set; }
 
         //Inventory
 

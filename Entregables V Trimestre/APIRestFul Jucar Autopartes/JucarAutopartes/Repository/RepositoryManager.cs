@@ -20,6 +20,7 @@ namespace Repository
         private readonly Lazy<IAutopartRepository> _autopartRepository;
 
         private readonly Lazy<IRawMaterialRepository> _rawMaterialRepository;
+        private readonly Lazy<IAutopartMaterialRepository> _autopartMaterialRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -34,6 +35,8 @@ namespace Repository
 
             _rawMaterialRepository = new Lazy<IRawMaterialRepository>(() => new RawMaterialRepository(repositoryContext));
 
+            _autopartMaterialRepository = new Lazy<IAutopartMaterialRepository>(() => new AutopartMaterialRepository(repositoryContext));
+
         }
 
         public ICategoryRepository Category => _categoryRepository.Value;
@@ -43,6 +46,8 @@ namespace Repository
         public IAutopartRepository Autopart => _autopartRepository.Value;
 
         public IRawMaterialRepository RawMaterial => _rawMaterialRepository.Value;
+
+        public IAutopartMaterialRepository AutopartMaterial => _autopartMaterialRepository.Value;
         
 
         

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JucarAutopartes.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabase : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -1029,12 +1029,12 @@ namespace JucarAutopartes.Migrations
                 columns: new[] { "CategoryID", "CreationDate", "ModificationDate", "Name", "State" },
                 values: new object[,]
                 {
-                    { new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7836), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7836), "EMPAQUE CARNAZA", true },
-                    { new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7837), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7837), "TELEFONO CAUCHO", true },
-                    { new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7839), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7839), "MEDIA LUNA", true },
-                    { new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7803), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7813), "PIN", true },
-                    { new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7834), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7834), "LAINA", true },
-                    { new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7832), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(7832), "ARANDELA", true }
+                    { new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7793), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7794), "EMPAQUE CARNAZA", true },
+                    { new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7796), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7797), "TELEFONO CAUCHO", true },
+                    { new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7799), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7800), "MEDIA LUNA", true },
+                    { new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7707), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7760), "PIN", true },
+                    { new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7790), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7791), "LAINA", true },
+                    { new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7787), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7788), "ARANDELA", true }
                 });
 
             migrationBuilder.InsertData(
@@ -1042,13 +1042,13 @@ namespace JucarAutopartes.Migrations
                 columns: new[] { "SubcategoryID", "CategoryId", "CreationDate", "ModificationDate", "Name", "State" },
                 values: new object[,]
                 {
-                    { new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"), new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8186), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8186), "ARANDELA LEVA", true },
-                    { new Guid("3120692a-9626-418d-baae-315eea262ab5"), new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8188), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8188), "LAINA SPLINDER", true },
-                    { new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8182), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8182), "PIN LEVA", true },
-                    { new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8180), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8181), "PIN DISCO", true },
-                    { new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8178), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8178), "PIN TUERCA", true },
-                    { new Guid("b449767b-601c-4811-ad3e-8b388bedf632"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8173), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8174), "PIN CRUCETA", true },
-                    { new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"), new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8184), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8184), "ARANDELA CACHO", true }
+                    { new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"), new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8528), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8529), "ARANDELA LEVA", true },
+                    { new Guid("3120692a-9626-418d-baae-315eea262ab5"), new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8533), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8533), "LAINA SPLINDER", true },
+                    { new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8519), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8520), "PIN LEVA", true },
+                    { new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8516), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8516), "PIN DISCO", true },
+                    { new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8511), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8512), "PIN TUERCA", true },
+                    { new Guid("b449767b-601c-4811-ad3e-8b388bedf632"), new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8498), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8502), "PIN CRUCETA", true },
+                    { new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"), new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8523), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8524), "ARANDELA CACHO", true }
                 });
 
             migrationBuilder.InsertData(
@@ -1056,16 +1056,16 @@ namespace JucarAutopartes.Migrations
                 columns: new[] { "AutopartID", "CreationDate", "Description", "HeightCm", "LengthCm", "ModificationDate", "Name", "State", "SubcategoryId", "VehicleZone", "WeightKgs" },
                 values: new object[,]
                 {
-                    { new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8447), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8447), "PIN DISCO QUINTA RUEDA", true, new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"), "N/N", "0" },
-                    { new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8438), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8440), "PIN CRUCETA 334", true, new Guid("b449767b-601c-4811-ad3e-8b388bedf632"), "N/N", "0" },
-                    { new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8458), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8458), "LAINA SPLINDER NPR", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
-                    { new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8455), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8455), "ARANDELA LEVA 3/4", true, new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"), "N/N", "0" },
-                    { new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8449), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8449), "PIN LEVA 1 1/4", true, new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"), "N/N", "0" },
-                    { new Guid("8db21635-4db7-453d-8010-831137e72d63"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8464), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8464), "LAINA SPLINDER HINO FC 500", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
-                    { new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8452), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8452), "ARANDELA CACHO AGRALE MODELO NUEVO", true, new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"), "N/N", "0" },
-                    { new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8461), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8461), "LAINA SPLINDER KENWORTH", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
-                    { new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8444), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8444), "PIN TUERCA HOUSING 950 PLANO", true, new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"), "N/N", "0" },
-                    { new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"), new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8467), "N/N", "0", "0", new DateTime(2023, 9, 7, 16, 20, 6, 0, DateTimeKind.Local).AddTicks(8467), "LAINA SPLINDER NISSAN MT 3000", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" }
+                    { new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9077), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9078), "PIN DISCO QUINTA RUEDA", true, new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"), "N/N", "0" },
+                    { new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9033), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9035), "PIN CRUCETA 334", true, new Guid("b449767b-601c-4811-ad3e-8b388bedf632"), "N/N", "0" },
+                    { new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9112), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9113), "LAINA SPLINDER NPR", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
+                    { new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9107), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9108), "ARANDELA LEVA 3/4", true, new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"), "N/N", "0" },
+                    { new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9082), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9083), "PIN LEVA 1 1/4", true, new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"), "N/N", "0" },
+                    { new Guid("8db21635-4db7-453d-8010-831137e72d63"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9121), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9122), "LAINA SPLINDER HINO FC 500", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
+                    { new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9088), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9089), "ARANDELA CACHO AGRALE MODELO NUEVO", true, new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"), "N/N", "0" },
+                    { new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9117), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9117), "LAINA SPLINDER KENWORTH", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" },
+                    { new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9051), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9062), "PIN TUERCA HOUSING 950 PLANO", true, new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"), "N/N", "0" },
+                    { new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"), new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9125), "N/N", "0", "0", new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9126), "LAINA SPLINDER NISSAN MT 3000", true, new Guid("3120692a-9626-418d-baae-315eea262ab5"), "N/N", "0" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -1213,7 +1213,8 @@ namespace JucarAutopartes.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_PriceHistories_AutopartId",
                 table: "PriceHistories",
-                column: "AutopartId");
+                column: "AutopartId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProviderAddresses_AddressId",

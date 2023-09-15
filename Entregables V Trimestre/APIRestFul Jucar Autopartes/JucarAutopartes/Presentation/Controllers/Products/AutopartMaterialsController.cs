@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Controllers.Products
 {
-    [Route("")]
+    [Route("api/autoparts/{autopartId}/materials")]
     [ApiController]
     public class AutopartMaterialsController : ControllerBase
     {
@@ -21,6 +21,16 @@ namespace Presentation.Controllers.Products
 
         /* Crear un material */
 
+
+        /* Obtener todos los materiales */
+
+        [HttpGet("/api/materials")]
+        public IActionResult GetAllMaterials()
+        {
+            var materials = _service.AutopartMaterialService.GetAllMaterials(trackChanges: false);
+
+            return Ok(materials);
+        }
 
     }
 }

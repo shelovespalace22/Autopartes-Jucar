@@ -42,6 +42,12 @@ namespace JucarAutopartes
             CreateMap<RawMaterialForCreationDto, RawMaterial>();
 
             CreateMap<RawMaterialForUpdateDto, RawMaterial>();
+
+
+
+            /* Materiales de Autoparte */
+
+            CreateMap<AutopartMaterial, AutopartMaterialDto>();
         }
     }
 }
