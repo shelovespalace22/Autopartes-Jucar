@@ -21,5 +21,11 @@ namespace Repository.Products
             FindAll(trackChanges)
             .OrderBy(m => m.CreationDate)
             .ToList();
+
+        /* Obtener todos los Materiales de una Autoparte */
+        public IEnumerable<AutopartMaterial> GetMaterials(Guid autopartId, bool trackChanges) =>
+            FindByCondition(m => m.AutopartId.Equals(autopartId), trackChanges)
+            .OrderBy(m => m.CreationDate)
+            .ToList();
     }
 }

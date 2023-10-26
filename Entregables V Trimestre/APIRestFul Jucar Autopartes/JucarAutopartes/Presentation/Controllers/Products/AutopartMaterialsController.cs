@@ -32,5 +32,14 @@ namespace Presentation.Controllers.Products
             return Ok(materials);
         }
 
+        /* Obtener todos los Materiales de una Autoparte */
+
+        public IActionResult GetMaterialsForAutopart (Guid autopartId)
+        {
+            var materials = _service.AutopartMaterialService.GetMaterials(autopartId, trackChanges: false);
+
+            return Ok(materials);
+        }
+
     }
 }

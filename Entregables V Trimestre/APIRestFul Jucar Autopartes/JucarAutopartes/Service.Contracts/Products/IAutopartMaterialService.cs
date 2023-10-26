@@ -11,5 +11,8 @@ namespace Service.Contracts.Products
     {
         /* Obtener todos los materiales */
         IEnumerable<AutopartMaterialDto> GetAllMaterials(bool trackChanges);
+
+        /* Obtener todos los Materiales de una Autoparte */
+        IEnumerable<AutopartMaterialDto> GetMaterials(Guid autopartId, bool trackChanges);
     }
 }
