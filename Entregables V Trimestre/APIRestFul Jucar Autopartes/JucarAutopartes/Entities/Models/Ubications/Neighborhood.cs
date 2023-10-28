@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Providers;
 
 namespace Entities.Models.Ubications
 {
@@ -30,9 +31,9 @@ namespace Entities.Models.Ubications
         public Guid MunicipalityId { get; set; }
         public Municipality? Municipality { get; set; }
 
-        //Stret
+        /* Se eliminó la relación con Street  */
 
-        public ICollection<Street> Streets { get; set; }
+        public ProviderAddress? ProviderAddress { get; set; }
 
 
 

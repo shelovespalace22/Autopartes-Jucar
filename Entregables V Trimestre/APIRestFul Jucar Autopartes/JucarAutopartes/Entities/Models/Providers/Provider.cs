@@ -37,7 +37,7 @@ namespace Entities.Models.Providers
 
         [Required(ErrorMessage = "¡Ingrese un correo electrónico!")]
         [EmailAddress(ErrorMessage = "¡Ingrese una cuenta de correo electrónico válida!")]
-        [DisplayName("Correo Electrónicos")]
+        [DisplayName("Correo Electrónico")]
         public string? EmailAddress { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el tipo de producto!")]
@@ -78,10 +78,10 @@ namespace Entities.Models.Providers
 
         //ProviderAddress
 
-        public ICollection<ProviderAddress> ProviderAddresses { get; set; }
+        public ICollection<ProviderAddress>? ProviderAddresses { get; set; }
 
         //ProviderPhone
 
-        public ICollection<ProviderPhone> ProviderPhones { get; set; }
+        public ICollection<ProviderPhone>? ProviderPhones { get; set; }
     }
 }

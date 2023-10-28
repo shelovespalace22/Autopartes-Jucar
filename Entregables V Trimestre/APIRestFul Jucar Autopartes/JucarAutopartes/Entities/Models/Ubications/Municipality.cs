@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Providers;
 
 namespace Entities.Models.Ubications
 {
@@ -32,5 +33,7 @@ namespace Entities.Models.Ubications
         //Neighborhood
 
         public ICollection<Neighborhood> Neighborhoods { get; set; }
+
+        public ProviderAddress? ProviderAddress { get; set; }
     }
 }
