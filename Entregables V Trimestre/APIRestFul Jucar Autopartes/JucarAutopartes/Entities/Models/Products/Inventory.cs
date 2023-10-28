@@ -20,7 +20,7 @@ namespace Entities.Models.Products
         [MaxLength(3)]
         [RegularExpression("^[0-9]+$")]
         [DisplayName("Cantidad Disponible")]
-        public string? QuantityAvailable { get; set; }
+        public int QuantityAvailable { get; set; } /* Cambié el tipo de string a int */
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -45,8 +45,6 @@ namespace Entities.Models.Products
         public Guid AutopartId { get; set; }
         public Autopart? Autopart { get; set; }
 
-        //Shelving
-
-        public ICollection<Shelving>? Shelvings { get; set; }
+        /* Eliminé la relación con Shelving */
     }
 }

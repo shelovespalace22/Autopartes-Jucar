@@ -27,11 +27,7 @@ namespace Entities.Models.Products
         [DisplayName("Responsable")]
         public string? Responsible { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el lugar de la perdida!")]
-        [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
-        [DisplayName("Lugar")]
-        public string? Place { get; set; }
+        /* Eliminé la propiedad 'Place' */
 
         [Required(ErrorMessage = "¡Ingrese el motivo de perdida!")]
         [MaxLength(150)]
@@ -56,6 +52,13 @@ namespace Entities.Models.Products
         public Loss()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

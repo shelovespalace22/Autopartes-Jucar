@@ -22,11 +22,7 @@ namespace Entities.Models.Products
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el tipo de la Materia Prima!")]
-        [MaxLength(50)]
-        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un tipo válido!")]
-        [DisplayName("Tipo")]
-        public string? Type { get; set; }
+        /* Elminé la propiedad 'Type' */
 
         [Required]
         [DisplayName("Estado")]
@@ -49,6 +45,8 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
         public void setModificationDate()
         {
             ModificationDate = DateTime.Now;
@@ -56,16 +54,18 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        //AutopartMaterial
-
-        public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
+        /* Elminé la relación con la clase 'AutopartMaterials' */
 
         //Stock
 
-        public ICollection<Stock>? Stocks { get; set; }
+        public Stock? Stocks { get; set; }
 
         //Movement
 
         public ICollection<Movement>? Movements { get; set; }
+
+        // Autopart
+
+        public Autopart? Autopart { get; set; }
     }
 }

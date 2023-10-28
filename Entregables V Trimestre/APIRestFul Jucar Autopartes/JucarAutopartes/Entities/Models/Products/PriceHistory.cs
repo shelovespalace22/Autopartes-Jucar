@@ -41,15 +41,23 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
+        public void setModificationDate()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos 
 
         //Autopart 
 
         public Guid AutopartId { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una Autoparte.")]
+        [DisplayName("Autoparte")]
         public Autopart? Autopart { get; set; }
 
-        //DiscountHistory
-
-        public ICollection<DiscountHistory>? DiscountHistories { get; set; }
+        /* Eliminé la relación con la tabla 'DiscountHistory' */
     }
 }

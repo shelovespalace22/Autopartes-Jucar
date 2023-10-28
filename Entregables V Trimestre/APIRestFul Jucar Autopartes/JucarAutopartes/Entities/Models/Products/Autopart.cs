@@ -22,32 +22,13 @@ namespace Entities.Models.Products
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese una descripción para la autoparte!")]
+        /* Ya no es requerida la Descripción */
         [MaxLength(200, ErrorMessage = "Ha superado el límite de caracteres permitido")]
         [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
         [DisplayName("Descripción")]
         public string? Description { get; set; }
 
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Peso Kgs")]
-        public string? WeightKgs { get; set; }
-
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Altura Cm")]
-        public string? HeightCm { get; set; }
-
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Largo Cm")]
-        public string? LengthCm { get; set; }
-
-        [Required(ErrorMessage = "¡Ingrese la zona del vehiculo a la que pertenece!")]
-        [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
-        [DisplayName("Zona del Vehículo")]
-        public string? VehicleZone { get; set; }
+       /* Elimíné propiedades Peso, Altura, Ancho, Zona de Vehiculo */
 
         [Required]
         [DisplayName("Estado")]
@@ -66,15 +47,10 @@ namespace Entities.Models.Products
 
         public Autopart()
         {
-            WeightKgs = "0";
-            HeightCm = "0";
-            LengthCm = "0";
+            Description = "No tiene descripción.";
             State = true;
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
-
-            // Inicializar AutopartMaterials como una lista vacía
-            AutopartMaterials = new List<AutopartMaterial>();
         }
 
         public void setModificationDate()
@@ -87,6 +63,7 @@ namespace Entities.Models.Products
         //Subcategory
         public Guid SubcategoryId { get; set; }
 
+        [Required(ErrorMessage = "Debe seleccionar una Subcategoría")]
         [DisplayName("Subcategoría")]
         public Subcategory? Subcategory { get; set; }
 
@@ -96,17 +73,16 @@ namespace Entities.Models.Products
 
         //PriceHistory
 
+        [Required(ErrorMessage = "Debe ingresar el precio de la autoparte.")]
         [DisplayName("Precio")] 
-        public PriceHistory? PriceHistorie { get; set; }
+        public ICollection<PriceHistory>? PriceHistories { get; set; } /* Cambié la relación de 1:1 a 1:N */
 
         //Inventory
 
         [DisplayName("Inventario")]
         public Inventory? Inventory { get; set; }
 
-        //AutopartMaterial
-
-        public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
+        /* Elminé la relación con la tabla de 'AutopartMaterials' */
 
         //BillDetail
 
@@ -115,5 +91,13 @@ namespace Entities.Models.Products
         //OrderDetail
 
         public ICollection<OrderDetail>? OrderDetails { get; set; }
+
+        //RawMaterial
+
+        public Guid RawMaterialId { get; set; }
+
+        [Required(ErrorMessage = "Escoga un material para la autoparte")]
+        [DisplayName("Material")]
+        public RawMaterial? Material { get; set; }
     }
 }
