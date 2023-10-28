@@ -16,27 +16,12 @@ namespace Entities.Models.Ubications
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid NeighborhoodID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el nombre del barrio!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Nombre")]
+        /* Se eliminaron las data annotations */
         public string? Name { get; set; }
 
-        [Required]
-        [DisplayName("Creación del Regístro")]
-        public DateTime CreationDate { get; set; }
+        /* Se eliminaron 2 propiedades: CreationDate y ModificationDate*/
 
-        [Required]
-        [DisplayName("Modificación del Regístro")]
-        public DateTime ModificationDate { get; set; }
-
-        //Constructor
-
-        public Neighborhood()
-        {
-            CreationDate = DateTime.Now;
-            ModificationDate = DateTime.Now;
-        }
+        /* Se eliminó el constructor */
 
         //Relaciones con otros modelos
 

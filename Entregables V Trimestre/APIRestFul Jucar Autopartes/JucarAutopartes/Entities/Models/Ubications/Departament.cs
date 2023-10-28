@@ -15,33 +15,12 @@ namespace Entities.Models.Ubications
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid DepartmentID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingresa el nombre del departamento!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Nombre")]
+        /* Se eliminó los DataAnnotations */
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese la capital del departamento!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Capital")]
-        public string? Capital { get; set; }
+        /* Se eliminaron 3 propiedades: CreationDate, ModificationDate y Capital*/
 
-        [Required]
-        [DisplayName("Creación del Regístro")]
-        public DateTime CreationDate { get; set; }
-
-        [Required]
-        [DisplayName("Modificación del Regístro")]
-        public DateTime ModificationDate { get; set; }
-
-        //Constructor
-
-        public Department()
-        {
-            CreationDate = DateTime.Now;
-            ModificationDate = DateTime.Now;
-        }
+        /* Se eliminó el constructor */
 
         //Relaciones con otros modelos 
 

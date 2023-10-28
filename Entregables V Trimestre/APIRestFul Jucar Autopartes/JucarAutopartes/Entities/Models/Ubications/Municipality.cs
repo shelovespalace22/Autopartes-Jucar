@@ -15,31 +15,12 @@ namespace Entities.Models.Ubications
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid MunicipalityID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingresa el nombre del municipio!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Nombre")]
+        /* Se eliminaron las data annotations */
         public string? Name { get; set; }
 
-        [Required]
-        [DisplayName("Capital")]
-        public bool Capital { get; set; }
+        /* Se eliminaron 3 propiedades: CreationDate, ModificationDate y Capital*/
 
-        [Required]
-        [DisplayName("Creación del Regístro")]
-        public DateTime CreationDate { get; set; }
-
-        [Required]
-        [DisplayName("Modificación del Regístro")]
-        public DateTime ModificationDate { get; set; }
-
-        //Constructor
-
-        public Municipality()
-        {
-            CreationDate = DateTime.Now;
-            ModificationDate = DateTime.Now;
-        }
+        /* Se eliminó el constructor */
 
         //Relaciones con otros modelos
 
