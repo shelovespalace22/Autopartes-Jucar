@@ -19,7 +19,7 @@ namespace Entities.Models.Products
         [MaxLength(5)]
         [RegularExpression("^[0-9]+$")]
         [DisplayName("Cantidad Perdida")]
-        public string? AmountLoss { get; set; }
+        public int AmountLoss { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el responsable!")]
         [MaxLength(50)]
