@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Models.Providers;
+using Entities.Models.Sales;
 
 namespace Entities.Models.Ubications
 {
@@ -34,6 +35,7 @@ namespace Entities.Models.Ubications
         /* Se eliminó la relación con Street  */
 
         public ProviderAddress? ProviderAddress { get; set; }
+        public CustomerAddress? CustomerAddress { get; set; }
 
 
 

@@ -16,17 +16,35 @@ namespace Entities.Models.Sales
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderDetailID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el producto solicitado!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Producto")]
-        public string? Product { get; set; }
-
-        [Required(ErrorMessage = "¡Ingrese la cantidad solicitada!")]
+        [Required(ErrorMessage = "¡Ingresa la cantidad del item!")]
         [MaxLength(5)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Cantidad")]
         public string? Quantity { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa el valor unitario del item!")]
+        [MaxLength(10)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("Valor Unitario")]
+        public double UnitValue { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa la tarifa de IVA!")]
+        [MaxLength(2)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("%IVA")]
+        public double IVA { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa el valor subtotal!")]
+        [MaxLength(10)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("Subtotal")]
+        public double SubtotalValue { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa el valor total!")]
+        [MaxLength(10)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("Total")]
+        public double TotalValue { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]

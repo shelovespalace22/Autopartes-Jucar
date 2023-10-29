@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Models.Providers;
+using Entities.Models.Sales;
 
 namespace Entities.Models.Ubications
 {
@@ -28,6 +29,7 @@ namespace Entities.Models.Ubications
         public ICollection<Municipality> Municipalities { get; set; }
 
         public ProviderAddress? ProviderAddress { get; set; }
+        public CustomerAddress? CustomerAddress { get; set; }
 
     }
 }

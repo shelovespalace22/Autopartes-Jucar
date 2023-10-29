@@ -44,6 +44,6 @@ namespace Entities.Models.Sales
 
         //Relaciones con otros modelos 
 
-        public ICollection<Contribution> Contributions { get; set; }
+        public ICollection<Contribution>? Contributions { get; set; }
     }
 }

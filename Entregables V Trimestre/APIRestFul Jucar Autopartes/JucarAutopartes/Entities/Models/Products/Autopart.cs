@@ -84,9 +84,7 @@ namespace Entities.Models.Products
 
         /* Elminé la relación con la tabla de 'AutopartMaterials' */
 
-        //BillDetail
-
-        public ICollection<BillDetail>? BillDetails { get; set; }
+        /* Se elimino la relacion con BillDetails */
 
         //OrderDetail
 

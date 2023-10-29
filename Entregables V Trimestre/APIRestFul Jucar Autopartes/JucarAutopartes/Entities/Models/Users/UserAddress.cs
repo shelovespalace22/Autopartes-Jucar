@@ -44,9 +44,6 @@ namespace Entities.Models.Users
         public Guid UserID { get; set; }
         public User? User { get; set; }
 
-        //Address
-
-        public Guid AddressId { get; set; }
-        public Address? Address { get; set; }
+        /* Se eliminó la relación con Address */
     }
 }

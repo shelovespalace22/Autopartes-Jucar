@@ -15,15 +15,36 @@ namespace Entities.Models.Sales
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el lugar del pedido!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Lugar")]
-        public string? Place { get; set; }
+        /* Se eliminó propiedad 'Place' */
 
-        [Required]
+        [Required(ErrorMessage = "Ingrese el nombre del solicitante del pedido.")]
+        [StringLength(50)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
+        [DisplayName("Nombre - Razón Social")]
+        public string? Name { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el correo del solicitante del pedido.")]
+        [StringLength(50)]
+        [EmailAddress]
+        [DisplayName("Correo")]
+        public string? Email { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el número telefonico del solicitante del pedido.")]
+        [MaxLength(10)]
+        [RegularExpression("^[0-9]+$")]
+        [Phone]
+        [DisplayName("Número")]
+        public string? PhoneNumber { get; set; }
+
+        [MaxLength(50)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
+        [DisplayName("Dirección de Destino")]
+        public string? Address { get; set; }
+
+        [MaxLength(20)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
         [DisplayName("Estado")]
-        public bool State { get; set; }
+        public string? State { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -37,7 +58,8 @@ namespace Entities.Models.Sales
 
         public Order()
         {
-            State = true;
+            Address = "Sin dirección indicada";
+            State = "Sin Contribuciones";
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
         }
@@ -51,14 +73,11 @@ namespace Entities.Models.Sales
 
         //OrderDetail
 
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public ICollection<OrderDetail>? OrderDetails { get; set; }
 
         //Contribution
 
-        public ICollection<Contribution> Contributions { get; set; }
+        public ICollection<Contribution>? Contributions { get; set; }
 
-        //Bill
-
-        public Bill? Bill { get; set; }
     }
 }

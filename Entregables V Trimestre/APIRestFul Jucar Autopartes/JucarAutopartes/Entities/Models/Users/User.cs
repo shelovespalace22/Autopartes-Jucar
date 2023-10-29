@@ -107,8 +107,6 @@ namespace Entities.Models.Users
 
         public ICollection<UserAddress> UserAddresses { get; set; }
 
-        //Bill 
-
-        public ICollection<Bill> Bills { get; set; }
+        /* Se eliminó la relación con Bills */
     }
 }
