@@ -11,12 +11,11 @@ namespace Shared.DataTransferObjects.Products
         public Guid AutopartID { get; init; }
         public string? Name { get; init; }
         public string? Description { get; init; }
-        public string? WeightKgs { get; init; }
-        public string? HeightCm { get; init; }
-        public string? LengthCm { get; init; }
-        public string? VehicleZone { get; init; }
         public bool State { get; init; }
         public DateTime CreationDate { get; init; }
         public DateTime ModificationDate { get; init; }
+        public Guid SubcategoryId { get; init; }
+        public Guid RawMaterialId { get; init; }
+
     }
 }

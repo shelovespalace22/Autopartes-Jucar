@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects.Products
 {
-    public record RawMaterialForCreationDto(string Name, string Type);
+    public record RawMaterialForCreationDto(string Name);
 
 }
