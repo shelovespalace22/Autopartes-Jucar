@@ -55,17 +55,6 @@ namespace Entities.Models.Providers
 
         //Relaciones con otros modelos 
 
-
-        /* Departamento */
-
-        public Guid DepartmentId { get; set; }
-        public Department? Department { get; set; }
-
-        /* Municipio */
-
-        public Guid MunicipalityId { get; set; }
-        public Municipality? Municipality { get; set; }
-
         /* Barrio */
 
         public Guid NeighborhoodId { get; set; }

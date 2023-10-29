@@ -1,44 +1,45 @@
-﻿//using contracts;
-//using loggerservice;
-//using repository;
-//using service.contracts;
-//using service;
-//using microsoft.entityframeworkcore;
+﻿using Contracts;
+using LoggerService;
+using Repository;
+using Service.Contracts;
+using Service;
+using Microsoft.EntityFrameworkCore;
+using JucarAutopartes;
 
-//namespace jucarautopartes.extensions
-//{
-//    public static class serviceextensions
-//    {
-//        public static void configurecors(this iservicecollection services) =>
-//            services.addcors(options =>
-//            {
-//                options.addpolicy("corspolicy", builder =>
-//                    builder.allowanyorigin()
-//                    .allowanymethod()
-//                    .allowanyheader());
-//            });
+namespace JucarAutopartes.Extensions
+{
+    public static class serviceextensions
+    {
+        public static void ConfigureCors(this IServiceCollection services) =>
+            services.AddCors(options =>
+            {
+                options.AddPolicy("corspolicy", builder =>
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
 
-//        public static void configureiisintegration(this iservicecollection services) =>
-//            services.configure<iisoptions>(options =>
-//            {
+        public static void ConfigureIISIntegration(this IServiceCollection services) =>
+            services.Configure<IISOptions>(options =>
+            {
 
-//            });
+            });
 
-//        public static void configureloggerservice(this iservicecollection services) =>
-//            services.addsingleton<iloggermanager, loggermanager>();
+        public static void ConfigureLoggerService(this IServiceCollection services) =>
+            services.AddSingleton<ILoggerManager, LoggerManager>();
 
-//        public static void configurerepositorymanager(this iservicecollection services) =>
-//            services.addscoped<irepositorymanager, repositorymanager>();
+        public static void ConfigureRepositoryManager(this IServiceCollection services) =>
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
 
-//        public static void configureservicemanager(this iservicecollection services) =>
-//            services.addscoped<iservicemanager, servicemanager>();
+        public static void ConfigureServiceManager(this IServiceCollection services) =>
+            services.AddScoped<IServiceManager, ServiceManager>();
 
-//        public static void configuresqlcontext(this iservicecollection services, iconfiguration configuration) =>
-//            services.adddbcontext<repositorycontext>(opts =>
-//                opts.usesqlserver(configuration.getconnectionstring("sqlconnection")));
+        public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
+            services.AddDbContext<RepositoryContext>(opts =>
+                opts.UseSqlServer(configuration.GetConnectionString("sqlconnection")));
 
-//        public static imvcbuilder addcustomcsvformatter(this imvcbuilder builder) =>
-//            builder.addmvcoptions(config => config.outputformatters.add(new csvoutputformatter()));
+        public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
+            builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
 
-//    }
-//}
+    }
+}

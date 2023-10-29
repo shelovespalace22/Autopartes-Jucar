@@ -34,8 +34,5 @@ namespace Entities.Models.Ubications
         //Neighborhood
 
         public ICollection<Neighborhood> Neighborhoods { get; set; }
-
-        public ProviderAddress? ProviderAddress { get; set; }
-        public CustomerAddress? CustomerAddress { get; set; }
     }
 }

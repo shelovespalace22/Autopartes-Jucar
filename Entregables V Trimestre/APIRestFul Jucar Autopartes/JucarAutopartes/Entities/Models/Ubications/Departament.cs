@@ -28,8 +28,5 @@ namespace Entities.Models.Ubications
 
         public ICollection<Municipality> Municipalities { get; set; }
 
-        public ProviderAddress? ProviderAddress { get; set; }
-        public CustomerAddress? CustomerAddress { get; set; }
-
     }
 }
