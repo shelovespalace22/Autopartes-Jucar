@@ -12,8 +12,8 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231029012531_CreacionBaseDeDatos")]
-    partial class CreacionBaseDeDatos
+    [Migration("20231029015619_InserccionDatos")]
+    partial class InserccionDatos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,12 +57,123 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("AutopartID");
 
-                    b.HasIndex("RawMaterialId")
-                        .IsUnique();
+                    b.HasIndex("RawMaterialId");
 
                     b.HasIndex("SubcategoryId");
 
                     b.ToTable("Autoparts");
+
+                    b.HasData(
+                        new
+                        {
+                            AutopartID = new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2378),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2381),
+                            Name = "PIN CRUCETA 334",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
+                            State = true,
+                            SubcategoryId = new Guid("b449767b-601c-4811-ad3e-8b388bedf632")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2396),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2397),
+                            Name = "PIN TUERCA HOUSING 950 PLANO",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
+                            State = true,
+                            SubcategoryId = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2402),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2402),
+                            Name = "PIN DISCO QUINTA RUEDA",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
+                            State = true,
+                            SubcategoryId = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2407),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2408),
+                            Name = "PIN LEVA 1 1/4",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            State = true,
+                            SubcategoryId = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2412),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2413),
+                            Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            State = true,
+                            SubcategoryId = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2417),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2418),
+                            Name = "ARANDELA LEVA 3/4",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            State = true,
+                            SubcategoryId = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2423),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2424),
+                            Name = "LAINA SPLINDER NPR",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            State = true,
+                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2428),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2429),
+                            Name = "LAINA SPLINDER KENWORTH",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
+                            State = true,
+                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("8db21635-4db7-453d-8010-831137e72d63"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2530),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2531),
+                            Name = "LAINA SPLINDER HINO FC 500",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
+                            State = true,
+                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5")
+                        },
+                        new
+                        {
+                            AutopartID = new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2538),
+                            Description = "N/N",
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(2539),
+                            Name = "LAINA SPLINDER NISSAN MT 3000",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
+                            State = true,
+                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5")
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
@@ -88,6 +199,56 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(35),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(51),
+                            Name = "PIN",
+                            State = true
+                        },
+                        new
+                        {
+                            CategoryID = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(86),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(87),
+                            Name = "ARANDELA",
+                            State = true
+                        },
+                        new
+                        {
+                            CategoryID = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(90),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(91),
+                            Name = "LAINA",
+                            State = true
+                        },
+                        new
+                        {
+                            CategoryID = new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(93),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(94),
+                            Name = "EMPAQUE CARNAZA",
+                            State = true
+                        },
+                        new
+                        {
+                            CategoryID = new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(96),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(96),
+                            Name = "TELEFONO CAUCHO",
+                            State = true
+                        },
+                        new
+                        {
+                            CategoryID = new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(99),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(99),
+                            Name = "MEDIA LUNA",
+                            State = true
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
@@ -241,6 +402,32 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("RawMaterialID");
 
                     b.ToTable("RawMaterials");
+
+                    b.HasData(
+                        new
+                        {
+                            RawMaterialID = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3732),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3735),
+                            Name = "Acero",
+                            State = true
+                        },
+                        new
+                        {
+                            RawMaterialID = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3743),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3743),
+                            Name = "Hierro",
+                            State = true
+                        },
+                        new
+                        {
+                            RawMaterialID = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3746),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(3747),
+                            Name = "Cobre",
+                            State = true
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
@@ -314,6 +501,71 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
+
+                    b.HasData(
+                        new
+                        {
+                            SubcategoryID = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
+                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1612),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1615),
+                            Name = "PIN CRUCETA",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
+                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1628),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1629),
+                            Name = "PIN TUERCA",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
+                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1632),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1633),
+                            Name = "PIN DISCO",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
+                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1636),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1637),
+                            Name = "PIN LEVA",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
+                            CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1639),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1640),
+                            Name = "ARANDELA CACHO",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
+                            CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1643),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1644),
+                            Name = "ARANDELA LEVA",
+                            State = true
+                        },
+                        new
+                        {
+                            SubcategoryID = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
+                            CategoryId = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
+                            CreationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1647),
+                            ModificationDate = new DateTime(2023, 10, 28, 20, 56, 19, 454, DateTimeKind.Local).AddTicks(1648),
+                            Name = "LAINA SPLINDER",
+                            State = true
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>
@@ -749,8 +1001,8 @@ namespace JucarAutopartes.Migrations
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
                 {
                     b.HasOne("Entities.Models.Products.RawMaterial", "Material")
-                        .WithOne("Autopart")
-                        .HasForeignKey("Entities.Models.Products.Autopart", "RawMaterialId")
+                        .WithMany("Autopart")
+                        .HasForeignKey("RawMaterialId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

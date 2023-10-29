@@ -502,8 +502,7 @@ namespace JucarAutopartes.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Autoparts_RawMaterialId",
                 table: "Autoparts",
-                column: "RawMaterialId",
-                unique: true);
+                column: "RawMaterialId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Autoparts_SubcategoryId",

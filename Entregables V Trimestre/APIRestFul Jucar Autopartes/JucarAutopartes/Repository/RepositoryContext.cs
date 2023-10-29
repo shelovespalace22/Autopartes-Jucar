@@ -9,7 +9,7 @@ using Entities.Models.Sales;
 using Entities.Models.Ubications;
 using Entities.Models.Users;
 using Microsoft.EntityFrameworkCore;
-//using Repository.Configuration;
+using Repository.Configuration;
 
 namespace Repository
 {
@@ -23,9 +23,10 @@ namespace Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            //modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
-            //modelBuilder.ApplyConfiguration(new AutopartConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
+            modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
         }
 
         /* Products */

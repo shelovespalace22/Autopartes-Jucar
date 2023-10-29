@@ -66,6 +66,6 @@ namespace Entities.Models.Products
 
         // Autopart
 
-        public Autopart? Autopart { get; set; }
+        public ICollection<Autopart>? Autopart { get; set; }
     }
 }
