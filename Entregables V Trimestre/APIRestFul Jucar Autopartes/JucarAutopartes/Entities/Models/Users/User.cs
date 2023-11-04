@@ -99,10 +99,6 @@ namespace Entities.Models.Users
 
         public ICollection<UserPhone> UserPhones { get; set; }
 
-        //UserPosition
-
-        public ICollection<UserPosition> UserPositions { get; set; }
-
         //UserAddress
 
         public ICollection<UserAddress> UserAddresses { get; set; }
