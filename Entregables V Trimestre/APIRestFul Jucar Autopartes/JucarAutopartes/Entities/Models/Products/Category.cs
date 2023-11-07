@@ -17,7 +17,7 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la categoría!")]
         [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 

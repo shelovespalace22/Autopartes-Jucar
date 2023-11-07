@@ -26,25 +26,19 @@ namespace Entities.Models.Sales
         [MaxLength(10)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Valor Unitario")]
-        public double UnitValue { get; set; }
+        public decimal UnitValue { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa la tarifa de IVA!")]
         [MaxLength(2)]
         [RegularExpression("^\\d+$")]
         [DisplayName("%IVA")]
-        public double IVA { get; set; }
+        public decimal IVA { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el valor subtotal!")]
         [MaxLength(10)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Subtotal")]
-        public double SubtotalValue { get; set; }
-
-        [Required(ErrorMessage = "¡Ingresa el valor total!")]
-        [MaxLength(10)]
-        [RegularExpression("^\\d+$")]
-        [DisplayName("Total")]
-        public double TotalValue { get; set; }
+        public decimal SubtotalValue { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]

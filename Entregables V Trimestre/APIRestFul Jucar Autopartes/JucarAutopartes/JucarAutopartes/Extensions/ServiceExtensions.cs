@@ -5,6 +5,8 @@ using Service.Contracts;
 using Service;
 using Microsoft.EntityFrameworkCore;
 using JucarAutopartes;
+using Entities.Models.Users;
+using Microsoft.AspNetCore.Identity;
 
 namespace JucarAutopartes.Extensions
 {
@@ -40,6 +42,23 @@ namespace JucarAutopartes.Extensions
 
         public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
             builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
+
+        /* Configuración de Identity */
+
+        public static void ConfigureIdentity(this IServiceCollection services) 
+        { 
+            var builder = services.AddIdentity<User, IdentityRole>(o => 
+            { 
+                o.Password.RequireDigit = true;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 10;
+                o.User.RequireUniqueEmail = true; 
+            })
+            .AddEntityFrameworkStores<RepositoryContext>()
+            .AddDefaultTokenProviders(); 
+        }
 
     }
 }

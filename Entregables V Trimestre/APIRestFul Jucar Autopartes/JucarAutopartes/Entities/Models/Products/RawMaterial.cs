@@ -18,7 +18,7 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la Materia Prima!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un nombre válido!")]
+        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 

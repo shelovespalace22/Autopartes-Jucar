@@ -15,6 +15,10 @@ builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
+
+builder.Services.AddAuthentication(); 
+builder.Services.ConfigureIdentity();
+
 // Add services to the container.
 
 builder.Services.AddControllers(config =>
@@ -62,6 +66,7 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 app.UseCors("CorsPolicy");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

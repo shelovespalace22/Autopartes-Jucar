@@ -17,19 +17,19 @@ namespace Entities.Models.Sales
 
         [Required(ErrorMessage = "Ingrese su Tipo de Identificación (NIT, C.C o C.E)")]
         [MaxLength(50)]
-        [RegularExpression("^[A-Za-z.\\s]+$\r\n")]
+        [RegularExpression("^[A-Za-z.\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Tipo de Identifiación")]
         public string? IdentifierType { get; set; }
 
         [Required(ErrorMessage = "Ingrese su Número de Identificación")]
         [MaxLength(10)]
-        [RegularExpression("^[0-9]+$\r\n")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Número de Identificación")]
         public string IdentifierNumber { get; set; }
 
         [Required(ErrorMessage = "Ingrese su Nombre o Razón Social")]
         [MaxLength(100)]
-        [RegularExpression("^[A-Za-z.\\s]+$\r\n")]
+        [RegularExpression("^[A-Za-z.\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
@@ -65,14 +65,14 @@ namespace Entities.Models.Sales
 
         //CustomerAddress
 
-        public ICollection<CustomerAddress> CustomerAddresses { get; set; }
+        public ICollection<CustomerAddress>? CustomerAddresses { get; set; }
 
         //CustomerPhone
 
-        public ICollection<CustomerPhone> CustomerPhones { get; set; }
+        public ICollection<CustomerPhone>? CustomerPhones { get; set; }
 
         //Order
 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 }

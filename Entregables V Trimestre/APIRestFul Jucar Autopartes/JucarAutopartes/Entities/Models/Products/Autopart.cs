@@ -18,26 +18,23 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la autoparte!")]
         [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
-        /* Ya no es requerida la Descripción */
         [MaxLength(200, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Descripción")]
         public string? Description { get; set; }
 
-        [RegularExpression("^[0-9]+$")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Inventario")]
         public int Inventory { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio de la autoparte.")]
-        [RegularExpression("^[0-9]+$")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Precio")]
-        public decimal Precio { get; set; }
-
-       /* Elimíné propiedades Peso, Altura, Ancho, Zona de Vehiculo */
+        public decimal Value { get; set; }
 
         [Required]
         [DisplayName("Estado")]

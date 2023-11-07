@@ -8,12 +8,13 @@ using Entities.Models.Providers;
 using Entities.Models.Sales;
 using Entities.Models.Ubications;
 using Entities.Models.Users;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Repository.Configuration;
 
 namespace Repository
 {
-    public class RepositoryContext : DbContext
+    public class RepositoryContext : IdentityDbContext<User>
     {
         public RepositoryContext(DbContextOptions options)
             : base(options)
@@ -23,10 +24,11 @@ namespace Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
-            modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
+            base.OnModelCreating(modelBuilder);
+            //modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            //modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            //modelBuilder.ApplyConfiguration(new AutopartConfiguration());
+            //modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
         }
 
         /* Products */
@@ -75,17 +77,5 @@ namespace Repository
         public DbSet<Municipality>? Municipalities { get; set; }
 
         public DbSet<Neighborhood>? Neighborhoods { get; set; }
-
-        /* Users */
-
-        //public DbSet<Position>? Positions { get; set; }
-
-        //public DbSet<User>? Users { get; set; }
-
-        //public DbSet<UserAddress>? UserAddresses { get; set; }
-
-        //public DbSet<UserPhone>? UserPhones { get; set; }
-
-        //public DbSet<UserPosition>? UserPositions { get; set; }
     }
 }

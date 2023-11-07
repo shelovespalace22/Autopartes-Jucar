@@ -11,6 +11,8 @@ namespace Shared.DataTransferObjects.Products
         public Guid AutopartID { get; init; }
         public string? Name { get; init; }
         public string? Description { get; init; }
+        public int Inventory { get; init; }
+        public decimal Value { get; init; }
         public bool State { get; init; }
         public DateTime CreationDate { get; init; }
         public DateTime ModificationDate { get; init; }

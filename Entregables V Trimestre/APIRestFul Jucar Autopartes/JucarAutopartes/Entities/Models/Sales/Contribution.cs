@@ -19,7 +19,7 @@ namespace Entities.Models.Sales
         [MaxLength(5)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Monto del Aporte")]
-        public double AmountPaid { get; set; }
+        public decimal AmountPaid { get; set; }
 
         [Required]
         [DisplayName("Fecha del Aporte")]

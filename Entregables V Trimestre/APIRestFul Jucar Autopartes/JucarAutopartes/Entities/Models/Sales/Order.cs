@@ -15,36 +15,37 @@ namespace Entities.Models.Sales
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderID { get; set; }
 
-        /* Se eliminó propiedad 'Place' */
+        [Required(ErrorMessage = "Ingrese la Fecha del Pedido")]
+        [DisplayName("Fecha del Pedido")]
+        public DateTime OrderDate { get; set; }
+        //Customer
+        public Guid CustomerId { get; set; }
 
-        [Required(ErrorMessage = "Ingrese el nombre del solicitante del pedido.")]
-        [StringLength(50)]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
-        [DisplayName("Nombre - Razón Social")]
-        public string? Name { get; set; }
+        [Required(ErrorMessage = "Escoga un Cliente")]
+        [DisplayName("Cliente")]
+        public Customer? Customer { get; set; }
 
-        [Required(ErrorMessage = "Ingrese el correo del solicitante del pedido.")]
-        [StringLength(50)]
-        [EmailAddress]
-        [DisplayName("Correo")]
-        public string? Email { get; set; }
-
-        [Required(ErrorMessage = "Ingrese el número telefonico del solicitante del pedido.")]
-        [MaxLength(10)]
-        [RegularExpression("^[0-9]+$")]
-        [Phone]
-        [DisplayName("Número")]
-        public string? PhoneNumber { get; set; }
+        [DisplayName("Total de Venta")]
+        public decimal? Total { get; set; }
 
         [MaxLength(50)]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
-        [DisplayName("Dirección de Destino")]
-        public string? Address { get; set; }
+        [DisplayName("Estado de Pago")]
+        public string? PaymentStatus { get; set; }
 
-        [MaxLength(20)]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
-        [DisplayName("Estado")]
-        public string? State { get; set; }
+        [MaxLength(100)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [DisplayName("Dirección de Envío")]
+        public string? ShippingAddress { get; set; }
+
+        [MaxLength(50)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [DisplayName("Estado de Envío")]
+        public string? ShippingStatus { get; set; }
+
+        [MaxLength(200)]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [DisplayName("Observación")]
+        public string? Observation { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -58,18 +59,16 @@ namespace Entities.Models.Sales
 
         public Order()
         {
-            Address = "Sin dirección indicada";
-            State = "Sin Contribuciones";
+            Total = 0;
+            PaymentStatus = "Pendiente";
+            ShippingAddress = "No hay dirección de envío.";
+            ShippingStatus = "En Fabrica";
+            Observation = "No se realizó ninguna observación.";
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
         }
 
         //Relaciones con otros modelos
-
-        //Customer
-
-        public Guid CustomerId { get; set; }
-        public Customer? Customer { get; set; }
 
         //OrderDetail
 
@@ -78,6 +77,5 @@ namespace Entities.Models.Sales
         //Contribution
 
         public ICollection<Contribution>? Contributions { get; set; }
-
     }
 }
