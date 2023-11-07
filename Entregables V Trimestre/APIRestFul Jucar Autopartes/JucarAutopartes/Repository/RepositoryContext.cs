@@ -34,13 +34,9 @@ namespace Repository
 
         public DbSet<Category>? Categories { get; set; }
 
-        public DbSet<Inventory>? Inventories { get; set; }
-
         public DbSet<Loss>? Losses { get; set; }
 
         public DbSet<Movement>? Movements { get; set; }
-
-        public DbSet<PriceHistory>? PriceHistories { get; set; }
 
         public DbSet<RawMaterial>? RawMaterials { get; set; }
 

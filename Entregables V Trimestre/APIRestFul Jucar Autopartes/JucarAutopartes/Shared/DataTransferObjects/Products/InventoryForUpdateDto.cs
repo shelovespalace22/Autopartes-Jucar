@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contracts.Products
+namespace Shared.DataTransferObjects.Products
 {
-    public interface IPriceHistoryRepository
-    {
-    }
+    public record InventoryForUpdateDto(int QuantityAvailable);
 }

@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects.Products
 {
-    public record AutopartForUpdateDto(string Name, string Description, Guid RawMaterialId, IEnumerable<PriceHistorieForCreationDto>? PriceHistories);
+    public record StockForUpdateDto(int QuantityAvailable, int InitialStock, int ReorderPoint, int MinimumInventory, int MaximumInventory);
 }

@@ -28,6 +28,15 @@ namespace Entities.Models.Products
         [DisplayName("Descripción")]
         public string? Description { get; set; }
 
+        [RegularExpression("^[0-9]+$")]
+        [DisplayName("Inventario")]
+        public int Inventory { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el precio de la autoparte.")]
+        [RegularExpression("^[0-9]+$")]
+        [DisplayName("Precio")]
+        public decimal Precio { get; set; }
+
        /* Elimíné propiedades Peso, Altura, Ancho, Zona de Vehiculo */
 
         [Required]
@@ -48,6 +57,7 @@ namespace Entities.Models.Products
         public Autopart()
         {
             Description = "No tiene descripción.";
+            Inventory = 0;
             State = true;
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
@@ -71,20 +81,6 @@ namespace Entities.Models.Products
 
         public ICollection<Loss>? Losses { get; set; }
 
-        //PriceHistory
-
-        [Required(ErrorMessage = "Debe ingresar el precio de la autoparte.")]
-        [DisplayName("Precio")] 
-        public ICollection<PriceHistory>? PriceHistories { get; set; } /* Cambié la relación de 1:1 a 1:N */
-
-        //Inventory
-
-        [DisplayName("Inventario")]
-        public Inventory? Inventory { get; set; }
-
-        /* Elminé la relación con la tabla de 'AutopartMaterials' */
-
-        /* Se elimino la relacion con BillDetails */
 
         //OrderDetail
 
