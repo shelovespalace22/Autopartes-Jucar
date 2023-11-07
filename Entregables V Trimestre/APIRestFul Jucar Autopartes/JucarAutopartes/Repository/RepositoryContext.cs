@@ -25,10 +25,11 @@ namespace Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            //modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
-            //modelBuilder.ApplyConfiguration(new AutopartConfiguration());
-            //modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
+
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
+            modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
         }
 
         /* Products */
