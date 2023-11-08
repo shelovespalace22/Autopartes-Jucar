@@ -21,6 +21,8 @@ namespace Service
 
         private readonly Lazy<IRawMaterialService> _rawMaterialService;
 
+        private readonly Lazy<IStockService> _stockService;
+
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
         {
@@ -36,11 +38,15 @@ namespace Service
             _rawMaterialService = new Lazy<IRawMaterialService>(() =>
                 new RawMaterialService(repositoryManager, logger, mapper));
 
+            _stockService = new Lazy<IStockService>(() =>
+                new StockService(repositoryManager, logger, mapper));
+
         }
 
         public ICategoryService CategoryService => _categoryService.Value;
         public ISubcategoryService SubcategoryService => _subcategoryService.Value;
         public IAutopartService AutopartService => _autopartService.Value;
         public IRawMaterialService RawMaterialService => _rawMaterialService.Value;
+        public IStockService StockService => _stockService.Value;
     }
 }

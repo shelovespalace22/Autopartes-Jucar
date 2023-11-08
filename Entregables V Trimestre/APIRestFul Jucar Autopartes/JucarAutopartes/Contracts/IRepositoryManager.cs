@@ -13,8 +13,7 @@ namespace Contracts
         ISubcategoryRepository Subcategory { get; }
         IAutopartRepository Autopart { get; }
         IRawMaterialRepository RawMaterial { get; }
-
-
+        IStockRepository Stock { get; }
 
         void Save();
 

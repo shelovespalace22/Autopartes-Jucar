@@ -43,6 +43,33 @@ namespace JucarAutopartes
 
             CreateMap<RawMaterialForUpdateDto, RawMaterial>();
 
+
+            /* Stock Materias Primas */
+
+            CreateMap<Stock, StockDto>();
+
+            CreateMap<StockForCreationDto, Stock>();
+
+            CreateMap<StockForUpdateDto, Stock>();
+
+
+            /* Perdidas */
+
+            CreateMap<Loss, LossDto>();
+
+            CreateMap<LossForCreationDto, Loss>();
+
+            CreateMap<LossForUpdateDto, Loss>();
+
+
+            /* Movimientos */
+
+            CreateMap<Movement, MovementDto>();
+
+            CreateMap<MovementForCreationDto, Movement>();
+
+            CreateMap<MovementForUpdateDto, Movement>();
+
         }
     }
 }

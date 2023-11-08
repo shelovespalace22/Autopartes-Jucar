@@ -13,6 +13,7 @@ namespace Service.Contracts
         ISubcategoryService SubcategoryService { get; }
         IAutopartService AutopartService { get; }
         IRawMaterialService RawMaterialService { get; }
+        IStockService StockService {  get; }
 
     }
 }
