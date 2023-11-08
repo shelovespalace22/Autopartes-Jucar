@@ -14,6 +14,8 @@ namespace Repository
         private readonly RepositoryContext _repositoryContext;
 
 
+        /* Productos */
+
         private readonly Lazy<ICategoryRepository> _categoryRepository;
 
         private readonly Lazy<ISubcategoryRepository> _subcategoryRepository;
@@ -24,10 +26,16 @@ namespace Repository
 
         private readonly Lazy<IStockRepository> _stockRepository;
 
+        private readonly Lazy<ILossRepository> _lossRepository;
+
+        private readonly Lazy<IMovementRepository> _movementRepository;
+
         public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
 
+
+            /* Productos */
 
             _categoryRepository = new Lazy<ICategoryRepository>(() => new CategoryRepository(repositoryContext));
 
@@ -39,7 +47,13 @@ namespace Repository
 
             _stockRepository = new Lazy<IStockRepository>(() => new StockRepository(repositoryContext));
 
+            _lossRepository = new Lazy<ILossRepository>(() => new LossRepository(repositoryContext));
+
+            _movementRepository = new Lazy<IMovementRepository>(() => new MovementRepository(repositoryContext));
+
         }
+
+        /* Productos */
 
         public ICategoryRepository Category => _categoryRepository.Value;
 
@@ -50,6 +64,10 @@ namespace Repository
         public IRawMaterialRepository RawMaterial => _rawMaterialRepository.Value;
 
         public IStockRepository Stock => _stockRepository.Value;
+
+        public ILossRepository Loss => _lossRepository.Value;
+
+        public IMovementRepository Movement => _movementRepository.Value;
 
 
 

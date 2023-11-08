@@ -9,11 +9,15 @@ namespace Contracts
 {
     public interface IRepositoryManager
     {
+
+        /* Productos */
         ICategoryRepository Category { get; }
         ISubcategoryRepository Subcategory { get; }
         IAutopartRepository Autopart { get; }
         IRawMaterialRepository RawMaterial { get; }
         IStockRepository Stock { get; }
+        ILossRepository Loss { get; }
+        IMovementRepository Movement { get; }
 
         void Save();
 

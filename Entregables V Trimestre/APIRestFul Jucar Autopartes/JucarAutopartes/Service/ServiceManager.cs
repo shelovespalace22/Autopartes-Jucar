@@ -23,6 +23,10 @@ namespace Service
 
         private readonly Lazy<IStockService> _stockService;
 
+        private readonly Lazy<ILossService> _lossService;
+
+        private readonly Lazy<IMovementService> _movementService;
+
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
         {
@@ -41,6 +45,12 @@ namespace Service
             _stockService = new Lazy<IStockService>(() =>
                 new StockService(repositoryManager, logger, mapper));
 
+            _lossService = new Lazy<ILossService>(() =>
+                new LossService(repositoryManager, logger, mapper));
+
+            _movementService = new Lazy<IMovementService>(() =>
+                new MovementService(repositoryManager, logger, mapper));
+
         }
 
         public ICategoryService CategoryService => _categoryService.Value;
@@ -48,5 +58,7 @@ namespace Service
         public IAutopartService AutopartService => _autopartService.Value;
         public IRawMaterialService RawMaterialService => _rawMaterialService.Value;
         public IStockService StockService => _stockService.Value;
+        public ILossService LossService => _lossService.Value;
+        public IMovementService MovementService => _movementService.Value;
     }
 }
