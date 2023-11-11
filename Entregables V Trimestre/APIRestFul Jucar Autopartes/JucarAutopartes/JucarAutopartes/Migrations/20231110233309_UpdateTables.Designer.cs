@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -11,9 +12,11 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20231110233309_UpdateTables")]
+    partial class UpdateTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,10 +73,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8544),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5994),
                             Description = "N/N",
                             Inventory = 80,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8545),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5996),
                             Name = "PIN CRUCETA 334",
                             RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
@@ -83,10 +86,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8559),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6012),
                             Description = "N/N",
                             Inventory = 10,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8559),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6013),
                             Name = "PIN TUERCA HOUSING 950 PLANO",
                             RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
@@ -96,10 +99,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8565),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6020),
                             Description = "N/N",
                             Inventory = 60,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8565),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6020),
                             Name = "PIN DISCO QUINTA RUEDA",
                             RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
@@ -109,10 +112,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8570),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6025),
                             Description = "N/N",
                             Inventory = 80,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8570),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6025),
                             Name = "PIN LEVA 1 1/4",
                             RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
@@ -122,10 +125,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8575),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6030),
                             Description = "N/N",
                             Inventory = 200,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8576),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6031),
                             Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
                             RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
@@ -135,10 +138,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8581),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6036),
                             Description = "N/N",
                             Inventory = 190,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8582),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6037),
                             Name = "ARANDELA LEVA 3/4",
                             RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
@@ -148,10 +151,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8586),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6043),
                             Description = "N/N",
                             Inventory = 80,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8587),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6044),
                             Name = "LAINA SPLINDER NPR",
                             RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
@@ -161,10 +164,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8592),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6049),
                             Description = "N/N",
                             Inventory = 65,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8593),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6050),
                             Name = "LAINA SPLINDER KENWORTH",
                             RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
@@ -174,10 +177,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("8db21635-4db7-453d-8010-831137e72d63"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8598),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6055),
                             Description = "N/N",
                             Inventory = 45,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8598),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6055),
                             Name = "LAINA SPLINDER HINO FC 500",
                             RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
@@ -187,10 +190,10 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8603),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6061),
                             Description = "N/N",
                             Inventory = 23,
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8604),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6061),
                             Name = "LAINA SPLINDER NISSAN MT 3000",
                             RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
@@ -227,48 +230,48 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             CategoryID = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7302),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7319),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4699),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4716),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7346),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7347),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4747),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4747),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7350),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7351),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4751),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4752),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7353),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7354),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4754),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4755),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7356),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7356),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4757),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4758),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7358),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(7359),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4760),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(4761),
                             Name = "MEDIA LUNA",
                             State = true
                         });
@@ -375,24 +378,24 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             RawMaterialID = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9030),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9032),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6617),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6618),
                             Name = "Acero",
                             State = true
                         },
                         new
                         {
                             RawMaterialID = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9037),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9037),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6624),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6624),
                             Name = "Hierro",
                             State = true
                         },
                         new
                         {
                             RawMaterialID = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9040),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(9040),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6627),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(6627),
                             Name = "Cobre",
                             State = true
                         });
@@ -475,8 +478,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8077),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8078),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5546),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5547),
                             Name = "PIN CRUCETA",
                             State = true
                         },
@@ -484,8 +487,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8087),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8087),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5554),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5555),
                             Name = "PIN TUERCA",
                             State = true
                         },
@@ -493,8 +496,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8092),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8092),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5559),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5559),
                             Name = "PIN DISCO",
                             State = true
                         },
@@ -502,8 +505,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8097),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8097),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5563),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5563),
                             Name = "PIN LEVA",
                             State = true
                         },
@@ -511,8 +514,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
                             CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8100),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8101),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5566),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5567),
                             Name = "ARANDELA CACHO",
                             State = true
                         },
@@ -520,8 +523,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
                             CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8104),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8104),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5570),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5571),
                             Name = "ARANDELA LEVA",
                             State = true
                         },
@@ -529,8 +532,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
                             CategoryId = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8107),
-                            ModificationDate = new DateTime(2023, 11, 10, 18, 36, 55, 652, DateTimeKind.Local).AddTicks(8108),
+                            CreationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5575),
+                            ModificationDate = new DateTime(2023, 11, 10, 18, 33, 8, 707, DateTimeKind.Local).AddTicks(5575),
                             Name = "LAINA SPLINDER",
                             State = true
                         });
@@ -757,7 +760,8 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("NeighborhoodId");
+                    b.HasIndex("NeighborhoodId")
+                        .IsUnique();
 
                     b.ToTable("CustomerAddresses");
                 });
@@ -1286,8 +1290,8 @@ namespace JucarAutopartes.Migrations
                         .IsRequired();
 
                     b.HasOne("Entities.Models.Ubications.Neighborhood", "Neighborhood")
-                        .WithMany("CustomerAddresses")
-                        .HasForeignKey("NeighborhoodId")
+                        .WithOne("CustomerAddress")
+                        .HasForeignKey("Entities.Models.Sales.CustomerAddress", "NeighborhoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1476,7 +1480,7 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
                 {
-                    b.Navigation("CustomerAddresses");
+                    b.Navigation("CustomerAddress");
 
                     b.Navigation("ProviderAddresses");
                 });

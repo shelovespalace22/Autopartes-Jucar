@@ -16,15 +16,7 @@ namespace Entities.Models.Ubications
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid MunicipalityID { get; set; }
-
-        /* Se eliminaron las data annotations */
         public string? Name { get; set; }
-
-        /* Se eliminaron 3 propiedades: CreationDate, ModificationDate y Capital*/
-
-        /* Se eliminó el constructor */
-
-        //Relaciones con otros modelos
 
         //Department
 

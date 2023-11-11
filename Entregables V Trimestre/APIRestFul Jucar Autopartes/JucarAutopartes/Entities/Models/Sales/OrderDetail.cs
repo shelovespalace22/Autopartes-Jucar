@@ -28,12 +28,6 @@ namespace Entities.Models.Sales
         [DisplayName("Valor Unitario")]
         public decimal UnitValue { get; set; }
 
-        [Required(ErrorMessage = "¡Ingresa la tarifa de IVA!")]
-        [MaxLength(2)]
-        [RegularExpression("^\\d+$")]
-        [DisplayName("%IVA")]
-        public decimal IVA { get; set; }
-
         [Required(ErrorMessage = "¡Ingresa el valor subtotal!")]
         [MaxLength(10)]
         [RegularExpression("^\\d+$")]

@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts;
 using Contracts.Products;
+using Contracts.Providers;
 using Repository.Products;
+using Repository.Providers;
 
 namespace Repository
 {
@@ -30,6 +32,14 @@ namespace Repository
 
         private readonly Lazy<IMovementRepository> _movementRepository;
 
+        /* Proveedores */
+
+        private readonly Lazy<IProviderRepository> _providerRepository;
+
+        private readonly Lazy<IProviderAddressRepository> _providerAddressRepository;
+
+        private readonly Lazy<IProviderPhoneRepository> _providerPhoneRepository;
+
         public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
@@ -51,6 +61,13 @@ namespace Repository
 
             _movementRepository = new Lazy<IMovementRepository>(() => new MovementRepository(repositoryContext));
 
+            _providerRepository = new Lazy<IProviderRepository>(() => new ProviderRepository(repositoryContext));
+
+            _providerAddressRepository = new Lazy<IProviderAddressRepository>(() => new ProviderAddressRepository(repositoryContext));
+
+            _providerPhoneRepository = new Lazy<IProviderPhoneRepository>(() => new ProviderPhoneRepository(repositoryContext));
+
+
         }
 
         /* Productos */
@@ -68,6 +85,14 @@ namespace Repository
         public ILossRepository Loss => _lossRepository.Value;
 
         public IMovementRepository Movement => _movementRepository.Value;
+
+        /* Proveedores */
+
+        public IProviderRepository Provider => _providerRepository.Value;
+
+        public IProviderAddressRepository ProviderAddress => _providerAddressRepository.Value;
+
+        public IProviderPhoneRepository ProviderPhone => _providerPhoneRepository.Value;
 
 
 

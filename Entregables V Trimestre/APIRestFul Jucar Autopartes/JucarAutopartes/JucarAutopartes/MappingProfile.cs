@@ -1,6 +1,10 @@
 ﻿using AutoMapper;
 using Entities.Models.Products;
+using Entities.Models.Providers;
 using Shared.DataTransferObjects.Products;
+using Shared.DataTransferObjects.Providers.Provider;
+using Shared.DataTransferObjects.Providers.ProviderAddress;
+using Shared.DataTransferObjects.Providers.ProviderPhone;
 
 namespace JucarAutopartes
 {
@@ -70,6 +74,32 @@ namespace JucarAutopartes
 
             CreateMap<MovementForUpdateDto, Movement>();
 
+
+            /* Proveedores */
+
+            CreateMap<Provider, ProviderDto>();
+
+            CreateMap<ProviderForCreationDto, Provider>();
+
+            CreateMap<ProviderForUpdateDto, Provider>();
+
+
+            /* Telefonos de Proveedor */
+
+            CreateMap<ProviderPhone, ProviderPhoneDto>();
+
+            CreateMap<ProviderPhoneForCreationDto, ProviderPhone>();
+
+            CreateMap<ProviderPhoneForUpdateDto, ProviderPhone>();
+
+
+            /* Direcciones de Proveedor */
+
+            CreateMap<ProviderAddress, ProviderAddressDto>();
+
+            CreateMap<ProviderAddressForCreationDto, ProviderAddress>();
+
+            CreateMap<ProviderAddressForUpdateDto, ProviderAddress>();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Service.Contracts.Products;
+using Service.Contracts.Proveedores;
 
 namespace Service.Contracts
 {
@@ -19,6 +20,14 @@ namespace Service.Contracts
         IStockService StockService {  get; }
         ILossService LossService { get; }
         IMovementService MovementService  { get; }
+
+
+        /* Proveedores */
+
+        IProviderService ProviderService { get; }
+        IProviderAddressService ProviderAddressService { get; }
+        IProviderPhoneService ProviderPhoneService { get; }
+
 
     }
 }

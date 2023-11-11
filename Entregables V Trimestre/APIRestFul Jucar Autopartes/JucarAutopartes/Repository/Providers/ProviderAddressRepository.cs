@@ -15,5 +15,28 @@ namespace Repository.Providers
         {
             
         }
+
+        /* Crear */
+        public void CreateAddressForProvider(Guid providerId, ProviderAddress providerAddress)
+        {
+            providerAddress.ProviderId = providerId;
+
+            Create(providerAddress);
+        }
+
+        /* Eliminar */
+        public void DeleteProviderAddress(ProviderAddress providerAddress) => Delete(providerAddress);
+
+
+        /* Un registro */
+        public ProviderAddress GetAddressByProvider(Guid providerId, Guid id, bool trackChanges) =>
+            FindByCondition(p => p.ProviderId.Equals(providerId) && p.ProviderAddressID.Equals(id), trackChanges)
+            .SingleOrDefault();
+
+        /* Listar */
+        public IEnumerable<ProviderAddress> GetAddressesForProvider(Guid providerId, bool trackChanges) =>
+            FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
+            .OrderBy(p => p.Neighborhood)
+            .ToList();
     }
 }

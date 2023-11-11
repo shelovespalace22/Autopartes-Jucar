@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts.Products;
+using Contracts.Providers;
 
 namespace Contracts
 {
@@ -18,6 +19,12 @@ namespace Contracts
         IStockRepository Stock { get; }
         ILossRepository Loss { get; }
         IMovementRepository Movement { get; }
+
+        /* Proveedores */
+
+        IProviderRepository Provider { get; }
+        IProviderAddressRepository ProviderAddress { get; }
+        IProviderPhoneRepository ProviderPhone { get; }
 
         void Save();
 

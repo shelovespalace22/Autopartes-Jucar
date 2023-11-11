@@ -7,12 +7,16 @@ using AutoMapper;
 using Contracts;
 using Service.Contracts;
 using Service.Contracts.Products;
+using Service.Contracts.Proveedores;
 using Service.Products;
+using Service.Proveedores;
 
 namespace Service
 {
     public sealed class ServiceManager : IServiceManager
     {
+        /* Productos */
+
         private readonly Lazy<ICategoryService> _categoryService;
 
         private readonly Lazy<ISubcategoryService> _subcategoryService;
@@ -27,9 +31,19 @@ namespace Service
 
         private readonly Lazy<IMovementService> _movementService;
 
+        /* Proveedores */
+
+        private readonly Lazy<IProviderService> _providerService;
+
+        private readonly Lazy<IProviderAddressService> _providerAddressService;
+
+        private readonly Lazy<IProviderPhoneService> _providerPhoneService;
+
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
         {
+            /* Productos */
+
             _categoryService = new Lazy<ICategoryService>(() =>
                 new CategoryService(repositoryManager, logger, mapper));
 
@@ -51,7 +65,20 @@ namespace Service
             _movementService = new Lazy<IMovementService>(() =>
                 new MovementService(repositoryManager, logger, mapper));
 
+            /* Proveedores */
+
+            _providerService = new Lazy<IProviderService>(() =>
+                new ProviderService(repositoryManager, logger, mapper));
+
+            _providerAddressService = new Lazy<IProviderAddressService>(() =>
+                new ProviderAddressService(repositoryManager, logger, mapper));
+
+            _providerPhoneService = new Lazy<IProviderPhoneService>(() =>
+                new ProviderPhoneService(repositoryManager, logger, mapper));
+
         }
+
+        /* Productos */
 
         public ICategoryService CategoryService => _categoryService.Value;
         public ISubcategoryService SubcategoryService => _subcategoryService.Value;
@@ -60,5 +87,11 @@ namespace Service
         public IStockService StockService => _stockService.Value;
         public ILossService LossService => _lossService.Value;
         public IMovementService MovementService => _movementService.Value;
+
+        /* Proveedores */
+
+        public IProviderService ProviderService => _providerService.Value;
+        public IProviderAddressService ProviderAddressService => _providerAddressService.Value;
+        public IProviderPhoneService ProviderPhoneService => _providerPhoneService.Value;
     }
 }

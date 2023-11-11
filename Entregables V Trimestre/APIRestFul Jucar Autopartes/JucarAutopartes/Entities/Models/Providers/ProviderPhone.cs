@@ -44,6 +44,13 @@ namespace Entities.Models.Providers
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
+        public void setModificationDate()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos
 
         public Guid ProviderId { get; set; }

@@ -34,8 +34,8 @@ namespace Entities.Models.Ubications
 
         /* Se eliminó la relación con Street  */
 
-        public ProviderAddress? ProviderAddress { get; set; }
-        public CustomerAddress? CustomerAddress { get; set; }
+        public ICollection<ProviderAddress>? ProviderAddresses  { get; set; }
+        public ICollection<CustomerAddress>? CustomerAddresses { get; set; }
 
 
 
