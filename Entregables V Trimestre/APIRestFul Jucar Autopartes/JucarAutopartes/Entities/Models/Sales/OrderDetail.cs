@@ -50,6 +50,13 @@ namespace Entities.Models.Sales
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
+        public void setModificationDate()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos
 
         //Autopart

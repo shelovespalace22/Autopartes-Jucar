@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts.Products;
 using Contracts.Providers;
+using Contracts.Sales;
 
 namespace Contracts
 {
@@ -25,6 +26,16 @@ namespace Contracts
         IProviderRepository Provider { get; }
         IProviderAddressRepository ProviderAddress { get; }
         IProviderPhoneRepository ProviderPhone { get; }
+
+        /* Ventas */
+
+        ICustomerRepository Customer { get; }
+        ICustomerPhoneRepository CustomerPhone { get; }
+        ICustomerAddressRepository CustomerAddress { get; }
+        IOrderRepository Order { get; }
+        IOrderDetailRepository OrderDetail { get; }
+        IPaymentMethodRepository PaymentMethod { get; }
+        IContributionRepository Contribution { get; }
 
         void Save();
 

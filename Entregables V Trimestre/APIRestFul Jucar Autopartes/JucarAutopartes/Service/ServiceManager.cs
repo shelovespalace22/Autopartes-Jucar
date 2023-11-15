@@ -8,8 +8,10 @@ using Contracts;
 using Service.Contracts;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
+using Service.Contracts.Sales;
 using Service.Products;
 using Service.Proveedores;
+using Service.Sales;
 
 namespace Service
 {
@@ -38,6 +40,22 @@ namespace Service
         private readonly Lazy<IProviderAddressService> _providerAddressService;
 
         private readonly Lazy<IProviderPhoneService> _providerPhoneService;
+
+        /* Ventas */
+
+        private readonly Lazy<ICustomerService> _customerService;
+
+        private readonly Lazy<ICustomerAddressService> _customerAddressService;
+
+        private readonly Lazy<ICustomerPhoneService> _customerPhoneService;
+
+        private readonly Lazy<IOrderService> _orderService;
+
+        private readonly Lazy<IOrderDetailService> _orderDetailService;
+
+        private readonly Lazy<IPaymentMethodService> _paymentMethodService;
+
+        private readonly Lazy<IContributionService> _contributionService;
 
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
@@ -76,6 +94,29 @@ namespace Service
             _providerPhoneService = new Lazy<IProviderPhoneService>(() =>
                 new ProviderPhoneService(repositoryManager, logger, mapper));
 
+            /* Ventas */
+
+            _customerService = new Lazy<ICustomerService>(() =>
+                new CustomerService(repositoryManager, logger, mapper));
+
+            _customerAddressService = new Lazy<ICustomerAddressService>(() =>
+                new CustomerAddressService(repositoryManager, logger, mapper));
+
+            _customerPhoneService = new Lazy<ICustomerPhoneService>(() =>
+                new CustomerPhoneService(repositoryManager, logger, mapper));
+
+            _orderService = new Lazy<IOrderService>(() =>
+                new OrderService(repositoryManager, logger, mapper));
+
+            _orderDetailService = new Lazy<IOrderDetailService>(() =>
+                new OrderDetailService(repositoryManager, logger, mapper));
+
+            _paymentMethodService = new Lazy<IPaymentMethodService>(() =>
+                new PaymentMethodService(repositoryManager, logger, mapper));
+
+            _contributionService = new Lazy<IContributionService>(() =>
+                new ContributionService(repositoryManager, logger, mapper));
+
         }
 
         /* Productos */
@@ -93,5 +134,15 @@ namespace Service
         public IProviderService ProviderService => _providerService.Value;
         public IProviderAddressService ProviderAddressService => _providerAddressService.Value;
         public IProviderPhoneService ProviderPhoneService => _providerPhoneService.Value;
+
+        /* Ventas */
+
+        public ICustomerService CustomerService => _customerService.Value;
+        public ICustomerAddressService CustomerAddressService => _customerAddressService.Value;
+        public ICustomerPhoneService CustomerPhoneService => _customerPhoneService.Value;
+        public IOrderService OrderService => _orderService.Value;
+        public IOrderDetailService OrderDetailService => _orderDetailService.Value;
+        public IPaymentMethodService PaymentMethodService => _paymentMethodService.Value;
+        public IContributionService ContributionService => _contributionService.Value;
     }
 }

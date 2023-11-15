@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
+using Service.Contracts.Sales;
 
 namespace Service.Contracts
 {
@@ -29,5 +30,14 @@ namespace Service.Contracts
         IProviderPhoneService ProviderPhoneService { get; }
 
 
+        /* Ventas */
+
+        ICustomerService CustomerService { get; }
+        ICustomerPhoneService CustomerPhoneService { get; }
+        ICustomerAddressService CustomerAddressService { get; }
+        IOrderService OrderService { get; }
+        IOrderDetailService OrderDetailService { get; }
+        IPaymentMethodService PaymentMethodService { get; }
+        IContributionService ContributionService { get; }
     }
 }
