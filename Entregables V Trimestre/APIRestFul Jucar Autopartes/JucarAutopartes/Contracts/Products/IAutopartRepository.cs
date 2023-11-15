@@ -29,5 +29,12 @@ namespace Contracts.Products
 
         /* Eliminar una Autoparte */
         void DeleteAutopart(Autopart autopart);
+
+
+
+
+
+        /* Actualizar Inventario */
+        void UpdateAutopartInventory(Autopart autopart);
     }
 }

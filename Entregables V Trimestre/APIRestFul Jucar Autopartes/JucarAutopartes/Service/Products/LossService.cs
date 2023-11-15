@@ -36,6 +36,8 @@ namespace Service.Products
 
             var lossEntity = _mapper.Map<Loss>(lossForCreation);
 
+            UpdateAutopartInventory(autopartId, lossEntity.AmountLoss);
+
             _repository.Loss.CreateLossForAutopart(autopartId, lossEntity);
 
             _repository.Save();
@@ -125,10 +127,26 @@ namespace Service.Products
         }
 
 
-        
 
 
 
-        
+
+        /* <--- Métodos Privados ---> */
+        private void UpdateAutopartInventory(Guid autopartId, int amountLoss)
+        {
+            var autopart = _repository.Autopart.GetAutopartById(autopartId, false);
+
+            if (autopart != null)
+            {
+                autopart.Inventory -= amountLoss;
+                _repository.Autopart.UpdateAutopartInventory(autopart);
+                _repository.Save();
+            }
+        }
+
+
+
+
+
     }
 }
