@@ -30,6 +30,7 @@ namespace Repository
             modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
             modelBuilder.ApplyConfiguration(new AutopartConfiguration());
             modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
 
         /* Products */
