@@ -35,9 +35,9 @@ namespace Service.Products
             if (rawMaterial is null)
                 throw new RawMaterialNotFoundException(rawMaterialId);
 
-            var movementEntity = _mapper.Map<Movement>(movementForCreation);
+            UpdateStockQuantity(rawMaterial, movementForCreation);
 
-            UpdateStockQuantityAvailable(rawMaterialId, movementEntity.Quantity, movementEntity.MovementType);
+            var movementEntity = _mapper.Map<Movement>(movementForCreation);
 
             _repository.Movement.CreateMovementForRawmaterial(rawMaterialId, movementEntity);
 
@@ -133,33 +133,39 @@ namespace Service.Products
 
 
         /* <--- Métodos Privados ---> */
-        private void UpdateStockQuantityAvailable(Guid rawMaterialId, int quantity, string movementType)
+
+        public enum MovementType
         {
-            var rawM = _repository.RawMaterial.GetRawMaterial(rawMaterialId, false);
-
-            var stock = rawM.Stock;
-
-            var stockId = stock.StockID;
-
-            var stocDSDSDk = _repository.Stock.GetStockByRawMaterial(rawMaterialId, stockId, false);
-
-            if (stocDSDSDk != null)
-            {
-                if (movementType.ToLower() == "entrada")
-                {
-                    stocDSDSDk.QuantityAvailable += quantity;
-                }
-                else if (movementType.ToLower() == "salida")
-                {
-                    stocDSDSDk.QuantityAvailable -= quantity;
-                }
-
-                stocDSDSDk.setModificationDate();
-
-                _repository.Stock.UpdateStockQuantity(stock);
-
-                _repository.Save();
-            }
+            Entrada,
+            Salida
         }
+
+        private void UpdateStockQuantity(RawMaterial rawMaterial, MovementForCreationDto movement)
+        {
+            // Verificar si 'rawMaterial.Stock' es null antes de acceder a 'StockID'
+            if (rawMaterial.Stock is null)
+                throw new StockNotFoundException(rawMaterial.Stock.StockID);
+
+            // Buscar el stock correspondiente a la materia prima
+            var stock = _repository.Stock.GetStockByRawMaterial(rawMaterial.RawMaterialID, rawMaterial.Stock.StockID, false);
+
+            // Actualizar 'QuantityAvailable' del stock dependiendo del tipo de movimiento
+            if (movement.MovementType == "Entrada" || movement.MovementType == "entrada")
+            {
+                stock.QuantityAvailable += movement.Quantity;
+            }
+            else if (movement.MovementType == "Salida" || movement.MovementType == "salida")
+            {
+                stock.QuantityAvailable -= movement.Quantity;
+            }
+
+            stock.setModificationDate();
+
+            _repository.Stock.UpdateStockQuantity(stock);
+
+            _repository.Save();
+        }
+
+
     }
 }

@@ -22,7 +22,7 @@ namespace Contracts.Products
         void DeleteStock(Stock stock);
 
 
-
+        
 
         void UpdateStockQuantity(Stock stock);
     }
