@@ -46,5 +46,14 @@ namespace Repository.Products
 
         /* Eliminar*/
         public void DeleteStock(Stock stock) => Delete(stock);
+
+
+
+
+        /* Actualizar Cantidad Disponible */
+        public void UpdateStockQuantity(Stock stock)
+        {
+            Update(stock);
+        }
     }
 }

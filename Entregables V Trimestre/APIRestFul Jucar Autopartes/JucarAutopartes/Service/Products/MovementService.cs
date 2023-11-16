@@ -37,6 +37,8 @@ namespace Service.Products
 
             var movementEntity = _mapper.Map<Movement>(movementForCreation);
 
+            UpdateStockQuantityAvailable(rawMaterialId, movementEntity.Quantity, movementEntity.MovementType);
+
             _repository.Movement.CreateMovementForRawmaterial(rawMaterialId, movementEntity);
 
             _repository.Save();
@@ -123,6 +125,41 @@ namespace Service.Products
             movementEntity.setModificationDate();
 
             _repository.Save();
+        }
+
+
+
+
+
+
+        /* <--- Métodos Privados ---> */
+        private void UpdateStockQuantityAvailable(Guid rawMaterialId, int quantity, string movementType)
+        {
+            var rawM = _repository.RawMaterial.GetRawMaterial(rawMaterialId, false);
+
+            var stock = rawM.Stock;
+
+            var stockId = stock.StockID;
+
+            var stocDSDSDk = _repository.Stock.GetStockByRawMaterial(rawMaterialId, stockId, false);
+
+            if (stocDSDSDk != null)
+            {
+                if (movementType.ToLower() == "entrada")
+                {
+                    stocDSDSDk.QuantityAvailable += quantity;
+                }
+                else if (movementType.ToLower() == "salida")
+                {
+                    stocDSDSDk.QuantityAvailable -= quantity;
+                }
+
+                stocDSDSDk.setModificationDate();
+
+                _repository.Stock.UpdateStockQuantity(stock);
+
+                _repository.Save();
+            }
         }
     }
 }

@@ -54,11 +54,9 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        /* Elminé la relación con la clase 'AutopartMaterials' */
-
         //Stock
 
-        public Stock? Stocks { get; set; }
+        public Stock Stock { get; set; }
 
         //Movement
 

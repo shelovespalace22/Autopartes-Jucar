@@ -139,6 +139,7 @@ namespace Service.Products
             if (autopart != null)
             {
                 autopart.Inventory -= amountLoss;
+                autopart.setModificationDate();
                 _repository.Autopart.UpdateAutopartInventory(autopart);
                 _repository.Save();
             }

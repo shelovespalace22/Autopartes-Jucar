@@ -20,5 +20,10 @@ namespace Contracts.Products
 
         /* Eliminar*/
         void DeleteStock(Stock stock);
+
+
+
+
+        void UpdateStockQuantity(Stock stock);
     }
 }
