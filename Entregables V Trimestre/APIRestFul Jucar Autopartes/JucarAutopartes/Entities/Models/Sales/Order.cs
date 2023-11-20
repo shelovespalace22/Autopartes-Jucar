@@ -25,12 +25,6 @@ namespace Entities.Models.Sales
         [DisplayName("Cliente")]
         public Customer? Customer { get; set; }
 
-        [Required(ErrorMessage = "¡Ingresa la tarifa de IVA!")]
-        [MaxLength(2)]
-        [RegularExpression("^\\d+$")]
-        [DisplayName("%IVA")]
-        public decimal IVA { get; set; }
-
         [DisplayName("Total de Venta")]
         public decimal? Total { get; set; }
 
@@ -65,7 +59,6 @@ namespace Entities.Models.Sales
 
         public Order()
         {
-            IVA = 19;
             Total = 0;
             PaymentStatus = "Pendiente";
             ShippingAddress = "No hay dirección de envío.";

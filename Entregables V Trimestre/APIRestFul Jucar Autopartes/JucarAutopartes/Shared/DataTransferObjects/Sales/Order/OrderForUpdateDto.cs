@@ -10,8 +10,6 @@ namespace Shared.DataTransferObjects.Sales.Order
         (
             DateTime OrderDate,
             Guid CustomerId,
-            decimal? IVA,
-            decimal? Total,
             string PaymentStatus,
             string ShippingAddress,
             string ShippingStatus,

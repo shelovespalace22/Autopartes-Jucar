@@ -4,6 +4,7 @@ using Entities.Exceptions.NotFound.Sales;
 using Entities.Models.Sales;
 using Service.Contracts.Sales;
 using Shared.DataTransferObjects.Sales.Order;
+using Shared.DataTransferObjects.Sales.OrderDetail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace Service.Sales
         /* Crear */
         public OrderDto CreateOrder(OrderForCreationDto order)
         {
+            ApplyAdditionalOperations(order, _repository);
+
             var orderEntity = _mapper.Map<Order>(order);
 
             _repository.Order.CreateOrder(orderEntity);
@@ -89,5 +92,32 @@ namespace Service.Sales
 
             _repository.Save();
         }
+
+
+
+
+
+        /* <--- Métodos Privados ---> */
+
+        private void ApplyAdditionalOperations(OrderForCreationDto order, IRepositoryManager _repository)
+        {
+            foreach (var orderDetail in order.OrderDetails)
+            {
+                var autopart = _repository.Autopart.GetAutopartById(orderDetail.AutopartId, false);
+
+                orderDetail.UnitValue = autopart.Value;
+
+                orderDetail.SubtotalValue = orderDetail.Quantity * orderDetail.UnitValue.Value;
+            }
+
+            // Calcular el Total sumando los SubtotalValue de cada detalle
+            order.Total = order.OrderDetails.Sum(detail => detail.SubtotalValue ?? 0);
+
+            //order.Total = order.OrderDetails.Sum(detail => detail.SubtotalValue.GetValueOrDefault());
+            //order = order with { Total = order.OrderDetails.Sum(detail => detail.SubtotalValue.GetValueOrDefault()) };
+
+            _repository.Save();
+        }
+            
     }
 }

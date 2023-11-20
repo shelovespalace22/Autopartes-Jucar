@@ -20,7 +20,7 @@ namespace Entities.Models.Sales
         [MaxLength(5)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Cantidad")]
-        public string? Quantity { get; set; }
+        public int Quantity { get; set; }
 
         [Required(ErrorMessage = "¡Ingresa el valor unitario del item!")]
         [MaxLength(10)]

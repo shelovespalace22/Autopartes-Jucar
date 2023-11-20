@@ -13,7 +13,6 @@ namespace Shared.DataTransferObjects.Sales.Order
         public Guid OrderID { get; init; }
         public DateTime OrderDate { get; init; }
         public Guid CustomerId { get; init; }
-        public decimal IVA { get; init; }
         public decimal? Total { get; init; }
         public string? PaymentStatus { get; init; }
         public string? ShippingAddress { get; init; }

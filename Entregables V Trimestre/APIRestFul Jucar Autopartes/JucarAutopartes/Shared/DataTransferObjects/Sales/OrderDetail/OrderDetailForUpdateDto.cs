@@ -9,8 +9,6 @@ namespace Shared.DataTransferObjects.Sales.OrderDetail
     public record OrderDetailForUpdateDto
     (
         Guid AutopartId,
-        string Quantity,
-        decimal UnitValue,
-        decimal SubtotalValue
+        int Quantity
     );
 }

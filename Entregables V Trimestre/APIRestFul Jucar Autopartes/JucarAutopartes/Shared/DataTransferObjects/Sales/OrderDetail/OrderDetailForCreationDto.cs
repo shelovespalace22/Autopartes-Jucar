@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace Shared.DataTransferObjects.Sales.OrderDetail
 {
     public record OrderDetailForCreationDto
-    (
-        Guid AutopartId,
-        string Quantity,
-        decimal UnitValue,
-        decimal SubtotalValue
-    );
+    {
+        public Guid AutopartId { get; init; }
+        public int Quantity { get; init; }
+        public decimal? UnitValue { get; set; }
+        public decimal? SubtotalValue { get; set; }
+    }
+
 }
