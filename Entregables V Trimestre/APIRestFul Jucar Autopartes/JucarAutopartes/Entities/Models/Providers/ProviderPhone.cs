@@ -17,13 +17,13 @@ namespace Entities.Models.Providers
 
         [Required(ErrorMessage = "¡Escoga el tipo de teléfono!")]
         [MaxLength(20)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Tipo de Teléfono")]
         public string? PhoneType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número teléfonico!")]
         [MaxLength(10)]
-        [RegularExpression("^\\d{1,9}$")]
+        [RegularExpression("^\\d{1,9}$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Número de Teléfono")]
         public string? PhoneNumber { get; set; }
 
@@ -41,6 +41,13 @@ namespace Entities.Models.Providers
         public ProviderPhone()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

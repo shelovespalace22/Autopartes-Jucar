@@ -109,7 +109,7 @@ namespace Service.Products
         {
             var categoryEntity = _repository.Category.GetCategory(categoryId, trackChanges);
 
-            if(categoryEntity is null)
+            if (categoryEntity is null)
                 throw new CategoryNotFoundException(categoryId);
 
             _mapper.Map(categoryForUpdate, categoryEntity);

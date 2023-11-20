@@ -17,15 +17,15 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese la cantidad del movimiento!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad")]
-        public string? Quantity { get; set; }
+        public int Quantity { get; set; } 
 
-        [Required]
+        [Required(ErrorMessage = "Debe indicar si el movimiento es una Salida o Entrada")]
         [MaxLength(20)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Tipo de Movimiento")]
-        public string? MovementType { get; set; }
+        public string? MovementType { get; set; } 
 
         [Required(ErrorMessage = "¡Ingrese la fecha del movimiento!")]
         [DisplayName("Fecha del Movimiento")]
@@ -44,6 +44,13 @@ namespace Entities.Models.Products
         public Movement()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

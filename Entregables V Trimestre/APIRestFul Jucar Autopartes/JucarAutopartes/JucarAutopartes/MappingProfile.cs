@@ -1,6 +1,18 @@
 ﻿using AutoMapper;
 using Entities.Models.Products;
+using Entities.Models.Providers;
+using Entities.Models.Sales;
 using Shared.DataTransferObjects.Products;
+using Shared.DataTransferObjects.Providers.Provider;
+using Shared.DataTransferObjects.Providers.ProviderAddress;
+using Shared.DataTransferObjects.Providers.ProviderPhone;
+using Shared.DataTransferObjects.Sales.Contribution;
+using Shared.DataTransferObjects.Sales.Customer;
+using Shared.DataTransferObjects.Sales.CustomerAddress;
+using Shared.DataTransferObjects.Sales.CustomerPhone;
+using Shared.DataTransferObjects.Sales.Order;
+using Shared.DataTransferObjects.Sales.OrderDetail;
+using Shared.DataTransferObjects.Sales.PaymentMethod;
 
 namespace JucarAutopartes
 {
@@ -44,10 +56,121 @@ namespace JucarAutopartes
             CreateMap<RawMaterialForUpdateDto, RawMaterial>();
 
 
+            /* Stock Materias Primas */
 
-            /* Materiales de Autoparte */
+            CreateMap<Stock, StockDto>();
 
-            CreateMap<AutopartMaterial, AutopartMaterialDto>();
+            CreateMap<StockForCreationDto, Stock>();
+
+            CreateMap<StockForUpdateDto, Stock>();
+
+
+            /* Perdidas */
+
+            CreateMap<Loss, LossDto>();
+
+            CreateMap<LossForCreationDto, Loss>();
+
+            CreateMap<LossForUpdateDto, Loss>();
+
+
+            /* Movimientos */
+
+            CreateMap<Movement, MovementDto>();
+
+            CreateMap<MovementForCreationDto, Movement>();
+
+            CreateMap<MovementForUpdateDto, Movement>();
+
+
+            /* Proveedores */
+
+            CreateMap<Provider, ProviderDto>();
+
+            CreateMap<ProviderForCreationDto, Provider>();
+
+            CreateMap<ProviderForUpdateDto, Provider>();
+
+
+            /* Telefonos de Proveedor */
+
+            CreateMap<ProviderPhone, ProviderPhoneDto>();
+
+            CreateMap<ProviderPhoneForCreationDto, ProviderPhone>();
+
+            CreateMap<ProviderPhoneForUpdateDto, ProviderPhone>();
+
+
+            /* Direcciones de Proveedor */
+
+            CreateMap<ProviderAddress, ProviderAddressDto>();
+
+            CreateMap<ProviderAddressForCreationDto, ProviderAddress>();
+
+            CreateMap<ProviderAddressForUpdateDto, ProviderAddress>();
+
+
+            /* Clientes */
+
+            CreateMap<Customer, CustomerDto>();
+
+            CreateMap<CustomerForCreationDto, Customer>();
+
+            CreateMap<CustomerForUpdateDto, Customer>();
+
+
+            /* Telefónos de Cliente */
+
+            CreateMap<CustomerPhone, CustomerPhoneDto>();
+
+            CreateMap<CustomerPhoneForCreationDto, CustomerPhone>();
+
+            CreateMap<CustomerPhoneForUpdateDto, CustomerPhone>();
+
+
+            /* Direcciones de Cliente */
+
+            CreateMap<CustomerAddress, CustomerAddressDto>();
+
+            CreateMap<CustomerAddressForCreationDto, CustomerAddress>();
+
+            CreateMap<CustomerAddressForUpdateDto, CustomerAddress>();
+
+
+            /* Pedidos */
+
+            CreateMap<Order, OrderDto>();
+
+            CreateMap<OrderForCreationDto, Order>();
+
+            CreateMap<OrderForUpdateDto, Order>();
+
+
+            /* Detalles de Pedido */
+
+            CreateMap<OrderDetail, OrderDetailDto>();
+
+            CreateMap<OrderDetailForCreationDto, OrderDetail>();
+
+            CreateMap<OrderDetailForUpdateDto, OrderDetail>();
+
+
+            /* Métodos de Pago */
+
+            CreateMap<PaymentMethod, PaymentMethodDto>();
+
+            CreateMap<PaymentMethodForCreationDto, PaymentMethod>();
+
+            CreateMap<PaymentMethodForUpdateDto, PaymentMethod>();
+
+
+            /* Contribuciones */
+
+            CreateMap<Contribution, ContributionDto>();
+
+            CreateMap<ContributionForCreationDto, Contribution>();
+
+            CreateMap<ContributionForUpdateDto, Contribution>();
         }
     }
 }

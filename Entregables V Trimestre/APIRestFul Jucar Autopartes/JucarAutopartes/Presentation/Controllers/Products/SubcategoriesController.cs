@@ -50,8 +50,9 @@ namespace Presentation.Controllers.Products
             return Ok(subcategory);
         }
 
-        /* Obtener todas las Subcategorias de una Categoria */  
+        /* Obtener todas las Subcategorias de una Categoria */
 
+        [HttpGet]
         public IActionResult GetSubcategoriesForCategory(Guid categoryId)
         {
             var subcategories = _service.SubcategoryService.GetSubcategories(categoryId, trackChanges: false);

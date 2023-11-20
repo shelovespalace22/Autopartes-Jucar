@@ -17,25 +17,21 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese la cantidad perdida!")]
         [MaxLength(5)]
-        [RegularExpression("^[0-9]+$")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad Perdida")]
-        public string? AmountLoss { get; set; }
+        public int AmountLoss { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el responsable!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Responsable")]
         public string? Responsible { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el lugar de la perdida!")]
-        [MaxLength(50)]
-        [RegularExpression("^[a-zA-Z]+$")]
-        [DisplayName("Lugar")]
-        public string? Place { get; set; }
+        /* Eliminé la propiedad 'Place' */
 
         [Required(ErrorMessage = "¡Ingrese el motivo de perdida!")]
         [MaxLength(150)]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Motivo")]
         public string? Reason { get; set; }
 
@@ -56,6 +52,13 @@ namespace Entities.Models.Products
         public Loss()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

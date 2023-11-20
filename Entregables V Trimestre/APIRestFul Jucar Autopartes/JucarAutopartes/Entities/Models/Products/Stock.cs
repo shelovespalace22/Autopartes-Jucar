@@ -17,33 +17,33 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese la cantidad disponible!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "¡Ingrese una cantidad disponible válida!")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad Disponible")]
-        public string? QuantityAvailable { get; set; }
+        public int QuantityAvailable { get; set; } 
 
         [Required(ErrorMessage = "¡Ingresa las existencias iniciales!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "¡Ingrese existencias iniciales válidas!")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Existencias Iniciales")]
-        public string? InitialStock { get; set; }
+        public int InitialStock { get; set; } 
 
         [Required(ErrorMessage = "¡Ingrese la cantidad de punto de reorden!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "¡Ingrese un punto de reorden válido!")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Punto de Reorden")]
-        public string? ReorderPoint { get; set; }
+        public int ReorderPoint { get; set; } 
 
         [Required(ErrorMessage = "¡Ingrese el inventario minimo!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "¡Ingrese un inventario mínimo válido!")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Inventario Minimo")]
-        public string? MinimumInventory { get; set; }
+        public int MinimumInventory { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el inventario máximo!")]
         [MaxLength(3)]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "¡Ingrese un inventario máximo válido!")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Inventario Máximo")]
-        public string? MaximumInventory { get; set; }
+        public int MaximumInventory { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -61,9 +61,19 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
+        public void setModificationDate()
+        {
+            ModificationDate = DateTime.Now;
+        }
+
         //Relaciones con otros modelos
 
         public Guid RawMaterialId { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una Materia Prima")]
+        [DisplayName("Materia Prima")]
         public RawMaterial? RawMaterial { get; set; }
     }
 }

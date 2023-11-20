@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObjects.Products
 {
-    public record SubcategoryForUpdateDto (string Name);
+    public record SubcategoryForUpdateDto(string Name);
 }

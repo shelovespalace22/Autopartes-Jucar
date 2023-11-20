@@ -15,5 +15,35 @@ namespace Repository.Products
         {
             
         }
+
+
+        /* Crear */
+
+        public void CreateMovementForRawmaterial(Guid rawMaterialId, Movement movement)
+        {
+            movement.RawMaterialId = rawMaterialId;
+
+            Create(movement);
+        }
+
+
+        /* Eliminar */
+
+        public void DeleteMovement(Movement movement) => Delete(movement);
+
+
+        /* Único Registro */
+
+        public Movement GetMovementByRawmaterial(Guid rawMaterialId, Guid id, bool trackChanges) =>
+            FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId) && m.MovementID.Equals(id), trackChanges)
+            .SingleOrDefault();
+
+
+        /* Listar */
+
+        public IEnumerable<Movement> GetMovements(Guid rawMaterialId, bool trackChanges) =>
+            FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId), trackChanges)
+            .OrderBy(m => m.MovementDate)
+            .ToList();
     }
 }

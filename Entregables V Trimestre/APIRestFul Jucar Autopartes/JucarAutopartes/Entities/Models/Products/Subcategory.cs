@@ -18,7 +18,7 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese un nombre para la subcategoría!")]
         [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
@@ -52,6 +52,9 @@ namespace Entities.Models.Products
 
         //Category
         public Guid CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una Categoría")]
+        [DisplayName("Categoría")]
         public Category? Category { get; set; }
 
         //Autopart

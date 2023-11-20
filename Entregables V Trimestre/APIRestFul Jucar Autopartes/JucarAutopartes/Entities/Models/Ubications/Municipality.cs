@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Providers;
+using Entities.Models.Sales;
 
 namespace Entities.Models.Ubications
 {
@@ -14,34 +16,7 @@ namespace Entities.Models.Ubications
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid MunicipalityID { get; set; }
-
-        [Required(ErrorMessage = "¡Ingresa el nombre del municipio!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Nombre")]
         public string? Name { get; set; }
-
-        [Required]
-        [DisplayName("Capital")]
-        public bool Capital { get; set; }
-
-        [Required]
-        [DisplayName("Creación del Regístro")]
-        public DateTime CreationDate { get; set; }
-
-        [Required]
-        [DisplayName("Modificación del Regístro")]
-        public DateTime ModificationDate { get; set; }
-
-        //Constructor
-
-        public Municipality()
-        {
-            CreationDate = DateTime.Now;
-            ModificationDate = DateTime.Now;
-        }
-
-        //Relaciones con otros modelos
 
         //Department
 

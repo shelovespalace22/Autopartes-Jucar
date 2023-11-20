@@ -16,17 +16,23 @@ namespace Entities.Models.Sales
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderDetailID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el producto solicitado!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Producto")]
-        public string? Product { get; set; }
-
-        [Required(ErrorMessage = "¡Ingrese la cantidad solicitada!")]
+        [Required(ErrorMessage = "¡Ingresa la cantidad del item!")]
         [MaxLength(5)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Cantidad")]
-        public string? Quantity { get; set; }
+        public int Quantity { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa el valor unitario del item!")]
+        [MaxLength(10)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("Valor Unitario")]
+        public decimal UnitValue { get; set; }
+
+        [Required(ErrorMessage = "¡Ingresa el valor subtotal!")]
+        [MaxLength(10)]
+        [RegularExpression("^\\d+$")]
+        [DisplayName("Subtotal")]
+        public decimal SubtotalValue { get; set; }
 
         [Required]
         [DisplayName("Creación del Regístro")]
@@ -41,6 +47,13 @@ namespace Entities.Models.Sales
         public OrderDetail()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

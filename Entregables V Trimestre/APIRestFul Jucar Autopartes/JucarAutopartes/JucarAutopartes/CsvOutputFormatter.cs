@@ -25,19 +25,19 @@ namespace JucarAutopartes
 
             }
 
-            //if (typeof(SubcategoryDto).IsAssignableFrom(type) || typeof(IEnumerable<SubcategoryDto>).IsAssignableFrom(type))
-            //{
+            if (typeof(SubcategoryDto).IsAssignableFrom(type) || typeof(IEnumerable<SubcategoryDto>).IsAssignableFrom(type))
+            {
 
-            //    return base.CanWriteType(type);
+                return base.CanWriteType(type);
 
-            //}
+            }
 
-            //if (typeof(AutopartDto).IsAssignableFrom(type) || typeof(IEnumerable<AutopartDto>).IsAssignableFrom(type))
-            //{
+            if (typeof(AutopartDto).IsAssignableFrom(type) || typeof(IEnumerable<AutopartDto>).IsAssignableFrom(type))
+            {
 
-            //    return base.CanWriteType(type);
+                return base.CanWriteType(type);
 
-            //}
+            }
 
             return false;
 

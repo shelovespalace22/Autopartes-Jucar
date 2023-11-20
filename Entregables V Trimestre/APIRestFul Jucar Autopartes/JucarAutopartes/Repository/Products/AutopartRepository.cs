@@ -53,5 +53,15 @@ namespace Repository.Products
 
         /* Eliminar una Autoparts */
         public void DeleteAutopart(Autopart autopart) => Delete(autopart);
+
+
+
+
+
+        /* Actualizar Iventario */
+        public void UpdateAutopartInventory(Autopart autopart)
+        {
+            Update(autopart);
+        }
     }
 }

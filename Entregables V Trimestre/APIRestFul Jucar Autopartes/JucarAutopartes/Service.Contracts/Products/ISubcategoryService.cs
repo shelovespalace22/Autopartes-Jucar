@@ -16,7 +16,7 @@ namespace Service.Contracts.Products
         /* Obtener todas las Subcategorias en general*/
         IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
 
-        /* Obtener una Subcategoria especifica */    
+        /* Obtener una Subcategoria especifica */
         SubcategoryDto GetSubcategoryById(Guid subcategoryId, bool trackChanges);
 
         /* Obtener todas las subcategorias de una Categoria */

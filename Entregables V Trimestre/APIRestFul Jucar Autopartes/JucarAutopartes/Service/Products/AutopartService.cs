@@ -37,25 +37,6 @@ namespace Service.Products
 
             var autopartEntity = _mapper.Map<Autopart>(autopartForCreation);
 
-
-            // Asignar materiales a la autoparte
-            if (autopartForCreation.RawMaterialIds != null && autopartForCreation.RawMaterialIds.Any())
-            {
-                foreach (var rawMaterialId in autopartForCreation.RawMaterialIds)
-                {
-                    var autopartMaterial = new AutopartMaterial
-                    {
-                        AutopartId = autopartEntity.AutopartID,
-                        RawMaterialId = rawMaterialId
-                    };
-
-                    // Agregar el autopartMaterial a la autoparte
-                    autopartEntity.AutopartMaterials.Add(autopartMaterial);
-                }
-            }
-
-
-
             _repository.Autopart.CreateAutopartForSubcategory(subcategoryId, autopartEntity);
 
             _repository.Save();

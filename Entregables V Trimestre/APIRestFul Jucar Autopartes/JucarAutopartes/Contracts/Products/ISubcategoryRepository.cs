@@ -17,9 +17,9 @@ namespace Contracts.Products
 
         /* Obtener una Subcategoria especifica */
         Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges);
-       
+
         /* Obtener todas las Subcategorias de una Categoria */
-        IEnumerable<Subcategory> GetSubcategories(Guid subcategoryId, bool trackChanges);
+        IEnumerable<Subcategory> GetSubcategories(Guid categoryId, bool trackChanges);
 
         /* Obtener una Subcategoria especifica de una Categoria */
         Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);

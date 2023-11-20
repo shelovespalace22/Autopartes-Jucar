@@ -19,7 +19,7 @@ namespace Entities.Models.Sales
         [MaxLength(5)]
         [RegularExpression("^\\d+$")]
         [DisplayName("Monto del Aporte")]
-        public double AmountPaid { get; set; }
+        public decimal AmountPaid { get; set; }
 
         [Required]
         [DisplayName("Fecha del Aporte")]
@@ -38,6 +38,13 @@ namespace Entities.Models.Sales
         public Contribution()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 

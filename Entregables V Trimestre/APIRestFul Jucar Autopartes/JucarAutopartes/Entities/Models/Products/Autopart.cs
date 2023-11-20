@@ -18,36 +18,23 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la autoparte!")]
         [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$")]
+        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese una descripción para la autoparte!")]
         [MaxLength(200, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Descripción")]
         public string? Description { get; set; }
 
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Peso Kgs")]
-        public string? WeightKgs { get; set; }
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
+        [DisplayName("Inventario")]
+        public int Inventory { get; set; }
 
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Altura Cm")]
-        public string? HeightCm { get; set; }
-
-        [MaxLength(3, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[0-9]+$")]
-        [DisplayName("Largo Cm")]
-        public string? LengthCm { get; set; }
-
-        [Required(ErrorMessage = "¡Ingrese la zona del vehiculo a la que pertenece!")]
-        [MaxLength(50, ErrorMessage = "Ha superado el límite de caracteres permitido")]
-        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$")]
-        [DisplayName("Zona del Vehículo")]
-        public string? VehicleZone { get; set; }
+        [Required(ErrorMessage = "Ingrese el precio de la autoparte.")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
+        [DisplayName("Precio")]
+        public decimal Value { get; set; }
 
         [Required]
         [DisplayName("Estado")]
@@ -66,15 +53,11 @@ namespace Entities.Models.Products
 
         public Autopart()
         {
-            WeightKgs = "0";
-            HeightCm = "0";
-            LengthCm = "0";
+            Description = "No tiene descripción.";
+            Inventory = 0;
             State = true;
             CreationDate = DateTime.Now;
             ModificationDate = DateTime.Now;
-
-            // Inicializar AutopartMaterials como una lista vacía
-            AutopartMaterials = new List<AutopartMaterial>();
         }
 
         public void setModificationDate()
@@ -87,6 +70,7 @@ namespace Entities.Models.Products
         //Subcategory
         public Guid SubcategoryId { get; set; }
 
+        [Required(ErrorMessage = "Debe seleccionar una Subcategoría")]
         [DisplayName("Subcategoría")]
         public Subcategory? Subcategory { get; set; }
 
@@ -94,26 +78,17 @@ namespace Entities.Models.Products
 
         public ICollection<Loss>? Losses { get; set; }
 
-        //PriceHistory
-
-        [DisplayName("Precio")] 
-        public PriceHistory? PriceHistorie { get; set; }
-
-        //Inventory
-
-        [DisplayName("Inventario")]
-        public Inventory? Inventory { get; set; }
-
-        //AutopartMaterial
-
-        public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
-
-        //BillDetail
-
-        public ICollection<BillDetail>? BillDetails { get; set; }
 
         //OrderDetail
 
         public ICollection<OrderDetail>? OrderDetails { get; set; }
+
+        //RawMaterial
+
+        public Guid RawMaterialId { get; set; }
+
+        [Required(ErrorMessage = "Escoga un material para la autoparte")]
+        [DisplayName("Material")]
+        public RawMaterial? Material { get; set; }
     }
 }

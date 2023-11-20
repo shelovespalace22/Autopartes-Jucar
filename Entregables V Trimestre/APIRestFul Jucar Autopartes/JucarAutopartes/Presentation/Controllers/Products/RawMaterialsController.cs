@@ -31,7 +31,7 @@ namespace Presentation.Controllers.Products
         }
 
         /* Obtener una Materia Prima */
-        
+
         [HttpGet("{id:guid}", Name = "RawMaterialById")]
         public IActionResult GetRawMaterial(Guid id)
         {

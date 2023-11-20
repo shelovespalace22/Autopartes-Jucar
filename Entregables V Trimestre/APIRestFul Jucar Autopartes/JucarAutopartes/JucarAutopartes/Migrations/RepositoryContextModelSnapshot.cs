@@ -17,223 +17,10 @@ namespace JucarAutopartes.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Entities.Models.Factories.Factory", b =>
-                {
-                    b.Property<Guid>("FactoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("BusinessName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NIT")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.HasKey("FactoryID");
-
-                    b.ToTable("Factories");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.FactoryAddress", b =>
-                {
-                    b.Property<Guid>("FactoryAddressID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AddressId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("FactoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.HasKey("FactoryAddressID");
-
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("FactoryId");
-
-                    b.ToTable("FactoryAddresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.FactoryPhone", b =>
-                {
-                    b.Property<Guid>("FactoryPhoneID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("FactoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("FactoryPhoneID");
-
-                    b.HasIndex("FactoryId");
-
-                    b.ToTable("FactoryPhones");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Shelf", b =>
-                {
-                    b.Property<Guid>("ShelfID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("HeightCm")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<string>("LengthCm")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<string>("Material")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("MaxCapacityKgs")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ShelfNumber")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ShelfID");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("Shelves");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Shelving", b =>
-                {
-                    b.Property<Guid>("ShelvingID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("InventoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ProductType")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<Guid>("ShelfId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ShelvingNumber")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.HasKey("ShelvingID");
-
-                    b.HasIndex("InventoryId");
-
-                    b.HasIndex("ShelfId");
-
-                    b.ToTable("Shelvings");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Warehouse", b =>
-                {
-                    b.Property<Guid>("WarehouseID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("FactoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.HasKey("WarehouseID");
-
-                    b.HasIndex("FactoryId");
-
-                    b.ToTable("Warehouses");
-                });
 
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
                 {
@@ -245,17 +32,11 @@ namespace JucarAutopartes.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("HeightCm")
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<string>("LengthCm")
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                    b.Property<int>("Inventory")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
@@ -265,22 +46,21 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<Guid>("RawMaterialId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
                     b.Property<Guid>("SubcategoryId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("VehicleZone")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("WeightKgs")
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("AutopartID");
+
+                    b.HasIndex("RawMaterialId");
 
                     b.HasIndex("SubcategoryId");
 
@@ -290,170 +70,133 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             AutopartID = new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9033),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7887),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9035),
+                            Inventory = 80,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7888),
                             Name = "PIN CRUCETA 334",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
                             SubcategoryId = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 100m
                         },
                         new
                         {
                             AutopartID = new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9051),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7902),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9062),
+                            Inventory = 10,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7903),
                             Name = "PIN TUERCA HOUSING 950 PLANO",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
                             SubcategoryId = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 150m
                         },
                         new
                         {
                             AutopartID = new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9077),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7908),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9078),
+                            Inventory = 60,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7908),
                             Name = "PIN DISCO QUINTA RUEDA",
+                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
                             State = true,
                             SubcategoryId = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 800m
                         },
                         new
                         {
                             AutopartID = new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9082),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7913),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9083),
+                            Inventory = 80,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7914),
                             Name = "PIN LEVA 1 1/4",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
                             SubcategoryId = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 100m
                         },
                         new
                         {
                             AutopartID = new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9088),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7919),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9089),
+                            Inventory = 200,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7919),
                             Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
                             SubcategoryId = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 90m
                         },
                         new
                         {
                             AutopartID = new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9107),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7924),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9108),
+                            Inventory = 190,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7924),
                             Name = "ARANDELA LEVA 3/4",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
                             SubcategoryId = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 50m
                         },
                         new
                         {
                             AutopartID = new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9112),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7930),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9113),
+                            Inventory = 80,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7930),
                             Name = "LAINA SPLINDER NPR",
+                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
                             State = true,
                             SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 100m
                         },
                         new
                         {
                             AutopartID = new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9117),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7935),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9117),
+                            Inventory = 65,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7936),
                             Name = "LAINA SPLINDER KENWORTH",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
                             SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 70m
                         },
                         new
                         {
                             AutopartID = new Guid("8db21635-4db7-453d-8010-831137e72d63"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9121),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7941),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9122),
+                            Inventory = 45,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7941),
                             Name = "LAINA SPLINDER HINO FC 500",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
                             SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 200m
                         },
                         new
                         {
                             AutopartID = new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9125),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7946),
                             Description = "N/N",
-                            HeightCm = "0",
-                            LengthCm = "0",
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(9126),
+                            Inventory = 23,
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7947),
                             Name = "LAINA SPLINDER NISSAN MT 3000",
+                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
                             State = true,
                             SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            VehicleZone = "N/N",
-                            WeightKgs = "0"
+                            Value = 150m
                         });
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.AutopartMaterial", b =>
-                {
-                    b.Property<Guid>("AutopartMaterialID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AutopartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("RawMaterialId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("AutopartMaterialID");
-
-                    b.HasIndex("AutopartId");
-
-                    b.HasIndex("RawMaterialId");
-
-                    b.ToTable("AutopartMaterials");
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
@@ -484,116 +227,51 @@ namespace JucarAutopartes.Migrations
                         new
                         {
                             CategoryID = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7707),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7760),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6302),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6316),
                             Name = "PIN",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7787),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7788),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6346),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6346),
                             Name = "ARANDELA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7790),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7791),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6349),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6350),
                             Name = "LAINA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7793),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7794),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6352),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6353),
                             Name = "EMPAQUE CARNAZA",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7796),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7797),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6355),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6355),
                             Name = "TELEFONO CAUCHO",
                             State = true
                         },
                         new
                         {
                             CategoryID = new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7799),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(7800),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6358),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(6358),
                             Name = "MEDIA LUNA",
                             State = true
                         });
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.DiscountHistory", b =>
-                {
-                    b.Property<Guid>("DiscountHistoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("DiscountRate")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("FinalDiscountDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("InitialDiscountDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PriceHistoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.Property<double>("TemporalValue")
-                        .HasColumnType("float");
-
-                    b.HasKey("DiscountHistoryID");
-
-                    b.HasIndex("PriceHistoryId");
-
-                    b.ToTable("DiscountHistories");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
-                {
-                    b.Property<Guid>("InventoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AutopartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("QuantityAvailable")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<DateTime>("UltimateModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("InventoryID");
-
-                    b.HasIndex("AutopartId")
-                        .IsUnique();
-
-                    b.ToTable("Inventories");
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Loss", b =>
@@ -602,10 +280,9 @@ namespace JucarAutopartes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("AmountLoss")
-                        .IsRequired()
+                    b.Property<int>("AmountLoss")
                         .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("AutopartId")
                         .HasColumnType("uniqueidentifier");
@@ -618,11 +295,6 @@ namespace JucarAutopartes.Migrations
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Place")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Reason")
                         .IsRequired()
@@ -661,10 +333,9 @@ namespace JucarAutopartes.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Quantity")
-                        .IsRequired()
+                    b.Property<int>("Quantity")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("RawMaterialId")
                         .HasColumnType("uniqueidentifier");
@@ -674,35 +345,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("RawMaterialId");
 
                     b.ToTable("Movements");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.PriceHistory", b =>
-                {
-                    b.Property<Guid>("PriceHistoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AutopartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.Property<double>("Value")
-                        .HasColumnType("float");
-
-                    b.HasKey("PriceHistoryID");
-
-                    b.HasIndex("AutopartId")
-                        .IsUnique();
-
-                    b.ToTable("PriceHistories");
                 });
 
             modelBuilder.Entity("Entities.Models.Products.RawMaterial", b =>
@@ -725,14 +367,35 @@ namespace JucarAutopartes.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.HasKey("RawMaterialID");
 
                     b.ToTable("RawMaterials");
+
+                    b.HasData(
+                        new
+                        {
+                            RawMaterialID = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8609),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8611),
+                            Name = "Acero",
+                            State = true
+                        },
+                        new
+                        {
+                            RawMaterialID = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8617),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8618),
+                            Name = "Hierro",
+                            State = true
+                        },
+                        new
+                        {
+                            RawMaterialID = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8620),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(8621),
+                            Name = "Cobre",
+                            State = true
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
@@ -744,40 +407,36 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("InitialStock")
-                        .IsRequired()
+                    b.Property<int>("InitialStock")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
-                    b.Property<string>("MaximumInventory")
-                        .IsRequired()
+                    b.Property<int>("MaximumInventory")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
-                    b.Property<string>("MinimumInventory")
-                        .IsRequired()
+                    b.Property<int>("MinimumInventory")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("QuantityAvailable")
-                        .IsRequired()
+                    b.Property<int>("QuantityAvailable")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("RawMaterialId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ReorderPoint")
-                        .IsRequired()
+                    b.Property<int>("ReorderPoint")
                         .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("int");
 
                     b.HasKey("StockID");
 
-                    b.HasIndex("RawMaterialId");
+                    b.HasIndex("RawMaterialId")
+                        .IsUnique();
 
                     b.ToTable("Stocks");
                 });
@@ -816,8 +475,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8498),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8502),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7391),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7394),
                             Name = "PIN CRUCETA",
                             State = true
                         },
@@ -825,8 +484,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8511),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8512),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7403),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7404),
                             Name = "PIN TUERCA",
                             State = true
                         },
@@ -834,8 +493,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8516),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8516),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7407),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7408),
                             Name = "PIN DISCO",
                             State = true
                         },
@@ -843,8 +502,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
                             CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8519),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8520),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7411),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7412),
                             Name = "PIN LEVA",
                             State = true
                         },
@@ -852,8 +511,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
                             CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8523),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8524),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7415),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7416),
                             Name = "ARANDELA CACHO",
                             State = true
                         },
@@ -861,8 +520,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
                             CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8528),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8529),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7419),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7420),
                             Name = "ARANDELA LEVA",
                             State = true
                         },
@@ -870,8 +529,8 @@ namespace JucarAutopartes.Migrations
                         {
                             SubcategoryID = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
                             CategoryId = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8533),
-                            ModificationDate = new DateTime(2023, 9, 15, 18, 8, 25, 852, DateTimeKind.Local).AddTicks(8533),
+                            CreationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7423),
+                            ModificationDate = new DateTime(2023, 11, 16, 19, 24, 24, 814, DateTimeKind.Local).AddTicks(7423),
                             Name = "LAINA SPLINDER",
                             State = true
                         });
@@ -886,16 +545,27 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("EmailAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentifierNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("IdentifierType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ProductType")
                         .IsRequired()
@@ -908,10 +578,6 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("ProviderID");
 
                     b.ToTable("Providers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Provider");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderAddress", b =>
@@ -920,14 +586,24 @@ namespace JucarAutopartes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AddressId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("AddressType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("NeighborhoodId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ProviderId")
                         .HasColumnType("uniqueidentifier");
@@ -937,7 +613,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("ProviderAddressID");
 
-                    b.HasIndex("AddressId");
+                    b.HasIndex("NeighborhoodId");
 
                     b.HasIndex("ProviderId");
 
@@ -976,123 +652,15 @@ namespace JucarAutopartes.Migrations
                     b.ToTable("ProviderPhones");
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.Bill", b =>
-                {
-                    b.Property<Guid>("BillID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Customer")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CustomerPhone")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("DocumentNumber")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NIT")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Observation")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("SalesInvoiceNumber")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<Guid?>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("BillID");
-
-                    b.HasIndex("OrderId")
-                        .IsUnique();
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("Bills");
-                });
-
-            modelBuilder.Entity("Entities.Models.Sales.BillDetail", b =>
-                {
-                    b.Property<Guid>("BillDetailID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AutopartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BillId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("IVA")
-                        .HasMaxLength(2)
-                        .HasColumnType("float");
-
-                    b.Property<string>("ItemNumber")
-                        .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Quantity")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<double>("SubtotalValue")
-                        .HasMaxLength(10)
-                        .HasColumnType("float");
-
-                    b.Property<double>("TotalValue")
-                        .HasMaxLength(10)
-                        .HasColumnType("float");
-
-                    b.Property<double>("UnitValue")
-                        .HasMaxLength(10)
-                        .HasColumnType("float");
-
-                    b.HasKey("BillDetailID");
-
-                    b.HasIndex("AutopartId");
-
-                    b.HasIndex("BillId");
-
-                    b.ToTable("BillDetails");
-                });
-
             modelBuilder.Entity("Entities.Models.Sales.Contribution", b =>
                 {
                     b.Property<Guid>("ContributionID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("AmountPaid")
+                    b.Property<decimal>("AmountPaid")
                         .HasMaxLength(5)
-                        .HasColumnType("float");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("ContributionDate")
                         .HasColumnType("datetime2");
@@ -1127,24 +695,31 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentifierNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("IdentifierType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("CustomerID");
 
                     b.ToTable("Customers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Customer");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerAddress", b =>
@@ -1153,8 +728,15 @@ namespace JucarAutopartes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AddressId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("AddressType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -1165,14 +747,17 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("NeighborhoodId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
                     b.HasKey("CustomerAddressID");
 
-                    b.HasIndex("AddressId");
-
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("NeighborhoodId");
 
                     b.ToTable("CustomerAddresses");
                 });
@@ -1224,13 +809,27 @@ namespace JucarAutopartes.Migrations
                     b.Property<DateTime>("ModificationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Place")
-                        .IsRequired()
+                    b.Property<string>("Observation")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentStatus")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
+                    b.Property<string>("ShippingAddress")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ShippingStatus")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal?>("Total")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderID");
 
@@ -1257,15 +856,17 @@ namespace JucarAutopartes.Migrations
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Product")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Quantity")
-                        .IsRequired()
+                    b.Property<int>("Quantity")
                         .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("SubtotalValue")
+                        .HasMaxLength(10)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("UnitValue")
+                        .HasMaxLength(10)
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderDetailID");
 
@@ -1301,189 +902,14 @@ namespace JucarAutopartes.Migrations
                     b.ToTable("PaymentMethods");
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.WayToPay", b =>
-                {
-                    b.Property<Guid>("WayToPayID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BillId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("WayToPayName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("WayToPayID");
-
-                    b.HasIndex("BillId")
-                        .IsUnique();
-
-                    b.ToTable("WayToPays");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Address", b =>
-                {
-                    b.Property<Guid>("AddressID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AddressTypeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AddresseeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AditionalInformation")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<Guid>("BuildingId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("StreetId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("AddressID");
-
-                    b.HasIndex("AddressTypeId");
-
-                    b.HasIndex("AddresseeId");
-
-                    b.HasIndex("BuildingId");
-
-                    b.HasIndex("StreetId");
-
-                    b.ToTable("Addresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.AddressType", b =>
-                {
-                    b.Property<Guid>("AddressTypeID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("AddressTypeID");
-
-                    b.ToTable("AddressTypes");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Addressee", b =>
-                {
-                    b.Property<Guid>("AddresseeID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("DocumntType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("FirstSurname")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SecondName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("SecondSurname")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("AddresseeID");
-
-                    b.ToTable("Addressees");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Building", b =>
-                {
-                    b.Property<Guid>("BuildingID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("BuildingNumber")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
-
-                    b.Property<string>("BuildingType")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("BuildingID");
-
-                    b.ToTable("Buildings");
-                });
-
             modelBuilder.Entity("Entities.Models.Ubications.Department", b =>
                 {
                     b.Property<Guid>("DepartmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Capital")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DepartmentID");
 
@@ -1496,22 +922,11 @@ namespace JucarAutopartes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("Capital")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<Guid>("DepartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MunicipalityID");
 
@@ -1526,19 +941,11 @@ namespace JucarAutopartes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<Guid>("MunicipalityId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("NeighborhoodID");
 
@@ -1547,456 +954,243 @@ namespace JucarAutopartes.Migrations
                     b.ToTable("Neighborhoods");
                 });
 
-            modelBuilder.Entity("Entities.Models.Ubications.Street", b =>
-                {
-                    b.Property<Guid>("StreetID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FirstNumber")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("NeighborhoodId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("SecondNumber")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<string>("StreetNumber")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<string>("StreetType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Sufix")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.HasKey("StreetID");
-
-                    b.HasIndex("NeighborhoodId");
-
-                    b.ToTable("Streets");
-                });
-
-            modelBuilder.Entity("Entities.Models.Users.Position", b =>
-                {
-                    b.Property<Guid>("PositionID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PositionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.HasKey("PositionID");
-
-                    b.ToTable("Positions");
-                });
-
             modelBuilder.Entity("Entities.Models.Users.User", b =>
                 {
-                    b.Property<Guid>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BirthCity")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CityResidence")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("DocumentType")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstSurname")
+                    b.Property<string>("LastName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SecondName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("SecondSurname")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Sex")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<bool>("State")
+                    b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
-                    b.HasKey("UserID");
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
 
-                    b.ToTable("Users");
-                });
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-            modelBuilder.Entity("Entities.Models.Users.UserAddress", b =>
-                {
-                    b.Property<Guid>("UserAddressID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<Guid>("AddressId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("State")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("UserAddressID");
-
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("UserAddresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Users.UserPhone", b =>
-                {
-                    b.Property<Guid>("UserPhoneID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneType")
-                        .IsRequired()
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
 
-                    b.HasKey("UserPhoneID");
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "36cbf895-bc7c-4be3-886f-dd881884af2e",
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        },
+                        new
+                        {
+                            Id = "c61fa2a7-af13-4cba-98da-e1acb7f79318",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPhones");
+                    b.ToTable("AspNetUserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Models.Users.UserPosition", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<Guid>("UserPositionID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PositionID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("UserPositionID");
-
-                    b.HasIndex("PositionID");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("UserPositions");
-                });
-
-            modelBuilder.Entity("Entities.Models.Providers.LegalProvider", b =>
-                {
-                    b.HasBaseType("Entities.Models.Providers.Provider");
-
-                    b.Property<string>("BusinessName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LegalRepresentative")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("NIT")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
-
-                    b.HasDiscriminator().HasValue("LegalProvider");
-                });
-
-            modelBuilder.Entity("Entities.Models.Providers.NaturalProvider", b =>
-                {
-                    b.HasBaseType("Entities.Models.Providers.Provider");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("DocumentType")
-                        .IsRequired()
+                    b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FirstSurname")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.Property<string>("SecondName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.HasIndex("UserId");
 
-                    b.Property<string>("SecondSurname")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasDiscriminator().HasValue("NaturalProvider");
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.LegalCustomer", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasBaseType("Entities.Models.Sales.Customer");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BusinessName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("NIT")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
+                    b.HasKey("UserId", "RoleId");
 
-                    b.HasDiscriminator().HasValue("LegalCustomer");
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.NaturalCustomer", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasBaseType("Entities.Models.Sales.Customer");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DocumentType")
-                        .IsRequired()
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.Property<string>("FirstSurname")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("SecondName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("SecondSurname")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasDiscriminator().HasValue("NaturalCustomer");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.FactoryAddress", b =>
-                {
-                    b.HasOne("Entities.Models.Ubications.Address", "Address")
-                        .WithMany("FactoryAddresses")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Factories.Factory", "Factory")
-                        .WithMany("FactoryAddresses")
-                        .HasForeignKey("FactoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
-
-                    b.Navigation("Factory");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.FactoryPhone", b =>
-                {
-                    b.HasOne("Entities.Models.Factories.Factory", "Factory")
-                        .WithMany("FactoryPhones")
-                        .HasForeignKey("FactoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Factory");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Shelf", b =>
-                {
-                    b.HasOne("Entities.Models.Factories.Warehouse", "Warehouse")
-                        .WithMany("Shelves")
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Warehouse");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Shelving", b =>
-                {
-                    b.HasOne("Entities.Models.Products.Inventory", "Inventory")
-                        .WithMany("Shelvings")
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Factories.Shelf", "Shelf")
-                        .WithMany("Shelvings")
-                        .HasForeignKey("ShelfId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Inventory");
-
-                    b.Navigation("Shelf");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Warehouse", b =>
-                {
-                    b.HasOne("Entities.Models.Factories.Factory", "Factory")
-                        .WithMany("Warehouses")
-                        .HasForeignKey("FactoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Factory");
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
                 {
+                    b.HasOne("Entities.Models.Products.RawMaterial", "Material")
+                        .WithMany("Autopart")
+                        .HasForeignKey("RawMaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Products.Subcategory", "Subcategory")
                         .WithMany("Autoparts")
                         .HasForeignKey("SubcategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Material");
+
                     b.Navigation("Subcategory");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.AutopartMaterial", b =>
-                {
-                    b.HasOne("Entities.Models.Products.Autopart", "Autopart")
-                        .WithMany("AutopartMaterials")
-                        .HasForeignKey("AutopartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Products.RawMaterial", "RawMaterial")
-                        .WithMany("AutopartMaterials")
-                        .HasForeignKey("RawMaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Autopart");
-
-                    b.Navigation("RawMaterial");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.DiscountHistory", b =>
-                {
-                    b.HasOne("Entities.Models.Products.PriceHistory", "PriceHistory")
-                        .WithMany("DiscountHistories")
-                        .HasForeignKey("PriceHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PriceHistory");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
-                {
-                    b.HasOne("Entities.Models.Products.Autopart", "Autopart")
-                        .WithOne("Inventory")
-                        .HasForeignKey("Entities.Models.Products.Inventory", "AutopartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Autopart");
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Loss", b =>
@@ -2021,22 +1215,11 @@ namespace JucarAutopartes.Migrations
                     b.Navigation("RawMaterial");
                 });
 
-            modelBuilder.Entity("Entities.Models.Products.PriceHistory", b =>
-                {
-                    b.HasOne("Entities.Models.Products.Autopart", "Autopart")
-                        .WithOne("PriceHistorie")
-                        .HasForeignKey("Entities.Models.Products.PriceHistory", "AutopartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Autopart");
-                });
-
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
                 {
                     b.HasOne("Entities.Models.Products.RawMaterial", "RawMaterial")
-                        .WithMany("Stocks")
-                        .HasForeignKey("RawMaterialId")
+                        .WithOne("Stock")
+                        .HasForeignKey("Entities.Models.Products.Stock", "RawMaterialId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -2056,9 +1239,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderAddress", b =>
                 {
-                    b.HasOne("Entities.Models.Ubications.Address", "Address")
+                    b.HasOne("Entities.Models.Ubications.Neighborhood", "Neighborhood")
                         .WithMany("ProviderAddresses")
-                        .HasForeignKey("AddressId")
+                        .HasForeignKey("NeighborhoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -2068,7 +1251,7 @@ namespace JucarAutopartes.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Address");
+                    b.Navigation("Neighborhood");
 
                     b.Navigation("Provider");
                 });
@@ -2082,42 +1265,6 @@ namespace JucarAutopartes.Migrations
                         .IsRequired();
 
                     b.Navigation("Provider");
-                });
-
-            modelBuilder.Entity("Entities.Models.Sales.Bill", b =>
-                {
-                    b.HasOne("Entities.Models.Sales.Order", "Order")
-                        .WithOne("Bill")
-                        .HasForeignKey("Entities.Models.Sales.Bill", "OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Users.User", "User")
-                        .WithMany("Bills")
-                        .HasForeignKey("UserID");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Entities.Models.Sales.BillDetail", b =>
-                {
-                    b.HasOne("Entities.Models.Products.Autopart", "Autopart")
-                        .WithMany("BillDetails")
-                        .HasForeignKey("AutopartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Sales.Bill", "Bill")
-                        .WithMany("BillDetails")
-                        .HasForeignKey("BillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Autopart");
-
-                    b.Navigation("Bill");
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Contribution", b =>
@@ -2141,27 +1288,27 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerAddress", b =>
                 {
-                    b.HasOne("Entities.Models.Ubications.Address", "Address")
-                        .WithMany("CustomerAddresses")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Entities.Models.Sales.Customer", "Customer")
                         .WithMany("CustomerAddresses")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Address");
+                    b.HasOne("Entities.Models.Ubications.Neighborhood", "Neighborhood")
+                        .WithMany("CustomerAddresses")
+                        .HasForeignKey("NeighborhoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
+
+                    b.Navigation("Neighborhood");
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerPhone", b =>
                 {
                     b.HasOne("Entities.Models.Sales.Customer", "Customer")
-                        .WithMany()
+                        .WithMany("CustomerPhones")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2199,52 +1346,6 @@ namespace JucarAutopartes.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.WayToPay", b =>
-                {
-                    b.HasOne("Entities.Models.Sales.Bill", "Bill")
-                        .WithOne("WayToPay")
-                        .HasForeignKey("Entities.Models.Sales.WayToPay", "BillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Bill");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Address", b =>
-                {
-                    b.HasOne("Entities.Models.Ubications.AddressType", "AddressType")
-                        .WithMany("Addresses")
-                        .HasForeignKey("AddressTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Ubications.Addressee", "Addressee")
-                        .WithMany("Addresses")
-                        .HasForeignKey("AddresseeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Ubications.Building", "Building")
-                        .WithMany("Addresses")
-                        .HasForeignKey("BuildingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Ubications.Street", "Street")
-                        .WithMany("Addresses")
-                        .HasForeignKey("StreetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AddressType");
-
-                    b.Navigation("Addressee");
-
-                    b.Navigation("Building");
-
-                    b.Navigation("Street");
-                });
-
             modelBuilder.Entity("Entities.Models.Ubications.Municipality", b =>
                 {
                     b.HasOne("Entities.Models.Ubications.Department", "Department")
@@ -2267,98 +1368,62 @@ namespace JucarAutopartes.Migrations
                     b.Navigation("Municipality");
                 });
 
-            modelBuilder.Entity("Entities.Models.Ubications.Street", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Entities.Models.Ubications.Neighborhood", "Neighborhood")
-                        .WithMany("Streets")
-                        .HasForeignKey("NeighborhoodId")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Neighborhood");
                 });
 
-            modelBuilder.Entity("Entities.Models.Users.UserAddress", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Entities.Models.Ubications.Address", "Address")
-                        .WithMany("UserAddresses")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Models.Users.User", "User")
-                        .WithMany("UserAddresses")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Entities.Models.Users.UserPhone", b =>
-                {
-                    b.HasOne("Entities.Models.Users.User", "User")
-                        .WithMany("UserPhones")
+                    b.HasOne("Entities.Models.Users.User", null)
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Models.Users.UserPosition", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Entities.Models.Users.Position", "Position")
-                        .WithMany("UserPositions")
-                        .HasForeignKey("PositionID")
+                    b.HasOne("Entities.Models.Users.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Users.User", "User")
-                        .WithMany("UserPositions")
-                        .HasForeignKey("UserID")
+                    b.HasOne("Entities.Models.Users.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Position");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Models.Factories.Factory", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Navigation("FactoryAddresses");
-
-                    b.Navigation("FactoryPhones");
-
-                    b.Navigation("Warehouses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Shelf", b =>
-                {
-                    b.Navigation("Shelvings");
-                });
-
-            modelBuilder.Entity("Entities.Models.Factories.Warehouse", b =>
-                {
-                    b.Navigation("Shelves");
+                    b.HasOne("Entities.Models.Users.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Autopart", b =>
                 {
-                    b.Navigation("AutopartMaterials");
-
-                    b.Navigation("BillDetails");
-
-                    b.Navigation("Inventory");
-
                     b.Navigation("Losses");
 
                     b.Navigation("OrderDetails");
-
-                    b.Navigation("PriceHistorie");
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
@@ -2366,23 +1431,14 @@ namespace JucarAutopartes.Migrations
                     b.Navigation("Subcategories");
                 });
 
-            modelBuilder.Entity("Entities.Models.Products.Inventory", b =>
-                {
-                    b.Navigation("Shelvings");
-                });
-
-            modelBuilder.Entity("Entities.Models.Products.PriceHistory", b =>
-                {
-                    b.Navigation("DiscountHistories");
-                });
-
             modelBuilder.Entity("Entities.Models.Products.RawMaterial", b =>
                 {
-                    b.Navigation("AutopartMaterials");
+                    b.Navigation("Autopart");
 
                     b.Navigation("Movements");
 
-                    b.Navigation("Stocks");
+                    b.Navigation("Stock")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Subcategory", b =>
@@ -2397,24 +1453,17 @@ namespace JucarAutopartes.Migrations
                     b.Navigation("ProviderPhones");
                 });
 
-            modelBuilder.Entity("Entities.Models.Sales.Bill", b =>
-                {
-                    b.Navigation("BillDetails");
-
-                    b.Navigation("WayToPay");
-                });
-
             modelBuilder.Entity("Entities.Models.Sales.Customer", b =>
                 {
                     b.Navigation("CustomerAddresses");
+
+                    b.Navigation("CustomerPhones");
 
                     b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Order", b =>
                 {
-                    b.Navigation("Bill");
-
                     b.Navigation("Contributions");
 
                     b.Navigation("OrderDetails");
@@ -2423,32 +1472,6 @@ namespace JucarAutopartes.Migrations
             modelBuilder.Entity("Entities.Models.Sales.PaymentMethod", b =>
                 {
                     b.Navigation("Contributions");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Address", b =>
-                {
-                    b.Navigation("CustomerAddresses");
-
-                    b.Navigation("FactoryAddresses");
-
-                    b.Navigation("ProviderAddresses");
-
-                    b.Navigation("UserAddresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.AddressType", b =>
-                {
-                    b.Navigation("Addresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Addressee", b =>
-                {
-                    b.Navigation("Addresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Ubications.Building", b =>
-                {
-                    b.Navigation("Addresses");
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Department", b =>
@@ -2463,28 +1486,9 @@ namespace JucarAutopartes.Migrations
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
                 {
-                    b.Navigation("Streets");
-                });
+                    b.Navigation("CustomerAddresses");
 
-            modelBuilder.Entity("Entities.Models.Ubications.Street", b =>
-                {
-                    b.Navigation("Addresses");
-                });
-
-            modelBuilder.Entity("Entities.Models.Users.Position", b =>
-                {
-                    b.Navigation("UserPositions");
-                });
-
-            modelBuilder.Entity("Entities.Models.Users.User", b =>
-                {
-                    b.Navigation("Bills");
-
-                    b.Navigation("UserAddresses");
-
-                    b.Navigation("UserPhones");
-
-                    b.Navigation("UserPositions");
+                    b.Navigation("ProviderAddresses");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,5 +1,6 @@
 ﻿using Contracts.Products;
 using Entities.Models.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace Repository.Products
     public class RawMaterialRepository : RepositoryBase<RawMaterial>, IRawMaterialRepository
     {
         public RawMaterialRepository(RepositoryContext repositoryContext)
-            :base(repositoryContext)
+            : base(repositoryContext)
         {
-            
+
         }
 
         /* Obtener todas las Materias Primas */
@@ -27,6 +28,7 @@ namespace Repository.Products
 
         public RawMaterial GetRawMaterial(Guid rawMaterialId, bool trackChanges) =>
             FindByCondition(r => r.RawMaterialID.Equals(rawMaterialId), trackChanges)
+            .Include(r => r.Stock)
             .SingleOrDefault();
 
         /* Crear Materia Prima*/

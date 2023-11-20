@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Models.Providers;
+using Entities.Models.Sales;
 
 namespace Entities.Models.Ubications
 {
@@ -16,27 +18,12 @@ namespace Entities.Models.Ubications
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid NeighborhoodID { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el nombre del barrio!")]
-        [MaxLength(50)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
-        [DisplayName("Nombre")]
+        /* Se eliminaron las data annotations */
         public string? Name { get; set; }
 
-        [Required]
-        [DisplayName("Creación del Regístro")]
-        public DateTime CreationDate { get; set; }
+        /* Se eliminaron 2 propiedades: CreationDate y ModificationDate*/
 
-        [Required]
-        [DisplayName("Modificación del Regístro")]
-        public DateTime ModificationDate { get; set; }
-
-        //Constructor
-
-        public Neighborhood()
-        {
-            CreationDate = DateTime.Now;
-            ModificationDate = DateTime.Now;
-        }
+        /* Se eliminó el constructor */
 
         //Relaciones con otros modelos
 
@@ -45,9 +32,10 @@ namespace Entities.Models.Ubications
         public Guid MunicipalityId { get; set; }
         public Municipality? Municipality { get; set; }
 
-        //Stret
+        /* Se eliminó la relación con Street  */
 
-        public ICollection<Street> Streets { get; set; }
+        public ICollection<ProviderAddress>? ProviderAddresses  { get; set; }
+        public ICollection<CustomerAddress>? CustomerAddresses { get; set; }
 
 
 

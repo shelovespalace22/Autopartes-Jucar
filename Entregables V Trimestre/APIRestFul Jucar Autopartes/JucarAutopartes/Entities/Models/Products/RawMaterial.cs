@@ -18,15 +18,11 @@ namespace Entities.Models.Products
 
         [Required(ErrorMessage = "¡Ingrese el nombre de la Materia Prima!")]
         [MaxLength(50)]
-        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un nombre válido!")]
+        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "¡Ingrese el tipo de la Materia Prima!")]
-        [MaxLength(50)]
-        [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "¡Ingrese un tipo válido!")]
-        [DisplayName("Tipo")]
-        public string? Type { get; set; }
+        /* Elminé la propiedad 'Type' */
 
         [Required]
         [DisplayName("Estado")]
@@ -49,6 +45,8 @@ namespace Entities.Models.Products
             ModificationDate = DateTime.Now;
         }
 
+        /* Métodos */
+
         public void setModificationDate()
         {
             ModificationDate = DateTime.Now;
@@ -56,16 +54,16 @@ namespace Entities.Models.Products
 
         //Relaciones con otros modelos
 
-        //AutopartMaterial
-
-        public ICollection<AutopartMaterial>? AutopartMaterials { get; set; }
-
         //Stock
 
-        public ICollection<Stock>? Stocks { get; set; }
+        public Stock Stock { get; set; }
 
         //Movement
 
         public ICollection<Movement>? Movements { get; set; }
+
+        // Autopart
+
+        public ICollection<Autopart>? Autopart { get; set; }
     }
 }

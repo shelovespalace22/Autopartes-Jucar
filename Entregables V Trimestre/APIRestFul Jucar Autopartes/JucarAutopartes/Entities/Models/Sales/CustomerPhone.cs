@@ -17,13 +17,13 @@ namespace Entities.Models.Sales
 
         [Required(ErrorMessage = "¡Ingrese el tipo de teléfono!")]
         [MaxLength(30)]
-        [RegularExpression("^[A-Za-z\\s]+$")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Tipo de Teléfono")]
         public string? PhoneType { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el número de teléfono!")]
         [MaxLength(10)]
-        [RegularExpression("\\d{1,10}$")]
+        [RegularExpression("\\d{1,10}$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Número de Teléfono")]
         public string? PhoneNumber { get; set; }
 
@@ -40,6 +40,13 @@ namespace Entities.Models.Sales
         public CustomerPhone()
         {
             CreationDate = DateTime.Now;
+            ModificationDate = DateTime.Now;
+        }
+
+        /* Métodos */
+
+        public void setModificationDate()
+        {
             ModificationDate = DateTime.Now;
         }
 
