@@ -26,6 +26,9 @@ namespace Presentation.Controllers.Proveedores
             if (provider is null)
                 return BadRequest("ProviderForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdProvider = _service.ProviderService.CreateProvider(provider);
 
             return CreatedAtRoute("ProviderById", new { id = createdProvider.ProviderID }, createdProvider);
@@ -64,6 +67,9 @@ namespace Presentation.Controllers.Proveedores
         {
             if (provider is null)
                 return BadRequest("ProviderForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.ProviderService.UpdateProvider(id, provider, trackChanges: true);
 

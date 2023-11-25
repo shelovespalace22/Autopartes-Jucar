@@ -25,6 +25,9 @@ namespace Presentation.Controllers.Proveedores
             if (address is null)
                 return BadRequest("ProviderAddressForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var addressToReturn = _service.ProviderAddressService.CreateAddressForProvider(providerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForProvider", new { providerId, id = addressToReturn.ProviderAddressID }, addressToReturn);
@@ -63,6 +66,9 @@ namespace Presentation.Controllers.Proveedores
         {
             if (addressForUpdate is null)
                 return BadRequest("ProviderAddressForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.ProviderAddressService.UpdateAddressForProvider(providerId, id, addressForUpdate, proTrackChanges: false, adrTrackChanges: true);
 

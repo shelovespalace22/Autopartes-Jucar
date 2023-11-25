@@ -27,6 +27,9 @@ namespace Presentation.Controllers.Products
             if (subcategory is null)
                 return BadRequest("SubcategoryForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var subcategoryToReturn = _service.SubcategoryService.CreateSubcategoryForCategory(categoryId, subcategory, trackChanges: false);
 
             return CreatedAtRoute("GetSubcategoryByCategory", new { categoryId, id = subcategoryToReturn.SubcategoryId }, subcategoryToReturn);
@@ -86,6 +89,9 @@ namespace Presentation.Controllers.Products
         {
             if (subcategory is null)
                 return BadRequest("SubcategoryForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.SubcategoryService.UpdateSubcategoryForCategory(categoryId, id, subcategory, catTrackChanges: false, subTrackChanges: true);
 

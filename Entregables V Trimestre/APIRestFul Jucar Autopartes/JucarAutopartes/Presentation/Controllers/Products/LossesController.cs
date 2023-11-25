@@ -27,6 +27,10 @@ namespace Presentation.Controllers.Products
             if (loss is null)
                 return BadRequest("LossForCreationDto object is null");
 
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var lossToReturn = _service.LossService.CreateLossForAutopart(autopartId, loss, trackChanges: false);
 
             return CreatedAtRoute("GetLossByAutopart", new { autopartId, id = lossToReturn.LossID }, lossToReturn);
@@ -73,6 +77,9 @@ namespace Presentation.Controllers.Products
         {
             if (loss is null)
                 return BadRequest("LossForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.LossService.UpdateLossForAutopart(autopartId, id, loss, autTrackChanges: false, losTrackChanges: true);
 

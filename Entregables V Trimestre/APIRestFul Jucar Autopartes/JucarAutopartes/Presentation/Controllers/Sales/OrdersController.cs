@@ -26,6 +26,10 @@ namespace Presentation.Controllers.Sales
             if (order is null)
                 return BadRequest("OrderForCreationDto object is null");
 
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdOrder = _service.OrderService.CreateOrder(order);
 
             return CreatedAtRoute("OrderById", new { id = createdOrder.OrderID }, createdOrder);
@@ -64,6 +68,9 @@ namespace Presentation.Controllers.Sales
         {
             if (order is null)
                 return BadRequest("OrderForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.OrderService.UpdateOrder(id, order, trackChanges: true);
 

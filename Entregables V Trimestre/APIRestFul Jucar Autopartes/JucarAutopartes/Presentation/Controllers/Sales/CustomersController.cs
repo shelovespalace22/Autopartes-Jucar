@@ -25,6 +25,9 @@ namespace Presentation.Controllers.Sales
             if (customer is null)
                 return BadRequest("CustomerForCreationDto object is null.");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdCustomer = _service.CustomerService.CreateCustomer(customer);
 
             return CreatedAtRoute("CustomerById", new { id = createdCustomer.CustomerID }, createdCustomer);
@@ -63,6 +66,9 @@ namespace Presentation.Controllers.Sales
         {
             if (customer is null)
                 return BadRequest("CustomerForUpdateDto object is null.");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.CustomerService.UpdateCustomer(id, customer, trackChanges: true);
 

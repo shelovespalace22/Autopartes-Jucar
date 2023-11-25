@@ -25,6 +25,9 @@ namespace Presentation.Controllers.Sales
             if (paymentMethod is null)
                 return BadRequest("PaymentMethodForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdPaymentMethod = _service.PaymentMethodService.CreatePaymentMethod(paymentMethod);
 
             return CreatedAtRoute("PaymentMethodById", new { id = createdPaymentMethod.PaymentMethodID }, createdPaymentMethod);
@@ -63,6 +66,9 @@ namespace Presentation.Controllers.Sales
         {
             if (paymentMethodForUpdate is null)
                 return BadRequest("PaymentMethodForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.PaymentMethodService.UpdatePaymentMethod(id, paymentMethodForUpdate, trackChanges: true);
 

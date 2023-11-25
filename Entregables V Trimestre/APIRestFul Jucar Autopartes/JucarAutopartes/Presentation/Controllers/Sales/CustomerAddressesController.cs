@@ -25,6 +25,9 @@ namespace Presentation.Controllers.Sales
             if (address is null)
                 return BadRequest("CustomerAddressForCreationDto object is null.");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var addressToReturn = _service.CustomerAddressService.CreateAddress(customerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForCustomer", new { customerId, id = addressToReturn.CustomerAddressID }, addressToReturn);
@@ -63,6 +66,9 @@ namespace Presentation.Controllers.Sales
         {
             if (addressForUpdate is null)
                 return BadRequest("CustomerAddressForUpdateDto object is null.");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.CustomerAddressService.UpdateAddress(customerId, id, addressForUpdate, cusTrackChanges: false, adrTrackChanges: true);
 

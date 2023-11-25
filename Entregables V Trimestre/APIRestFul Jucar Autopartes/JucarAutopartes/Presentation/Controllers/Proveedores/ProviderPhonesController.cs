@@ -25,6 +25,9 @@ namespace Presentation.Controllers.Proveedores
             if (phone is null)
                 return BadRequest("ProviderPhoneForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var phoneToReturn = _service.ProviderPhoneService.CreatePhoneForProvider(providerId, phone, trackChanges: false);
 
             return CreatedAtRoute("GetPhoneForProvider", new { providerId, id = phoneToReturn.ProviderPhoneID }, phoneToReturn);
@@ -63,6 +66,9 @@ namespace Presentation.Controllers.Proveedores
         {
             if (phoneForUpdate is null)
                 return BadRequest("ProviderPhoneForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.ProviderPhoneService.UpdatePhoneForProvider(providerId, id, phoneForUpdate, proTrackChanges: false, phoTrackChanges: true);
 

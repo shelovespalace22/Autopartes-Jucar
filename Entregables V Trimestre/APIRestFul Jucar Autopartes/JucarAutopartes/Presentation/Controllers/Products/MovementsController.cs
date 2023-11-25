@@ -27,6 +27,9 @@ namespace Presentation.Controllers.Products
             if (movement is null)
                 return BadRequest("MovementForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var movementToReturn = _service.MovementService.CreateMovementForRawmaterial(rawMaterialId, movement, trackChanges: false);
 
             return CreatedAtRoute("GetMovementByRawmaterial", new { rawMaterialId, id = movementToReturn.MovementID }, movementToReturn);
@@ -69,6 +72,9 @@ namespace Presentation.Controllers.Products
         {
             if (movement is null)
                 return BadRequest("MovementForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.MovementService.UpdateMovementForRawmaterial(rawMaterialId, id, movement, rawTrackChanges: false, movTrackChanges: true);
 

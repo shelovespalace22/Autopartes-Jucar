@@ -26,6 +26,9 @@ namespace Presentation.Controllers.Sales
             if (contribution is null)
                 return BadRequest("ContributionForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var contributionToReturn = _service.ContributionService.CreateContribution(orderId, contribution, trackChanges: false);
 
             return CreatedAtRoute("GetContributionForOrder", new { orderId, id = contributionToReturn.ContributionID }, contributionToReturn);
@@ -64,6 +67,9 @@ namespace Presentation.Controllers.Sales
         {
             if (contributionForUpdate is null)
                 return BadRequest("ContributionForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.ContributionService.UpdateContribution(orderId, id, contributionForUpdate, ordTrackChanges: false, conTrackChanges: true);
 

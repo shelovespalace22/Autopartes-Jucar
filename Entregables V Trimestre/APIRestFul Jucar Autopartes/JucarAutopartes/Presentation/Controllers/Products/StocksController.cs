@@ -27,6 +27,9 @@ namespace Presentation.Controllers.Products
             if (stock is null)
                 return BadRequest("StockForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var stockToReturn = _service.StockService.CreateStockForRawMaterial(rawMaterialId, stock, trackChanges: false);
 
             return CreatedAtRoute("GetStockByRawMaterial", new { rawMaterialId, id = stockToReturn.StockID }, stockToReturn);
@@ -69,6 +72,9 @@ namespace Presentation.Controllers.Products
         {
             if (stock is null)
                 return BadRequest("StockForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.StockService.UpdateStockForRawMaterial(rawMaterialId, id, stock, rawTrackChanges: false, stcTrackChanges: true);
 

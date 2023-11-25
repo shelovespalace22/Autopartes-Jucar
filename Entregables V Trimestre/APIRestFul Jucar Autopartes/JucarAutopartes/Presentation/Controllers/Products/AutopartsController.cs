@@ -26,6 +26,9 @@ namespace Presentation.Controllers.Products
             if (autopart is null)
                 return BadRequest("AutopartForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var autopartToReturn = _service.AutopartService.CreateAutopartForSubcategory(subcategoryId, autopart, trackChanges: false);
 
             return CreatedAtRoute("GetAutopartBySubcategory", new { subcategoryId, id = autopartToReturn.AutopartID }, autopartToReturn);
@@ -83,6 +86,9 @@ namespace Presentation.Controllers.Products
         {
             if (autopart is null)
                 return BadRequest("AutopartForUpdateDto object is null.");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.AutopartService.UpdateAutopartForSubcategory(subcategoryId, id, autopart, subcTrackChanges: false, trackChanges: true);
 

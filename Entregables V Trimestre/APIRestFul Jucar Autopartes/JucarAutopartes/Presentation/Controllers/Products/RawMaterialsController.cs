@@ -48,6 +48,9 @@ namespace Presentation.Controllers.Products
             if (rawMaterial is null)
                 return BadRequest("RawMaterialForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdRawMaterial = _service.RawMaterialService.CreateRawMaterial(rawMaterial);
 
             return CreatedAtRoute("RawMaterialById", new { id = createdRawMaterial.RawMaterialId }, createdRawMaterial);
@@ -86,6 +89,9 @@ namespace Presentation.Controllers.Products
         {
             if (rawMaterial is null)
                 return BadRequest("RawMaterialForUpdateDto object is null.");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.RawMaterialService.UpdateRawMaterial(id, rawMaterial, trackChanges: true);
 

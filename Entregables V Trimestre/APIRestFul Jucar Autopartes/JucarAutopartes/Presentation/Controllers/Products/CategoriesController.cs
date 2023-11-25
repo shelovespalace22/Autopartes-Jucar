@@ -28,6 +28,9 @@ namespace Presentation.Controllers.Products
             if (category is null)
                 return BadRequest("CategoryForCreationDto object is null");
 
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
+
             var createdCategory = _service.CategoryService.CreateCategory(category);
 
             return CreatedAtRoute("CategoryById", new { id = createdCategory.CategoryId }, createdCategory);
@@ -78,6 +81,9 @@ namespace Presentation.Controllers.Products
         {
             if (category is null)
                 return BadRequest("CategoryForUpdateDto object is null");
+
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
             _service.CategoryService.UpdateCategory(id, category, trackChanges: true);
 
