@@ -26,13 +26,13 @@ namespace Service.Proveedores
         }
 
         /* Crear */
-        public ProviderDto CreateProvider(ProviderForCreationDto provider)
+        public async Task<ProviderDto> CreateProviderAsync(ProviderForCreationDto provider)
         {
             var providerEntity = _mapper.Map<Provider>(provider);
 
             _repository.Provider.CreateProvider(providerEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var providerToReturn = _mapper.Map<ProviderDto>(providerEntity);
 
@@ -40,22 +40,22 @@ namespace Service.Proveedores
         }
 
         /* Eliminar */
-        public void DeleteProvider(Guid providerId, bool trackChanges)
+        public async Task DeleteProviderAsync(Guid providerId, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
 
             if (provider is null)
                 throw new ProviderNotFoundException(providerId);
 
             _repository.Provider.DeleteProvider(provider);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Listar */
-        public IEnumerable<ProviderDto> GetAllProviders(bool trackChanges)
+        public async Task<IEnumerable<ProviderDto>> GetAllProvidersAsync(bool trackChanges)
         {
-            var providers = _repository.Provider.GetAllProviders(trackChanges);
+            var providers = await _repository.Provider.GetAllProvidersAsync(trackChanges);
 
             var providersDto = _mapper.Map<IEnumerable<ProviderDto>>(providers);
 
@@ -63,9 +63,9 @@ namespace Service.Proveedores
         }
 
         /* Un registro */
-        public ProviderDto GetProvider(Guid providerId, bool trackChanges)
+        public async Task<ProviderDto> GetProviderAsync(Guid providerId, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
 
             if (provider is null)
                 throw new ProviderNotFoundException(providerId);
@@ -76,9 +76,9 @@ namespace Service.Proveedores
         }
 
         /* Actualizar */
-        public void UpdateProvider(Guid providerId, ProviderForUpdateDto providerForUpdate, bool trackChanges)
+        public async Task UpdateProviderAsync(Guid providerId, ProviderForUpdateDto providerForUpdate, bool trackChanges)
         {
-            var providerEntity = _repository.Provider.GetProvider(providerId, trackChanges);
+            var providerEntity = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
 
             if (providerEntity is null)
                 throw new ProviderNotFoundException(providerId);
@@ -87,7 +87,7 @@ namespace Service.Proveedores
 
             providerEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

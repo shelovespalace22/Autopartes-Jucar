@@ -10,6 +10,6 @@ namespace Contracts.Sales
     public interface IOrderDetailRepository
     {
         /* Listar */
-        IEnumerable<OrderDetail> GetOrderDetails(Guid orderId, bool trackChanges);
+        Task<IEnumerable<OrderDetail>> GetOrderDetailsAsync(Guid orderId, bool trackChanges);
     }
 }

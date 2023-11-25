@@ -1,5 +1,6 @@
 ﻿using Contracts.Providers;
 using Entities.Models.Providers;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,15 +31,15 @@ namespace Repository.Providers
 
 
         /* Un registro */
-        public ProviderPhone GetPhoneByProvider(Guid providerId, Guid id, bool trackChanges) =>
-            FindByCondition(p => p.ProviderId.Equals(providerId) && p.ProviderPhoneID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<ProviderPhone> GetPhoneByProviderAsync(Guid providerId, Guid id, bool trackChanges) =>
+            await FindByCondition(p => p.ProviderId.Equals(providerId) && p.ProviderPhoneID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
 
         /* Listar */
-        public IEnumerable<ProviderPhone> GetPhonesForProvider(Guid providerId, bool trackChanges) =>
-            FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
+        public async Task<IEnumerable<ProviderPhone>> GetPhonesForProviderAsync(Guid providerId, bool trackChanges) =>
+            await FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
             .OrderBy(p => p.PhoneNumber)
-            .ToList();
+            .ToListAsync();
     }
 }

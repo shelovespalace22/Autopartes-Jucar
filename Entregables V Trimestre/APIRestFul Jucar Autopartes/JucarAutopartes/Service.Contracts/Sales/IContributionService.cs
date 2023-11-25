@@ -11,18 +11,18 @@ namespace Service.Contracts.Sales
     public interface IContributionService
     {
         /* Crear */
-        ContributionDto CreateContribution(Guid orderId, ContributionForCreationDto contribution, bool trackChanges);
+        Task<ContributionDto> CreateContributionAsync(Guid orderId, ContributionForCreationDto contribution, bool trackChanges);
 
         /* Listar */
-        IEnumerable<ContributionDto> GetContributions(Guid orderId, bool trackChanges);
+        Task<IEnumerable<ContributionDto>> GetContributionsAsync(Guid orderId, bool trackChanges);
 
         /* Un registro */
-        ContributionDto GetContribution(Guid orderId, Guid id, bool trackChanges);
+        Task<ContributionDto> GetContributionAsync(Guid orderId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateContribution(Guid orderId, Guid id, ContributionForUpdateDto contributionForUpdate, bool ordTrackChanges, bool conTrackChanges);
+        Task UpdateContributionAsync(Guid orderId, Guid id, ContributionForUpdateDto contributionForUpdate, bool ordTrackChanges, bool conTrackChanges);
 
         /* Eliminar */
-        void DeleteContribution(Guid orderId, Guid id, bool trackChanges);
+        Task DeleteContributionAsync(Guid orderId, Guid id, bool trackChanges);
     }
 }

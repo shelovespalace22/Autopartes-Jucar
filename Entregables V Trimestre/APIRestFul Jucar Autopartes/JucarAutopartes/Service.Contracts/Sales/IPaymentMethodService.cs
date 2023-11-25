@@ -11,18 +11,18 @@ namespace Service.Contracts.Sales
     public interface IPaymentMethodService
     {
         /* Crear */
-        PaymentMethodDto CreatePaymentMethod(PaymentMethodForCreationDto paymentMethod);
+        Task<PaymentMethodDto> CreatePaymentMethodAsync(PaymentMethodForCreationDto paymentMethod);
 
         /* Listar */
-        IEnumerable<PaymentMethodDto> GetAllPaymentMethods(bool trackChanges);
+        Task<IEnumerable<PaymentMethodDto>> GetAllPaymentMethodsAsync(bool trackChanges);
 
         /* Un registro */
-        PaymentMethodDto GetPaymentMethod(Guid paymentMethodId, bool trackChanges);
+        Task<PaymentMethodDto> GetPaymentMethodAsync(Guid paymentMethodId, bool trackChanges);
 
         /* Actualizar */
-        void UpdatePaymentMethod(Guid paymentMethodId, PaymentMethodForUpdateDto paymentMethodForUpdate, bool trackChanges);
+        Task UpdatePaymentMethodAsync(Guid paymentMethodId, PaymentMethodForUpdateDto paymentMethodForUpdate, bool trackChanges);
 
         /* Eliminar */
-        void DeletePaymentMethod(Guid paymentMethodId, bool trackChanges);
+        Task DeletePaymentMethodAsync(Guid paymentMethodId, bool trackChanges);
     }
 }

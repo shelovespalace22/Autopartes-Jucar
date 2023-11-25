@@ -13,10 +13,10 @@ namespace Contracts.Sales
         void CreateOrder(Order order);
 
         /* Listar */
-        IEnumerable<Order> GetAllOrders(bool trackChanges);
+        Task<IEnumerable<Order>> GetAllOrdersAsync(bool trackChanges);
 
         /* Un registro */
-        Order GetOrder(Guid orderId, bool trackChanges);
+        Task<Order> GetOrderAsync(Guid orderId, bool trackChanges);
 
         /* Eliminar */
         void DeleteOrder(Order order);

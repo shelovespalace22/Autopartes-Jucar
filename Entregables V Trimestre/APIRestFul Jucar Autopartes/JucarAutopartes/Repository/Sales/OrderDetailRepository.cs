@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Repository.Sales
         }
 
         /* Listar */
-        public IEnumerable<OrderDetail> GetOrderDetails(Guid orderId, bool trackChanges) =>
-            FindByCondition(d => d.OrderId.Equals(orderId), trackChanges)
+        public async Task<IEnumerable<OrderDetail>> GetOrderDetailsAsync(Guid orderId, bool trackChanges) =>
+            await FindByCondition(d => d.OrderId.Equals(orderId), trackChanges)
             .OrderBy(d => d.SubtotalValue)
-            .ToList();
+            .ToListAsync();
     }
 }

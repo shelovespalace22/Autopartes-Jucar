@@ -1,5 +1,6 @@
 ﻿using Contracts.Providers;
 using Entities.Models.Providers;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,14 +30,14 @@ namespace Repository.Providers
 
 
         /* Un registro */
-        public ProviderAddress GetAddressByProvider(Guid providerId, Guid id, bool trackChanges) =>
-            FindByCondition(p => p.ProviderId.Equals(providerId) && p.ProviderAddressID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<ProviderAddress> GetAddressByProviderAsync(Guid providerId, Guid id, bool trackChanges) =>
+            await FindByCondition(p => p.ProviderId.Equals(providerId) && p.ProviderAddressID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Listar */
-        public IEnumerable<ProviderAddress> GetAddressesForProvider(Guid providerId, bool trackChanges) =>
-            FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
+        public async Task<IEnumerable<ProviderAddress>> GetAddressesForProviderAsync(Guid providerId, bool trackChanges) =>
+            await FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
             .OrderBy(p => p.Neighborhood)
-            .ToList();
+            .ToListAsync();
     }
 }

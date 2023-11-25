@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts.Products;
 using Entities.Models.Products;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Products
 {
@@ -25,31 +26,31 @@ namespace Repository.Products
         }
 
         /* Obtener todas las Subcategorias en general*/
-        public IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<Subcategory>> GetAllSubcategoriesAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(c => c.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Obteber una Subcategoria */
-        public Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges) =>
-            FindByCondition(s => s.SubcategoryID.Equals(subcategoryId), trackChanges)
-            .SingleOrDefault();
+        public async Task<Subcategory> GetSubcategoryByIdAsync(Guid subcategoryId, bool trackChanges) =>
+            await FindByCondition(s => s.SubcategoryID.Equals(subcategoryId), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Obtener todas las Subcategorias de una Categoria */
-        public IEnumerable<Subcategory> GetSubcategories(Guid categoryId, bool trackChanges) =>
-            FindByCondition(s => s.CategoryId.Equals(categoryId), trackChanges)
+        public async Task<IEnumerable<Subcategory>> GetSubcategoriesAsync(Guid categoryId, bool trackChanges) =>
+            await FindByCondition(s => s.CategoryId.Equals(categoryId), trackChanges)
             .OrderBy(s => s.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Obteniendo una Subcategoria especifica de la Categoria */
-        public Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges) =>
-            FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Subcategory> GetSubcategoryByCategoryAsync(Guid categoryId, Guid id, bool trackChanges) =>
+            await FindByCondition(s => s.CategoryId.Equals(categoryId) && s.SubcategoryID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Obtener una colección de Subcategorías de una Categoría*/
-        public IEnumerable<Subcategory> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
-            FindByCondition(x => ids.Contains(x.SubcategoryID), trackChanges)
-            .ToList();
+        public async Task<IEnumerable<Subcategory>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges) =>
+            await FindByCondition(x => ids.Contains(x.SubcategoryID), trackChanges)
+            .ToListAsync();
 
         /* Eliminar una Subcategoria */
         public void DeleteSubcategory(Subcategory subcategory) => Delete(subcategory);

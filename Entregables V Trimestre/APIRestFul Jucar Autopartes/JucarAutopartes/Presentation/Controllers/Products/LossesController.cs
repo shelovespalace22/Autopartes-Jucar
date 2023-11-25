@@ -20,9 +20,8 @@ namespace Presentation.Controllers.Products
 
 
         /* Crear */
-
         [HttpPost]
-        public IActionResult CreateLossForAutopart(Guid autopartId, [FromBody] LossForCreationDto loss)
+        public async Task<IActionResult> CreateLossForAutopart(Guid autopartId, [FromBody] LossForCreationDto loss)
         {
             if (loss is null)
                 return BadRequest("LossForCreationDto object is null");
@@ -31,49 +30,45 @@ namespace Presentation.Controllers.Products
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var lossToReturn = _service.LossService.CreateLossForAutopart(autopartId, loss, trackChanges: false);
+            var lossToReturn = await _service.LossService.CreateLossForAutopartAsync(autopartId, loss, trackChanges: false);
 
             return CreatedAtRoute("GetLossByAutopart", new { autopartId, id = lossToReturn.LossID }, lossToReturn);
         }
 
 
         /* Eliminar */
-
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteLossForAutopart(Guid autopartId, Guid id)
+        public async Task<IActionResult> DeleteLossForAutopart(Guid autopartId, Guid id)
         {
-            _service.LossService.DeleteLossForAutopart(autopartId, id, trackChanges: false);
+            await _service.LossService.DeleteLossForAutopartAsync(autopartId, id, trackChanges: false);
 
             return NoContent();
         }
 
 
         /* Único Registro */
-
         [HttpGet("{id:guid}", Name = "GetLossByAutopart")]
-        public IActionResult GetLossByAutopart(Guid autopartId, Guid id)
+        public async Task<IActionResult> GetLossByAutopart(Guid autopartId, Guid id)
         {
-            var loss = _service.LossService.GetLossByAutopart(autopartId, id, trackChanges: false);
+            var loss = await _service.LossService.GetLossByAutopartAsync(autopartId, id, trackChanges: false);
 
             return Ok(loss);
         }
 
 
         /* Listar */
-
         [HttpGet]
-        public IActionResult GetLossesForAutopart(Guid autopartId)
+        public async Task<IActionResult> GetLossesForAutopart(Guid autopartId)
         {
-            var loss = _service.LossService.GetLosses(autopartId, trackChanges: false);
+            var loss = await _service.LossService.GetLossesAsync(autopartId, trackChanges: false);
 
             return Ok(loss);
         }
 
 
         /* Actualizar */
-
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateLossForAutopart(Guid autopartId, Guid id, [FromBody] LossForUpdateDto loss)
+        public async Task<IActionResult> UpdateLossForAutopart(Guid autopartId, Guid id, [FromBody] LossForUpdateDto loss)
         {
             if (loss is null)
                 return BadRequest("LossForUpdateDto object is null");
@@ -81,7 +76,7 @@ namespace Presentation.Controllers.Products
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            _service.LossService.UpdateLossForAutopart(autopartId, id, loss, autTrackChanges: false, losTrackChanges: true);
+            await _service.LossService.UpdateLossForAutopartAsync(autopartId, id, loss, autTrackChanges: false, losTrackChanges: true);
 
             return NoContent();
         }

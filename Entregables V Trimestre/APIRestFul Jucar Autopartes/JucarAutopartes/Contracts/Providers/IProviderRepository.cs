@@ -13,10 +13,10 @@ namespace Contracts.Providers
         void CreateProvider(Provider provider);
 
         /* Listar */
-        IEnumerable<Provider> GetAllProviders(bool trackChanges);
+        Task<IEnumerable<Provider>> GetAllProvidersAsync(bool trackChanges);
 
         /* Un registro */
-        Provider GetProvider(Guid providerId, bool trackChanges);
+        Task<Provider> GetProviderAsync(Guid providerId, bool trackChanges);
 
         /* Eliminar */
         void DeleteProvider(Provider provider);

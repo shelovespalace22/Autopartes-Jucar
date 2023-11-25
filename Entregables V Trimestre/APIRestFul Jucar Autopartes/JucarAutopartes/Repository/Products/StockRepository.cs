@@ -1,5 +1,6 @@
 ﻿using Contracts.Products;
 using Entities.Models.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,18 +29,18 @@ namespace Repository.Products
 
 
         /* Listar */
-        public IEnumerable<Stock> GetStocks(Guid rawMaterialId, bool trackChanges) =>
-            FindByCondition(s => s.RawMaterialId.Equals(rawMaterialId), trackChanges)
+        public async Task<IEnumerable<Stock>> GetStocksAsync(Guid rawMaterialId, bool trackChanges) =>
+            await FindByCondition(s => s.RawMaterialId.Equals(rawMaterialId), trackChanges)
             .OrderBy(s => s.QuantityAvailable)
-            .ToList();
+            .ToListAsync();
 
 
 
 
         /* Único Registro */
-        public Stock GetStockByRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges) =>
-            FindByCondition(s => s.RawMaterialId.Equals(rawMaterialId) && s.StockID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Stock> GetStockByRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges) =>
+            await FindByCondition(s => s.RawMaterialId.Equals(rawMaterialId) && s.StockID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
 
 

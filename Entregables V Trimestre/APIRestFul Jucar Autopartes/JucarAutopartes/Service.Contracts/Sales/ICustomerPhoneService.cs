@@ -10,18 +10,18 @@ namespace Service.Contracts.Sales
     public interface ICustomerPhoneService
     {
         /* Crear */
-        CustomerPhoneDto CreatePhone(Guid customerId, CustomerPhoneForCreationDto phone, bool trackChanges);
+        Task<CustomerPhoneDto> CreatePhoneAsync(Guid customerId, CustomerPhoneForCreationDto phone, bool trackChanges);
 
         /* Listar */
-        IEnumerable<CustomerPhoneDto> GetPhones(Guid customerId, bool trackChanges);
+        Task<IEnumerable<CustomerPhoneDto>> GetPhonesAsync(Guid customerId, bool trackChanges);
 
         /* Un registro */
-        CustomerPhoneDto GetPhone(Guid customerId, Guid id, bool trackChanges);
+        Task<CustomerPhoneDto> GetPhoneAsync(Guid customerId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdatePhone(Guid customerId, Guid id, CustomerPhoneForUpdateDto phoneForUpdate, bool cusTrackChanges, bool phoTrackChanges);
+        Task UpdatePhoneAsync(Guid customerId, Guid id, CustomerPhoneForUpdateDto phoneForUpdate, bool cusTrackChanges, bool phoTrackChanges);
 
         /* Eliminar */
-        void DeletePhone(Guid customerId, Guid id, bool trackChanges);
+        Task DeletePhoneAsync(Guid customerId, Guid id, bool trackChanges);
     }
 }

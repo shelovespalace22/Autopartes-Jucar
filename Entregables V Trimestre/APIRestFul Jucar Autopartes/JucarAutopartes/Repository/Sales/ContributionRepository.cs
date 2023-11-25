@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,14 @@ namespace Repository.Sales
         public void DeleteContribution(Contribution contribution) => Delete(contribution);
 
         /* Un registro */
-        public Contribution GetContributionByOrder(Guid orderId, Guid id, bool trackChanges) =>
-            FindByCondition(c => c.OrderId.Equals(orderId) && c.ContributionID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Contribution> GetContributionByOrderAsync(Guid orderId, Guid id, bool trackChanges) =>
+            await FindByCondition(c => c.OrderId.Equals(orderId) && c.ContributionID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Listar */
-        public IEnumerable<Contribution> GetContributions(Guid orderId, bool trackChanges) =>
-            FindByCondition(c => c.OrderId.Equals(orderId), trackChanges)
+        public async Task<IEnumerable<Contribution>> GetContributionsAsync(Guid orderId, bool trackChanges) =>
+            await FindByCondition(c => c.OrderId.Equals(orderId), trackChanges)
             .OrderBy(c => c.AmountPaid)
-            .ToList();
+            .ToListAsync();
     }
 }

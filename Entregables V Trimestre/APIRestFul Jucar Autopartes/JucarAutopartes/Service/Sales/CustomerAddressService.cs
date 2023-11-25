@@ -26,9 +26,9 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public CustomerAddressDto CreateAddress(Guid customerId, CustomerAddressForCreationDto address, bool trackChanges)
+        public async Task<CustomerAddressDto> CreateAddressAsync(Guid customerId, CustomerAddressForCreationDto address, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
@@ -37,7 +37,7 @@ namespace Service.Sales
 
             _repository.CustomerAddress.CreateAddressForCustomer(customerId, addressEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var addressToReturn = _mapper.Map<CustomerAddressDto>(addressEntity);
 
@@ -45,32 +45,32 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public void DeleteAddress(Guid customerId, Guid id, bool trackChanges)
+        public async Task DeleteAddressAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var addressForCustomer = _repository.CustomerAddress.GetAddressByCustomer(customerId, id, trackChanges);
+            var addressForCustomer = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, trackChanges);
 
             if (addressForCustomer is null)
                 throw new CustomerAddressNotFoundException(id);
 
             _repository.CustomerAddress.DeleteAddress(addressForCustomer);
 
-            _repository.Save();
+            _repository.SaveAsync();
         }
 
         /* Un registro */
-        public CustomerAddressDto GetAddress(Guid customerId, Guid id, bool trackChanges)
+        public async Task<CustomerAddressDto> GetAddressAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var addressDb = _repository.CustomerAddress.GetAddressByCustomer(customerId, id, trackChanges);
+            var addressDb = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, trackChanges);
 
             if (addressDb is null)
                 throw new CustomerAddressNotFoundException(id);
@@ -81,14 +81,14 @@ namespace Service.Sales
         }
 
         /* Listar */
-        public IEnumerable<CustomerAddressDto> GetAddresses(Guid customerId, bool trackChanges)
+        public async Task<IEnumerable<CustomerAddressDto>> GetAddressesAsync(Guid customerId, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var addressesFromDb = _repository.CustomerAddress.GetAddressesForCustomer(customerId, trackChanges);
+            var addressesFromDb = await _repository.CustomerAddress.GetAddressesForCustomerAsync(customerId, trackChanges);
 
             var addressDto = _mapper.Map<IEnumerable<CustomerAddressDto>>(addressesFromDb);
 
@@ -96,14 +96,14 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public void UpdateAddress(Guid customerId, Guid id, CustomerAddressForUpdateDto addressForUpdate, bool cusTrackChanges, bool adrTrackChanges)
+        public async Task UpdateAddressAsync(Guid customerId, Guid id, CustomerAddressForUpdateDto addressForUpdate, bool cusTrackChanges, bool adrTrackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, cusTrackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, cusTrackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var addressEntity = _repository.CustomerAddress.GetAddressByCustomer(customerId, id, adrTrackChanges);
+            var addressEntity = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, adrTrackChanges);
 
             if (addressEntity is null)
                 throw new CustomerAddressNotFoundException(id);
@@ -112,7 +112,7 @@ namespace Service.Sales
 
             addressEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

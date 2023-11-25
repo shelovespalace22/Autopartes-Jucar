@@ -13,10 +13,10 @@ namespace Contracts.Sales
         void CreateContribution(Guid orderId, Contribution contribution);
 
         /* Listar */
-        IEnumerable<Contribution> GetContributions(Guid orderId, bool trackChanges);
+        Task<IEnumerable<Contribution>> GetContributionsAsync(Guid orderId, bool trackChanges);
 
         /* Un registro */
-        Contribution GetContributionByOrder(Guid orderId, Guid id, bool trackChanges);
+        Task<Contribution> GetContributionByOrderAsync(Guid orderId, Guid id, bool trackChanges);
 
         /* Eliminar */
         void DeleteContribution(Contribution contribution);

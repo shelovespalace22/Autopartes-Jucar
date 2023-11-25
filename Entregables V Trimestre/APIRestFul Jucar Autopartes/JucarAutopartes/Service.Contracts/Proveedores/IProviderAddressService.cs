@@ -10,18 +10,18 @@ namespace Service.Contracts.Proveedores
     public interface IProviderAddressService
     {
         /* Crear */
-        ProviderAddressDto CreateAddressForProvider(Guid providerId, ProviderAddressForCreationDto address, bool trackChanges);
+        Task<ProviderAddressDto> CreateAddressForProviderAsync(Guid providerId, ProviderAddressForCreationDto address, bool trackChanges);
 
         /* Listar */
-        IEnumerable<ProviderAddressDto> GetAddresses(Guid providerId, bool trackChanges);
+        Task<IEnumerable<ProviderAddressDto>> GetAddressesAsync(Guid providerId, bool trackChanges);
 
         /* Un registro */
-        ProviderAddressDto GetAddressForProvider(Guid providerId, Guid id, bool trackChanges);
+        Task<ProviderAddressDto> GetAddressForProviderAsync(Guid providerId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateAddressForProvider(Guid providerId, Guid id, ProviderAddressForUpdateDto addressForUpdate, bool proTrackChanges, bool adrTrackChanges);
+        Task UpdateAddressForProviderAsync(Guid providerId, Guid id, ProviderAddressForUpdateDto addressForUpdate, bool proTrackChanges, bool adrTrackChanges);
 
         /* Eliminar */
-        void DeleteAddressForProvider(Guid providerId, Guid id, bool trackChanges);
+        Task DeleteAddressForProviderAsync(Guid providerId, Guid id, bool trackChanges);
     }
 }

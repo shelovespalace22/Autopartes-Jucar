@@ -10,18 +10,18 @@ namespace Service.Contracts.Proveedores
     public interface IProviderPhoneService
     {
         /* Crear */
-        ProviderPhoneDto CreatePhoneForProvider(Guid providerId, ProviderPhoneForCreationDto phone, bool trackChanges);
+        Task<ProviderPhoneDto> CreatePhoneForProviderAsync(Guid providerId, ProviderPhoneForCreationDto phone, bool trackChanges);
 
         /* Listar */
-        IEnumerable<ProviderPhoneDto> GetPhones(Guid providerId, bool trackChanges);
+        Task<IEnumerable<ProviderPhoneDto>> GetPhonesAsync(Guid providerId, bool trackChanges);
 
         /* Un registro */
-        ProviderPhoneDto GetPhoneForProvider(Guid providerId, Guid id, bool trackChanges);
+        Task<ProviderPhoneDto> GetPhoneForProviderAsync(Guid providerId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdatePhoneForProvider(Guid providerId, Guid id, ProviderPhoneForUpdateDto phoneForUpdate, bool proTrackChanges, bool phoTrackChanges);
+        Task UpdatePhoneForProviderAsync(Guid providerId, Guid id, ProviderPhoneForUpdateDto phoneForUpdate, bool proTrackChanges, bool phoTrackChanges);
 
         /* Eliminar */
-        void DeletePhoneForProvider(Guid providerId, Guid id, bool trackChanges);
+        Task DeletePhoneForProviderAsync(Guid providerId, Guid id, bool trackChanges);
     }
 }

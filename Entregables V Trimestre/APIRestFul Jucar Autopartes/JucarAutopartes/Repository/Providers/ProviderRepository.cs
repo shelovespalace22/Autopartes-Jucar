@@ -1,5 +1,6 @@
 ﻿using Contracts.Providers;
 using Entities.Models.Providers;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace Repository.Providers
         public void DeleteProvider(Provider provider) => Delete(provider);
 
         /* Listar */
-        public IEnumerable<Provider> GetAllProviders(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<Provider>> GetAllProvidersAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(p => p.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Un registro */
-        public Provider GetProvider(Guid providerId, bool trackChanges) =>
-            FindByCondition(p => p.ProviderID.Equals(providerId), trackChanges)
-            .SingleOrDefault();
+        public async Task<Provider> GetProviderAsync(Guid providerId, bool trackChanges) =>
+            await FindByCondition(p => p.ProviderID.Equals(providerId), trackChanges)
+            .SingleOrDefaultAsync();
     }
 }

@@ -10,18 +10,18 @@ namespace Service.Contracts.Sales
     public interface ICustomerAddressService
     {
         /* Crear */
-        CustomerAddressDto CreateAddress(Guid customerId, CustomerAddressForCreationDto address, bool trackChanges);
+        Task<CustomerAddressDto> CreateAddressAsync(Guid customerId, CustomerAddressForCreationDto address, bool trackChanges);
 
         /* Listar */
-        IEnumerable<CustomerAddressDto> GetAddresses(Guid customerId, bool trackChanges);
+        Task<IEnumerable<CustomerAddressDto>> GetAddressesAsync(Guid customerId, bool trackChanges);
 
         /* Un registro */
-        CustomerAddressDto GetAddress(Guid customerId, Guid id, bool trackChanges);
+        Task<CustomerAddressDto> GetAddressAsync(Guid customerId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateAddress(Guid customerId, Guid id, CustomerAddressForUpdateDto addressForUpdate, bool cusTrackChanges, bool adrTrackChanges);
+        Task UpdateAddressAsync(Guid customerId, Guid id, CustomerAddressForUpdateDto addressForUpdate, bool cusTrackChanges, bool adrTrackChanges);
 
         /* Eliminar */
-        void DeleteAddress(Guid customerId, Guid id, bool trackChanges);
+        Task DeleteAddressAsync(Guid customerId, Guid id, bool trackChanges);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace Repository.Sales
         public void DeleteOrder(Order order) => Delete(order);
 
         /* Listar */
-        public IEnumerable<Order> GetAllOrders(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(o => o.OrderDate)
-            .ToList();
+            .ToListAsync();
 
         /* Un registro */
-        public Order GetOrder(Guid orderId, bool trackChanges) =>
-            FindByCondition(o => o.OrderID.Equals(orderId), trackChanges)
-            .SingleOrDefault();
+        public async Task<Order> GetOrderAsync(Guid orderId, bool trackChanges) =>
+            await FindByCondition(o => o.OrderID.Equals(orderId), trackChanges)
+            .SingleOrDefaultAsync();
     }
 }

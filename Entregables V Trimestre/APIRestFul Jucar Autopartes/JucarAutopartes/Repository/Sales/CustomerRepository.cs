@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace Repository.Sales
         public void DeleteCustomer(Customer customer) => Delete(customer);
 
         /* Listar */
-        public IEnumerable<Customer> GetAllCustomers(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<Customer>> GetAllCustomersAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(c => c.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Un registro */
-        public Customer GetCustomer(Guid customerId, bool trackChanges) =>
-            FindByCondition(c => c.CustomerID.Equals(customerId), trackChanges)
-            .SingleOrDefault();
+        public async Task<Customer> GetCustomerAsync(Guid customerId, bool trackChanges) =>
+            await FindByCondition(c => c.CustomerID.Equals(customerId), trackChanges)
+            .SingleOrDefaultAsync();
     }
 }

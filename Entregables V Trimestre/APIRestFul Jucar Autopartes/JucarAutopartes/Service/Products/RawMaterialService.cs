@@ -28,10 +28,9 @@ namespace Service.Products
         }
 
         /* Obtener todas las Materias Primas */
-
-        public IEnumerable<RawMaterialDto> GetAllRawMaterials(bool trackChanges)
+        public async Task<IEnumerable<RawMaterialDto>> GetAllRawMaterialsAsync(bool trackChanges)
         {
-            var rawMaterials = _repository.RawMaterial.GetAllRawMaterials(trackChanges);
+            var rawMaterials = await _repository.RawMaterial.GetAllRawMaterialsAsync(trackChanges);
 
             var rawMaterialsDto = _mapper.Map<IEnumerable<RawMaterialDto>>(rawMaterials);
 
@@ -39,10 +38,9 @@ namespace Service.Products
         }
 
         /* Obtener una Materia Prima */
-
-        public RawMaterialDto GetRawMaterial(Guid id, bool trackChanges)
+        public async Task<RawMaterialDto> GetRawMaterialAsync(Guid id, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(id, trackChanges);
+            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(id, trackChanges);
 
             if (rawMaterial is null)
                 throw new RawMaterialNotFoundException(id);
@@ -53,14 +51,13 @@ namespace Service.Products
         }
 
         /* Crear una Materia Prima */
-
-        public RawMaterialDto CreateRawMaterial(RawMaterialForCreationDto rawMaterial)
+        public async Task<RawMaterialDto> CreateRawMaterialAsync(RawMaterialForCreationDto rawMaterial)
         {
             var rawMaterialEntity = _mapper.Map<RawMaterial>(rawMaterial);
 
             _repository.RawMaterial.CreateRawMaterial(rawMaterialEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var rawMaterialToReturn = _mapper.Map<RawMaterialDto>(rawMaterialEntity);
 
@@ -68,13 +65,12 @@ namespace Service.Products
         }
 
         /* Obtener una colección de Materias Primas */
-
-        public IEnumerable<RawMaterialDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        public async Task<IEnumerable<RawMaterialDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges)
         {
             if (ids is null)
                 throw new IdParametersBadRequestException();
 
-            var rawMaterialEntities = _repository.RawMaterial.GetByIds(ids, trackChanges);
+            var rawMaterialEntities = await _repository.RawMaterial.GetByIdsAsync(ids, trackChanges);
 
             if (ids.Count() != rawMaterialEntities.Count())
                 throw new CollectionByIdsBadRequestException();
@@ -85,8 +81,7 @@ namespace Service.Products
         }
 
         /* Crear una colección de Materias Primas */
-
-        public (IEnumerable<RawMaterialDto> rawMaterials, string ids) CreateRawMaterialCollection(IEnumerable<RawMaterialForCreationDto> rawMaterialCollection)
+        public async Task<(IEnumerable<RawMaterialDto> rawMaterials, string ids)> CreateRawMaterialCollectionAsync(IEnumerable<RawMaterialForCreationDto> rawMaterialCollection)
         {
             if (rawMaterialCollection is null)
                 throw new RawMaterialCollectionBadRequest();
@@ -98,7 +93,7 @@ namespace Service.Products
                 _repository.RawMaterial.CreateRawMaterial(rawMaterial);
             }
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var rawMaterialCollectionToReturn = _mapper.Map<IEnumerable<RawMaterialDto>>(rawMaterialEntities);
 
@@ -108,24 +103,22 @@ namespace Service.Products
         }
 
         /* Eliminar una Materia Prima */
-
-        public void DeleteRawMaterial(Guid rawMaterialId, bool trackChanges)
+        public async Task DeleteRawMaterialAsync(Guid rawMaterialId, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
+            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
 
             if (rawMaterial is null)
                 throw new RawMaterialNotFoundException(rawMaterialId);
 
             _repository.RawMaterial.DeleteRawMaterial(rawMaterial);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Actualizar una Materia Prima */
-
-        public void UpdateRawMaterial(Guid rawMaterialId, RawMaterialForUpdateDto rawMaterialForUpdate, bool trackChanges)
+        public async Task UpdateRawMaterialAsync(Guid rawMaterialId, RawMaterialForUpdateDto rawMaterialForUpdate, bool trackChanges)
         {
-            var rawMaterialEntity = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
+            var rawMaterialEntity = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
 
             if (rawMaterialEntity is null)
                 throw new RawMaterialNotFoundException(rawMaterialId);
@@ -134,7 +127,7 @@ namespace Service.Products
 
             rawMaterialEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

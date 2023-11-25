@@ -11,6 +11,6 @@ namespace Service.Contracts.Sales
     public interface IOrderDetailService
     {
         /* Listar */
-        IEnumerable<OrderDetailDto> GetDetailsForOrder(Guid orderId, bool trackChanges);
+        Task<IEnumerable<OrderDetailDto>> GetDetailsForOrderAsync(Guid orderId, bool trackChanges);
     }
 }

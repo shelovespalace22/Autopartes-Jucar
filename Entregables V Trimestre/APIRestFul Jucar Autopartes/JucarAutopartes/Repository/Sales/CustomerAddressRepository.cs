@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,14 @@ namespace Repository.Sales
         public void DeleteAddress(CustomerAddress customerAddress) => Delete(customerAddress);
 
         /* Un registro */
-        public CustomerAddress GetAddressByCustomer(Guid customerId, Guid id, bool trackChanges) =>
-            FindByCondition(c => c.CustomerId.Equals(customerId) && c.CustomerAddressID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<CustomerAddress> GetAddressByCustomerAsync(Guid customerId, Guid id, bool trackChanges) =>
+            await FindByCondition(c => c.CustomerId.Equals(customerId) && c.CustomerAddressID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Listar */
-        public IEnumerable<CustomerAddress> GetAddressesForCustomer(Guid customerId, bool trackChanges) =>
-            FindByCondition(c => c.CustomerId.Equals(customerId), trackChanges)
+        public async Task<IEnumerable<CustomerAddress>> GetAddressesForCustomerAsync(Guid customerId, bool trackChanges) =>
+            await FindByCondition(c => c.CustomerId.Equals(customerId), trackChanges)
             .OrderBy(c => c.Address)
-            .ToList();
+            .ToListAsync();
     }
 }

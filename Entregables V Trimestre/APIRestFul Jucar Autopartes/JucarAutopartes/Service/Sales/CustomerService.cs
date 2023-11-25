@@ -27,13 +27,13 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public CustomerDto CreateCustomer(CustomerForCreationDto customer)
+        public async Task<CustomerDto> CreateCustomerAsync(CustomerForCreationDto customer)
         {
             var customerEntity = _mapper.Map<Customer>(customer);
 
             _repository.Customer.CreateCustomer(customerEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var customerToReturn = _mapper.Map<CustomerDto>(customerEntity);
 
@@ -41,23 +41,23 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public void DeleteCustomer(Guid customerId, bool trackChanges)
+        public async Task DeleteCustomerAsync(Guid customerId, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
             _repository.Customer.DeleteCustomer(customer);
 
-            _repository.Save();
+            await _repository.SaveAsync();
                 
         }
 
         /* Listar */
-        public IEnumerable<CustomerDto> GetAllCustomers(bool trackChanges)
+        public async Task<IEnumerable<CustomerDto>> GetAllCustomersAsync(bool trackChanges)
         {
-            var customers = _repository.Customer.GetAllCustomers(trackChanges);
+            var customers = await _repository.Customer.GetAllCustomersAsync(trackChanges);
 
             var customersDto = _mapper.Map<IEnumerable<CustomerDto>>(customers);
 
@@ -65,9 +65,9 @@ namespace Service.Sales
         }
 
         /* Un registro */
-        public CustomerDto GetCustomer(Guid customerId, bool trackChanges)
+        public async Task<CustomerDto> GetCustomerAsync(Guid customerId, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
@@ -78,9 +78,9 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public void UpdateCustomer(Guid customerId, CustomerForUpdateDto customerForUpdate, bool trackChanges)
+        public async Task UpdateCustomerAsync(Guid customerId, CustomerForUpdateDto customerForUpdate, bool trackChanges)
         {
-            var customerEntity = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customerEntity = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customerEntity is null)
                 throw new CustomerNotFoundException(customerId);
@@ -89,7 +89,7 @@ namespace Service.Sales
 
             customerEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

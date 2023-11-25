@@ -26,9 +26,9 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public CustomerPhoneDto CreatePhone(Guid customerId, CustomerPhoneForCreationDto phone, bool trackChanges)
+        public async Task<CustomerPhoneDto> CreatePhoneAsync(Guid customerId, CustomerPhoneForCreationDto phone, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
@@ -37,7 +37,7 @@ namespace Service.Sales
 
             _repository.CustomerPhone.CreatePhoneForCustomer(customerId, phoneEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var phoneToReturn = _mapper.Map<CustomerPhoneDto>(phoneEntity);
 
@@ -45,32 +45,32 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public void DeletePhone(Guid customerId, Guid id, bool trackChanges)
+        public async Task DeletePhoneAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var phoneForCustomer = _repository.CustomerPhone.GetPhoneByCustomer(customerId, id, trackChanges);
+            var phoneForCustomer = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, trackChanges);
 
             if (phoneForCustomer is null)
                 throw new CustomerPhoneNotFoundException(id);
 
             _repository.CustomerPhone.DeletePhone(phoneForCustomer);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Un registro */
-        public CustomerPhoneDto GetPhone(Guid customerId, Guid id, bool trackChanges)
+        public async Task<CustomerPhoneDto> GetPhoneAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var phoneDb = _repository.CustomerPhone.GetPhoneByCustomer(customerId, id, trackChanges);
+            var phoneDb = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, trackChanges);
 
             if (phoneDb is null)
                 throw new CustomerPhoneNotFoundException(id);
@@ -81,14 +81,14 @@ namespace Service.Sales
         }
 
         /* Listar */
-        public IEnumerable<CustomerPhoneDto> GetPhones(Guid customerId, bool trackChanges)
+        public async Task<IEnumerable<CustomerPhoneDto>> GetPhonesAsync(Guid customerId, bool trackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, trackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var phonesFromDb = _repository.CustomerPhone.GetPhonesForCustomer(customerId, trackChanges);
+            var phonesFromDb = await _repository.CustomerPhone.GetPhonesForCustomerAsync(customerId, trackChanges);
 
             var phonesDto = _mapper.Map<IEnumerable<CustomerPhoneDto>>(phonesFromDb);
 
@@ -96,14 +96,14 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public void UpdatePhone(Guid customerId, Guid id, CustomerPhoneForUpdateDto phoneForUpdate, bool cusTrackChanges, bool phoTrackChanges)
+        public async Task UpdatePhoneAsync(Guid customerId, Guid id, CustomerPhoneForUpdateDto phoneForUpdate, bool cusTrackChanges, bool phoTrackChanges)
         {
-            var customer = _repository.Customer.GetCustomer(customerId, cusTrackChanges);
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, cusTrackChanges);
 
             if (customer is null)
                 throw new CustomerNotFoundException(customerId);
 
-            var phoneEntity = _repository.CustomerPhone.GetPhoneByCustomer(customerId, id, phoTrackChanges);
+            var phoneEntity = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, phoTrackChanges);
 
             if (phoneEntity is null)
                 throw new CustomerPhoneNotFoundException(id);
@@ -112,7 +112,7 @@ namespace Service.Sales
 
             phoneEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

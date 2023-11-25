@@ -13,10 +13,10 @@ namespace Contracts.Products
         void CreateMovementForRawmaterial(Guid rawMaterialId, Movement movement);
 
         /* Listar */
-        IEnumerable<Movement> GetMovements(Guid rawMaterialId, bool trackChanges);
+        Task<IEnumerable<Movement>> GetMovementsAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Único Registro */
-        Movement GetMovementByRawmaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task<Movement> GetMovementByRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
 
         /* Eliminar*/
         void DeleteMovement(Movement movement);

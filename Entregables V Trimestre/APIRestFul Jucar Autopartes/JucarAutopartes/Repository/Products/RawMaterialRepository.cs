@@ -19,17 +19,17 @@ namespace Repository.Products
 
         /* Obtener todas las Materias Primas */
 
-        public IEnumerable<RawMaterial> GetAllRawMaterials(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<RawMaterial>> GetAllRawMaterialsAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(r => r.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Obtener una Materia Prima */
 
-        public RawMaterial GetRawMaterial(Guid rawMaterialId, bool trackChanges) =>
-            FindByCondition(r => r.RawMaterialID.Equals(rawMaterialId), trackChanges)
+        public async Task<RawMaterial> GetRawMaterialAsync(Guid rawMaterialId, bool trackChanges) =>
+            await FindByCondition(r => r.RawMaterialID.Equals(rawMaterialId), trackChanges)
             .Include(r => r.Stock)
-            .SingleOrDefault();
+            .SingleOrDefaultAsync();
 
         /* Crear Materia Prima*/
 
@@ -37,9 +37,9 @@ namespace Repository.Products
 
         /* Obtener colección de Materias Primas */
 
-        public IEnumerable<RawMaterial> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
-            FindByCondition(x => ids.Contains(x.RawMaterialID), trackChanges)
-            .ToList();
+        public async Task<IEnumerable<RawMaterial>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges) =>
+            await FindByCondition(x => ids.Contains(x.RawMaterialID), trackChanges)
+            .ToListAsync();
 
         /* Eliminar una Materia Prima */
         public void DeleteRawMaterial(RawMaterial rawMaterial) => Delete(rawMaterial);

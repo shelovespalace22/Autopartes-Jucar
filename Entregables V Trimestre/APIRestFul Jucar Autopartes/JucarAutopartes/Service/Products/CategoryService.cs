@@ -28,13 +28,13 @@ namespace Service.Products
         }
 
         /* Crear Categoria */
-        public CategoryDto CreateCategory(CategoryForCreationDto category)
+        public async Task<CategoryDto> CreateCategoryAsync(CategoryForCreationDto category)
         {
             var categoryEntity = _mapper.Map<Category>(category);
 
             _repository.Category.CreateCategory(categoryEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var categoryToReturn = _mapper.Map<CategoryDto>(categoryEntity);
 
@@ -42,7 +42,7 @@ namespace Service.Products
         }
 
         /* Crear una colección */
-        public (IEnumerable<CategoryDto> categories, string ids) CreateCategoryCollection(IEnumerable<CategoryForCreationDto> categoryCollection)
+        public async Task<(IEnumerable<CategoryDto> categories, string ids)> CreateCategoryCollectionAsync(IEnumerable<CategoryForCreationDto> categoryCollection)
         {
             if (categoryCollection is null)
                 throw new CategoryCollectionBadRequest();
@@ -54,7 +54,7 @@ namespace Service.Products
                 _repository.Category.CreateCategory(category);
             }
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var categoryCollectionToReturn = _mapper.Map<IEnumerable<CategoryDto>>(categoryEntities);
 
@@ -64,9 +64,9 @@ namespace Service.Products
         }
 
         /* Obtener todos los registros de la tabla */
-        public IEnumerable<CategoryDto> GetAllCategories(bool trackChanges)
+        public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync(bool trackChanges)
         {
-            var categories = _repository.Category.GetAllCategories(trackChanges);
+            var categories = await _repository.Category.GetAllCategoriesAsync(trackChanges);
 
             var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories);
 
@@ -74,9 +74,9 @@ namespace Service.Products
         }
 
         /* Obtener un registro especifico */
-        public CategoryDto GetCategory(Guid id, bool trackChanges)
+        public async Task<CategoryDto> GetCategoryAsync(Guid id, bool trackChanges)
         {
-            var category = _repository.Category.GetCategory(id, trackChanges);
+            var category = await _repository.Category.GetCategoryAsync(id, trackChanges);
 
             if (category is null)
                 throw new CategoryNotFoundException(id);
@@ -87,13 +87,12 @@ namespace Service.Products
         }
 
         /* Obtener una colección de registros */
-
-        public IEnumerable<CategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        public async Task<IEnumerable<CategoryDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges)
         {
             if (ids is null)
                 throw new IdParametersBadRequestException();
 
-            var categoryEntities = _repository.Category.GetByIds(ids, trackChanges);
+            var categoryEntities = await _repository.Category.GetByIdsAsync(ids, trackChanges);
 
             if (ids.Count() != categoryEntities.Count())
                 throw new CollectionByIdsBadRequestException();
@@ -104,10 +103,9 @@ namespace Service.Products
         }
 
         /* Actualizar una categoria */
-
-        public void UpdateCategory(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges)
+        public async Task UpdateCategoryAsync(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges)
         {
-            var categoryEntity = _repository.Category.GetCategory(categoryId, trackChanges);
+            var categoryEntity = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
 
             if (categoryEntity is null)
                 throw new CategoryNotFoundException(categoryId);
@@ -116,20 +114,20 @@ namespace Service.Products
 
             categoryEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Eliminar una categoría */
-        public void DeleteCategory(Guid categoryId, bool trackChanges)
+        public async Task DeleteCategoryAsync(Guid categoryId, bool trackChanges)
         {
-            var category = _repository.Category.GetCategory(categoryId, trackChanges);
+            var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
 
             if (category is null)
                 throw new CategoryNotFoundException(categoryId);
 
             _repository.Category.DeleteCategory(category);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
     }

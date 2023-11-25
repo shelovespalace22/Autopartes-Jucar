@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,14 @@ namespace Repository.Sales
         public void DeletePhone(CustomerPhone customerPhone) => Delete(customerPhone);
 
         /* Un registro */
-        public CustomerPhone GetPhoneByCustomer(Guid customerId, Guid id, bool trackChanges) =>
+        public async Task<CustomerPhone> GetPhoneByCustomerAsync(Guid customerId, Guid id, bool trackChanges) =>
             FindByCondition(c => c.CustomerId.Equals(customerId) && c.CustomerPhoneID.Equals(id), trackChanges)
             .SingleOrDefault();
 
         /* Listar */
-        public IEnumerable<CustomerPhone> GetPhonesForCustomer(Guid customerId, bool trackChanges) =>
-            FindByCondition(c => c.CustomerId.Equals(customerId), trackChanges)
+        public async Task<IEnumerable<CustomerPhone>> GetPhonesForCustomerAsync(Guid customerId, bool trackChanges) =>
+            await FindByCondition(c => c.CustomerId.Equals(customerId), trackChanges)
             .OrderBy(c => c.PhoneNumber)
-            .ToList();
+            .ToListAsync();
     }
 }

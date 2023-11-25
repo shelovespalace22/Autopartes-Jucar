@@ -11,27 +11,27 @@ namespace Service.Contracts.Products
     public interface ISubcategoryService
     {
         /* Crear Subcategoria */
-        SubcategoryDto CreateSubcategoryForCategory(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges);
+        Task<SubcategoryDto> CreateSubcategoryForCategoryAsync(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges);
 
         /* Obtener todas las Subcategorias en general*/
-        IEnumerable<SubcategoryDto> GetAllSubcategories(bool trackChanges);
+        Task<IEnumerable<SubcategoryDto>> GetAllSubcategoriesAsync(bool trackChanges);
 
         /* Obtener una Subcategoria especifica */
-        SubcategoryDto GetSubcategoryById(Guid subcategoryId, bool trackChanges);
+        Task<SubcategoryDto> GetSubcategoryByIdAsync(Guid subcategoryId, bool trackChanges);
 
         /* Obtener todas las subcategorias de una Categoria */
-        IEnumerable<SubcategoryDto> GetSubcategories(Guid categoryId, bool trackChanges);
+        Task<IEnumerable<SubcategoryDto>> GetSubcategoriesAsync(Guid categoryId, bool trackChanges);
 
         /* Obtener una Subcategoria especifica de una Categoria */
-        SubcategoryDto GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
+        Task<SubcategoryDto> GetSubcategoryByCategoryAsync(Guid categoryId, Guid id, bool trackChanges);
 
         /* Obtener Collección de Subcategorías de una Categoría */
-        IEnumerable<SubcategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<SubcategoryDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Actualizar una Subcategoría */
-        void UpdateSubcategoryForCategory(Guid categoryId, Guid id, SubcategoryForUpdateDto subcategoryForUpdate, bool catTrackChanges, bool subTrackChanges);
+        Task UpdateSubcategoryForCategoryAsync(Guid categoryId, Guid id, SubcategoryForUpdateDto subcategoryForUpdate, bool catTrackChanges, bool subTrackChanges);
 
         /* Eliminar una Subcategoria */
-        void DeleteSubcategoryForCategory(Guid categoryId, Guid id, bool trackChanges);
+        Task DeleteSubcategoryForCategoryAsync(Guid categoryId, Guid id, bool trackChanges);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Contracts.Products;
 using Entities.Models.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,16 +35,16 @@ namespace Repository.Products
 
         /* Único Registro */
 
-        public Movement GetMovementByRawmaterial(Guid rawMaterialId, Guid id, bool trackChanges) =>
-            FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId) && m.MovementID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Movement> GetMovementByRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges) =>
+            await FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId) && m.MovementID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
 
         /* Listar */
 
-        public IEnumerable<Movement> GetMovements(Guid rawMaterialId, bool trackChanges) =>
-            FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId), trackChanges)
+        public async Task<IEnumerable<Movement>> GetMovementsAsync(Guid rawMaterialId, bool trackChanges) =>
+            await FindByCondition(m => m.RawMaterialId.Equals(rawMaterialId), trackChanges)
             .OrderBy(m => m.MovementDate)
-            .ToList();
+            .ToListAsync();
     }
 }

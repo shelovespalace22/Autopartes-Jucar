@@ -26,13 +26,13 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public PaymentMethodDto CreatePaymentMethod(PaymentMethodForCreationDto paymentMethod)
+        public async Task<PaymentMethodDto> CreatePaymentMethodAsync(PaymentMethodForCreationDto paymentMethod)
         {
             var paymentEntity = _mapper.Map<PaymentMethod>(paymentMethod);
 
             _repository.PaymentMethod.CreatePaymentMethod(paymentEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var paymentToReturn = _mapper.Map<PaymentMethodDto>(paymentEntity);
 
@@ -40,22 +40,22 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public void DeletePaymentMethod(Guid paymentMethodId, bool trackChanges)
+        public async Task DeletePaymentMethodAsync(Guid paymentMethodId, bool trackChanges)
         {
-            var payment = _repository.PaymentMethod.GetPaymentMethod(paymentMethodId, trackChanges);
+            var payment = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
 
             if (payment is null)
                 throw new PaymentMethodNotFoundException(paymentMethodId);
 
             _repository.PaymentMethod.DeletePaymentMethod(payment);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Listar */
-        public IEnumerable<PaymentMethodDto> GetAllPaymentMethods(bool trackChanges)
+        public async Task<IEnumerable<PaymentMethodDto>> GetAllPaymentMethodsAsync(bool trackChanges)
         {
-            var payments = _repository.PaymentMethod.GetAllPaymentMethods(trackChanges);
+            var payments = await _repository.PaymentMethod.GetAllPaymentMethodsAsync(trackChanges);
 
             var paymentsDto = _mapper.Map<IEnumerable<PaymentMethodDto>>(payments);
 
@@ -63,9 +63,9 @@ namespace Service.Sales
         }
 
         /* Un registro */
-        public PaymentMethodDto GetPaymentMethod(Guid paymentMethodId, bool trackChanges)
+        public async Task<PaymentMethodDto> GetPaymentMethodAsync(Guid paymentMethodId, bool trackChanges)
         {
-            var payment = _repository.PaymentMethod.GetPaymentMethod(paymentMethodId, trackChanges);
+            var payment = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
 
             if (payment is null)
                 throw new PaymentMethodNotFoundException(paymentMethodId);
@@ -76,9 +76,9 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public void UpdatePaymentMethod(Guid paymentMethodId, PaymentMethodForUpdateDto paymentMethodForUpdate, bool trackChanges)
+        public async Task UpdatePaymentMethodAsync(Guid paymentMethodId, PaymentMethodForUpdateDto paymentMethodForUpdate, bool trackChanges)
         {
-            var paymentEntity = _repository.PaymentMethod.GetPaymentMethod(paymentMethodId, trackChanges);
+            var paymentEntity = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
 
             if (paymentEntity is null)
                 throw new PaymentMethodNotFoundException(paymentMethodId);
@@ -87,7 +87,7 @@ namespace Service.Sales
 
             paymentEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
     }
 }

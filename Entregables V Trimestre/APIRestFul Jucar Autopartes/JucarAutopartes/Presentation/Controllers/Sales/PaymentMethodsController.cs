@@ -20,7 +20,7 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreatePaymentMethod([FromBody] PaymentMethodForCreationDto paymentMethod)
+        public async Task<IActionResult> CreatePaymentMethod([FromBody] PaymentMethodForCreationDto paymentMethod)
         {
             if (paymentMethod is null)
                 return BadRequest("PaymentMethodForCreationDto object is null");
@@ -28,41 +28,41 @@ namespace Presentation.Controllers.Sales
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var createdPaymentMethod = _service.PaymentMethodService.CreatePaymentMethod(paymentMethod);
+            var createdPaymentMethod = await _service.PaymentMethodService.CreatePaymentMethodAsync(paymentMethod);
 
             return CreatedAtRoute("PaymentMethodById", new { id = createdPaymentMethod.PaymentMethodID }, createdPaymentMethod);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeletePaymentMethod(Guid id)
+        public async Task<IActionResult> DeletePaymentMethod(Guid id)
         {
-            _service.PaymentMethodService.DeletePaymentMethod(id, trackChanges: false);
+            await _service.PaymentMethodService.DeletePaymentMethodAsync(id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetPaymentMethods()
+        public async Task<IActionResult> GetPaymentMethods()
         {
-            var paymentMethods = _service.PaymentMethodService.GetAllPaymentMethods(trackChanges: false);
+            var paymentMethods = await _service.PaymentMethodService.GetAllPaymentMethodsAsync(trackChanges: false);
 
             return Ok(paymentMethods);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "PaymentMethodById")]
-        public IActionResult GetPaymentMethod(Guid id)
+        public async Task<IActionResult> GetPaymentMethod(Guid id)
         {
-            var paymentMethod = _service.PaymentMethodService.GetPaymentMethod(id, trackChanges: false);
+            var paymentMethod = await _service.PaymentMethodService.GetPaymentMethodAsync(id, trackChanges: false);
 
             return Ok(paymentMethod);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdatePaymentMethod(Guid id, [FromBody] PaymentMethodForUpdateDto paymentMethodForUpdate)
+        public async Task<IActionResult> UpdatePaymentMethod(Guid id, [FromBody] PaymentMethodForUpdateDto paymentMethodForUpdate)
         {
             if (paymentMethodForUpdate is null)
                 return BadRequest("PaymentMethodForUpdateDto object is null");
@@ -70,7 +70,7 @@ namespace Presentation.Controllers.Sales
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            _service.PaymentMethodService.UpdatePaymentMethod(id, paymentMethodForUpdate, trackChanges: true);
+            await _service.PaymentMethodService.UpdatePaymentMethodAsync(id, paymentMethodForUpdate, trackChanges: true);
 
             return NoContent();
         }

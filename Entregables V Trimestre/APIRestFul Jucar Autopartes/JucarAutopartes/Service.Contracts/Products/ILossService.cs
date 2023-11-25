@@ -10,18 +10,18 @@ namespace Service.Contracts.Products
     public interface ILossService
     {
         /* Crear*/
-        LossDto CreateLossForAutopart(Guid autopartId, LossForCreationDto lossForCreation, bool trackChanges);
+        Task<LossDto> CreateLossForAutopartAsync(Guid autopartId, LossForCreationDto lossForCreation, bool trackChanges);
 
         /* Listar */
-        IEnumerable<LossDto> GetLosses(Guid autopartId, bool trackChanges);
+        Task<IEnumerable<LossDto>> GetLossesAsync(Guid autopartId, bool trackChanges);
 
         /* Único Registro */
-        LossDto GetLossByAutopart(Guid autopartId, Guid id, bool trackChanges);
+        Task<LossDto> GetLossByAutopartAsync(Guid autopartId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateLossForAutopart(Guid autopartId, Guid id, LossForUpdateDto lossForUpdate, bool autTrackChanges, bool losTrackChanges);
+        Task UpdateLossForAutopartAsync(Guid autopartId, Guid id, LossForUpdateDto lossForUpdate, bool autTrackChanges, bool losTrackChanges);
 
         /* Eliminar */
-        void DeleteLossForAutopart(Guid autopartId, Guid id, bool trackChanges);
+        Task DeleteLossForAutopartAsync(Guid autopartId, Guid id, bool trackChanges);
     }
 }

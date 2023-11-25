@@ -27,7 +27,7 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public OrderDto CreateOrder(OrderForCreationDto order)
+        public async Task<OrderDto> CreateOrderAsync(OrderForCreationDto order)
         {
             ApplyAdditionalOperations(order, _repository);
 
@@ -35,7 +35,7 @@ namespace Service.Sales
 
             _repository.Order.CreateOrder(orderEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var orderToReturn = _mapper.Map<OrderDto>(orderEntity);
 
@@ -43,22 +43,22 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public void DeleteOrder(Guid orderId, bool trackChanges)
+        public async Task DeleteOrderAsync(Guid orderId, bool trackChanges)
         {
-            var order = _repository.Order.GetOrder(orderId, trackChanges);
+            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
 
             if (order is null)
                 throw new OrderNotFoundException(orderId);
 
             _repository.Order.DeleteOrder(order);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Listar */
-        public IEnumerable<OrderDto> GetAllOrders(bool trackChanges)
+        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(bool trackChanges)
         {
-            var orders = _repository.Order.GetAllOrders(trackChanges);
+            var orders = await _repository.Order.GetAllOrdersAsync(trackChanges);
 
             var ordersDto = _mapper.Map<IEnumerable<OrderDto>>(orders);
 
@@ -66,9 +66,9 @@ namespace Service.Sales
         }
 
         /* Un registro */
-        public OrderDto GetOrder(Guid orderId, bool trackChanges)
+        public async Task<OrderDto> GetOrderAsync(Guid orderId, bool trackChanges)
         {
-            var order = _repository.Order.GetOrder(orderId, trackChanges);
+            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
 
             if (order is null)
                 throw new OrderNotFoundException(orderId);
@@ -79,9 +79,9 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public void UpdateOrder(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges)
+        public async Task UpdateOrderAsync(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges)
         {
-            var orderEntity = _repository.Order.GetOrder(orderId, trackChanges);
+            var orderEntity = await _repository.Order.GetOrderAsync(orderId, trackChanges);
 
             if (orderEntity is null)
                 throw new OrderNotFoundException(orderId);
@@ -90,7 +90,7 @@ namespace Service.Sales
 
             orderEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
 
@@ -99,11 +99,11 @@ namespace Service.Sales
 
         /* <--- Métodos Privados ---> */
 
-        private void ApplyAdditionalOperations(OrderForCreationDto order, IRepositoryManager _repository)
+        private async Task ApplyAdditionalOperations(OrderForCreationDto order, IRepositoryManager _repository)
         {
             foreach (var orderDetail in order.OrderDetails)
             {
-                var autopart = _repository.Autopart.GetAutopartById(orderDetail.AutopartId, false);
+                var autopart = await _repository.Autopart.GetAutopartByIdAsync(orderDetail.AutopartId, false);
 
                 orderDetail.UnitValue = autopart.Value;
 
@@ -116,7 +116,7 @@ namespace Service.Sales
             //order.Total = order.OrderDetails.Sum(detail => detail.SubtotalValue.GetValueOrDefault());
             //order = order with { Total = order.OrderDetails.Sum(detail => detail.SubtotalValue.GetValueOrDefault()) };
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
             
     }
