@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.NotFound.Products;
 using Entities.Exceptions.NotFound.Sales;
+using Entities.Models.Products;
 using Entities.Models.Sales;
 using Service.Contracts;
 using Service.Contracts.Sales;
@@ -43,10 +45,7 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeleteCustomerAsync(Guid customerId, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            var customer = await GetCustomerAndCheckIfItExists(customerId, trackChanges);
 
             _repository.Customer.DeleteCustomer(customer);
 
@@ -67,10 +66,7 @@ namespace Service.Sales
         /* Un registro */
         public async Task<CustomerDto> GetCustomerAsync(Guid customerId, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            var customer = await GetCustomerAndCheckIfItExists(customerId, trackChanges);
 
             var customerDto = _mapper.Map<CustomerDto>(customer);
 
@@ -80,16 +76,30 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdateCustomerAsync(Guid customerId, CustomerForUpdateDto customerForUpdate, bool trackChanges)
         {
-            var customerEntity = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customerEntity is null)
-                throw new CustomerNotFoundException(customerId);
+            var customerEntity = await GetCustomerAndCheckIfItExists(customerId, trackChanges);
 
             _mapper.Map(customerForUpdate, customerEntity);
 
             customerEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<Customer> GetCustomerAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var customer = await _repository.Customer.GetCustomerAsync(id, trackChanges);
+
+            if (customer is null)
+                throw new CustomerNotFoundException(id);
+
+            return customer;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.ProviderPhone;
 using System;
@@ -20,14 +21,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreatePhoneForProvider(Guid providerId, [FromBody] ProviderPhoneForCreationDto phone)
         {
-            if (phone is null)
-                return BadRequest("ProviderPhoneForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var phoneToReturn = await _service.ProviderPhoneService.CreatePhoneForProviderAsync(providerId, phone, trackChanges: false);
 
             return CreatedAtRoute("GetPhoneForProvider", new { providerId, id = phoneToReturn.ProviderPhoneID }, phoneToReturn);
@@ -62,14 +58,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdatePhoneForProvider(Guid providerId, Guid id, [FromBody] ProviderPhoneForUpdateDto phoneForUpdate)
         {
-            if (phoneForUpdate is null)
-                return BadRequest("ProviderPhoneForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.ProviderPhoneService.UpdatePhoneForProviderAsync(providerId, id, phoneForUpdate, proTrackChanges: false, phoTrackChanges: true);
 
             return NoContent();

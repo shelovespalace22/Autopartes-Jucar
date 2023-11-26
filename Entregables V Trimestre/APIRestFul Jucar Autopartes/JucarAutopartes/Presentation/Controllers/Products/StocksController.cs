@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
 using System;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateStockForRawMaterial(Guid rawMaterialId, [FromBody] StockForCreationDto stock)
         {
-            if (stock is null)
-                return BadRequest("StockForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var stockToReturn = await _service.StockService.CreateStockForRawMaterialAsync(rawMaterialId, stock, trackChanges: false);
 
             return CreatedAtRoute("GetStockByRawMaterial", new { rawMaterialId, id = stockToReturn.StockID }, stockToReturn);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateStopckForRawMaterial(Guid rawMaterialId, Guid id, [FromBody] StockForUpdateDto stock)
         {
-            if (stock is null)
-                return BadRequest("StockForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.StockService.UpdateStockForRawMaterialAsync(rawMaterialId, id, stock, rawTrackChanges: false, stcTrackChanges: true);
 
             return NoContent();

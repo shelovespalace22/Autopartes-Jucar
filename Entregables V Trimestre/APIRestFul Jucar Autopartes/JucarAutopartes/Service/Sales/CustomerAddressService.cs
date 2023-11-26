@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.NotFound.Providers;
 using Entities.Exceptions.NotFound.Sales;
+using Entities.Models.Providers;
 using Entities.Models.Sales;
 using Service.Contracts.Sales;
 using Shared.DataTransferObjects.Sales.CustomerAddress;
@@ -28,10 +30,7 @@ namespace Service.Sales
         /* Crear */
         public async Task<CustomerAddressDto> CreateAddressAsync(Guid customerId, CustomerAddressForCreationDto address, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
             var addressEntity = _mapper.Map<CustomerAddress>(address);
 
@@ -47,15 +46,9 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeleteAddressAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var addressForCustomer = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, trackChanges);
-
-            if (addressForCustomer is null)
-                throw new CustomerAddressNotFoundException(id);
+            var addressForCustomer = await GetAddressForCustomerAndCheckIfItExists(customerId, id, trackChanges);
 
             _repository.CustomerAddress.DeleteAddress(addressForCustomer);
 
@@ -65,15 +58,9 @@ namespace Service.Sales
         /* Un registro */
         public async Task<CustomerAddressDto> GetAddressAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var addressDb = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, trackChanges);
-
-            if (addressDb is null)
-                throw new CustomerAddressNotFoundException(id);
+            var addressDb = await GetAddressForCustomerAndCheckIfItExists(customerId, id, trackChanges);
 
             var address = _mapper.Map<CustomerAddressDto>(addressDb);
 
@@ -83,10 +70,7 @@ namespace Service.Sales
         /* Listar */
         public async Task<IEnumerable<CustomerAddressDto>> GetAddressesAsync(Guid customerId, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
             var addressesFromDb = await _repository.CustomerAddress.GetAddressesForCustomerAsync(customerId, trackChanges);
 
@@ -98,21 +82,38 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdateAddressAsync(Guid customerId, Guid id, CustomerAddressForUpdateDto addressForUpdate, bool cusTrackChanges, bool adrTrackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, cusTrackChanges);
+            await CheckIfCustomerExists(customerId, cusTrackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var addressEntity = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, adrTrackChanges);
-
-            if (addressEntity is null)
-                throw new CustomerAddressNotFoundException(id);
+            var addressEntity = await GetAddressForCustomerAndCheckIfItExists(customerId, id, adrTrackChanges);
 
             _mapper.Map(addressForUpdate, addressEntity);
 
             addressEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfCustomerExists(Guid customerId, bool trackChanges)
+        {
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+
+            if (customer is null)
+                throw new CustomerNotFoundException(customerId);
+        }
+
+
+        private async Task<CustomerAddress> GetAddressForCustomerAndCheckIfItExists(Guid customerId, Guid id, bool trackChanges)
+        {
+            var addressDb = await _repository.CustomerAddress.GetAddressByCustomerAsync(customerId, id, trackChanges);
+
+            if (addressDb is null)
+                throw new CustomerAddressNotFoundException(id);
+
+            return addressDb;
         }
     }
 }

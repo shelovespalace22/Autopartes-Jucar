@@ -40,10 +40,7 @@ namespace Service.Products
         /* Obtener una Materia Prima */
         public async Task<RawMaterialDto> GetRawMaterialAsync(Guid id, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(id, trackChanges);
-
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(id);
+            var rawMaterial = await GetRawMaterialAndCheckIfItExists(id, trackChanges);
 
             var rawMaterialDto = _mapper.Map<RawMaterialDto>(rawMaterial);
 
@@ -105,10 +102,7 @@ namespace Service.Products
         /* Eliminar una Materia Prima */
         public async Task DeleteRawMaterialAsync(Guid rawMaterialId, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
-
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
+            var rawMaterial = await GetRawMaterialAndCheckIfItExists(rawMaterialId, trackChanges);
 
             _repository.RawMaterial.DeleteRawMaterial(rawMaterial);
 
@@ -118,16 +112,30 @@ namespace Service.Products
         /* Actualizar una Materia Prima */
         public async Task UpdateRawMaterialAsync(Guid rawMaterialId, RawMaterialForUpdateDto rawMaterialForUpdate, bool trackChanges)
         {
-            var rawMaterialEntity = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
-
-            if (rawMaterialEntity is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
+            var rawMaterialEntity = await GetRawMaterialAndCheckIfItExists(rawMaterialId, trackChanges);
 
             _mapper.Map(rawMaterialForUpdate, rawMaterialEntity);
 
             rawMaterialEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<RawMaterial> GetRawMaterialAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(id, trackChanges);
+
+            if (rawMaterial is null)
+                throw new RawMaterialNotFoundException(id);
+
+            return rawMaterial;
         }
     }
 }

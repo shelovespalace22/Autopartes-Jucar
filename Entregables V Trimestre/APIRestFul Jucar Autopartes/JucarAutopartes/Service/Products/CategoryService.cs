@@ -76,10 +76,7 @@ namespace Service.Products
         /* Obtener un registro especifico */
         public async Task<CategoryDto> GetCategoryAsync(Guid id, bool trackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(id, trackChanges);
-
-            if (category is null)
-                throw new CategoryNotFoundException(id);
+            var category = await GetCategoryAndCheckIfItExists(id, trackChanges);
 
             var categoryDto = _mapper.Map<CategoryDto>(category);
 
@@ -105,14 +102,11 @@ namespace Service.Products
         /* Actualizar una categoria */
         public async Task UpdateCategoryAsync(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges)
         {
-            var categoryEntity = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
+            var category = await GetCategoryAndCheckIfItExists(categoryId, trackChanges);
 
-            if (categoryEntity is null)
-                throw new CategoryNotFoundException(categoryId);
+            _mapper.Map(categoryForUpdate, category);
 
-            _mapper.Map(categoryForUpdate, categoryEntity);
-
-            categoryEntity.setModificationDate();
+            category.setModificationDate();
 
             await _repository.SaveAsync();
         }
@@ -120,14 +114,26 @@ namespace Service.Products
         /* Eliminar una categoría */
         public async Task DeleteCategoryAsync(Guid categoryId, bool trackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
-
-            if (category is null)
-                throw new CategoryNotFoundException(categoryId);
+            var category = await GetCategoryAndCheckIfItExists(categoryId, trackChanges);
 
             _repository.Category.DeleteCategory(category);
 
             await _repository.SaveAsync();
+        }
+
+
+        
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<Category> GetCategoryAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var category = await _repository.Category.GetCategoryAsync(id, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(id);
+
+            return category;
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.CustomerAddress;
 using Shared.DataTransferObjects.Sales.CustomerPhone;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreatePhoneForCustomer(Guid customerId, [FromBody] CustomerPhoneForCreationDto phone)
         {
-            if (phone is null)
-                return BadRequest("CustomerPhoneForCreationDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var phoneToReturn = await _service.CustomerPhoneService.CreatePhoneAsync(customerId, phone, trackChanges: false);
 
             return CreatedAtRoute("GetPhoneForCustomer", new { customerId, id = phoneToReturn.CustomerPhoneID }, phoneToReturn);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdatePhoneForCustomer(Guid customerId, Guid id, [FromBody] CustomerPhoneForUpdateDto phoneForUpdate)
         {
-            if (phoneForUpdate is null)
-                return BadRequest("CustomerPhoneForUpdateDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.CustomerPhoneService.UpdatePhoneAsync(customerId, id, phoneForUpdate, cusTrackChanges: false, phoTrackChanges: true);
 
             return NoContent();

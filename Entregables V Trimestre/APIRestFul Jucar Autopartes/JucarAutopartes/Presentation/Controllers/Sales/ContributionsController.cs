@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.ProviderPhone;
 using Shared.DataTransferObjects.Sales.Contribution;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateContribution(Guid orderId, [FromBody] ContributionForCreationDto contribution)
         {
-            if (contribution is null)
-                return BadRequest("ContributionForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var contributionToReturn = await _service.ContributionService.CreateContributionAsync(orderId, contribution, trackChanges: false);
 
             return CreatedAtRoute("GetContributionForOrder", new { orderId, id = contributionToReturn.ContributionID }, contributionToReturn);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateContribution(Guid orderId, Guid id, [FromBody] ContributionForUpdateDto contributionForUpdate)
         {
-            if (contributionForUpdate is null)
-                return BadRequest("ContributionForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.ContributionService.UpdateContributionAsync(orderId, id, contributionForUpdate, ordTrackChanges: false, conTrackChanges: true);
 
             return NoContent();

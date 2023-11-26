@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.Customer;
 using System;
@@ -20,14 +21,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCustomer([FromBody] CustomerForCreationDto customer)
         {
-            if (customer is null)
-                return BadRequest("CustomerForCreationDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var createdCustomer = await _service.CustomerService.CreateCustomerAsync(customer);
 
             return CreatedAtRoute("CustomerById", new { id = createdCustomer.CustomerID }, createdCustomer);
@@ -62,14 +58,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateCustomer(Guid id, [FromBody] CustomerForUpdateDto customer)
         {
-            if (customer is null)
-                return BadRequest("CustomerForUpdateDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.CustomerService.UpdateCustomerAsync(id, customer, trackChanges: true);
 
             return NoContent();

@@ -45,10 +45,7 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeleteOrderAsync(Guid orderId, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
+            var order = await GetOrderAndCheckIfItExists(orderId, trackChanges);
 
             _repository.Order.DeleteOrder(order);
 
@@ -68,10 +65,7 @@ namespace Service.Sales
         /* Un registro */
         public async Task<OrderDto> GetOrderAsync(Guid orderId, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
+            var order = await GetOrderAndCheckIfItExists(orderId, trackChanges);
 
             var orderDto = _mapper.Map<OrderDto>(order);
 
@@ -81,10 +75,7 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdateOrderAsync(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges)
         {
-            var orderEntity = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (orderEntity is null)
-                throw new OrderNotFoundException(orderId);
+            var orderEntity = await GetOrderAndCheckIfItExists(orderId, trackChanges);
 
             _mapper.Map(orderForUpdate, orderEntity);
 
@@ -118,6 +109,16 @@ namespace Service.Sales
 
             await _repository.SaveAsync();
         }
-            
+
+        private async Task<Order> GetOrderAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var order = await _repository.Order.GetOrderAsync(id, trackChanges);
+
+            if (order is null)
+                throw new OrderNotFoundException(id);
+
+            return order;
+        }
+
     }
 }

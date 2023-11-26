@@ -2,6 +2,7 @@ using Contracts;
 using JucarAutopartes.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
+using Presentation.ActionFilters;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 
 builder.Services.AddAuthentication(); 
 builder.Services.ConfigureIdentity();
+
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 // Add services to the container.
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.PaymentMethod;
 using System;
@@ -20,14 +21,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreatePaymentMethod([FromBody] PaymentMethodForCreationDto paymentMethod)
         {
-            if (paymentMethod is null)
-                return BadRequest("PaymentMethodForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var createdPaymentMethod = await _service.PaymentMethodService.CreatePaymentMethodAsync(paymentMethod);
 
             return CreatedAtRoute("PaymentMethodById", new { id = createdPaymentMethod.PaymentMethodID }, createdPaymentMethod);
@@ -62,14 +58,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdatePaymentMethod(Guid id, [FromBody] PaymentMethodForUpdateDto paymentMethodForUpdate)
         {
-            if (paymentMethodForUpdate is null)
-                return BadRequest("PaymentMethodForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.PaymentMethodService.UpdatePaymentMethodAsync(id, paymentMethodForUpdate, trackChanges: true);
 
             return NoContent();

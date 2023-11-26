@@ -29,10 +29,7 @@ namespace Service.Products
         /* Crear una subcategoria */
         public async Task<SubcategoryDto> CreateSubcategoryForCategoryAsync(Guid categoryId, SubcategoryForCreationDto subcategoryForCreation, bool trackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
-
-            if (category is null)
-                throw new CategoryNotFoundException(categoryId);
+            await CheckIfCategoryExists(categoryId, trackChanges);
 
             var subcategoryEntity = _mapper.Map<Subcategory>(subcategoryForCreation);
 
@@ -58,10 +55,7 @@ namespace Service.Products
         /* Obtener una Subcategoria especifica */
         public async Task<SubcategoryDto> GetSubcategoryByIdAsync(Guid id, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(id, trackChanges);
-
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(id);
+            var subcategory = await GetSubcategoryAndCheckIfItExists(id, trackChanges);
 
             var subcategoryDto = _mapper.Map<SubcategoryDto>(subcategory);
 
@@ -71,10 +65,7 @@ namespace Service.Products
         /* Obteniendo las Subcategorias de una Categoria */
         public async Task<IEnumerable<SubcategoryDto>> GetSubcategoriesAsync(Guid categoryId, bool trackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
-
-            if (category is null)
-                throw new CategoryNotFoundException(categoryId);
+            await CheckIfCategoryExists(categoryId, trackChanges);
 
             var subcategoriesFromDb = await _repository.Subcategory.GetSubcategoriesAsync(categoryId, trackChanges);
 
@@ -86,15 +77,9 @@ namespace Service.Products
         /* Obtener una Subcategoria especifica de una Categoria */
         public async Task<SubcategoryDto> GetSubcategoryByCategoryAsync(Guid categoryId, Guid id, bool trackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
+            await CheckIfCategoryExists(categoryId, trackChanges);
 
-            if (category is null)
-                throw new CategoryNotFoundException(categoryId);
-
-            var subcategoryDb = await _repository.Subcategory.GetSubcategoryByCategoryAsync(categoryId, id, trackChanges);
-
-            if (subcategoryDb is null)
-                throw new SubcategoryNotFoundException(id);
+            var subcategoryDb = await GetSubcategoryForCategoryAndCheckIfItExists(categoryId, id, trackChanges);
 
             var subcategory = _mapper.Map<SubcategoryDto>(subcategoryDb);
 
@@ -120,19 +105,13 @@ namespace Service.Products
         /* Actualizar una Subcategoría */
         public async Task UpdateSubcategoryForCategoryAsync(Guid categoryId, Guid id, SubcategoryForUpdateDto subcategoryForUpdate, bool catTrackChanges, bool subTrackChanges)
         {
-            var category = await _repository.Category.GetCategoryAsync(categoryId, catTrackChanges);
+            await CheckIfCategoryExists(categoryId, catTrackChanges);
 
-            if (category is null)
-                throw new CategoryNotFoundException(categoryId);
+            var subcategoryDb = await GetSubcategoryForCategoryAndCheckIfItExists(categoryId, id, subTrackChanges);
 
-            var subcategoryEntity = await _repository.Subcategory.GetSubcategoryByCategoryAsync(categoryId, id, subTrackChanges);
+            _mapper.Map(subcategoryForUpdate, subcategoryDb);
 
-            if (subcategoryEntity is null)
-                throw new SubcategoryNotFoundException(id);
-
-            _mapper.Map(subcategoryForUpdate, subcategoryEntity);
-
-            subcategoryEntity.setModificationDate();
+            subcategoryDb.setModificationDate();
 
             await _repository.SaveAsync();
         }
@@ -140,19 +119,49 @@ namespace Service.Products
         /* Eliminar una Subcategoria */
         public async Task DeleteSubcategoryForCategoryAsync(Guid categoryId, Guid id, bool trackChanges)
         {
+            await CheckIfCategoryExists(categoryId, trackChanges);
+
+            var subcategoryDb = await GetSubcategoryForCategoryAndCheckIfItExists(categoryId, id, trackChanges); 
+
+            _repository.Subcategory.DeleteSubcategory(subcategoryDb);
+
+            await _repository.SaveAsync();
+        }
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<Subcategory> GetSubcategoryAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(id, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(id);
+
+            return subcategory;
+        }
+
+
+        private async Task CheckIfCategoryExists(Guid categoryId, bool trackChanges)
+        {
             var category = await _repository.Category.GetCategoryAsync(categoryId, trackChanges);
 
             if (category is null)
                 throw new CategoryNotFoundException(categoryId);
+        }
 
-            var subcategoryForCategory = await _repository.Subcategory.GetSubcategoryByCategoryAsync(categoryId, id, trackChanges);
 
-            if (subcategoryForCategory is null)
+        private async Task<Subcategory> GetSubcategoryForCategoryAndCheckIfItExists(Guid categoryId, Guid id, bool trackChanges)
+        {
+            var subcategoryDb = await _repository.Subcategory.GetSubcategoryByCategoryAsync(categoryId, id, trackChanges);
+
+            if (subcategoryDb is null)
                 throw new SubcategoryNotFoundException(id);
 
-            _repository.Subcategory.DeleteSubcategory(subcategoryForCategory);
-
-            await _repository.SaveAsync();
+            return subcategoryDb;
         }
     }
 }

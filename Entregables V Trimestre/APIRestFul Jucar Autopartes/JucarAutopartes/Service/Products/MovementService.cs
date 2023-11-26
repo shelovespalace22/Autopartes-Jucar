@@ -29,10 +29,7 @@ namespace Service.Products
         /* Crear */
         public async Task<MovementDto> CreateMovementForRawmaterialAsync(Guid rawMaterialId, MovementForCreationDto movementForCreation, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
-
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
+            var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
             UpdateStockQuantity(rawMaterial, movementForCreation);
 
@@ -51,15 +48,9 @@ namespace Service.Products
         /* Eliminar */
         public async Task DeleteMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var movementForRawmaterial = await _repository.Movement.GetMovementByRawmaterialAsync(rawMaterialId, id, trackChanges);
-
-            if (movementForRawmaterial is null)
-                throw new MovementNotFoundException(id);
+            var movementForRawmaterial = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
 
             _repository.Movement.DeleteMovement(movementForRawmaterial);
 
@@ -70,15 +61,9 @@ namespace Service.Products
         /* Único Registro */
         public async Task<MovementDto> GetMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var movementDb = await _repository.Movement.GetMovementByRawmaterialAsync(rawMaterialId, id, trackChanges);
-
-            if (movementDb is null)
-                throw new MovementNotFoundException(id);
+            var movementDb = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
 
             var movement = _mapper.Map<MovementDto>(movementDb);
 
@@ -89,10 +74,7 @@ namespace Service.Products
         /* Listar */
         public async Task<IEnumerable<MovementDto>> GetMovementsAsync(Guid rawMaterialId, bool trackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
-
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
             var movementsFromDb = await _repository.Movement.GetMovementsAsync(rawMaterialId, trackChanges);
 
@@ -105,15 +87,9 @@ namespace Service.Products
         /* Actualizar */
         public async Task UpdateMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, MovementForUpdateDto movementForUpdate, bool rawTrackChanges, bool movTrackChanges)
         {
-            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, rawTrackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, rawTrackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var movementEntity = await _repository.Movement.GetMovementByRawmaterialAsync(rawMaterialId, id, movTrackChanges);
-
-            if (movementEntity is null)
-                throw new MovementNotFoundException(id);
+            var movementEntity = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, movTrackChanges);
 
             _mapper.Map(movementForUpdate, movementEntity);
 
@@ -161,5 +137,24 @@ namespace Service.Products
             await _repository.SaveAsync();
         }
 
+        private async Task<RawMaterial> CheckIfRawMaterialExists(Guid rawMaterialId, bool trackChanges)
+        {
+            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
+
+            if (rawMaterial is null)
+                throw new RawMaterialNotFoundException(rawMaterialId);
+
+            return rawMaterial;
+        }
+
+        private async Task<Movement> GetMovementForRawMaterialAndCheckIfItExists(Guid rawMaterialId, Guid id, bool trackChanges)
+        {
+            var movementDb = await _repository.Movement.GetMovementByRawmaterialAsync(rawMaterialId, id, trackChanges);
+
+            if (movementDb is null)
+                throw new MovementNotFoundException(id);
+
+            return movementDb;
+        }
     }
 }

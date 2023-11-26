@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
 using System;
@@ -21,15 +22,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateLossForAutopart(Guid autopartId, [FromBody] LossForCreationDto loss)
         {
-            if (loss is null)
-                return BadRequest("LossForCreationDto object is null");
-
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var lossToReturn = await _service.LossService.CreateLossForAutopartAsync(autopartId, loss, trackChanges: false);
 
             return CreatedAtRoute("GetLossByAutopart", new { autopartId, id = lossToReturn.LossID }, lossToReturn);
@@ -68,14 +63,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateLossForAutopart(Guid autopartId, Guid id, [FromBody] LossForUpdateDto loss)
         {
-            if (loss is null)
-                return BadRequest("LossForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.LossService.UpdateLossForAutopartAsync(autopartId, id, loss, autTrackChanges: false, losTrackChanges: true);
 
             return NoContent();

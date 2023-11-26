@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
 using System;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateMovementForRawmaterial(Guid rawMaterialId, [FromBody] MovementForCreationDto movement)
         {
-            if (movement is null)
-                return BadRequest("MovementForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var movementToReturn = await _service.MovementService.CreateMovementForRawmaterialAsync(rawMaterialId, movement, trackChanges: false);
 
             return CreatedAtRoute("GetMovementByRawmaterial", new { rawMaterialId, id = movementToReturn.MovementID }, movementToReturn);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateMovementForRawmaterial(Guid rawMaterialId, Guid id, [FromBody] MovementForUpdateDto movement)
-        {
-            if (movement is null)
-                return BadRequest("MovementForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
+        { 
             await _service.MovementService.UpdateMovementForRawmaterialAsync(rawMaterialId, id, movement, rawTrackChanges: false, movTrackChanges: true);
 
             return NoContent();

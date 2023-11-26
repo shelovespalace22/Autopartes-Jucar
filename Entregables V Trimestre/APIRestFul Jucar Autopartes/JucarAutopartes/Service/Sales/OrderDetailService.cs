@@ -27,16 +27,27 @@ namespace Service.Sales
         /* Listar */
         public async Task<IEnumerable<OrderDetailDto>> GetDetailsForOrderAsync(Guid orderId, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
+            await CheckIfOrderExists(orderId, trackChanges);
 
             var detailsFromDb = await _repository.OrderDetail.GetOrderDetailsAsync(orderId, trackChanges);
 
             var detailsDto = _mapper.Map<IEnumerable<OrderDetailDto>>(detailsFromDb);
 
             return detailsDto;
+        }
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfOrderExists(Guid orderId, bool trackChanges)
+        {
+            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
+
+            if (order is null)
+                throw new OrderNotFoundException(orderId);
         }
     }
 }

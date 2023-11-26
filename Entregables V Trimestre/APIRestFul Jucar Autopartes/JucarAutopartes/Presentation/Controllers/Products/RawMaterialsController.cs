@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Presentation.ModelBinders;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
@@ -40,14 +41,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear una Materia Prima */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateRawMaterial([FromBody] RawMaterialForCreationDto rawMaterial)
         {
-            if (rawMaterial is null)
-                return BadRequest("RawMaterialForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var createdRawMaterial = await _service.RawMaterialService.CreateRawMaterialAsync(rawMaterial);
 
             return CreatedAtRoute("RawMaterialById", new { id = createdRawMaterial.RawMaterialId }, createdRawMaterial);
@@ -82,14 +78,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar una Materia Prima */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateRawMaterial(Guid id, [FromBody] RawMaterialForUpdateDto rawMaterial)
         {
-            if (rawMaterial is null)
-                return BadRequest("RawMaterialForUpdateDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.RawMaterialService.UpdateRawMaterialAsync(id, rawMaterial, trackChanges: true);
 
             return NoContent();

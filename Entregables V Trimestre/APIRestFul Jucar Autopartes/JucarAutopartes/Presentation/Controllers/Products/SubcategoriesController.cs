@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Presentation.ModelBinders;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
@@ -22,14 +23,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear una subcategoria */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateSubcategoryForCategory(Guid categoryId, [FromBody] SubcategoryForCreationDto subcategory)
         {
-            if (subcategory is null)
-                return BadRequest("SubcategoryForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var subcategoryToReturn = await _service.SubcategoryService.CreateSubcategoryForCategoryAsync(categoryId, subcategory, trackChanges: false);
 
             return CreatedAtRoute("GetSubcategoryByCategory", new { categoryId, id = subcategoryToReturn.SubcategoryId }, subcategoryToReturn);
@@ -82,14 +78,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar una Subcategoría */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateSubcategoryForCategory(Guid categoryId, Guid id, [FromBody] SubcategoryForUpdateDto subcategory)
         {
-            if (subcategory is null)
-                return BadRequest("SubcategoryForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.SubcategoryService.UpdateSubcategoryForCategoryAsync(categoryId, id, subcategory, catTrackChanges: false, subTrackChanges: true);
 
             return NoContent();

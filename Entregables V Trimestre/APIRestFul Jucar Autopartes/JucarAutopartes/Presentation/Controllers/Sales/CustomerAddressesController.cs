@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.CustomerAddress;
 using System;
@@ -20,14 +21,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateAddressForCustomer(Guid customerId, [FromBody] CustomerAddressForCreationDto address)
         {
-            if (address is null)
-                return BadRequest("CustomerAddressForCreationDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var addressToReturn = await _service.CustomerAddressService.CreateAddressAsync(customerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForCustomer", new { customerId, id = addressToReturn.CustomerAddressID }, addressToReturn);
@@ -62,14 +58,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateAddressForCustomer(Guid customerId, Guid id, [FromBody] CustomerAddressForUpdateDto addressForUpdate)
         {
-            if (addressForUpdate is null)
-                return BadRequest("CustomerAddressForUpdateDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.CustomerAddressService.UpdateAddressAsync(customerId, id, addressForUpdate, cusTrackChanges: false, adrTrackChanges: true);
 
             return NoContent();

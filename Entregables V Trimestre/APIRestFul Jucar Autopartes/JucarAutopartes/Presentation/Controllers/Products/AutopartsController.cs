@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Presentation.ModelBinders;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Products
 
         /* Crear una autoparte */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateAutopartForSubcategory(Guid subcategoryId, [FromBody] AutopartForCreationDto autopart)
         {
-            if (autopart is null)
-                return BadRequest("AutopartForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var autopartToReturn = await _service.AutopartService.CreateAutopartForSubcategoryAsync(subcategoryId, autopart, trackChanges: false);
 
             return CreatedAtRoute("GetAutopartBySubcategory", new { subcategoryId, id = autopartToReturn.AutopartID }, autopartToReturn);
@@ -53,6 +49,7 @@ namespace Presentation.Controllers.Products
         }
 
         /* Obtener todas las Autopartes de una Subcategoria */
+        [HttpGet]
         public async Task<IActionResult> GetAutopartsForCategory(Guid subcategoryId)
         {
             var autoparts = await _service.AutopartService.GetAutopartsAsync(subcategoryId, trackChanges: false);
@@ -80,14 +77,9 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar una Autoparte */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateAutopartForSubcategory(Guid subcategoryId, Guid id, [FromBody] AutopartForUpdateDto autopart)
         {
-            if (autopart is null)
-                return BadRequest("AutopartForUpdateDto object is null.");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.AutopartService.UpdateAutopartForSubcategoryAsync(subcategoryId, id, autopart, subcTrackChanges: false, trackChanges: true);
 
             return NoContent();

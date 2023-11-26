@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.NotFound.Products;
 using Entities.Exceptions.NotFound.Providers;
+using Entities.Models.Products;
 using Entities.Models.Providers;
 using Service.Contracts.Proveedores;
 using Shared.DataTransferObjects.Providers.Provider;
@@ -42,10 +44,7 @@ namespace Service.Proveedores
         /* Eliminar */
         public async Task DeleteProviderAsync(Guid providerId, bool trackChanges)
         {
-            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
-
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
+            var provider = await GetProviderAndCheckIfItExists(providerId, trackChanges);
 
             _repository.Provider.DeleteProvider(provider);
 
@@ -65,10 +64,7 @@ namespace Service.Proveedores
         /* Un registro */
         public async Task<ProviderDto> GetProviderAsync(Guid providerId, bool trackChanges)
         {
-            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
-
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
+            var provider = await GetProviderAndCheckIfItExists(providerId, trackChanges);
 
             var providerDto = _mapper.Map<ProviderDto>(provider);
 
@@ -78,16 +74,31 @@ namespace Service.Proveedores
         /* Actualizar */
         public async Task UpdateProviderAsync(Guid providerId, ProviderForUpdateDto providerForUpdate, bool trackChanges)
         {
-            var providerEntity = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
-
-            if (providerEntity is null)
-                throw new ProviderNotFoundException(providerId);
+            var providerEntity = await GetProviderAndCheckIfItExists(providerId, trackChanges);
 
             _mapper.Map(providerForUpdate, providerEntity);
 
             providerEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<Provider> GetProviderAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var provider = await _repository.Provider.GetProviderAsync(id, trackChanges);
+
+            if (provider is null)
+                throw new ProviderNotFoundException(id);
+
+            return provider;
         }
     }
 }

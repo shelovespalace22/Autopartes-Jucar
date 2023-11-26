@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.Provider;
 using Shared.DataTransferObjects.Sales.Order;
@@ -21,15 +22,9 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateOrder([FromBody] OrderForCreationDto order)
         {
-            if (order is null)
-                return BadRequest("OrderForCreationDto object is null");
-
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var createdOrder = await _service.OrderService.CreateOrderAsync(order);
 
             return CreatedAtRoute("OrderById", new { id = createdOrder.OrderID }, createdOrder);
@@ -64,14 +59,9 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] OrderForUpdateDto order)
         {
-            if (order is null)
-                return BadRequest("OrderForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.OrderService.UpdateOrderAsync(id, order, trackChanges: true);
 
             return NoContent();

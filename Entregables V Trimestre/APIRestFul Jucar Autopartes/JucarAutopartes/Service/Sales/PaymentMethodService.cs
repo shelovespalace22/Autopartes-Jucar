@@ -42,10 +42,7 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeletePaymentMethodAsync(Guid paymentMethodId, bool trackChanges)
         {
-            var payment = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
-
-            if (payment is null)
-                throw new PaymentMethodNotFoundException(paymentMethodId);
+            var payment = await GetPaymentMethodAndCheckIfItExists(paymentMethodId, trackChanges);
 
             _repository.PaymentMethod.DeletePaymentMethod(payment);
 
@@ -65,10 +62,7 @@ namespace Service.Sales
         /* Un registro */
         public async Task<PaymentMethodDto> GetPaymentMethodAsync(Guid paymentMethodId, bool trackChanges)
         {
-            var payment = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
-
-            if (payment is null)
-                throw new PaymentMethodNotFoundException(paymentMethodId);
+            var payment = await GetPaymentMethodAndCheckIfItExists(paymentMethodId, trackChanges);
 
             var paymentDto = _mapper.Map<PaymentMethodDto>(payment);
 
@@ -78,16 +72,29 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdatePaymentMethodAsync(Guid paymentMethodId, PaymentMethodForUpdateDto paymentMethodForUpdate, bool trackChanges)
         {
-            var paymentEntity = await _repository.PaymentMethod.GetPaymentMethodAsync(paymentMethodId, trackChanges);
-
-            if (paymentEntity is null)
-                throw new PaymentMethodNotFoundException(paymentMethodId);
+            var paymentEntity = await GetPaymentMethodAndCheckIfItExists(paymentMethodId, trackChanges);
 
             _mapper.Map(paymentMethodForUpdate, paymentEntity);
 
             paymentEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<PaymentMethod> GetPaymentMethodAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var paymentMethod = await _repository.PaymentMethod.GetPaymentMethodAsync(id, trackChanges);
+
+            if (paymentMethod is null)
+                throw new PaymentMethodNotFoundException(id);
+
+            return paymentMethod;
         }
     }
 }

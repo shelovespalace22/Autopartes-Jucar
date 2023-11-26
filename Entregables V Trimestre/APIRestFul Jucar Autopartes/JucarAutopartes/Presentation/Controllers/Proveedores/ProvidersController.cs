@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.Provider;
 using System;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateProvider([FromBody] ProviderForCreationDto provider)
         {
-            if (provider is null)
-                return BadRequest("ProviderForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var createdProvider = await _service.ProviderService.CreateProviderAsync(provider);
 
             return CreatedAtRoute("ProviderById", new { id = createdProvider.ProviderID }, createdProvider);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateProvider(Guid id, [FromBody] ProviderForUpdateDto provider)
         {
-            if (provider is null)
-                return BadRequest("ProviderForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.ProviderService.UpdateProviderAsync(id, provider, trackChanges: true);
 
             return NoContent();

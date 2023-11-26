@@ -28,10 +28,7 @@ namespace Service.Products
         /* Crear */
         public async Task<LossDto> CreateLossForAutopartAsync(Guid autopartId, LossForCreationDto lossForCreation, bool trackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, trackChanges);
-
-            if (autopart is null)
-                throw new AutopartNotFoundException(autopartId);
+            await CheckIfAutopartExists(autopartId, trackChanges);
 
             var lossEntity = _mapper.Map<Loss>(lossForCreation);
 
@@ -50,15 +47,9 @@ namespace Service.Products
         /* Eliminar */
         public async Task DeleteLossForAutopartAsync(Guid autopartId, Guid id, bool trackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, trackChanges);
+            await CheckIfAutopartExists(autopartId, trackChanges);
 
-            if (autopart is null)
-                throw new AutopartNotFoundException(autopartId);
-
-            var lossForAutopart = await _repository.Loss.GetLossByAutopartAsync(autopartId, id, trackChanges);
-
-            if (lossForAutopart is null)
-                throw new LossNotFoundException(id);
+            var lossForAutopart = await GetLossForAutopartAndCheckIfItExists(autopartId, id, trackChanges);
 
             _repository.Loss.DeleteLoss(lossForAutopart);
 
@@ -69,15 +60,9 @@ namespace Service.Products
         /* Único Registro */
         public async Task<LossDto> GetLossByAutopartAsync(Guid autopartId, Guid id, bool trackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, trackChanges);
+            await CheckIfAutopartExists(autopartId, trackChanges);
 
-            if (autopart is null)
-                throw new AutopartNotFoundException(autopartId);
-
-            var lossDb = await _repository.Loss.GetLossByAutopartAsync(autopartId, id, trackChanges);
-
-            if (lossDb is null)
-                throw new LossNotFoundException(id);
+            var lossDb = await GetLossForAutopartAndCheckIfItExists(autopartId, id, trackChanges);
 
             var loss = _mapper.Map<LossDto>(lossDb);
 
@@ -88,10 +73,7 @@ namespace Service.Products
         /* Listar */
         public async Task<IEnumerable<LossDto>> GetLossesAsync(Guid autopartId, bool trackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, trackChanges);
-
-            if (autopart is null)
-                throw new AutopartNotFoundException(autopartId);
+            await CheckIfAutopartExists(autopartId, trackChanges);
 
             var lossesFromDb = await _repository.Loss.GetLossesAsync(autopartId, trackChanges);
 
@@ -104,15 +86,9 @@ namespace Service.Products
         /* Actualizar */
         public async Task UpdateLossForAutopartAsync(Guid autopartId, Guid id, LossForUpdateDto lossForUpdate, bool autTrackChanges, bool losTrackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, autTrackChanges);
+            await CheckIfAutopartExists(autopartId, autTrackChanges);
 
-            if (autopart is null)
-                throw new AutopartNotFoundException(autopartId);
-
-            var lossEntity = await _repository.Loss.GetLossByAutopartAsync(autopartId, id, losTrackChanges);
-
-            if (lossEntity is null)
-                throw new LossNotFoundException(id);
+            var lossEntity = await GetLossForAutopartAndCheckIfItExists(autopartId, id, losTrackChanges);
 
             _mapper.Map(lossForUpdate, lossEntity);
 
@@ -140,9 +116,23 @@ namespace Service.Products
             }
         }
 
+        private async Task CheckIfAutopartExists(Guid autopartId, bool trackChanges)
+        {
+            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, trackChanges);
 
+            if (autopart is null)
+                throw new AutopartNotFoundException(autopartId);
+        }
 
+        private async Task<Loss> GetLossForAutopartAndCheckIfItExists(Guid autopartId, Guid id, bool trackChanges)
+        {
+            var lossDb = await _repository.Loss.GetLossByAutopartAsync(autopartId, id, trackChanges);
 
+            if (lossDb is null)
+                throw new LossNotFoundException(id);
+
+            return lossDb;
+        }
 
     }
 }

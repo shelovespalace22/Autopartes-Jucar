@@ -8,6 +8,7 @@ using Contracts;
 using Entities.Exceptions;
 using Entities.Exceptions.NotFound.Products;
 using Entities.Models.Products;
+using Microsoft.VisualBasic;
 using Service.Contracts.Products;
 using Shared.DataTransferObjects.Products;
 
@@ -29,10 +30,7 @@ namespace Service.Products
         /* Crear una autoparte */
         public async Task<AutopartDto> CreateAutopartForSubcategoryAsync(Guid subcategoryId, AutopartForCreationDto autopartForCreation, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, trackChanges);
-
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(subcategoryId);
+            await CheckIfSubcategoryExists(subcategoryId, trackChanges);
 
             var autopartEntity = _mapper.Map<Autopart>(autopartForCreation);
 
@@ -58,10 +56,7 @@ namespace Service.Products
         /* Obteniendo Autoparte por su Id */
         public async Task<AutopartDto> GetAutopartByIdAsync(Guid id, bool trackChanges)
         {
-            var autopart = await _repository.Autopart.GetAutopartByIdAsync(id, trackChanges);
-
-            if (autopart is null)
-                throw new AutopartNotFoundException(id);
+            var autopart = await GetAutopartAndCheckIfItExists(id, trackChanges);
 
             var autopartDto = _mapper.Map<AutopartDto>(autopart);
 
@@ -71,10 +66,7 @@ namespace Service.Products
         /* Obteniendo las Autopartes de una Subcategoria */
         public async Task<IEnumerable<AutopartDto>> GetAutopartsAsync(Guid subcategoryId, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, trackChanges);
-
-            if (subcategory is null)
-                throw new CategoryNotFoundException(subcategoryId);
+            await CheckIfSubcategoryExists(subcategoryId, trackChanges);
 
             var autopartsFromDb = await _repository.Autopart.GetAutopartsAsync(subcategoryId, trackChanges);
 
@@ -86,15 +78,9 @@ namespace Service.Products
         /* Obtener una Autoparte especifica de una Subcategoria */
         public async Task<AutopartDto> GetAutopartBySubcategoryAsync(Guid subcategoryId, Guid id, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, trackChanges);
+            await CheckIfSubcategoryExists(subcategoryId, trackChanges);
 
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(subcategoryId);
-
-            var autopartDb = await _repository.Autopart.GetAutopartBySubcategoryAsync(subcategoryId, id, trackChanges);
-
-            if (autopartDb is null)
-                throw new AutopartNotFoundException(id);
+            var autopartDb = await GetAutopartForSubcategoryAndCheckIfItExists(subcategoryId, id, trackChanges);
 
             var autopart = _mapper.Map<AutopartDto>(autopartDb);
 
@@ -120,15 +106,9 @@ namespace Service.Products
         /* Actualizar una Autoparte */
         public async Task UpdateAutopartForSubcategoryAsync(Guid subcategoryId, Guid id, AutopartForUpdateDto autopartForUpdate, bool subcTrackChanges, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, subcTrackChanges);
+            await CheckIfSubcategoryExists(subcategoryId, trackChanges);
 
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(subcategoryId);
-
-            var autopartEntity = await _repository.Autopart.GetAutopartBySubcategoryAsync(subcategoryId, id, trackChanges);
-
-            if (autopartEntity is null)
-                throw new AutopartNotFoundException(id);
+            var autopartEntity = await GetAutopartForSubcategoryAndCheckIfItExists(subcategoryId, id, trackChanges);
 
             _mapper.Map(autopartForUpdate, autopartEntity);
 
@@ -140,19 +120,50 @@ namespace Service.Products
         /* Eliminar una Autoparte */
         public async Task DeleteAutopartForSubcategoryAsync(Guid subcategoryId, Guid id, bool trackChanges)
         {
-            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, trackChanges);
+            await CheckIfSubcategoryExists(subcategoryId, trackChanges);
 
-            if (subcategory is null)
-                throw new SubcategoryNotFoundException(subcategoryId);
-
-            var autopartForSubcategory = await _repository.Autopart.GetAutopartBySubcategoryAsync(subcategoryId, id, trackChanges);
-
-            if (autopartForSubcategory is null)
-                throw new AutopartNotFoundException(id);
+            var autopartForSubcategory = await GetAutopartForSubcategoryAndCheckIfItExists(subcategoryId, id, trackChanges);
 
             _repository.Autopart.DeleteAutopart(autopartForSubcategory);
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task<Autopart> GetAutopartAndCheckIfItExists(Guid id, bool trackChanges)
+        {
+            var autopart = await _repository.Autopart.GetAutopartByIdAsync(id, trackChanges);
+
+            if (autopart is null)
+                throw new SubcategoryNotFoundException(id);
+
+            return autopart;
+        }
+
+
+        private async Task CheckIfSubcategoryExists(Guid subcategoryId, bool trackChanges)
+        {
+            var subcategory = await _repository.Subcategory.GetSubcategoryByIdAsync(subcategoryId, trackChanges);
+
+            if (subcategory is null)
+                throw new SubcategoryNotFoundException(subcategoryId);
+        }
+
+
+        private async Task<Autopart> GetAutopartForSubcategoryAndCheckIfItExists(Guid subcategoryId, Guid id, bool trackChanges)
+        {
+            var autopartDb = await _repository.Autopart.GetAutopartBySubcategoryAsync(subcategoryId, id, trackChanges);
+
+            if (autopartDb is null)
+                throw new AutopartNotFoundException(id);
+
+            return autopartDb;
         }
     }
 }

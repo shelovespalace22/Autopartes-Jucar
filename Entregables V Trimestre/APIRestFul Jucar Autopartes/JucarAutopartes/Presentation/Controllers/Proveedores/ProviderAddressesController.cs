@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.ProviderAddress;
 using System;
@@ -21,14 +22,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Crear */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateAddressForProvider(Guid providerId, [FromBody] ProviderAddressForCreationDto address)
         {
-            if (address is null)
-                return BadRequest("ProviderAddressForCreationDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var addressToReturn = await _service.ProviderAddressService.CreateAddressForProviderAsync(providerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForProvider", new { providerId, id = addressToReturn.ProviderAddressID }, addressToReturn);
@@ -63,14 +59,9 @@ namespace Presentation.Controllers.Proveedores
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateAddressForProvider(Guid providerId, Guid id, [FromBody] ProviderAddressForUpdateDto addressForUpdate)
         {
-            if (addressForUpdate is null)
-                return BadRequest("ProviderAddressForUpdateDto object is null");
-
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             await _service.ProviderAddressService.UpdateAddressForProviderAsync(providerId, id, addressForUpdate, proTrackChanges: false, adrTrackChanges: true);
 
             return NoContent();

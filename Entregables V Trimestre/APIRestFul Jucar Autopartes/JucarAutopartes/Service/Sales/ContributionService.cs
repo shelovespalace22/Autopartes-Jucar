@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.NotFound.Providers;
 using Entities.Exceptions.NotFound.Sales;
+using Entities.Models.Providers;
 using Entities.Models.Sales;
 using Service.Contracts.Sales;
 using Shared.DataTransferObjects.Sales.Contribution;
@@ -28,10 +30,7 @@ namespace Service.Sales
         /* Crear */
         public async Task<ContributionDto> CreateContributionAsync(Guid orderId, ContributionForCreationDto contribution, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
+            await CheckIfOrderExists(orderId, trackChanges);
 
             var contributionEntity = _mapper.Map<Contribution>(contribution);
 
@@ -47,15 +46,9 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeleteContributionAsync(Guid orderId, Guid id, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
+            await CheckIfOrderExists(orderId, trackChanges);
 
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
-
-            var contributionFromOrder = await _repository.Contribution.GetContributionByOrderAsync(orderId, id, trackChanges);
-
-            if (contributionFromOrder is null)
-                throw new ContributionNotFoundException(id);
+            var contributionFromOrder = await GetContributionForOrderAndCheckIfItExists(orderId, id, trackChanges);
 
             _repository.Contribution.DeleteContribution(contributionFromOrder);
 
@@ -65,15 +58,9 @@ namespace Service.Sales
         /* Un registro */
         public async Task<ContributionDto> GetContributionAsync(Guid orderId, Guid id, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
+            await CheckIfOrderExists(orderId, trackChanges);
 
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
-
-            var contributionDb = await _repository.Contribution.GetContributionByOrderAsync(orderId, id, trackChanges);
-
-            if (contributionDb is null)
-                throw new ContributionNotFoundException(id);
+            var contributionDb = await GetContributionForOrderAndCheckIfItExists(orderId, id, trackChanges);
 
             var contribution = _mapper.Map<ContributionDto>(contributionDb);
 
@@ -83,10 +70,7 @@ namespace Service.Sales
         /* Listar */
         public async Task<IEnumerable<ContributionDto>> GetContributionsAsync(Guid orderId, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
-
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
+            await CheckIfOrderExists(orderId, trackChanges);
 
             var contributionsFromDb = await _repository.Contribution.GetContributionsAsync(orderId, trackChanges);
 
@@ -98,21 +82,40 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdateContributionAsync(Guid orderId, Guid id, ContributionForUpdateDto contributionForUpdate, bool ordTrackChanges, bool conTrackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, ordTrackChanges);
+            await CheckIfOrderExists(orderId, ordTrackChanges);
 
-            if (order is null)
-                throw new OrderNotFoundException(orderId);
-
-            var contributionEntity = await _repository.Contribution.GetContributionByOrderAsync(orderId, id, conTrackChanges);
-
-            if (contributionEntity is null)
-                throw new ContributionNotFoundException(id);
+            var contributionEntity = await GetContributionForOrderAndCheckIfItExists(orderId, id, conTrackChanges);
 
             _mapper.Map(contributionForUpdate, contributionEntity);
 
             contributionEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfOrderExists(Guid orderId, bool trackChanges)
+        {
+            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
+
+            if (order is null)
+                throw new OrderNotFoundException(orderId);
+        }
+
+
+        private async Task<Contribution> GetContributionForOrderAndCheckIfItExists(Guid orderId, Guid id, bool trackChanges)
+        {
+            var contribution = await _repository.Contribution.GetContributionByOrderAsync(orderId, id, trackChanges);
+
+            if (contribution is null)
+                throw new ContributionNotFoundException(id);
+
+            return contribution;
         }
     }
 }

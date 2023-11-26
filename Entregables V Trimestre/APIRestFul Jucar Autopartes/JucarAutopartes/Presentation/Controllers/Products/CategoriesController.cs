@@ -9,6 +9,7 @@ using Service.Contracts;
 using Presentation.ModelBinders;
 using Shared.DataTransferObjects.Products;
 using Entities.Exceptions;
+using Presentation.ActionFilters;
 
 namespace Presentation.Controllers.Products
 {
@@ -23,13 +24,14 @@ namespace Presentation.Controllers.Products
 
         /* Crear una categoria */
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
         {
-            if (category is null)
-                return BadRequest("CategoryForCreationDto object is null");
+            //if (category is null)
+            //    return BadRequest("CategoryForCreationDto object is null");
 
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
+            //if (!ModelState.IsValid)
+            //    return UnprocessableEntity(ModelState);
 
             var createdCategory = await _service.CategoryService.CreateCategoryAsync(category);
 
@@ -74,13 +76,14 @@ namespace Presentation.Controllers.Products
 
         /* Actualizar una categoria */
         [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateCategory(Guid id, [FromBody] CategoryForUpdateDto category)
         {
-            if (category is null)
-                return BadRequest("CategoryForUpdateDto object is null");
+            //if (category is null)
+            //    return BadRequest("CategoryForUpdateDto object is null");
 
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
+            //if (!ModelState.IsValid)
+            //    return UnprocessableEntity(ModelState);
 
             await _service.CategoryService.UpdateCategoryAsync(id, category, trackChanges: true);
 

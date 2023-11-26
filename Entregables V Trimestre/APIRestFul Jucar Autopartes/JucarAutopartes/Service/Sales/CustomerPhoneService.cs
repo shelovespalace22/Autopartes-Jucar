@@ -28,10 +28,7 @@ namespace Service.Sales
         /* Crear */
         public async Task<CustomerPhoneDto> CreatePhoneAsync(Guid customerId, CustomerPhoneForCreationDto phone, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
             var phoneEntity = _mapper.Map<CustomerPhone>(phone);
 
@@ -47,15 +44,9 @@ namespace Service.Sales
         /* Eliminar */
         public async Task DeletePhoneAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var phoneForCustomer = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, trackChanges);
-
-            if (phoneForCustomer is null)
-                throw new CustomerPhoneNotFoundException(id);
+            var phoneForCustomer = await GetPhoneForCustomerAndCheckIfItExists(customerId, id, trackChanges);
 
             _repository.CustomerPhone.DeletePhone(phoneForCustomer);
 
@@ -65,15 +56,9 @@ namespace Service.Sales
         /* Un registro */
         public async Task<CustomerPhoneDto> GetPhoneAsync(Guid customerId, Guid id, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var phoneDb = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, trackChanges);
-
-            if (phoneDb is null)
-                throw new CustomerPhoneNotFoundException(id);
+            var phoneDb = await GetPhoneForCustomerAndCheckIfItExists(customerId, id, trackChanges);
 
             var phone = _mapper.Map<CustomerPhoneDto>(phoneDb);
 
@@ -83,10 +68,7 @@ namespace Service.Sales
         /* Listar */
         public async Task<IEnumerable<CustomerPhoneDto>> GetPhonesAsync(Guid customerId, bool trackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
-
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
+            await CheckIfCustomerExists(customerId, trackChanges);
 
             var phonesFromDb = await _repository.CustomerPhone.GetPhonesForCustomerAsync(customerId, trackChanges);
 
@@ -98,21 +80,41 @@ namespace Service.Sales
         /* Actualizar */
         public async Task UpdatePhoneAsync(Guid customerId, Guid id, CustomerPhoneForUpdateDto phoneForUpdate, bool cusTrackChanges, bool phoTrackChanges)
         {
-            var customer = await _repository.Customer.GetCustomerAsync(customerId, cusTrackChanges);
+            await CheckIfCustomerExists(customerId, cusTrackChanges);
 
-            if (customer is null)
-                throw new CustomerNotFoundException(customerId);
-
-            var phoneEntity = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, phoTrackChanges);
-
-            if (phoneEntity is null)
-                throw new CustomerPhoneNotFoundException(id);
+            var phoneEntity = await GetPhoneForCustomerAndCheckIfItExists(customerId, id, phoTrackChanges);
 
             _mapper.Map(phoneForUpdate, phoneEntity);
 
             phoneEntity.setModificationDate();
 
             await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfCustomerExists(Guid customerId, bool trackChanges)
+        {
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+
+            if (customer is null)
+                throw new CustomerNotFoundException(customerId);
+        }
+
+
+        private async Task<CustomerPhone> GetPhoneForCustomerAndCheckIfItExists(Guid customerId, Guid id, bool trackChanges)
+        {
+            var phoneDb = await _repository.CustomerPhone.GetPhoneByCustomerAsync(customerId, id, trackChanges);
+
+            if (phoneDb is null)
+                throw new CustomerPhoneNotFoundException(id);
+
+            return phoneDb;
         }
     }
 }
