@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -11,9 +12,11 @@ using Repository;
 namespace JucarAutopartes.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20231126145931_AdditionalUserFiledsForRefreshToken")]
+    partial class AdditionalUserFiledsForRefreshToken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1062,13 +1065,13 @@ namespace JucarAutopartes.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "36cbf895-bc7c-4be3-886f-dd881884af2e",
+                            Id = "290306d4-9fa1-44ae-b702-756155fb518d",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "c61fa2a7-af13-4cba-98da-e1acb7f79318",
+                            Id = "5f3c32e2-4468-443e-a4d8-047f26666038",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
