@@ -24,7 +24,19 @@ namespace Presentation.Controllers.Products
             _service = service;
 
         /* Crear una categoria */
-        [HttpPost]
+
+        /// <summary>
+        /// Create una nueva categoría.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns>Una recién creada categoría</returns>
+        /// <response code="201">Retorna el elemento recién creado</response> 
+        /// <response code="400">Si el elemento está vacío</response>
+        /// <response code="422">Si el modelo es inválido</response>
+        [HttpPost(Name = "CrearCategoría")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
         {
@@ -49,6 +61,11 @@ namespace Presentation.Controllers.Products
         }
 
         /* Obtener todas las categorias */
+
+        /// <summary>
+        /// Obten la lista de todas las categorías.
+        /// </summary>
+        /// <returns>La lista de categorías disponibles.</returns>
         [HttpGet]
         [Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetCategories()

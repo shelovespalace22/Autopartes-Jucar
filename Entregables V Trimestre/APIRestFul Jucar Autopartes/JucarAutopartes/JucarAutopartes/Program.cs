@@ -29,6 +29,7 @@ builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.AddJwtConfiguration(builder.Configuration);
 
+builder.Services.ConfigureSwagger();
 
 
 
@@ -64,12 +65,16 @@ if (app.Environment.IsProduction())
 //else
 //    app.UseHsts();
 
-//// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(s => 
+    { 
+        s.SwaggerEndpoint("/swagger/v1/swagger.json", "Jucar Autopartes API v1");
+        //s.SwaggerEndpoint("/swagger/v2/swagger.json", "Code Maze API v2"); 
+    });
+}
 
 app.UseHttpsRedirection();
 
