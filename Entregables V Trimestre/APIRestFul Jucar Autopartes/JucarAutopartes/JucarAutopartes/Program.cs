@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using Contracts;
 using JucarAutopartes.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -17,10 +18,19 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 
+builder.Services.AddScoped<ValidationFilterAttribute>();
+
+builder.Services.AddMemoryCache();
+builder.Services.ConfigureRateLimitingOptions();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddAuthentication(); 
 builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJWT(builder.Configuration);
 
-builder.Services.AddScoped<ValidationFilterAttribute>();
+
+
+
 
 // Add services to the container.
 
@@ -67,6 +77,8 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.All
 });
+
+app.UseIpRateLimiting();
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();

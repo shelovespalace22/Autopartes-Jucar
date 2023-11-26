@@ -2,6 +2,7 @@
 using Entities.Models.Products;
 using Entities.Models.Providers;
 using Entities.Models.Sales;
+using Entities.Models.Users;
 using Shared.DataTransferObjects.Products;
 using Shared.DataTransferObjects.Providers.Provider;
 using Shared.DataTransferObjects.Providers.ProviderAddress;
@@ -13,6 +14,7 @@ using Shared.DataTransferObjects.Sales.CustomerPhone;
 using Shared.DataTransferObjects.Sales.Order;
 using Shared.DataTransferObjects.Sales.OrderDetail;
 using Shared.DataTransferObjects.Sales.PaymentMethod;
+using Shared.DataTransferObjects.Users;
 
 namespace JucarAutopartes
 {
@@ -171,6 +173,11 @@ namespace JucarAutopartes
             CreateMap<ContributionForCreationDto, Contribution>();
 
             CreateMap<ContributionForUpdateDto, Contribution>();
+
+
+            /* Usuarios */
+
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

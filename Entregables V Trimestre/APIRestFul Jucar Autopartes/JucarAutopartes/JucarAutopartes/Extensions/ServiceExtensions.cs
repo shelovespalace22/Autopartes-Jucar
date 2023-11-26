@@ -7,10 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using JucarAutopartes;
 using Entities.Models.Users;
 using Microsoft.AspNetCore.Identity;
+using AspNetCoreRateLimit;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace JucarAutopartes.Extensions
 {
-    public static class serviceextensions
+    public static class ServiceExtensions
     {
         public static void ConfigureCors(this IServiceCollection services) =>
             services.AddCors(options =>
@@ -60,5 +64,58 @@ namespace JucarAutopartes.Extensions
             .AddDefaultTokenProviders(); 
         }
 
+        /* Rate Limiting*/
+
+        public static void ConfigureRateLimitingOptions(this IServiceCollection services) 
+        {
+            var rateLimitRules = new List<RateLimitRule> 
+            { 
+                new RateLimitRule 
+                { 
+                    Endpoint = "*", 
+                    Limit = 30, 
+                    Period = "5m" 
+                } 
+            }; 
+            
+            services.Configure<IpRateLimitOptions>(opt => { opt.GeneralRules = rateLimitRules; }); 
+            
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>(); 
+            
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>(); 
+            
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>(); 
+            
+            services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>(); 
+        }
+
+        /* Configuración de JWT */
+
+        public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration) 
+        {
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            
+            var secretKey = Environment.GetEnvironmentVariable("SECRETII");
+
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidIssuer = jwtSettings["validIssuer"],
+                    ValidAudience = jwtSettings["validAudience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                };
+            });
+        }
     }
 }

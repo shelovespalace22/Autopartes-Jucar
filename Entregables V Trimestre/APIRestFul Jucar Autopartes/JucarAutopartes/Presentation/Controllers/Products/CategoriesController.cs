@@ -10,6 +10,7 @@ using Presentation.ModelBinders;
 using Shared.DataTransferObjects.Products;
 using Entities.Exceptions;
 using Presentation.ActionFilters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers.Products
 {
@@ -49,6 +50,7 @@ namespace Presentation.Controllers.Products
 
         /* Obtener todas las categorias */
         [HttpGet]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetCategories()
         { 
             var categories = await _service.CategoryService.GetAllCategoriesAsync(trackChanges: false);
