@@ -13,21 +13,21 @@ namespace Shared.DataTransferObjects.Sales.ManipulationDTOs
         public Guid AutopartId { get; init; }
 
         [Required(ErrorMessage = "¡Ingresa la cantidad del item!")]
-        [MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
+        //[MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
         [RegularExpression("^\\d+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Cantidad")]
         public int Quantity { get; init; }
 
         [Required(ErrorMessage = "¡Ingresa el valor unitario del item!")]
-        [MaxLength(10, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 10 cáracteres.")]
+        //[MaxLength(10, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 10 cáracteres.")]
         [RegularExpression("^\\d+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Valor Unitario")]
-        public decimal? UnitValue { get; set; }
+        public decimal? UnitValue { get; set; } = 0;
 
         [Required(ErrorMessage = "¡Ingresa el valor subtotal!")]
-        [MaxLength(10, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 10 cáracteres.")]
+        //[MaxLength(10, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 10 cáracteres.")]
         [RegularExpression("^\\d+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Subtotal")]
-        public decimal? SubtotalValue { get; set; }
+        public decimal? SubtotalValue { get; set; } = 0;
     }
 }

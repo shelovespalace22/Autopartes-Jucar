@@ -31,6 +31,6 @@ namespace Shared.DataTransferObjects.Products
         [DisplayName("Precio")]
         public decimal Value { get; init; }
 
-        Guid RawMaterialId;
+        public Guid RawMaterialId { get; init; }
     }
 }

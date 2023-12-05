@@ -13,7 +13,7 @@ namespace Shared.DataTransferObjects.Sales.ManipulationDTOs
         public Guid PaymentMethodId { get; init; }
 
         [Required(ErrorMessage = "¡Ingrese el monto aportado!")]
-        [MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
+        //[MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
         [RegularExpression("^\\d+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Monto del Aporte")]
         public decimal AmountPaid { get; init; }

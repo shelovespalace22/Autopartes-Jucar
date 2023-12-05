@@ -12,7 +12,7 @@ namespace Shared.DataTransferObjects.Products
     public record MovementForUpdateDto : MovementForManipulationDto
     {
         [Required(ErrorMessage = "¡Ingrese la cantidad del movimiento!")]
-        [MaxLength(3, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 3 cáracteres.")]
+        //[MaxLength(3, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 3 cáracteres.")]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad")]
         public int Quantity { get; init; }

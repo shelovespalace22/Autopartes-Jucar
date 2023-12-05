@@ -12,7 +12,7 @@ namespace Shared.DataTransferObjects.Products
     public record LossForCreationDto : LossForManipulationDto
     {
         [Required(ErrorMessage = "¡Ingrese la cantidad perdida!")]
-        [MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
+        //[MaxLength(5, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 5 cáracteres.")]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad Perdida")]
         public int AmountLoss { get; init; }

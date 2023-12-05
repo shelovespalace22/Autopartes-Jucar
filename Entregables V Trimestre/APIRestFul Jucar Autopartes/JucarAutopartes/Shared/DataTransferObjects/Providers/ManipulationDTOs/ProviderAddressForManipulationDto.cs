@@ -12,7 +12,7 @@ namespace Shared.DataTransferObjects.Providers.ManipulationDTOs
     {
         [Required(ErrorMessage = "Ingresa la dirección")]
         [MaxLength(50, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 50 cáracteres.")]
-        [RegularExpression("^(?:Cra\\.|Carrera|Calle|Cl|Avenida|Av|Transversal|Trv|Diagonal|Dg)\\.?\\s*\\d{1,5}\\s(?:\\w{2,})\\s#-?\\d{1,5}(?:-\\d{1,4})?$\r\n", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        //[RegularExpression("^(?:Cra\\.|Carrera|Calle|Cl|Avenida|Av|Transversal|Trv|Diagonal|Dg)\\.?\\s*\\d{1,5}\\s(?:\\w{2,})\\s#-?\\d{1,5}(?:-\\d{1,4})?$\r\n", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Dirección")]
         public string? Address { get; init; }
 

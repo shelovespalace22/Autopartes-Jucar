@@ -31,9 +31,6 @@ builder.Services.AddJwtConfiguration(builder.Configuration);
 
 builder.Services.ConfigureSwagger();
 
-
-
-
 // Add services to the container.
 
 builder.Services.AddControllers(config =>

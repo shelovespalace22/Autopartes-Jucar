@@ -29,7 +29,7 @@ namespace Service.Sales
         /* Crear */
         public async Task<OrderDto> CreateOrderAsync(OrderForCreationDto order)
         {
-            ApplyAdditionalOperations(order, _repository);
+            await ApplyAdditionalOperations(order, _repository);
 
             var orderEntity = _mapper.Map<Order>(order);
 

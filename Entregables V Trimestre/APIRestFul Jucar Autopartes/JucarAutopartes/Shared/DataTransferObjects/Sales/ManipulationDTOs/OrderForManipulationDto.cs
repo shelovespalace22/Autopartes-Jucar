@@ -26,7 +26,7 @@ namespace Shared.DataTransferObjects.Sales.ManipulationDTOs
         public string? PaymentStatus { get; init; }
 
         [MaxLength(100, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 100 cáracteres.")]
-        [RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        //[RegularExpression("^[\\w\\s'\"/.\\u00E1-\\u00FA]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Dirección de Envío")]
         public string? ShippingAddress { get; init; }
 
