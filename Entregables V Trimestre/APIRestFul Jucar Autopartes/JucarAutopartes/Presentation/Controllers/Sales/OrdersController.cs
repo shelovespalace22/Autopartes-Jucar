@@ -34,7 +34,7 @@ namespace Presentation.Controllers.Sales
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteOrder(Guid id)
         {
             await _service.OrderService.DeleteOrderAsync(id, trackChanges: false);
@@ -44,7 +44,7 @@ namespace Presentation.Controllers.Sales
 
         /* Listar */
         [HttpGet]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetOrders()
         {
             var orders = await _service.OrderService.GetAllOrdersAsync(trackChanges: false);
@@ -54,7 +54,7 @@ namespace Presentation.Controllers.Sales
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "OrderById")]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetOrder(Guid id)
         {
             var order = await _service.OrderService.GetOrderAsync(id, trackChanges: false);
@@ -64,7 +64,7 @@ namespace Presentation.Controllers.Sales
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        //[ServiceFilter(typeof(ValidationFilterAttribute))]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] OrderForUpdateDto order)
         {

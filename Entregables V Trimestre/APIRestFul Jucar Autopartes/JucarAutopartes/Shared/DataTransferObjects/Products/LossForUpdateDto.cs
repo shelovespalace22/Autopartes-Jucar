@@ -19,13 +19,13 @@ namespace Shared.DataTransferObjects.Products
 
         [Required(ErrorMessage = "¡Ingrese el responsable!")]
         [MaxLength(50, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 50 cáracteres")]
-        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Responsable")]
         public string? Responsible { get; init; }
 
         [Required(ErrorMessage = "¡Ingrese el motivo de perdida!")]
         [MaxLength(150, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 150 cáracteres.")]
-        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Motivo")]
         public string? Reason { get; init; }
 

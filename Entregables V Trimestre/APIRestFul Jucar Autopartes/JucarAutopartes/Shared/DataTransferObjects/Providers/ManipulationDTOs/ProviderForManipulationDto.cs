@@ -26,7 +26,7 @@ namespace Shared.DataTransferObjects.Providers.ManipulationDTOs
 
         [Required(ErrorMessage = "Ingrese su Nombre o Razón Social")]
         [MaxLength(100, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 100 cáracteres.")]
-        [RegularExpression("^[A-Za-z.\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string Name { get; init; }
 
@@ -37,7 +37,7 @@ namespace Shared.DataTransferObjects.Providers.ManipulationDTOs
 
         [Required(ErrorMessage = "¡Ingrese el tipo de producto!")]
         [MaxLength(50, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 50 cáracteres.")]
-        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Tipo de Producto")]
         public string ProductType { get; init; }
 
