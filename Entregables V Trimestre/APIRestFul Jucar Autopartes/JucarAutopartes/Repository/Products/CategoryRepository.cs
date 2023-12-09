@@ -14,7 +14,7 @@ namespace Repository.Products
     {
         public CategoryRepository(RepositoryContext repositoryContext)
         : base(repositoryContext)
-        {
+        {       
         }
 
         /* Crear categoria */
