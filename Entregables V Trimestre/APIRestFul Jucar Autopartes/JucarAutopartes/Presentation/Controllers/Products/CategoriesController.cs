@@ -67,7 +67,7 @@ namespace Presentation.Controllers.Products
         /// </summary>
         /// <returns>La lista de categorías disponibles.</returns>
         [HttpGet]
-        [Authorize(Roles = "Manager")]
+        //[Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetCategories()
         { 
             var categories = await _service.CategoryService.GetAllCategoriesAsync(trackChanges: false);
