@@ -56,7 +56,7 @@ namespace Entities.Models.Products
 
         //Stock
 
-        public Stock Stock { get; set; }
+        public Stock? Stock { get; set; }
 
         //Movement
 

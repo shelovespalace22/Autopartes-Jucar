@@ -13,19 +13,19 @@ namespace Contracts.Products
         void CreateSubcategoryForCategory(Guid categoryId, Subcategory subcategory);
 
         /* Obtener todas las Subcategorias en general*/
-        IEnumerable<Subcategory> GetAllSubcategories(bool trackChanges);
+        Task<IEnumerable<Subcategory>> GetAllSubcategoriesAsync(bool trackChanges);
 
         /* Obtener una Subcategoria especifica */
-        Subcategory GetSubcategoryById(Guid subcategoryId, bool trackChanges);
+        Task<Subcategory> GetSubcategoryByIdAsync(Guid subcategoryId, bool trackChanges);
 
         /* Obtener todas las Subcategorias de una Categoria */
-        IEnumerable<Subcategory> GetSubcategories(Guid categoryId, bool trackChanges);
+        Task<IEnumerable<Subcategory>> GetSubcategoriesAsync(Guid categoryId, bool trackChanges);
 
         /* Obtener una Subcategoria especifica de una Categoria */
-        Subcategory GetSubcategoryByCategory(Guid categoryId, Guid id, bool trackChanges);
+        Task<Subcategory> GetSubcategoryByCategoryAsync(Guid categoryId, Guid id, bool trackChanges);
 
         /* Obtener una colección de Subcategorías de una Categoría*/
-        IEnumerable<Subcategory> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<Subcategory>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Eliminar una Subcategoria */
         void DeleteSubcategory(Subcategory subcategory);

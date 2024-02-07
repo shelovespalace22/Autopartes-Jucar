@@ -5,13 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Contracts;
+using Entities.ConfigurationModels;
+using Entities.Models.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Service.Contracts;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
 using Service.Contracts.Sales;
+using Service.Contracts.Users;
 using Service.Products;
 using Service.Proveedores;
 using Service.Sales;
+using Service.Users;
 
 namespace Service
 {
@@ -57,8 +64,12 @@ namespace Service
 
         private readonly Lazy<IContributionService> _contributionService;
 
+        /* Usuarios */
 
-        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
+        private readonly Lazy<IAuthenticationService> _authenticationService;
+
+
+        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IOptions<JwtConfiguration> configuration)
         {
             /* Productos */
 
@@ -117,6 +128,11 @@ namespace Service
             _contributionService = new Lazy<IContributionService>(() =>
                 new ContributionService(repositoryManager, logger, mapper));
 
+            /* Usuarios */
+
+            _authenticationService = new Lazy<IAuthenticationService>(() =>
+                new AuthenticationService(logger, mapper, userManager, configuration));
+
         }
 
         /* Productos */
@@ -144,5 +160,9 @@ namespace Service
         public IOrderDetailService OrderDetailService => _orderDetailService.Value;
         public IPaymentMethodService PaymentMethodService => _paymentMethodService.Value;
         public IContributionService ContributionService => _contributionService.Value;
+
+        /* Usuarios */
+
+        public IAuthenticationService AuthenticationService => _authenticationService.Value;
     }
 }

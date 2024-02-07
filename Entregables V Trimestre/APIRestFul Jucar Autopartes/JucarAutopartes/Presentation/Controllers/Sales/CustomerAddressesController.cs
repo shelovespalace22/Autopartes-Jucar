@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.CustomerAddress;
 using System;
@@ -20,51 +21,47 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreateAddressForCustomer(Guid customerId, [FromBody] CustomerAddressForCreationDto address)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateAddressForCustomer(Guid customerId, [FromBody] CustomerAddressForCreationDto address)
         {
-            if (address is null)
-                return BadRequest("CustomerAddressForCreationDto object is null.");
-
-            var addressToReturn = _service.CustomerAddressService.CreateAddress(customerId, address, trackChanges: false);
+            var addressToReturn = await _service.CustomerAddressService.CreateAddressAsync(customerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForCustomer", new { customerId, id = addressToReturn.CustomerAddressID }, addressToReturn);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteAddressForCustomer(Guid customerId, Guid id)
+        public async Task<IActionResult> DeleteAddressForCustomer(Guid customerId, Guid id)
         {
-            _service.CustomerAddressService.DeleteAddress(customerId, id, trackChanges: false);
+            await _service.CustomerAddressService.DeleteAddressAsync(customerId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetAddressesForCustomer(Guid customerId)
+        public async Task<IActionResult> GetAddressesForCustomer(Guid customerId)
         {
-            var addresses = _service.CustomerAddressService.GetAddresses(customerId, trackChanges: false);
+            var addresses = await _service.CustomerAddressService.GetAddressesAsync(customerId, trackChanges: false);
 
             return Ok(addresses);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "GetAddressForCustomer")]
-        public IActionResult GetAddressForCustomer(Guid customerId, Guid id)
+        public async Task<IActionResult> GetAddressForCustomer(Guid customerId, Guid id)
         {
-            var address = _service.CustomerAddressService.GetAddress(customerId, id, trackChanges: false);
+            var address = await _service.CustomerAddressService.GetAddressAsync(customerId, id, trackChanges: false);
 
             return Ok(address);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateAddressForCustomer(Guid customerId, Guid id, [FromBody] CustomerAddressForUpdateDto addressForUpdate)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateAddressForCustomer(Guid customerId, Guid id, [FromBody] CustomerAddressForUpdateDto addressForUpdate)
         {
-            if (addressForUpdate is null)
-                return BadRequest("CustomerAddressForUpdateDto object is null.");
-
-            _service.CustomerAddressService.UpdateAddress(customerId, id, addressForUpdate, cusTrackChanges: false, adrTrackChanges: true);
+            await _service.CustomerAddressService.UpdateAddressAsync(customerId, id, addressForUpdate, cusTrackChanges: false, adrTrackChanges: true);
 
             return NoContent();
         }

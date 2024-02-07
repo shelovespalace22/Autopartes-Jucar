@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.NotFound.Products;
 using Entities.Exceptions.NotFound.Providers;
+using Entities.Models.Products;
 using Entities.Models.Providers;
 using Service.Contracts.Proveedores;
 using Shared.DataTransferObjects.Providers.ProviderPhone;
@@ -26,18 +28,15 @@ namespace Service.Proveedores
         }
 
         /* Crear */
-        public ProviderPhoneDto CreatePhoneForProvider(Guid providerId, ProviderPhoneForCreationDto phone, bool trackChanges)
+        public async Task<ProviderPhoneDto> CreatePhoneForProviderAsync(Guid providerId, ProviderPhoneForCreationDto phone, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
-
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
+            await CheckIfProviderExists(providerId, trackChanges);
 
             var phoneEntity = _mapper.Map<ProviderPhone>(phone);
 
             _repository.ProviderPhone.CreatePhoneForProvider(providerId, phoneEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var phoneToReturn = _mapper.Map<ProviderPhoneDto>(phoneEntity);
 
@@ -45,35 +44,23 @@ namespace Service.Proveedores
         }
 
         /* Eliminar */
-        public void DeletePhoneForProvider(Guid providerId, Guid id, bool trackChanges)
+        public async Task DeletePhoneForProviderAsync(Guid providerId, Guid id, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var phoneForProvider = _repository.ProviderPhone.GetPhoneByProvider(providerId, id, trackChanges);
-
-            if (phoneForProvider is null)
-                throw new ProviderPhoneNotFoundException(id);
+            var phoneForProvider = await GetPhoneForProviderAndCheckIfItExists(providerId, id, trackChanges);
 
             _repository.ProviderPhone.DeleteProviderPhone(phoneForProvider);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Un registro */
-        public ProviderPhoneDto GetPhoneForProvider(Guid providerId, Guid id, bool trackChanges)
+        public async Task<ProviderPhoneDto> GetPhoneForProviderAsync(Guid providerId, Guid id, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var phoneDb = _repository.ProviderPhone.GetPhoneByProvider(providerId, id, trackChanges);
-
-            if (phoneDb is null)
-                throw new ProviderPhoneNotFoundException(id);
+            var phoneDb = await GetPhoneForProviderAndCheckIfItExists(providerId, id, trackChanges);
 
             var phone = _mapper.Map<ProviderPhoneDto>(phoneDb);
 
@@ -81,14 +68,11 @@ namespace Service.Proveedores
         }
 
         /* Listar */
-        public IEnumerable<ProviderPhoneDto> GetPhones(Guid providerId, bool trackChanges)
+        public async Task<IEnumerable<ProviderPhoneDto>> GetPhonesAsync(Guid providerId, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var phonesFromDb = _repository.ProviderPhone.GetPhonesForProvider(providerId, trackChanges);
+            var phonesFromDb = await _repository.ProviderPhone.GetPhonesForProviderAsync(providerId, trackChanges);
 
             var phonesDto = _mapper.Map<IEnumerable<ProviderPhoneDto>>(phonesFromDb);
 
@@ -96,23 +80,46 @@ namespace Service.Proveedores
         }
 
         /* Actualizar */
-        public void UpdatePhoneForProvider(Guid providerId, Guid id, ProviderPhoneForUpdateDto phoneForUpdate, bool proTrackChanges, bool phoTrackChanges)
+        public async Task UpdatePhoneForProviderAsync(Guid providerId, Guid id, ProviderPhoneForUpdateDto phoneForUpdate, bool proTrackChanges, bool phoTrackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, proTrackChanges);
+            await CheckIfProviderExists(providerId, proTrackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var phoneEntity = _repository.ProviderPhone.GetPhoneByProvider(providerId, id, phoTrackChanges);
-
-            if (phoneEntity is null)
-                throw new ProviderPhoneNotFoundException(id);
+            var phoneEntity = await GetPhoneForProviderAndCheckIfItExists(providerId, id, phoTrackChanges);
 
             _mapper.Map(phoneForUpdate, phoneEntity);
 
             phoneEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
+
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfProviderExists(Guid providerId, bool trackChanges)
+        {
+            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
+
+            if (provider is null)
+                throw new ProviderNotFoundException(providerId);
+        }
+
+
+        private async Task<ProviderPhone> GetPhoneForProviderAndCheckIfItExists(Guid providerId, Guid id, bool trackChanges)
+        {
+            var phoneDb = await _repository.ProviderPhone.GetPhoneByProviderAsync(providerId, id, trackChanges);
+
+            if (phoneDb is null)
+                throw new ProviderPhoneNotFoundException(id);
+
+            return phoneDb;
+        }
+
+
     }
 }

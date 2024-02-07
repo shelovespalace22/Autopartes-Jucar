@@ -37,7 +37,7 @@ namespace Contracts
         IPaymentMethodRepository PaymentMethod { get; }
         IContributionRepository Contribution { get; }
 
-        void Save();
+        Task SaveAsync();
 
     }
 }

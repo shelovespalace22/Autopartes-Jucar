@@ -26,18 +26,15 @@ namespace Service.Proveedores
         }
 
         /* Crear */
-        public ProviderAddressDto CreateAddressForProvider(Guid providerId, ProviderAddressForCreationDto address, bool trackChanges)
+        public async Task<ProviderAddressDto> CreateAddressForProviderAsync(Guid providerId, ProviderAddressForCreationDto address, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
-
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
+            await CheckIfProviderExists(providerId, trackChanges);
 
             var addressEntity = _mapper.Map<ProviderAddress>(address);
 
             _repository.ProviderAddress.CreateAddressForProvider(providerId, addressEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var addressToReturn = _mapper.Map<ProviderAddressDto>(addressEntity);
 
@@ -45,32 +42,23 @@ namespace Service.Proveedores
         }
 
         /* Eliminar */
-        public void DeleteAddressForProvider(Guid providerId, Guid id, bool trackChanges)
+        public async Task DeleteAddressForProviderAsync(Guid providerId, Guid id, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var addressForProvider = _repository.ProviderAddress.GetAddressByProvider(providerId, id, trackChanges);
-
-            if (addressForProvider is null)
-                throw new ProviderAddressNotFoundException(id);
+            var addressForProvider = await GetAddressForProviderAndCheckIfItExists(providerId, id, trackChanges);
 
             _repository.ProviderAddress.DeleteProviderAddress(addressForProvider);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
         /* Listar */
-        public IEnumerable<ProviderAddressDto> GetAddresses(Guid providerId, bool trackChanges)
+        public async Task<IEnumerable<ProviderAddressDto>> GetAddressesAsync(Guid providerId, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var addressesFromDb = _repository.ProviderAddress.GetAddressesForProvider(providerId, trackChanges);
+            var addressesFromDb = await _repository.ProviderAddress.GetAddressesForProviderAsync(providerId, trackChanges);
 
             var addressesDto = _mapper.Map<IEnumerable<ProviderAddressDto>>(addressesFromDb);
 
@@ -78,17 +66,11 @@ namespace Service.Proveedores
         }
 
         /* Un registro */
-        public ProviderAddressDto GetAddressForProvider(Guid providerId, Guid id, bool trackChanges)
+        public async Task<ProviderAddressDto> GetAddressForProviderAsync(Guid providerId, Guid id, bool trackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, trackChanges);
+            await CheckIfProviderExists(providerId, trackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var addressDb = _repository.ProviderAddress.GetAddressByProvider(providerId, id, trackChanges);
-
-            if (addressDb is null)
-                throw new ProviderAddressNotFoundException(id);
+            var addressDb = await GetAddressForProviderAndCheckIfItExists(providerId, id, trackChanges);
 
             var address = _mapper.Map<ProviderAddressDto>(addressDb);
 
@@ -96,23 +78,42 @@ namespace Service.Proveedores
         }
 
         /* Actualizar */
-        public void UpdateAddressForProvider(Guid providerId, Guid id, ProviderAddressForUpdateDto addressForUpdate, bool proTrackChanges, bool adrTrackChanges)
+        public async Task UpdateAddressForProviderAsync(Guid providerId, Guid id, ProviderAddressForUpdateDto addressForUpdate, bool proTrackChanges, bool adrTrackChanges)
         {
-            var provider = _repository.Provider.GetProvider(providerId, proTrackChanges);
+            await CheckIfProviderExists(providerId, proTrackChanges);
 
-            if (provider is null)
-                throw new ProviderNotFoundException(providerId);
-
-            var addressEntity = _repository.ProviderAddress.GetAddressByProvider(providerId, id, adrTrackChanges);
-
-            if (addressEntity is null)
-                throw new ProviderAddressNotFoundException(id);
+            var addressEntity = await GetAddressForProviderAndCheckIfItExists(providerId, id, adrTrackChanges);
 
             _mapper.Map(addressForUpdate, addressEntity);
 
             addressEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
+        }
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfProviderExists(Guid providerId, bool trackChanges)
+        {
+            var provider = await _repository.Provider.GetProviderAsync(providerId, trackChanges);
+
+            if (provider is null)
+                throw new ProviderNotFoundException(providerId);
+        }
+
+
+        private async Task<ProviderAddress> GetAddressForProviderAndCheckIfItExists(Guid providerId, Guid id, bool trackChanges)
+        {
+            var addressDb = await _repository.ProviderAddress.GetAddressByProviderAsync(providerId, id, trackChanges);
+
+            if (addressDb is null)
+                throw new ProviderAddressNotFoundException(id);
+
+            return addressDb;
         }
     }
 }

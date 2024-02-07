@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.ProviderPhone;
 using Shared.DataTransferObjects.Sales.Contribution;
@@ -21,51 +22,47 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreateContribution(Guid orderId, [FromBody] ContributionForCreationDto contribution)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateContribution(Guid orderId, [FromBody] ContributionForCreationDto contribution)
         {
-            if (contribution is null)
-                return BadRequest("ContributionForCreationDto object is null");
-
-            var contributionToReturn = _service.ContributionService.CreateContribution(orderId, contribution, trackChanges: false);
+            var contributionToReturn = await _service.ContributionService.CreateContributionAsync(orderId, contribution, trackChanges: false);
 
             return CreatedAtRoute("GetContributionForOrder", new { orderId, id = contributionToReturn.ContributionID }, contributionToReturn);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteContribution(Guid orderId, Guid id)
+        public async Task<IActionResult> DeleteContribution(Guid orderId, Guid id)
         {
-            _service.ContributionService.DeleteContribution(orderId, id, trackChanges: false);
+            await _service.ContributionService.DeleteContributionAsync(orderId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetContributions(Guid orderId)
+        public async Task<IActionResult> GetContributions(Guid orderId)
         {
-            var contributions = _service.ContributionService.GetContributions(orderId, trackChanges: false);
+            var contributions = await _service.ContributionService.GetContributionsAsync(orderId, trackChanges: false);
 
             return Ok(contributions);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "GetContributionForOrder")]
-        public IActionResult GetContribution(Guid orderId, Guid id)
+        public async Task<IActionResult> GetContribution(Guid orderId, Guid id)
         {
-            var contribution = _service.ContributionService.GetContribution(orderId, id, trackChanges: false);
+            var contribution = await _service.ContributionService.GetContributionAsync(orderId, id, trackChanges: false);
 
             return Ok(contribution);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateContribution(Guid orderId, Guid id, [FromBody] ContributionForUpdateDto contributionForUpdate)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateContribution(Guid orderId, Guid id, [FromBody] ContributionForUpdateDto contributionForUpdate)
         {
-            if (contributionForUpdate is null)
-                return BadRequest("ContributionForUpdateDto object is null");
-
-            _service.ContributionService.UpdateContribution(orderId, id, contributionForUpdate, ordTrackChanges: false, conTrackChanges: true);
+            await _service.ContributionService.UpdateContributionAsync(orderId, id, contributionForUpdate, ordTrackChanges: false, conTrackChanges: true);
 
             return NoContent();
         }

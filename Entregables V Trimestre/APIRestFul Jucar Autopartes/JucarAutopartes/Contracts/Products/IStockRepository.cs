@@ -13,10 +13,10 @@ namespace Contracts.Products
         void CreateStockForRawMaterial(Guid rawMaterialId, Stock stock);
 
         /* Listar */
-        IEnumerable<Stock> GetStocks(Guid rawMaterialId, bool trackChanges);
+        Task<IEnumerable<Stock>> GetStocksAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Único Registro */
-        Stock GetStockByRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task<Stock> GetStockByRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
 
         /* Eliminar*/
         void DeleteStock(Stock stock);

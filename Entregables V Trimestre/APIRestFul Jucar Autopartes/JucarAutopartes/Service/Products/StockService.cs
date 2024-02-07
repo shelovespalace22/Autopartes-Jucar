@@ -26,101 +26,95 @@ namespace Service.Products
         }
 
         /* Crear */
-        public StockDto CreateStockForRawMaterial(Guid rawMaterialId, StockForCreationDto stockForCreation, bool trackChanges)
+        public async Task<StockDto> CreateStockForRawMaterialAsync(Guid rawMaterialId, StockForCreationDto stockForCreation, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
-
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
             var stockEntity = _mapper.Map<Stock>(stockForCreation);
 
             _repository.Stock.CreateStockForRawMaterial(rawMaterialId, stockEntity);
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var stockToReturn = _mapper.Map<StockDto>(stockEntity);
 
             return stockToReturn;
         }
 
-
         /* Eliminar */
-
-        public void DeleteStockForRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges)
+        public async Task DeleteStockForRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var stockForRawMaterial = _repository.Stock.GetStockByRawMaterial(rawMaterialId, id, trackChanges);
-
-            if (stockForRawMaterial is null)
-                throw new StockNotFoundException(id);
+            var stockForRawMaterial = await GetStockForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
 
             _repository.Stock.DeleteStock(stockForRawMaterial);
 
-            _repository.Save();
+            await _repository.SaveAsync();
         }
 
-
         /* Único Registro */
-
-        public StockDto GetStockForRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges)
+        public async Task<StockDto> GetStockForRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var stockDb = _repository.Stock.GetStockByRawMaterial(rawMaterialId, id, trackChanges);
-
-            if (stockDb is null)
-                throw new StockNotFoundException(id);
+            var stockDb = await GetStockForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
 
             var stock = _mapper.Map<StockDto>(stockDb);
 
             return stock;
         }
 
-
         /* Listar */
-
-        public IEnumerable<StockDto> GetStocks(Guid rawMaterialId, bool trackChanges)
+        public async Task<IEnumerable<StockDto>> GetStocksAsync(Guid rawMaterialId, bool trackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, trackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var stocksFromDb = _repository.Stock.GetStocks(rawMaterialId, trackChanges);
+            var stocksFromDb = await _repository.Stock.GetStocksAsync(rawMaterialId, trackChanges);
 
             var stocksDto = _mapper.Map<IEnumerable<StockDto>>(stocksFromDb);
 
             return stocksDto;
         }
 
-
         /* Actualizar */
-
-        public void UpdateStockForRawMaterial(Guid rawMaterialId, Guid id, StockForUpdateDto stockForUpdate, bool rawTrackChanges, bool stcTrackChanges)
+        public async Task UpdateStockForRawMaterialAsync(Guid rawMaterialId, Guid id, StockForUpdateDto stockForUpdate, bool rawTrackChanges, bool stcTrackChanges)
         {
-            var rawMaterial = _repository.RawMaterial.GetRawMaterial(rawMaterialId, rawTrackChanges);
+            await CheckIfRawMaterialExists(rawMaterialId, rawTrackChanges);
 
-            if (rawMaterial is null)
-                throw new RawMaterialNotFoundException(rawMaterialId);
-
-            var stockEntity = _repository.Stock.GetStockByRawMaterial(rawMaterialId, id, stcTrackChanges);
-
-            if (stockEntity is null)
-                throw new StockNotFoundException(id);
+            var stockEntity = await GetStockForRawMaterialAndCheckIfItExists(rawMaterialId, id, stcTrackChanges);
 
             _mapper.Map(stockForUpdate, stockEntity);
 
             stockEntity.setModificationDate();
 
-            _repository.Save();
+            await _repository.SaveAsync();
+        }
+
+
+
+
+
+
+        /* <----- Métodos Privados -----> */
+
+        private async Task CheckIfRawMaterialExists(Guid rawMaterialId, bool trackChanges)
+        {
+            var rawMaterial = await _repository.RawMaterial.GetRawMaterialAsync(rawMaterialId, trackChanges);
+
+            if (rawMaterial is null)
+                throw new RawMaterialNotFoundException(rawMaterialId);
+        }
+
+
+        private async Task<Stock> GetStockForRawMaterialAndCheckIfItExists(Guid rawMaterialId, Guid id, bool trackChanges)
+        {
+            var stockDb = await _repository.Stock.GetStockByRawMaterialAsync(rawMaterialId, id, trackChanges);
+
+            if (stockDb is null)
+                throw new StockNotFoundException(id);
+
+            return stockDb;
         }
     }
 }

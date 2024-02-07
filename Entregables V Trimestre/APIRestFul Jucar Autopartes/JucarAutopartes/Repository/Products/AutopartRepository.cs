@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts.Products;
 using Entities.Models.Products;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Products
 {
@@ -25,31 +26,31 @@ namespace Repository.Products
         }
 
         /* Obteniendo todas las Autopartes en general */
-        public IEnumerable<Autopart> GetAllAutoparts(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<Autopart>> GetAllAutopartsAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(c => c.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Obteniendo Autoparte por su Id */
-        public Autopart GetAutopartById(Guid autopartId, bool trackChanges) =>
-            FindByCondition(a => a.AutopartID.Equals(autopartId), trackChanges)
-            .SingleOrDefault();
+        public async Task<Autopart> GetAutopartByIdAsync(Guid autopartId, bool trackChanges) =>
+            await FindByCondition(a => a.AutopartID.Equals(autopartId), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Obtener todas las Autopartes de una Subcategoria */
-        public IEnumerable<Autopart> GetAutoparts(Guid subcategoryId, bool trackChanges) =>
-            FindByCondition(a => a.SubcategoryId.Equals(subcategoryId), trackChanges)
+        public async Task<IEnumerable<Autopart>> GetAutopartsAsync(Guid subcategoryId, bool trackChanges) =>
+            await FindByCondition(a => a.SubcategoryId.Equals(subcategoryId), trackChanges)
             .OrderBy(a => a.Name)
-            .ToList();
+            .ToListAsync();
 
         /* Obteniendo una Autoparte especifica de la Subcategoria */
-        public Autopart GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges) =>
-            FindByCondition(a => a.SubcategoryId.Equals(subcategoryId) && a.AutopartID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Autopart> GetAutopartBySubcategoryAsync(Guid subcategoryId, Guid id, bool trackChanges) =>
+            await FindByCondition(a => a.SubcategoryId.Equals(subcategoryId) && a.AutopartID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         /* Obtener una colección de Autopartes de una Subcategoría*/
-        public IEnumerable<Autopart> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
-            FindByCondition(x => ids.Contains(x.AutopartID), trackChanges)
-            .ToList();
+        public async Task<IEnumerable<Autopart>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges) =>
+            await FindByCondition(x => ids.Contains(x.AutopartID), trackChanges)
+            .ToListAsync();
 
         /* Eliminar una Autoparts */
         public void DeleteAutopart(Autopart autopart) => Delete(autopart);

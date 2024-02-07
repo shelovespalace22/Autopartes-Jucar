@@ -10,18 +10,18 @@ namespace Service.Contracts.Products
     public interface IStockService
     {
         /* Crear*/
-        StockDto CreateStockForRawMaterial(Guid rawMaterialId, StockForCreationDto stockForCreation, bool trackChanges);
+        Task<StockDto> CreateStockForRawMaterialAsync(Guid rawMaterialId, StockForCreationDto stockForCreation, bool trackChanges);
 
         /* Listar */
-        IEnumerable<StockDto> GetStocks(Guid rawMaterialId, bool trackChanges);
+        Task<IEnumerable<StockDto>> GetStocksAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Único Registro */
-        StockDto GetStockForRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task<StockDto> GetStockForRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateStockForRawMaterial(Guid rawMaterialId, Guid id, StockForUpdateDto stockForUpdate, bool rawTrackChanges, bool stcTrackChanges);
+        Task UpdateStockForRawMaterialAsync(Guid rawMaterialId, Guid id, StockForUpdateDto stockForUpdate, bool rawTrackChanges, bool stcTrackChanges);
 
         /* Eliminar */
-        void DeleteStockForRawMaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task DeleteStockForRawMaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
     }
 }

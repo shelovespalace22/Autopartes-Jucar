@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
 using System;
@@ -20,62 +21,50 @@ namespace Presentation.Controllers.Products
 
 
         /* Crear */
-
         [HttpPost]
-        public IActionResult CreateMovementForRawmaterial(Guid rawMaterialId, [FromBody] MovementForCreationDto movement)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateMovementForRawmaterial(Guid rawMaterialId, [FromBody] MovementForCreationDto movement)
         {
-            if (movement is null)
-                return BadRequest("MovementForCreationDto object is null");
-
-            var movementToReturn = _service.MovementService.CreateMovementForRawmaterial(rawMaterialId, movement, trackChanges: false);
+            var movementToReturn = await _service.MovementService.CreateMovementForRawmaterialAsync(rawMaterialId, movement, trackChanges: false);
 
             return CreatedAtRoute("GetMovementByRawmaterial", new { rawMaterialId, id = movementToReturn.MovementID }, movementToReturn);
         }
 
         /* Eliminar */
-
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteMovementForRawmaterial(Guid rawMaterialId, Guid id)
+        public async Task<IActionResult> DeleteMovementForRawmaterial(Guid rawMaterialId, Guid id)
         {
-            _service.MovementService.DeleteMovementForRawmaterial(rawMaterialId, id, trackChanges: false);
+            await _service.MovementService.DeleteMovementForRawmaterialAsync(rawMaterialId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Único Registro */
-
         [HttpGet("{id:guid}", Name = "GetMovementByRawmaterial")]
-        public IActionResult GetMovementByRawmaterial(Guid rawMaterialId, Guid id)
+        public async Task<IActionResult> GetMovementByRawmaterial(Guid rawMaterialId, Guid id)
         {
-            var movement = _service.MovementService.GetMovementForRawmaterial(rawMaterialId, id, trackChanges: false);
+            var movement = await _service.MovementService.GetMovementForRawmaterialAsync(rawMaterialId, id, trackChanges: false);
 
             return Ok(movement);
         }
 
         /* Listar */
-
         [HttpGet]
-        public IActionResult GetMovementsForRawmaterial(Guid rawMaterialId)
+        public async Task<IActionResult> GetMovementsForRawmaterial(Guid rawMaterialId)
         {
-            var movements = _service.MovementService.GetMovements(rawMaterialId, trackChanges: false);
+            var movements = await _service.MovementService.GetMovementsAsync(rawMaterialId, trackChanges: false);
 
             return Ok(movements);
         }
 
         /* Actualizar */
-
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateMovementForRawmaterial(Guid rawMaterialId, Guid id, [FromBody] MovementForUpdateDto movement)
-        {
-            if (movement is null)
-                return BadRequest("MovementForUpdateDto object is null");
-
-            _service.MovementService.UpdateMovementForRawmaterial(rawMaterialId, id, movement, rawTrackChanges: false, movTrackChanges: true);
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateMovementForRawmaterial(Guid rawMaterialId, Guid id, [FromBody] MovementForUpdateDto movement)
+        { 
+            await _service.MovementService.UpdateMovementForRawmaterialAsync(rawMaterialId, id, movement, rawTrackChanges: false, movTrackChanges: true);
 
             return NoContent();
         }
     }
-
-
-
 }

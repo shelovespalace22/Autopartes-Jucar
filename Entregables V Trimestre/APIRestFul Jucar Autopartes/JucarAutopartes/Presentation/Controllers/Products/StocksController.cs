@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Products;
 using System;
@@ -20,59 +21,51 @@ namespace Presentation.Controllers.Products
 
 
         /* Crear */
-
         [HttpPost]
-        public IActionResult CreateStockForRawMaterial(Guid rawMaterialId, [FromBody] StockForCreationDto stock)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateStockForRawMaterial(Guid rawMaterialId, [FromBody] StockForCreationDto stock)
         {
-            if (stock is null)
-                return BadRequest("StockForCreationDto object is null");
-
-            var stockToReturn = _service.StockService.CreateStockForRawMaterial(rawMaterialId, stock, trackChanges: false);
+            var stockToReturn = await _service.StockService.CreateStockForRawMaterialAsync(rawMaterialId, stock, trackChanges: false);
 
             return CreatedAtRoute("GetStockByRawMaterial", new { rawMaterialId, id = stockToReturn.StockID }, stockToReturn);
         }
 
         /* Eliminar */
-
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteStockForRawMaterial(Guid rawMaterialId, Guid id)
+        public async Task<IActionResult> DeleteStockForRawMaterial(Guid rawMaterialId, Guid id)
         {
-            _service.StockService.DeleteStockForRawMaterial(rawMaterialId, id, trackChanges: false);
+            await _service.StockService.DeleteStockForRawMaterialAsync(rawMaterialId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Único Registro */
-
         [HttpGet("{id:guid}", Name = "GetStockByRawMaterial")]
-        public IActionResult GetStockByRawMaterial(Guid rawMaterialId, Guid id)
+        public async Task<IActionResult> GetStockByRawMaterial(Guid rawMaterialId, Guid id)
         {
-            var stock = _service.StockService.GetStockForRawMaterial(rawMaterialId, id, trackChanges: false);
+            var stock = await _service.StockService.GetStockForRawMaterialAsync(rawMaterialId, id, trackChanges: false);
 
             return Ok(stock);
         }
 
         /* Listar */
-
         [HttpGet]
-        public IActionResult GetStocksForRawMaterial(Guid rawMaterialId)
+        public async Task<IActionResult> GetStocksForRawMaterial(Guid rawMaterialId)
         {
-            var stocks = _service.StockService.GetStocks(rawMaterialId, trackChanges: false);
+            var stocks = await _service.StockService.GetStocksAsync(rawMaterialId, trackChanges: false);
 
             return Ok(stocks);
         }
 
         /* Actualizar */
-
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateStopckForRawMaterial(Guid rawMaterialId, Guid id, [FromBody] StockForUpdateDto stock)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateStopckForRawMaterial(Guid rawMaterialId, Guid id, [FromBody] StockForUpdateDto stock)
         {
-            if (stock is null)
-                return BadRequest("StockForUpdateDto object is null");
-
-            _service.StockService.UpdateStockForRawMaterial(rawMaterialId, id, stock, rawTrackChanges: false, stcTrackChanges: true);
+            await _service.StockService.UpdateStockForRawMaterialAsync(rawMaterialId, id, stock, rawTrackChanges: false, stcTrackChanges: true);
 
             return NoContent();
         }
     }
 }
+ 

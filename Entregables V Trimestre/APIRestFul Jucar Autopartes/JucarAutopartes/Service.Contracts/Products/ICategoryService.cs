@@ -11,26 +11,26 @@ namespace Service.Contracts.Products
     public interface ICategoryService
     {
         /* Crear Categoria */
-        CategoryDto CreateCategory(CategoryForCreationDto category);
+        Task<CategoryDto> CreateCategoryAsync(CategoryForCreationDto category);
 
         /* Crear Collección de Categorias */
-        (IEnumerable<CategoryDto> categories, string ids) CreateCategoryCollection
+        Task<(IEnumerable<CategoryDto> categories, string ids)> CreateCategoryCollectionAsync
             (IEnumerable<CategoryForCreationDto> categoryCollection);
 
         /* Obtener todos los registros de la tabla */
-        IEnumerable<CategoryDto> GetAllCategories(bool trackChanges);
+        Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync(bool trackChanges);
 
         /* Obtener un registro especifico */
-        CategoryDto GetCategory(Guid categoryId, bool trackChanges);
+        Task<CategoryDto> GetCategoryAsync(Guid categoryId, bool trackChanges);
 
         /* Obtener Collección de Categorias */
-        IEnumerable<CategoryDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<CategoryDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Actualizar una categoria */
-        void UpdateCategory(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges);
+        Task UpdateCategoryAsync(Guid categoryId, CategoryForUpdateDto categoryForUpdate, bool trackChanges);
 
         /* Eliminar una Categoria */
-        void DeleteCategory(Guid categoryId, bool trackChanges);
+        Task DeleteCategoryAsync(Guid categoryId, bool trackChanges);
 
     }
 }

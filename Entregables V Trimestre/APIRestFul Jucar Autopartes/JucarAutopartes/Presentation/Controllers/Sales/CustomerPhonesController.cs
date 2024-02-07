@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Sales.CustomerAddress;
 using Shared.DataTransferObjects.Sales.CustomerPhone;
@@ -21,51 +22,47 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreatePhoneForCustomer(Guid customerId, [FromBody] CustomerPhoneForCreationDto phone)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreatePhoneForCustomer(Guid customerId, [FromBody] CustomerPhoneForCreationDto phone)
         {
-            if (phone is null)
-                return BadRequest("CustomerPhoneForCreationDto object is null.");
-
-            var phoneToReturn = _service.CustomerPhoneService.CreatePhone(customerId, phone, trackChanges: false);
+            var phoneToReturn = await _service.CustomerPhoneService.CreatePhoneAsync(customerId, phone, trackChanges: false);
 
             return CreatedAtRoute("GetPhoneForCustomer", new { customerId, id = phoneToReturn.CustomerPhoneID }, phoneToReturn);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeletePhoneForCustomer(Guid customerId, Guid id)
+        public async Task<IActionResult> DeletePhoneForCustomer(Guid customerId, Guid id)
         {
-            _service.CustomerPhoneService.DeletePhone(customerId, id, trackChanges: false);
+            await _service.CustomerPhoneService.DeletePhoneAsync(customerId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetPhonesForCustomer(Guid customerId)
+        public async Task<IActionResult> GetPhonesForCustomer(Guid customerId)
         {
-            var phones = _service.CustomerPhoneService.GetPhones(customerId, trackChanges: false);
+            var phones = await _service.CustomerPhoneService.GetPhonesAsync(customerId, trackChanges: false);
 
             return Ok(phones);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "GetPhoneForCustomer")]
-        public IActionResult GetPhoneForCustomer(Guid customerId, Guid id)
+        public async Task<IActionResult> GetPhoneForCustomer(Guid customerId, Guid id)
         {
-            var phone = _service.CustomerPhoneService.GetPhone(customerId, id, trackChanges: false);
+            var phone = await _service.CustomerPhoneService.GetPhoneAsync(customerId, id, trackChanges: false);
 
             return Ok(phone);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdatePhoneForCustomer(Guid customerId, Guid id, [FromBody] CustomerPhoneForUpdateDto phoneForUpdate)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdatePhoneForCustomer(Guid customerId, Guid id, [FromBody] CustomerPhoneForUpdateDto phoneForUpdate)
         {
-            if (phoneForUpdate is null)
-                return BadRequest("CustomerPhoneForUpdateDto object is null.");
-
-            _service.CustomerPhoneService.UpdatePhone(customerId, id, phoneForUpdate, cusTrackChanges: false, phoTrackChanges: true);
+            await _service.CustomerPhoneService.UpdatePhoneAsync(customerId, id, phoneForUpdate, cusTrackChanges: false, phoTrackChanges: true);
 
             return NoContent();
         }

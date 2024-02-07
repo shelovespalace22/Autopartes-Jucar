@@ -10,25 +10,25 @@ namespace Service.Contracts.Products
     public interface IRawMaterialService
     {
         /* Obtener todas las Materias Primas */
-        IEnumerable<RawMaterialDto> GetAllRawMaterials(bool trackChanges);
+        Task<IEnumerable<RawMaterialDto>> GetAllRawMaterialsAsync(bool trackChanges);
 
         /* Obtener una Materia Prima */
-        RawMaterialDto GetRawMaterial(Guid rawMaterialId, bool trackChanges);
+        Task<RawMaterialDto> GetRawMaterialAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Crear una Materia Prima */
-        RawMaterialDto CreateRawMaterial(RawMaterialForCreationDto rawMaterial);
+        Task<RawMaterialDto> CreateRawMaterialAsync(RawMaterialForCreationDto rawMaterial);
 
         /* Obtener una colección de Materias Primas */
-        IEnumerable<RawMaterialDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<RawMaterialDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Crear una colección de Materias Primas */
-        (IEnumerable<RawMaterialDto> rawMaterials, string ids) CreateRawMaterialCollection
+        Task<(IEnumerable<RawMaterialDto> rawMaterials, string ids)> CreateRawMaterialCollectionAsync
             (IEnumerable<RawMaterialForCreationDto> rawMaterialCollection);
 
         /* Eliminar una Materia Prima */
-        void DeleteRawMaterial(Guid rawMaterialId, bool trackChanges);
+        Task DeleteRawMaterialAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Actualizar una Materia Prima */
-        void UpdateRawMaterial(Guid rawMaterialId, RawMaterialForUpdateDto rawMaterialForUpdate, bool trackChanges);
+        Task UpdateRawMaterialAsync(Guid rawMaterialId, RawMaterialForUpdateDto rawMaterialForUpdate, bool trackChanges);
     }
 }

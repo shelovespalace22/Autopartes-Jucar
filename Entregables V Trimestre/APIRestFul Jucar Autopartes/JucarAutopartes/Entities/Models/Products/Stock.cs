@@ -16,31 +16,31 @@ namespace Entities.Models.Products
         public Guid StockID { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese la cantidad disponible!")]
-        [MaxLength(3)]
+        //[MaxLength(3)]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Cantidad Disponible")]
         public int QuantityAvailable { get; set; } 
 
         [Required(ErrorMessage = "¡Ingresa las existencias iniciales!")]
-        [MaxLength(3)]
+        //[MaxLength(3)]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Existencias Iniciales")]
         public int InitialStock { get; set; } 
 
         [Required(ErrorMessage = "¡Ingrese la cantidad de punto de reorden!")]
-        [MaxLength(3)]
+        //[MaxLength(3)]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Punto de Reorden")]
         public int ReorderPoint { get; set; } 
 
         [Required(ErrorMessage = "¡Ingrese el inventario minimo!")]
-        [MaxLength(3)]
+        //[MaxLength(3)]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Inventario Minimo")]
         public int MinimumInventory { get; set; }
 
         [Required(ErrorMessage = "¡Ingrese el inventario máximo!")]
-        [MaxLength(3)]
+        //[MaxLength(3)]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten números (0-9).")]
         [DisplayName("Inventario Máximo")]
         public int MaximumInventory { get; set; }

@@ -13,10 +13,10 @@ namespace Contracts.Products
         void CreateLossForAutopart(Guid autopartId, Loss loss);
 
         /* Listar */
-        IEnumerable<Loss> GetLosses(Guid autopartId, bool trackChanges);
+        Task<IEnumerable<Loss>> GetLossesAsync(Guid autopartId, bool trackChanges);
 
         /* Único Registro */
-        Loss GetLossByAutopart(Guid autopartId, Guid id, bool trackChanges);
+        Task<Loss> GetLossByAutopartAsync(Guid autopartId, Guid id, bool trackChanges);
 
         /* Eliminar*/
         void DeleteLoss(Loss loss);

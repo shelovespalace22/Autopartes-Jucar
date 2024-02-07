@@ -13,19 +13,19 @@ namespace Contracts.Products
         void CreateAutopartForSubcategory(Guid subcategoryId, Autopart autopart);
 
         /* Obteniendo todas las Autopartes en general */
-        IEnumerable<Autopart> GetAllAutoparts(bool trackChanges);
+        Task<IEnumerable<Autopart>> GetAllAutopartsAsync(bool trackChanges);
 
         /* Obteniendo Autoparte por su Id */
-        Autopart GetAutopartById(Guid autopartId, bool trackChanges);
+        Task<Autopart> GetAutopartByIdAsync(Guid autopartId, bool trackChanges);
 
         /* Obtener todas las Autopartes de una Subcategoria */
-        IEnumerable<Autopart> GetAutoparts(Guid autopartId, bool trackChanges);
+        Task<IEnumerable<Autopart>> GetAutopartsAsync(Guid autopartId, bool trackChanges);
 
         /* Obtener una Autopartes especifica de una Subcategoria */
-        Autopart GetAutopartBySubcategory(Guid subcategoryId, Guid id, bool trackChanges);
+        Task<Autopart> GetAutopartBySubcategoryAsync(Guid subcategoryId, Guid id, bool trackChanges);
 
         /* Obtener una colección de Autopartes de una Subcategoría*/
-        IEnumerable<Autopart> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<Autopart>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Eliminar una Autoparte */
         void DeleteAutopart(Autopart autopart);

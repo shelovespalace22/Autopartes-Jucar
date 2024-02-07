@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
 using Service.Contracts.Sales;
+using Service.Contracts.Users;
 
 namespace Service.Contracts
 {
@@ -39,5 +40,10 @@ namespace Service.Contracts
         IOrderDetailService OrderDetailService { get; }
         IPaymentMethodService PaymentMethodService { get; }
         IContributionService ContributionService { get; }
+
+
+        /* Usuarios */
+
+        IAuthenticationService AuthenticationService { get; }
     }
 }

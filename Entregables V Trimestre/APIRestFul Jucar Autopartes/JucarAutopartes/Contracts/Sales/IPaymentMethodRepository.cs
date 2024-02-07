@@ -13,10 +13,10 @@ namespace Contracts.Sales
         void CreatePaymentMethod(PaymentMethod paymentMethod);
 
         /* Listar */
-        IEnumerable<PaymentMethod> GetAllPaymentMethods(bool trackChanges);
+        Task<IEnumerable<PaymentMethod>> GetAllPaymentMethodsAsync(bool trackChanges);
 
         /* Un registro */
-        PaymentMethod GetPaymentMethod(Guid paymentMethodId, bool trackChanges);
+        Task<PaymentMethod> GetPaymentMethodAsync(Guid paymentMethodId, bool trackChanges);
 
         /* Eliminar */
         void DeletePaymentMethod(PaymentMethod paymentMethod);

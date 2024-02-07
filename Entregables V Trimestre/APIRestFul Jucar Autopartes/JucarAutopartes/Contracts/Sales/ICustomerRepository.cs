@@ -14,10 +14,10 @@ namespace Contracts.Sales
         void CreateCustomer(Customer customer);
 
         /* Listar */
-        IEnumerable<Customer> GetAllCustomers(bool trackChanges);
+        Task<IEnumerable<Customer>> GetAllCustomersAsync(bool trackChanges);
 
         /* Un registro */
-        Customer GetCustomer(Guid customerId, bool trackChanges);
+        Task<Customer> GetCustomerAsync(Guid customerId, bool trackChanges);
 
         /* Eliminar */
         void DeleteCustomer(Customer customer);

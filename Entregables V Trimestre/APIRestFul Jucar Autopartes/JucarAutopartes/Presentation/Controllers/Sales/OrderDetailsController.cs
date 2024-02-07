@@ -19,9 +19,9 @@ namespace Presentation.Controllers.Sales
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetDetails(Guid orderId)
+        public async Task<IActionResult> GetDetails(Guid orderId)
         {
-            var details = _service.OrderDetailService.GetDetailsForOrder(orderId, trackChanges: false);
+            var details = await _service.OrderDetailService.GetDetailsForOrderAsync(orderId, trackChanges: false);
 
             return Ok(details);
         }

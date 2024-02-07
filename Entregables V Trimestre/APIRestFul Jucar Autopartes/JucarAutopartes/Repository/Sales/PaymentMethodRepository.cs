@@ -1,5 +1,6 @@
 ﻿using Contracts.Sales;
 using Entities.Models.Sales;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace Repository.Sales
         public void DeletePaymentMethod(PaymentMethod paymentMethod) => Delete(paymentMethod);
 
         /* Listar */
-        public IEnumerable<PaymentMethod> GetAllPaymentMethods(bool trackChanges) =>
-            FindAll(trackChanges)
+        public async Task<IEnumerable<PaymentMethod>> GetAllPaymentMethodsAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
             .OrderBy(p => p.PaymentMethodName)
-            .ToList();
+            .ToListAsync();
 
         /* Un registro */
-        public PaymentMethod GetPaymentMethod(Guid paymentMethodId, bool trackChanges) =>
-            FindByCondition(p => p.PaymentMethodID.Equals(paymentMethodId), trackChanges)
-            .SingleOrDefault();
+        public async Task<PaymentMethod> GetPaymentMethodAsync(Guid paymentMethodId, bool trackChanges) =>
+            await FindByCondition(p => p.PaymentMethodID.Equals(paymentMethodId), trackChanges)
+            .SingleOrDefaultAsync();
     }
 }

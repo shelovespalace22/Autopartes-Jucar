@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.Provider;
 using Shared.DataTransferObjects.Sales.Order;
@@ -21,51 +23,52 @@ namespace Presentation.Controllers.Sales
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreateOrder([FromBody] OrderForCreationDto order)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> CreateOrder([FromBody] OrderForCreationDto order)
         {
-            if (order is null)
-                return BadRequest("OrderForCreationDto object is null");
-
-            var createdOrder = _service.OrderService.CreateOrder(order);
+            var createdOrder = await _service.OrderService.CreateOrderAsync(order);
 
             return CreatedAtRoute("OrderById", new { id = createdOrder.OrderID }, createdOrder);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteOrder(Guid id)
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> DeleteOrder(Guid id)
         {
-            _service.OrderService.DeleteOrder(id, trackChanges: false);
+            await _service.OrderService.DeleteOrderAsync(id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetOrders()
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> GetOrders()
         {
-            var orders = _service.OrderService.GetAllOrders(trackChanges: false);
+            var orders = await _service.OrderService.GetAllOrdersAsync(trackChanges: false);
 
             return Ok(orders);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "OrderById")]
-        public IActionResult GetOrder(Guid id)
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> GetOrder(Guid id)
         {
-            var order = _service.OrderService.GetOrder(id, trackChanges: false);
+            var order = await _service.OrderService.GetOrderAsync(id, trackChanges: false);
 
             return Ok(order);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateOrder(Guid id, [FromBody] OrderForUpdateDto order)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        //[Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] OrderForUpdateDto order)
         {
-            if (order is null)
-                return BadRequest("OrderForUpdateDto object is null");
-
-            _service.OrderService.UpdateOrder(id, order, trackChanges: true);
+            await _service.OrderService.UpdateOrderAsync(id, order, trackChanges: true);
 
             return NoContent();
         }

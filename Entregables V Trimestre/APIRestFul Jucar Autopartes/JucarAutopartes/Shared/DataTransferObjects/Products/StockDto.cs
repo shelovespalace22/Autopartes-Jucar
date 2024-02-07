@@ -11,7 +11,6 @@ namespace Shared.DataTransferObjects.Products
 {
     public record StockDto
     {
-  
         public Guid StockID { get; init; }
         public int QuantityAvailable { get; init; }
         public int InitialStock { get; init; }

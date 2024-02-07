@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
+using Presentation.ActionFilters;
 using Service.Contracts;
 using Shared.DataTransferObjects.Providers.ProviderAddress;
 using System;
@@ -20,51 +22,47 @@ namespace Presentation.Controllers.Proveedores
 
         /* Crear */
         [HttpPost]
-        public IActionResult CreateAddressForProvider(Guid providerId, [FromBody] ProviderAddressForCreationDto address)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateAddressForProvider(Guid providerId, [FromBody] ProviderAddressForCreationDto address)
         {
-            if (address is null)
-                return BadRequest("ProviderAddressForCreationDto object is null");
-
-            var addressToReturn = _service.ProviderAddressService.CreateAddressForProvider(providerId, address, trackChanges: false);
+            var addressToReturn = await _service.ProviderAddressService.CreateAddressForProviderAsync(providerId, address, trackChanges: false);
 
             return CreatedAtRoute("GetAddressForProvider", new { providerId, id = addressToReturn.ProviderAddressID }, addressToReturn);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteAddressForProvider(Guid providerId, Guid id)
+        public async Task<IActionResult> DeleteAddressForProvider(Guid providerId, Guid id)
         {
-            _service.ProviderAddressService.DeleteAddressForProvider(providerId, id, trackChanges: false);
+            await _service.ProviderAddressService.DeleteAddressForProviderAsync(providerId, id, trackChanges: false);
 
             return NoContent();
         }
 
         /* Listar */
         [HttpGet]
-        public IActionResult GetAddressesForProvider(Guid providerId) 
+        public async Task<IActionResult> GetAddressesForProvider(Guid providerId) 
         {
-            var addresses = _service.ProviderAddressService.GetAddresses(providerId, trackChanges: false);
+            var addresses = await _service.ProviderAddressService.GetAddressesAsync(providerId, trackChanges: false);
 
             return Ok(addresses);
         }
 
         /* Un registro */
         [HttpGet("{id:guid}", Name = "GetAddressForProvider")]
-        public IActionResult GetAddressForProvider(Guid providerId, Guid id)
-        {
-            var address = _service.ProviderAddressService.GetAddressForProvider(providerId, id, trackChanges: false);
+        public async Task<IActionResult> GetAddressForProvider(Guid providerId, Guid id)
+        { 
+            var address = await _service.ProviderAddressService.GetAddressForProviderAsync(providerId, id, trackChanges: false);
 
             return Ok(address);
         }
 
         /* Actualizar */
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateAddressForProvider(Guid providerId, Guid id, [FromBody] ProviderAddressForUpdateDto addressForUpdate)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateAddressForProvider(Guid providerId, Guid id, [FromBody] ProviderAddressForUpdateDto addressForUpdate)
         {
-            if (addressForUpdate is null)
-                return BadRequest("ProviderAddressForUpdateDto object is null");
-
-            _service.ProviderAddressService.UpdateAddressForProvider(providerId, id, addressForUpdate, proTrackChanges: false, adrTrackChanges: true);
+            await _service.ProviderAddressService.UpdateAddressForProviderAsync(providerId, id, addressForUpdate, proTrackChanges: false, adrTrackChanges: true);
 
             return NoContent();
         }

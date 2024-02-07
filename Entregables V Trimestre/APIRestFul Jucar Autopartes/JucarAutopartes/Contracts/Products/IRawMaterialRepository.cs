@@ -10,16 +10,16 @@ namespace Contracts.Products
     public interface IRawMaterialRepository
     {
         /* Obtener todas las Materias Primas */
-        IEnumerable<RawMaterial> GetAllRawMaterials(bool trackChanges);
+        Task<IEnumerable<RawMaterial>> GetAllRawMaterialsAsync(bool trackChanges);
 
         /* Obtener una Materia Prima */
-        RawMaterial GetRawMaterial(Guid rawMaterialId, bool trackChanges);
+        Task<RawMaterial> GetRawMaterialAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Crear Materia Prima */
         void CreateRawMaterial(RawMaterial rawMaterial);
 
         /* Obtener una colección de Materias Primas */
-        IEnumerable<RawMaterial> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+        Task<IEnumerable<RawMaterial>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
 
         /* Eliminar una Materia Prima */
         void DeleteRawMaterial(RawMaterial rawMaterial);

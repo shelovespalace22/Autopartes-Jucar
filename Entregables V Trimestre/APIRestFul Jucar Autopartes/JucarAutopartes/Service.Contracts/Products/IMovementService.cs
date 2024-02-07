@@ -10,18 +10,18 @@ namespace Service.Contracts.Products
     public interface IMovementService
     {
         /* Crear*/
-        MovementDto CreateMovementForRawmaterial(Guid rawMaterialId, MovementForCreationDto movementForCreation, bool trackChanges);
+        Task<MovementDto> CreateMovementForRawmaterialAsync(Guid rawMaterialId, MovementForCreationDto movementForCreation, bool trackChanges);
 
         /* Listar */
-        IEnumerable<MovementDto> GetMovements(Guid rawMaterialId, bool trackChanges);
+        Task<IEnumerable<MovementDto>> GetMovementsAsync(Guid rawMaterialId, bool trackChanges);
 
         /* Único Registro */
-        MovementDto GetMovementForRawmaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task<MovementDto> GetMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
 
         /* Actualizar */
-        void UpdateMovementForRawmaterial(Guid rawMaterialId, Guid id, MovementForUpdateDto movementForUpdate, bool rawTrackChanges, bool movTrackChanges);
+        Task UpdateMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, MovementForUpdateDto movementForUpdate, bool rawTrackChanges, bool movTrackChanges);
 
         /* Eliminar */
-        void DeleteMovementForRawmaterial(Guid rawMaterialId, Guid id, bool trackChanges);
+        Task DeleteMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges);
     }
 }

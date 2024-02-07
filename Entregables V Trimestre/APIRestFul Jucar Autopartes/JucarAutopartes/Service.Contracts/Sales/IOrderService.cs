@@ -11,18 +11,18 @@ namespace Service.Contracts.Sales
     public interface IOrderService
     {
         /* Crear */
-        OrderDto CreateOrder(OrderForCreationDto order);
+        Task<OrderDto> CreateOrderAsync(OrderForCreationDto order);
 
         /* Listar */
-        IEnumerable<OrderDto> GetAllOrders(bool trackChanges);
+        Task<IEnumerable<OrderDto>> GetAllOrdersAsync(bool trackChanges);
 
         /* Un registro */
-        OrderDto GetOrder(Guid orderId, bool trackChanges);
+        Task<OrderDto> GetOrderAsync(Guid orderId, bool trackChanges);
 
         /* Actualizar */
-        void UpdateOrder(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges);
+        Task UpdateOrderAsync(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges);
 
         /* Eliminar */
-        void DeleteOrder(Guid orderId, bool trackChanges);
+        Task DeleteOrderAsync(Guid orderId, bool trackChanges);
     }
 }

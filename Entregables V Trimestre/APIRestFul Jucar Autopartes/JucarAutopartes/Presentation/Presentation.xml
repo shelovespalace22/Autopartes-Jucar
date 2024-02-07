@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Presentation</name>
+    </assembly>
+    <members>
+        <member name="M:Presentation.Controllers.Products.CategoriesController.CreateCategory(Shared.DataTransferObjects.Products.CategoryForCreationDto)">
+            <summary>
+            Create una nueva categoría.
+            </summary>
+            <param name="category"></param>
+            <returns>Una recién creada categoría</returns>
+            <response code="201">Retorna el elemento recién creado</response> 
+            <response code="400">Si el elemento está vacío</response>
+            <response code="422">Si el modelo es inválido</response>
+        </member>
+        <member name="M:Presentation.Controllers.Products.CategoriesController.GetCategories">
+            <summary>
+            Obten la lista de todas las categorías.
+            </summary>
+            <returns>La lista de categorías disponibles.</returns>
+        </member>
+    </members>
+</doc>

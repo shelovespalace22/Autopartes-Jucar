@@ -13,10 +13,10 @@ namespace Contracts.Sales
         void CreateAddressForCustomer(Guid customerId, CustomerAddress customerAddress);
 
         /* Listar */
-        IEnumerable<CustomerAddress> GetAddressesForCustomer(Guid customerId, bool trackChanges);
+        Task<IEnumerable<CustomerAddress>> GetAddressesForCustomerAsync(Guid customerId, bool trackChanges);
 
         /* Un registro */
-        CustomerAddress GetAddressByCustomer(Guid customerId, Guid id, bool trackChanges);
+        Task<CustomerAddress> GetAddressByCustomerAsync(Guid customerId, Guid id, bool trackChanges);
 
         /* Eliminar */
         void DeleteAddress(CustomerAddress customerAddress);
