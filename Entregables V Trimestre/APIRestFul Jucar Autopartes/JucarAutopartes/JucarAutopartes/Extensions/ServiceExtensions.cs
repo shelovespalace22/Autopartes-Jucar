@@ -75,7 +75,7 @@ namespace JucarAutopartes.Extensions
                 new RateLimitRule 
                 { 
                     Endpoint = "*", 
-                    Limit = 30, 
+                    Limit = 100, 
                     Period = "5m" 
                 } 
             }; 
