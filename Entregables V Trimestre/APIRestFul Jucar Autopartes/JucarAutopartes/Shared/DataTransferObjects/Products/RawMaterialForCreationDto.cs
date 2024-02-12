@@ -16,6 +16,10 @@ namespace Shared.DataTransferObjects.Products
         [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Nombre")]
         public string? Name { get; init; }
+
+        [Required(ErrorMessage = "¡Ingrese la información de stock de la materia prima!")]
+        [DisplayName("Información de Stock")]
+        public StockForCreationDto? Stock { get; init; }
     }
 
 }
