@@ -10,15 +10,19 @@ namespace Contracts.Sales
     public interface IOrderRepository
     {
         /* Crear */
-        void CreateOrder(Order order);
+        void CreateOrder(Guid customerId ,Order order);
 
         /* Listar */
-        Task<IEnumerable<Order>> GetAllOrdersAsync(bool trackChanges);
+        Task<IEnumerable<Order>> GetAllOrdersAsync(Guid customerId, bool trackChanges);
 
         /* Un registro */
-        Task<Order> GetOrderAsync(Guid orderId, bool trackChanges);
+        Task<Order> GetOrderByCustomerAsync(Guid customerId, Guid orderId, bool trackChanges);
 
         /* Eliminar */
         void DeleteOrder(Order order);
+
+
+        /* Obtener Instancia */
+        Task<Order> GetOrderByIdAsync(Guid orderId, bool trackChanges);
     }
 }

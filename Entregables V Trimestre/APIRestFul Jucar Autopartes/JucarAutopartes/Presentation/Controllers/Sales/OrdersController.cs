@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Controllers.Sales
 {
-    [Route("api/orders")]
+    [Route("api/customers/{customerId}/orders")]
     [ApiController]
     public class OrdersController : ControllerBase
     {
@@ -25,19 +25,19 @@ namespace Presentation.Controllers.Sales
         [HttpPost]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         //[Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> CreateOrder([FromBody] OrderForCreationDto order)
+        public async Task<IActionResult> CreateOrder(Guid customerId, [FromBody] OrderForCreationDto order)
         {
-            var createdOrder = await _service.OrderService.CreateOrderAsync(order);
+            var createdOrder = await _service.OrderService.CreateOrderAsync(customerId, order, trackChanges: false);
 
-            return CreatedAtRoute("OrderById", new { id = createdOrder.OrderID }, createdOrder);
+            return CreatedAtRoute("OrderById", new { customerId, id = createdOrder.OrderID }, createdOrder);
         }
 
         /* Eliminar */
         [HttpDelete("{id:guid}")]
         //[Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> DeleteOrder(Guid id)
+        public async Task<IActionResult> DeleteOrder(Guid customerId, Guid id)
         {
-            await _service.OrderService.DeleteOrderAsync(id, trackChanges: false);
+            await _service.OrderService.DeleteOrderAsync(customerId, id, trackChanges: false);
 
             return NoContent();
         }
@@ -45,9 +45,9 @@ namespace Presentation.Controllers.Sales
         /* Listar */
         [HttpGet]
         //[Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> GetOrders()
+        public async Task<IActionResult> GetOrders(Guid customerId)
         {
-            var orders = await _service.OrderService.GetAllOrdersAsync(trackChanges: false);
+            var orders = await _service.OrderService.GetAllOrdersAsync(customerId, trackChanges: false);
 
             return Ok(orders);
         }
@@ -55,9 +55,9 @@ namespace Presentation.Controllers.Sales
         /* Un registro */
         [HttpGet("{id:guid}", Name = "OrderById")]
         //[Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> GetOrder(Guid id)
+        public async Task<IActionResult> GetOrder(Guid customerId, Guid id)
         {
-            var order = await _service.OrderService.GetOrderAsync(id, trackChanges: false);
+            var order = await _service.OrderService.GetOrderAsync(customerId, id, trackChanges: false);
 
             return Ok(order);
         }
@@ -66,9 +66,9 @@ namespace Presentation.Controllers.Sales
         [HttpPut("{id:guid}")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         //[Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] OrderForUpdateDto order)
+        public async Task<IActionResult> UpdateOrder(Guid customerId, Guid id, [FromBody] OrderForUpdateDto order)
         {
-            await _service.OrderService.UpdateOrderAsync(id, order, trackChanges: true);
+            await _service.OrderService.UpdateOrderAsync(customerId, id, order, cusTrackChanges: false, ordTrackChanges: true);
 
             return NoContent();
         }

@@ -27,13 +27,15 @@ namespace Service.Sales
         }
 
         /* Crear */
-        public async Task<OrderDto> CreateOrderAsync(OrderForCreationDto order)
+        public async Task<OrderDto> CreateOrderAsync(Guid customerId, OrderForCreationDto order, bool trackChanges)
         {
+            await CheckIfCustomerExists(customerId, trackChanges);
+
             await ApplyAdditionalOperations(order, _repository);
 
             var orderEntity = _mapper.Map<Order>(order);
 
-            _repository.Order.CreateOrder(orderEntity);
+            _repository.Order.CreateOrder(customerId, orderEntity);
 
             await _repository.SaveAsync();
 
@@ -43,9 +45,11 @@ namespace Service.Sales
         }
 
         /* Eliminar */
-        public async Task DeleteOrderAsync(Guid orderId, bool trackChanges)
+        public async Task DeleteOrderAsync(Guid customerId, Guid orderId, bool trackChanges)
         {
-            var order = await GetOrderAndCheckIfItExists(orderId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
+
+            var order = await GetOrderAndCheckIfItExists(customerId, orderId, trackChanges);
 
             _repository.Order.DeleteOrder(order);
 
@@ -53,9 +57,11 @@ namespace Service.Sales
         }
 
         /* Listar */
-        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(bool trackChanges)
+        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(Guid customerId, bool trackChanges)
         {
-            var orders = await _repository.Order.GetAllOrdersAsync(trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
+
+            var orders = await _repository.Order.GetAllOrdersAsync(customerId, trackChanges);
 
             var ordersDto = _mapper.Map<IEnumerable<OrderDto>>(orders);
 
@@ -63,9 +69,11 @@ namespace Service.Sales
         }
 
         /* Un registro */
-        public async Task<OrderDto> GetOrderAsync(Guid orderId, bool trackChanges)
+        public async Task<OrderDto> GetOrderAsync(Guid customerId, Guid orderId, bool trackChanges)
         {
-            var order = await GetOrderAndCheckIfItExists(orderId, trackChanges);
+            await CheckIfCustomerExists(customerId, trackChanges);
+
+            var order = await GetOrderAndCheckIfItExists(customerId, orderId, trackChanges);
 
             var orderDto = _mapper.Map<OrderDto>(order);
 
@@ -73,9 +81,11 @@ namespace Service.Sales
         }
 
         /* Actualizar */
-        public async Task UpdateOrderAsync(Guid orderId, OrderForUpdateDto orderForUpdate, bool trackChanges)
+        public async Task UpdateOrderAsync(Guid customerId, Guid orderId, OrderForUpdateDto orderForUpdate, bool cusTrackChanges, bool ordTrackChanges)
         {
-            var orderEntity = await GetOrderAndCheckIfItExists(orderId, trackChanges);
+            await CheckIfCustomerExists(customerId, cusTrackChanges);
+
+            var orderEntity = await GetOrderAndCheckIfItExists(customerId, orderId, ordTrackChanges);
 
             _mapper.Map(orderForUpdate, orderEntity);
 
@@ -110,14 +120,24 @@ namespace Service.Sales
             await _repository.SaveAsync();
         }
 
-        private async Task<Order> GetOrderAndCheckIfItExists(Guid id, bool trackChanges)
+        private async Task<Order> GetOrderAndCheckIfItExists(Guid customerId, Guid id, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(id, trackChanges);
+            var order = await _repository.Order.GetOrderByCustomerAsync(customerId, id, trackChanges);
 
             if (order is null)
                 throw new OrderNotFoundException(id);
 
             return order;
+        }
+
+        private async Task<Customer> CheckIfCustomerExists(Guid customerId, bool trackChanges)
+        {
+            var customer = await _repository.Customer.GetCustomerAsync(customerId, trackChanges);
+
+            if (customer is null)
+                throw new CustomerNotFoundException(customerId);
+
+            return customer;
         }
 
     }
