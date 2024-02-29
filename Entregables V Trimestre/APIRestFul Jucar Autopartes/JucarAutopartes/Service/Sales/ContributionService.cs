@@ -101,7 +101,7 @@ namespace Service.Sales
 
         private async Task CheckIfOrderExists(Guid orderId, bool trackChanges)
         {
-            var order = await _repository.Order.GetOrderAsync(orderId, trackChanges);
+            var order = await _repository.Order.GetOrderByIdAsync(orderId, trackChanges);
 
             if (order is null)
                 throw new OrderNotFoundException(orderId);

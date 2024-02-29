@@ -16,8 +16,6 @@ namespace Shared.DataTransferObjects.Sales.ManipulationDTOs
         [DisplayName("Fecha del Pedido")]
         public DateTime OrderDate { get; init; }
 
-        public Guid CustomerId { get; init; }
-
         [DisplayName("Total de Venta")]
         public decimal? Total { get; set; }
 

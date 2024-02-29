@@ -18,19 +18,31 @@ namespace Repository.Sales
         }
 
         /* Crear */
-        public void CreateOrder(Order order) => Create(order);
+        public void CreateOrder(Guid customerId, Order order)
+        {
+            order.CustomerId = customerId;
+
+            Create(order);
+        }
 
         /* Eliminar */
         public void DeleteOrder(Order order) => Delete(order);
 
         /* Listar */
-        public async Task<IEnumerable<Order>> GetAllOrdersAsync(bool trackChanges) =>
-            await FindAll(trackChanges)
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync(Guid customerId, bool trackChanges) =>
+            await FindByCondition(o => o.CustomerId.Equals(customerId), trackChanges)
             .OrderBy(o => o.OrderDate)
             .ToListAsync();
 
         /* Un registro */
-        public async Task<Order> GetOrderAsync(Guid orderId, bool trackChanges) =>
+        public async Task<Order> GetOrderByCustomerAsync(Guid customerId, Guid orderId, bool trackChanges) =>
+            await FindByCondition(o => o.OrderID.Equals(orderId) && o.OrderID.Equals(orderId), trackChanges)
+            .SingleOrDefaultAsync();
+
+
+        /* Obtener una instancia */
+
+        public async Task<Order> GetOrderByIdAsync(Guid orderId, bool trackChanges) =>
             await FindByCondition(o => o.OrderID.Equals(orderId), trackChanges)
             .SingleOrDefaultAsync();
     }
