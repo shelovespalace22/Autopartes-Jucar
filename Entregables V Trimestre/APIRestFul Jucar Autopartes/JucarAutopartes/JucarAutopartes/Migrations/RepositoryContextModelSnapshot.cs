@@ -221,7 +221,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -310,7 +310,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("AutopartId");
 
-                    b.ToTable("Losses");
+                    b.ToTable("Losses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Movement", b =>
@@ -344,7 +344,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("RawMaterialId");
 
-                    b.ToTable("Movements");
+                    b.ToTable("Movements", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.RawMaterial", b =>
@@ -369,7 +369,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("RawMaterialID");
 
-                    b.ToTable("RawMaterials");
+                    b.ToTable("RawMaterials", (string)null);
 
                     b.HasData(
                         new
@@ -433,7 +433,7 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("RawMaterialId")
                         .IsUnique();
 
-                    b.ToTable("Stocks");
+                    b.ToTable("Stocks", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Subcategory", b =>
@@ -463,7 +463,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Subcategories");
+                    b.ToTable("Subcategories", (string)null);
 
                     b.HasData(
                         new
@@ -572,7 +572,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("ProviderID");
 
-                    b.ToTable("Providers");
+                    b.ToTable("Providers", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderAddress", b =>
@@ -612,7 +612,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("ProviderId");
 
-                    b.ToTable("ProviderAddresses");
+                    b.ToTable("ProviderAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.ProviderPhone", b =>
@@ -644,7 +644,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("ProviderId");
 
-                    b.ToTable("ProviderPhones");
+                    b.ToTable("ProviderPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Contribution", b =>
@@ -678,7 +678,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("PaymentMethodId");
 
-                    b.ToTable("Contributions");
+                    b.ToTable("Contributions", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Customer", b =>
@@ -714,7 +714,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerAddress", b =>
@@ -754,7 +754,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("NeighborhoodId");
 
-                    b.ToTable("CustomerAddresses");
+                    b.ToTable("CustomerAddresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.CustomerPhone", b =>
@@ -786,7 +786,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("CustomerPhones");
+                    b.ToTable("CustomerPhones", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.Order", b =>
@@ -830,7 +830,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.OrderDetail", b =>
@@ -869,7 +869,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Sales.PaymentMethod", b =>
@@ -894,7 +894,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("PaymentMethodID");
 
-                    b.ToTable("PaymentMethods");
+                    b.ToTable("PaymentMethods", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Department", b =>
@@ -908,7 +908,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasKey("DepartmentID");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Municipality", b =>
@@ -927,7 +927,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Municipalities");
+                    b.ToTable("Municipalities", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
@@ -946,7 +946,7 @@ namespace JucarAutopartes.Migrations
 
                     b.HasIndex("MunicipalityId");
 
-                    b.ToTable("Neighborhoods");
+                    b.ToTable("Neighborhoods", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.Users.User", b =>
