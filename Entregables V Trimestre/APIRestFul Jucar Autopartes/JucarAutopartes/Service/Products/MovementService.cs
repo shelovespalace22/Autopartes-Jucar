@@ -31,7 +31,7 @@ namespace Service.Products
         {
             var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            UpdateStockQuantity(rawMaterial, movementForCreation);
+            await UpdateStockQuantity(rawMaterial, movementForCreation);
 
             var movementEntity = _mapper.Map<Movement>(movementForCreation);
 
