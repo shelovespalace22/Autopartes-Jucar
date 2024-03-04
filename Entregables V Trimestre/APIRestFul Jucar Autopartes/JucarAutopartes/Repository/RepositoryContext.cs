@@ -31,6 +31,9 @@ namespace Repository
             modelBuilder.ApplyConfiguration(new AutopartConfiguration());
             modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ContributionConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
         }
 
         /* Products */

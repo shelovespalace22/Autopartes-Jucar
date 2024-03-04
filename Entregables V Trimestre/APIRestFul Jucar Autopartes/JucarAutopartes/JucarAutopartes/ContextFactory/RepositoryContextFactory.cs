@@ -15,7 +15,7 @@ namespace JucarAutopartes.ContextFactory
                 .Build();
 
             var builder = new DbContextOptionsBuilder<RepositoryContext>()
-                .UseSqlServer(configuration.GetConnectionString("sqlConnection"),
+                .UseSqlServer(configuration.GetConnectionString("SqlConnection"),
                     b => b.MigrationsAssembly("JucarAutopartes"));
             
             return new RepositoryContext(builder.Options); }

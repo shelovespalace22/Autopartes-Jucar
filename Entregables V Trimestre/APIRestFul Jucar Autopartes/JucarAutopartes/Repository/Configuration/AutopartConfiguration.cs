@@ -13,6 +13,10 @@ namespace Repository.Configuration
     {
         public void Configure(EntityTypeBuilder<Autopart> builder)
         {
+            // Configuración de precisión y escala para la propiedad Value
+            builder.Property(p => p.Value)
+                   .HasPrecision(10, 2); // Ajusta la precisión y escala según tus necesidades
+
             builder.HasData
             (
                 new Autopart

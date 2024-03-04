@@ -32,7 +32,7 @@ namespace Service.Products
 
             var lossEntity = _mapper.Map<Loss>(lossForCreation);
 
-            UpdateAutopartInventory(autopartId, lossEntity.AmountLoss);
+            await UpdateAutopartInventory(autopartId, lossEntity.AmountLoss);
 
             _repository.Loss.CreateLossForAutopart(autopartId, lossEntity);
 
