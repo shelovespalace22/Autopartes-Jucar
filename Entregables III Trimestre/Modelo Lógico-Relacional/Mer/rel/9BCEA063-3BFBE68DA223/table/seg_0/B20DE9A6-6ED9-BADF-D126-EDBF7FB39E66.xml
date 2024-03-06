@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B20DE9A6-6ED9-BADF-D126-EDBF7FB39E66" name="ProviderAddress">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>FBBBD8E7-C729-B3EF-9F78-106C1CD93594</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ProviderAddressID" id="7229D222-7C53-D8C8-AE5B-9AD13EFC6025">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>9D08346B-E2A3-6A66-DFCC-33526F3848C1</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address" id="2DDC997A-FBAC-E573-1AD5-CF4020A789EB">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>EE13861C-57BC-98F6-67CF-18C4D9BD8C98</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AddressType" id="6FF2F848-F604-AF15-0247-000D1290927F">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>9BCEB67D-F5E0-9493-8B90-FBB33804DDEA</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="State" id="7059FB4B-2799-1091-9394-343377EFB84A">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>1EE323E9-D2DF-594D-B962-AA4095CDFA5C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreationDate" id="BA861B83-E339-56DD-DA3B-A1ED2A24F63B">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>B448955E-27BD-6ED5-B5BC-FB13394C0689</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModificationDate" id="25FAFDEB-F86F-973D-3D26-9C9ABDF8DCF0">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>324E7AFF-FB3C-B132-3B41-CD7EB616F7B4</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Provider_ProviderID" id="FCA40ECD-8C88-3BB0-4DD4-FAC7C70A0654">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>848D9EAF-2F31-E315-1DAA-A82BEE486F90</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FF1DDC3-ABEE-B2D3-F38F-79FF7D481A7A" referredColumn="4F8A0624-8F1B-FBA0-0922-F777B17AE4FD"/>
+</associations>
+</Column>
+<Column name="Neighborhood_NeighborhoodID" id="0484CE34-2921-CC09-B16B-98A3EC9D1DA7">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>DF060F84-87FA-8128-963E-EAA667A6E259</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C8D1B358-A11E-DF99-42B5-BAF6238211C2" referredColumn="E41CAE45-FACF-D306-9A21-9D1E545A72DC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1748ECD-56A2-5C3A-FC0C-60B37719E9FF" name="ProviderAddress_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>590F8D4D-6C61-D3D3-E7C0-2528A5720504</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7229D222-7C53-D8C8-AE5B-9AD13EFC6025"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F0CB64E-A437-A71B-C698-DCE946351F1E" name="ProviderAddress_Neighborhood_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>A01D0D8B-7C2B-89D4-2276-3C8C175A9B85</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0484CE34-2921-CC09-B16B-98A3EC9D1DA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0DDD10A8-4C43-F4CC-64A1-F61024DFC734" name="ProviderAddress_Provider_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>E2309D72-CEC4-B8D9-D7F4-DF70243AF369</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCA40ECD-8C88-3BB0-4DD4-FAC7C70A0654"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

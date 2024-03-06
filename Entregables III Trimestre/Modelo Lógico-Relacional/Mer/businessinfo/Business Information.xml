@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="C8598065-8AE8-CAE6-4D8A-8D7EF285E6F1">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-11 15:16:29 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="22A9E839-F16A-51D0-E04E-917538125475">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:22:28 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
 <shouldBeOpen>false</shouldBeOpen>
 </BusinessInfoDesign>

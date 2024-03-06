@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="036E3665-6282-CA52-3539-7407D50514FD" name="Subcategory">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>82AA4C49-E86D-A83D-2567-3F679A4BA3F8</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SubcategoryID" id="81A34D9D-4B85-972A-3052-F968FE3B6B35">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>54B5E37F-279E-C412-CFD2-E09AFC05F59D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="42F7F2A9-3BBB-A22E-B4B2-7BF32C0F7135">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>449477BE-DDA6-612F-C390-927A9EB5A6B8</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="State" id="2F54F22F-1CC6-212C-0540-1992DE82AD7A">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>7E947C59-45C0-DD46-A8B1-52A0AF941C32</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreationDate" id="C8D7CCB9-453D-0E85-4213-B88C27221B7C">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>C2077ABC-6285-68DE-9F22-9145A436C7D4</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModificationDate" id="79E6872D-D19E-5E69-0D90-8E790463D2AC">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>F4866FBF-9C81-6A39-2277-85B692B9C495</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Category_CategoryID" id="0E4BDD76-C1D2-D65B-0E72-659E478CD7BC">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>E60EB312-7A15-E7C6-5502-FE4ADA4CF810</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="41EF8E6D-F746-E155-689F-05156F55484E" referredColumn="70BAFC0B-82F8-A994-0E5E-121C22542F66"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="14E95F23-9D0A-023E-CAC0-95221D9675C9" name="Subcategory_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>D86A47DA-ECD5-9CCA-B88D-3DFA62AA925D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81A34D9D-4B85-972A-3052-F968FE3B6B35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DA8650E-0B6B-4721-EA80-BB9B0A402067" name="Subcategory_Category_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>F1DA5FAB-3210-7FA7-25FA-51DFD147B351</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E4BDD76-C1D2-D65B-0E72-659E478CD7BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

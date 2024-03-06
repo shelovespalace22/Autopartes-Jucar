@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FEC7DADE-1841-66C6-E5EC-260064F111CA" name="Contribution">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>BAD67983-B683-9D24-28A1-B3E558821DB2</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ContributionID" id="3A7C69C0-1537-553F-6EB4-9BDCEBB39503">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>8B28A454-1A6B-A6C0-2203-176F374BE926</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AmountPaid" id="C207BFFC-5035-C053-2769-C997E0AFF411">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>A2FEC4F2-11A1-9671-45DB-3C2BB38668C0</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ContributionDate" id="2A2D9721-D5F0-8F1D-9153-0544D4DF2BDE">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>A78319B7-7E6A-5E6E-B07B-BBEA89286D0E</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreationDate" id="366165A4-1DAD-A16E-28EA-ACB02550E7B1">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>32748FA9-5639-C729-5D00-409D2AEC5C00</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModificationDate" id="BACF96D7-3163-42C5-C2ED-C2102C68A07F">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>2D65B8FE-05E6-8139-692E-352D1F0C1382</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_OrderID" id="BD2BE278-9BD2-360C-80AB-3B3726DF2CB7">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>9F0C8491-8435-E30D-7326-465FC678E460</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1FFFFCCD-5995-77C5-FBEE-46EDCA8512CC" referredColumn="85C39AF6-EA2D-F8B5-2952-267553538600"/>
+</associations>
+</Column>
+<Column name="PaymentMethod_PaymentMethodID" id="FE220AC0-3E0F-617A-83E6-E291EC564B91">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>B62FEF01-E6F5-0935-019A-6FEBBBC3DA3F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11E2FE50-4993-4367-4A20-A99E1D7667C4" referredColumn="FB55DB5B-2FA3-F600-4A89-DD0BCA390439"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="164A3F03-FD16-C888-565D-E6DEF9CB9E98" name="Contribution_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>14E4D324-7D8B-888B-0627-A45375F78578</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A7C69C0-1537-553F-6EB4-9BDCEBB39503"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07C8BD2D-D603-31BF-9EE8-4E2583970D14" name="Contribution_Order_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>3E79CFA0-9081-EC46-C7D3-736EB6ACF836</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD2BE278-9BD2-360C-80AB-3B3726DF2CB7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D725F91-1180-8D6A-92E7-F0477337CDCF" name="Contribution_PaymentMethod_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>96188DBD-3057-2D70-9C98-439E7B0EC672</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE220AC0-3E0F-617A-83E6-E291EC564B91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

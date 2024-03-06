@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5F481B8B-8C38-5086-FB8B-5419C4BCCA8F" name="Provider">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:19:10 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ProviderID" id="5F9671A1-DA11-C949-952F-4809CA45B6F6">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:19:37 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdentifierType" id="3A12710B-B47C-69C0-D087-59665F1DD788">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:19:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdentifierNumber" id="DD8DD018-30BB-FCF6-3CA2-8946626EA85A">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:20:07 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="11D69527-ABDC-2816-C560-639220F75A03">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:20:22 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EmailAddress" id="3A1C45C2-B5EE-30EE-C491-3C41156F34BA">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:20:35 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProductType" id="969E45E6-D4C9-1458-29C0-957BECA7491A">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:20:51 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="State" id="D8C393CE-6A3E-FEC7-D9FA-7502BC7EE020">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:21:08 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CreationDate" id="334C2EA2-142A-70AF-6D9C-AE6E2FC8B7BC">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:21:16 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ModificationDate" id="89334348-B3ED-7204-F4B4-4CA8BF03E81D">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:21:24 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="794759E2-610B-5EFE-82E5-09FEACF48688" name="Provider PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:19:45 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5F9671A1-DA11-C949-952F-4809CA45B6F6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="28DF377A-2126-F957-C044-265503084072" name="Movement">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:44:29 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MovementID" id="F83FB3B0-0589-F9EE-1420-2E8FFA49328B">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:44:35 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Quantity" id="8BA63EE9-24C6-DE9C-2FC0-1100823FBBA4">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:44:54 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MovementType" id="F923D1B7-8525-D847-1701-9D93DF3B0C07">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:45:08 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MovementDate" id="0B3EF46B-DC7A-5956-9BDD-AF35B6EE19F0">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:45:25 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CreationDate" id="982F89AF-D977-AE17-B5AA-BB771DA4F46C">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:45:33 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ModificationDate" id="6EE563FA-5A1A-51EE-4661-C444F11FF0BE">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:45:48 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RawMaterialID" id="C8A381A1-EA69-B89C-7622-C999651510C5">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:48:40 UTC</createdTime>
+<generatorID>E6AD31B1-5CB4-159B-F60F-FF5D8B03A59C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<referedAttribute>59942AD6-0B55-4907-4F28-CE9EB5336A34</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="607A4113-9E0D-6174-4B5C-36F105A1D08F" name="Movement PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:44:41 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F83FB3B0-0589-F9EE-1420-2E8FFA49328B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3690ADA6-0930-E424-331B-415AEC87DE8D" name="Provider">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>5F481B8B-8C38-5086-FB8B-5419C4BCCA8F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ProviderID" id="4F8A0624-8F1B-FBA0-0922-F777B17AE4FD">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>5F9671A1-DA11-C949-952F-4809CA45B6F6</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdentifierType" id="80E13384-861C-979B-9809-D2BE1DAFE6C0">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>3A12710B-B47C-69C0-D087-59665F1DD788</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdentifierNumber" id="50A364D5-8235-3343-FF0B-DB770C85F61B">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>DD8DD018-30BB-FCF6-3CA2-8946626EA85A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="48A05F0C-098C-3770-2311-D7E288DADA22">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>11D69527-ABDC-2816-C560-639220F75A03</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EmailAddress" id="2D176192-7710-1B6C-2DF7-B4919B2B4FFF">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>3A1C45C2-B5EE-30EE-C491-3C41156F34BA</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ProductType" id="820E6F98-E15C-C533-2D54-BCB8DCA65C52">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>969E45E6-D4C9-1458-29C0-957BECA7491A</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="State" id="F14382CC-9840-5C1F-A0AB-23EAD4E258CE">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>D8C393CE-6A3E-FEC7-D9FA-7502BC7EE020</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreationDate" id="F0CC7A8F-5240-B46E-F05B-3587FACB4F6B">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>334C2EA2-142A-70AF-6D9C-AE6E2FC8B7BC</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModificationDate" id="1DB6852B-8038-C5CF-0058-DE2C6516E1E0">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>89334348-B3ED-7204-F4B4-4CA8BF03E81D</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9CABA7A1-5276-3905-0E0F-101342D032DA" name="Provider_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>794759E2-610B-5EFE-82E5-09FEACF48688</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F8A0624-8F1B-FBA0-0922-F777B17AE4FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

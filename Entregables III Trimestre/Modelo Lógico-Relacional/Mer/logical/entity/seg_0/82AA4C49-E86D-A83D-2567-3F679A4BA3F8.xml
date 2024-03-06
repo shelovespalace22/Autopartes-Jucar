@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="82AA4C49-E86D-A83D-2567-3F679A4BA3F8" name="Subcategory">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:30:30 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="SubcategoryID" id="54B5E37F-279E-C412-CFD2-E09AFC05F59D">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:30:43 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="449477BE-DDA6-612F-C390-927A9EB5A6B8">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:30:53 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="State" id="7E947C59-45C0-DD46-A8B1-52A0AF941C32">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:31:10 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CreationDate" id="C2077ABC-6285-68DE-9F22-9145A436C7D4">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:31:23 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ModificationDate" id="F4866FBF-9C81-6A39-2277-85B692B9C495">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:31:37 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CategoryID" id="E60EB312-7A15-E7C6-5502-FE4ADA4CF810">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:34:59 UTC</createdTime>
+<generatorID>F1DA5FAB-3210-7FA7-25FA-51DFD147B351</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<referedAttribute>7768A959-D032-DB56-92B8-D84E3EF8577C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D86A47DA-ECD5-9CCA-B88D-3DFA62AA925D" name="Subcategory PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:30:51 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>54B5E37F-279E-C412-CFD2-E09AFC05F59D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

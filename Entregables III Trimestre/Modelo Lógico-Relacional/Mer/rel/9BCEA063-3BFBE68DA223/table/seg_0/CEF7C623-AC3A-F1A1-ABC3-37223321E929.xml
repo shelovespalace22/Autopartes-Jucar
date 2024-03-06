@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEF7C623-AC3A-F1A1-ABC3-37223321E929" name="PaymentMethod">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>4DA5ACD7-9D5F-BECB-8888-879D3BE01780</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PaymentMethodID" id="FB55DB5B-2FA3-F600-4A89-DD0BCA390439">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>9E5519C3-034B-97FF-D8BC-AE71A5EF60B3</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PaymentMethodName" id="99A74C79-8D41-C794-6B37-EA890FD9BE1F">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>51BCD1B8-C886-6508-9737-B6B053B51B99</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="State" id="E15777C0-C06A-C76D-F5C5-A6A590C2E5A4">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>1F22615B-105E-B7A5-78B0-69E525248E6F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreationDate" id="50305374-6FC8-44FB-596B-8D61D640C92E">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>7DFF2373-2D34-7BF5-4FCA-975740DBD44F</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModificationDate" id="1F4CACA3-2F5A-5DDC-D171-25D420AB7802">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>0C175B94-3DD0-CC21-D403-F869FC052B06</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A614002-B5C2-8443-2EE7-4BED17556C1B" name="PaymentMethod_PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<generatorID>DA1DA570-C666-52C0-9521-5D100FD57EEB</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB55DB5B-2FA3-F600-4A89-DD0BCA390439"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

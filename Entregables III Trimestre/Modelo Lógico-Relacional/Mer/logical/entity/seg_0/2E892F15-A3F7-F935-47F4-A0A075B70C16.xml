@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2E892F15-A3F7-F935-47F4-A0A075B70C16" name="Municipality">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:14:29 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MunicipalityID" id="C2AE6403-D3D0-CCB9-3316-D42D1D35D766">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:14:36 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="8DD6DE07-92D3-DE3E-E911-E1C0C6E38BD2">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:14:48 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DepartmentID" id="C1D3098A-2ECB-B430-2996-C10A5FFFC7F2">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:15:59 UTC</createdTime>
+<generatorID>3F7009E6-F3BA-7AA9-DDEB-D458A67F6CB2</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<referedAttribute>D39875E8-2570-F3BC-9D9F-58AEE5994E98</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="28E2EE59-8682-D69E-7E12-20756A3E40ED" name="Municipality PK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:14:46 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C2AE6403-D3D0-CCB9-3316-D42D1D35D766</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

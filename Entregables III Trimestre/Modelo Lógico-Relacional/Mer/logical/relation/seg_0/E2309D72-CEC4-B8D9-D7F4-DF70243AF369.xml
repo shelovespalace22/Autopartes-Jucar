@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Provider_has_Address" directorySegmentName="seg_0" id="E2309D72-CEC4-B8D9-D7F4-DF70243AF369">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:25:25 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>794759E2-610B-5EFE-82E5-09FEACF48688</sourcePk>
+<targetPk>590F8D4D-6C61-D3D3-E7C0-2528A5720504</targetPk>
+<identifying>false</identifying>
+<nameOnSource>tener una</nameOnSource>
+<nameOnTarget>pertenecer a una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5F481B8B-8C38-5086-FB8B-5419C4BCCA8F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FBBBD8E7-C729-B3EF-9F78-106C1CD93594</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>
