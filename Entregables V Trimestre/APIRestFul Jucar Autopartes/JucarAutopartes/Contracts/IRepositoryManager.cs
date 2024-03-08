@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Contracts.Products;
 using Contracts.Providers;
 using Contracts.Sales;
+using Contracts.Ubications;
 
 namespace Contracts
 {
@@ -36,6 +37,14 @@ namespace Contracts
         IOrderDetailRepository OrderDetail { get; }
         IPaymentMethodRepository PaymentMethod { get; }
         IContributionRepository Contribution { get; }
+
+
+        /* Ubicaciones */
+
+
+        IDepartmentRepository Department { get; }
+        IMunicipalityRepository Municipality { get; }
+        INeighborhoodRepository Neighborhood { get; }
 
         Task SaveAsync();
 

@@ -19,7 +19,7 @@ namespace Shared.DataTransferObjects.Providers.ProviderPhone
 
         [Required(ErrorMessage = "¡Ingrese el número teléfonico!")]
         [MaxLength(10, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 10 cáracteres.")]
-        [RegularExpression("^\\d{1,9}$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^\\d{1,10}$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Número de Teléfono")]
         public string? PhoneNumber { get; init; }
     }
