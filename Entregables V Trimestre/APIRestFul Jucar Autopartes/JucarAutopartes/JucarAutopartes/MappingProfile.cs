@@ -109,7 +109,8 @@ namespace JucarAutopartes
 
             /* Direcciones de Proveedor */
 
-            CreateMap<ProviderAddress, ProviderAddressDto>();
+            CreateMap<ProviderAddress, ProviderAddressDto>()
+                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name)); ;
 
             CreateMap<ProviderAddressForCreationDto, ProviderAddress>();
 

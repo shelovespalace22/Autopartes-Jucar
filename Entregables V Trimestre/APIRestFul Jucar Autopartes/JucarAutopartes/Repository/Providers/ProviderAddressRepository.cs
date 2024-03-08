@@ -37,7 +37,8 @@ namespace Repository.Providers
         /* Listar */
         public async Task<IEnumerable<ProviderAddress>> GetAddressesForProviderAsync(Guid providerId, bool trackChanges) =>
             await FindByCondition(p => p.ProviderId.Equals(providerId), trackChanges)
-            .OrderBy(p => p.Neighborhood)
+            .Include(p => p.Neighborhood) // Incluir la información del barrio
+            .OrderBy(p => p.Neighborhood.Name) // Ordenar por nombre del barrio si es necesario
             .ToListAsync();
     }
 }
