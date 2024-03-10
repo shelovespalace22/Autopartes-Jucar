@@ -110,7 +110,7 @@ namespace JucarAutopartes
             /* Direcciones de Proveedor */
 
             CreateMap<ProviderAddress, ProviderAddressDto>()
-                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name)); ;
+                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name));
 
             CreateMap<ProviderAddressForCreationDto, ProviderAddress>();
 
@@ -137,7 +137,8 @@ namespace JucarAutopartes
 
             /* Direcciones de Cliente */
 
-            CreateMap<CustomerAddress, CustomerAddressDto>();
+            CreateMap<CustomerAddress, CustomerAddressDto>()
+                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name));
 
             CreateMap<CustomerAddressForCreationDto, CustomerAddress>();
 

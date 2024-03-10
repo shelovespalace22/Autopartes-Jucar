@@ -15,6 +15,7 @@ namespace Shared.DataTransferObjects.Sales.CustomerAddress
         public string Address { get; init; }
         public string AddressType { get; init; }
         public Guid NeighborhoodId { get; init; }
+        public string? NeighborhoodName { get; init; }
         public Guid CustomerId { get; init; }
     }
 }
