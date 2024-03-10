@@ -23,7 +23,7 @@ namespace Entities.Models.Providers
 
         [Required(ErrorMessage = "¡Ingrese el número teléfonico!")]
         [MaxLength(10)]
-        [RegularExpression("^\\d{1,9}$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^\\d{1,10}$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
         [DisplayName("Número de Teléfono")]
         public string? PhoneNumber { get; set; }
 

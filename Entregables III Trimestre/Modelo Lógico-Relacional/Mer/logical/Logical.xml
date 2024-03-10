@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="621295FF-DB3B-D87E-2A6C-E10A79A96109" mainViewID="BA81EBCD-4995-58D2-D076-BA5CEE0F989F">
-<createdBy>LENOVO</createdBy>
-<createdTime>2023-04-11 15:16:28 UTC</createdTime>
-<ownerDesignName>Volumen 7</ownerDesignName>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="BAA48924-DDA5-E16D-1FE5-2CF820D03EC2" mainViewID="829CFF17-0987-765D-B69B-7CC239031DCE">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 18:22:27 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
 <shouldBeOpen>false</shouldBeOpen>
 </LogicalDesign>

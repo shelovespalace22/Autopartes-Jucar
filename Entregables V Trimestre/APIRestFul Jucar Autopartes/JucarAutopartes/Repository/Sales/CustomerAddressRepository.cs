@@ -36,7 +36,8 @@ namespace Repository.Sales
         /* Listar */
         public async Task<IEnumerable<CustomerAddress>> GetAddressesForCustomerAsync(Guid customerId, bool trackChanges) =>
             await FindByCondition(c => c.CustomerId.Equals(customerId), trackChanges)
-            .OrderBy(c => c.Address)
+            .Include(c => c.Neighborhood)
+            .OrderBy(c => c.Neighborhood.Name)
             .ToListAsync();
     }
 }

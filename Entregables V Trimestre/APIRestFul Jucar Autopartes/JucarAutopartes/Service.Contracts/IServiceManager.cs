@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
 using Service.Contracts.Sales;
+using Service.Contracts.Ubications;
 using Service.Contracts.Users;
 
 namespace Service.Contracts
@@ -45,5 +46,12 @@ namespace Service.Contracts
         /* Usuarios */
 
         IAuthenticationService AuthenticationService { get; }
+
+
+        /* Ubicaciones */
+
+        IDepartmentService DepartmentService { get; }
+        IMunicipaliityService MunicipaliityService { get; }
+        INeighborhoodService NeighborhoodService { get; }
     }
 }

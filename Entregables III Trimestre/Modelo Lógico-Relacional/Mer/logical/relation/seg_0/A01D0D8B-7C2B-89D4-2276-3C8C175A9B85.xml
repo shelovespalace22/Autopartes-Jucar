@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Neighborhood_has_ProviderAdresses" directorySegmentName="seg_0" id="A01D0D8B-7C2B-89D4-2276-3C8C175A9B85">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:26:25 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>27D1F3CF-6ABD-14E4-A57D-7D2BF71BAD27</sourcePk>
+<targetPk>590F8D4D-6C61-D3D3-E7C0-2528A5720504</targetPk>
+<identifying>false</identifying>
+<nameOnSource>tener una</nameOnSource>
+<nameOnTarget>pertenecer a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C24BE15A-34E3-2402-77A8-BE42F43175C1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FBBBD8E7-C729-B3EF-9F78-106C1CD93594</targetEntity>
+<transferable>true</transferable>
+<deleteRule>SET NULL</deleteRule>
+</Relation>

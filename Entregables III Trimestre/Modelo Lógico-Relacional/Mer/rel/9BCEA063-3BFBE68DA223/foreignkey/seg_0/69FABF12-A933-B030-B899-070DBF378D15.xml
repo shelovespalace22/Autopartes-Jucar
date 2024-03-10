@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="69FABF12-A933-B030-B899-070DBF378D15" containerWithKeyObject="CB2A77AA-1CCB-D1FA-4552-C40FBA63CC6D" localFKIndex="4E165B8F-B9CD-F25D-8DA5-773BC800EA66" name="Movement_RawMaterial_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>E6AD31B1-5CB4-159B-F60F-FF5D8B03A59C</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<referredTableLongName>RawMaterial</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>537E210F-E44E-6F91-06E7-F3FBF93FA3B1</referredTableID>
+<keyObject>4974CEB3-5B9C-3AF0-2A81-F3C148DAC3CC</keyObject>
+<referredKeyID>4974CEB3-5B9C-3AF0-2A81-F3C148DAC3CC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>RawMaterialID</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

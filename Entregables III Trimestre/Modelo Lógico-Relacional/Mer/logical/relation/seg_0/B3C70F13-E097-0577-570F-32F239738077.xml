@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RawMaterial_has_Autoparts" directorySegmentName="seg_0" id="B3C70F13-E097-0577-570F-32F239738077">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 19:00:14 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>C7E6823D-69FC-9498-3686-763998C5998B</sourcePk>
+<targetPk>CF84FA5D-E52D-35DA-E164-147758202122</targetPk>
+<identifying>false</identifying>
+<nameOnSource>componer una</nameOnSource>
+<nameOnTarget>componerse de un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B7762C04-8310-68E5-B062-EE2EF03416D6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>88CB9524-DE3C-5B4C-1F47-FBCF6C1F4E82</targetEntity>
+<transferable>true</transferable>
+<deleteRule>SET NULL</deleteRule>
+</Relation>

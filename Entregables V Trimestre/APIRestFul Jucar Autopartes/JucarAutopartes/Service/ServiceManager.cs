@@ -14,10 +14,12 @@ using Service.Contracts;
 using Service.Contracts.Products;
 using Service.Contracts.Proveedores;
 using Service.Contracts.Sales;
+using Service.Contracts.Ubications;
 using Service.Contracts.Users;
 using Service.Products;
 using Service.Proveedores;
 using Service.Sales;
+using Service.Ubications;
 using Service.Users;
 
 namespace Service
@@ -67,6 +69,14 @@ namespace Service
         /* Usuarios */
 
         private readonly Lazy<IAuthenticationService> _authenticationService;
+
+        /* Ubicaciones */
+
+        private readonly Lazy<IDepartmentService> _departmentService;
+
+        private readonly Lazy<IMunicipaliityService> _municipalityService;
+
+        private readonly Lazy<INeighborhoodService> _neighborhoodService;
 
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IOptions<JwtConfiguration> configuration)
@@ -133,6 +143,16 @@ namespace Service
             _authenticationService = new Lazy<IAuthenticationService>(() =>
                 new AuthenticationService(logger, mapper, userManager, configuration));
 
+            /* Ubicaciones */
+
+            _departmentService = new Lazy<IDepartmentService>(() =>
+                new DepartmentService(repositoryManager, logger, mapper));
+
+            _municipalityService = new Lazy<IMunicipaliityService>(() =>
+                new MunicipalityService(repositoryManager, logger, mapper));
+
+            _neighborhoodService = new Lazy<INeighborhoodService>(() =>
+                new NeighborhoodService(repositoryManager, logger, mapper));
         }
 
         /* Productos */
@@ -164,5 +184,13 @@ namespace Service
         /* Usuarios */
 
         public IAuthenticationService AuthenticationService => _authenticationService.Value;
+
+        /* Ubicaciones */
+
+        public IDepartmentService DepartmentService => _departmentService.Value;
+
+        public IMunicipaliityService MunicipaliityService => _municipalityService.Value;
+
+        public INeighborhoodService NeighborhoodService => _neighborhoodService.Value;
     }
 }

@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Autopart_has_Losses" directorySegmentName="seg_0" id="FB5E942C-0482-19E6-1AF1-E7E24EC06502">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:42:01 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>CF84FA5D-E52D-35DA-E164-147758202122</sourcePk>
+<targetPk>5B2E0797-DED7-CC79-5DC3-77E0265E5991</targetPk>
+<identifying>false</identifying>
+<nameOnSource>tener una</nameOnSource>
+<nameOnTarget>asociada a una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>88CB9524-DE3C-5B4C-1F47-FBCF6C1F4E82</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F4950268-F761-C240-192A-F7FB4E691224</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

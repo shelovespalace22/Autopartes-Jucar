@@ -7,9 +7,11 @@ using Contracts;
 using Contracts.Products;
 using Contracts.Providers;
 using Contracts.Sales;
+using Contracts.Ubications;
 using Repository.Products;
 using Repository.Providers;
 using Repository.Sales;
+using Repository.Ubications;
 
 namespace Repository
 {
@@ -58,6 +60,14 @@ namespace Repository
 
         private readonly Lazy<IContributionRepository> _contributionRepository;
 
+        /* Ubicaciones */
+
+        private readonly Lazy<IDepartmentRepository> _departmentRepository;
+
+        private readonly Lazy<IMunicipalityRepository> _municipalityRepository;
+
+        private readonly Lazy<INeighborhoodRepository> _neighborhoodRepository;
+
         public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
@@ -102,6 +112,14 @@ namespace Repository
             _paymentMethodRepository = new Lazy<IPaymentMethodRepository>(() => new PaymentMethodRepository(repositoryContext));
 
             _contributionRepository = new Lazy<IContributionRepository>(() => new ContributionRepository(repositoryContext));
+
+            /* Ubicaciones */
+
+            _departmentRepository = new Lazy<IDepartmentRepository>(() => new DepartmentRepository(repositoryContext));
+
+            _municipalityRepository = new Lazy<IMunicipalityRepository>(() => new MunicipalityRepository(repositoryContext));
+
+            _neighborhoodRepository = new Lazy<INeighborhoodRepository>(() => new NeighborhoodRepository(repositoryContext));
         }
 
         /* Productos */
@@ -143,6 +161,15 @@ namespace Repository
         public IPaymentMethodRepository PaymentMethod => _paymentMethodRepository.Value;
 
         public IContributionRepository Contribution => _contributionRepository.Value;
+
+
+        /* Ubicaciones */
+
+        public IDepartmentRepository Department => _departmentRepository.Value;
+
+        public IMunicipalityRepository Municipality => _municipalityRepository.Value;
+
+        public INeighborhoodRepository Neighborhood => _neighborhoodRepository.Value;
 
 
 

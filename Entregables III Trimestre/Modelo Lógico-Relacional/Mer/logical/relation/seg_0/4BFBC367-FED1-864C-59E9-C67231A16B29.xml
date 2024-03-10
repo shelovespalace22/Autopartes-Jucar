@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Municipality_has_Neighborhoods" directorySegmentName="seg_0" id="4BFBC367-FED1-864C-59E9-C67231A16B29">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:16:33 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>28E2EE59-8682-D69E-7E12-20756A3E40ED</sourcePk>
+<targetPk>27D1F3CF-6ABD-14E4-A57D-7D2BF71BAD27</targetPk>
+<identifying>false</identifying>
+<nameOnSource>contener un</nameOnSource>
+<nameOnTarget>pertenecer a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2E892F15-A3F7-F935-47F4-A0A075B70C16</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C24BE15A-34E3-2402-77A8-BE42F43175C1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

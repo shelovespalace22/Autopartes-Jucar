@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B25024D1-F798-6D36-438B-03CF78B3DAAC" containerWithKeyObject="D06FBD0F-0E89-1C38-4DCA-8BF7B49CF3BB" localFKIndex="5C974B89-0CD5-9074-D3CB-BC6D5202D7BE" name="Loss_Autopart_FK">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<generatorID>FB5E942C-0482-19E6-1AF1-E7E24EC06502</generatorID>
+<ownerDesignName>Mer</ownerDesignName>
+<referredTableLongName>Autopart</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>7DAB8986-207C-5BD0-7C13-20127A61D395</referredTableID>
+<keyObject>B70C42CD-7293-B296-45B7-386E805D43E3</keyObject>
+<referredKeyID>B70C42CD-7293-B296-45B7-386E805D43E3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>AutopartID</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -2,6 +2,7 @@
 using Entities.Models.Products;
 using Entities.Models.Providers;
 using Entities.Models.Sales;
+using Entities.Models.Ubications;
 using Entities.Models.Users;
 using Shared.DataTransferObjects.Products;
 using Shared.DataTransferObjects.Providers.Provider;
@@ -14,6 +15,9 @@ using Shared.DataTransferObjects.Sales.CustomerPhone;
 using Shared.DataTransferObjects.Sales.Order;
 using Shared.DataTransferObjects.Sales.OrderDetail;
 using Shared.DataTransferObjects.Sales.PaymentMethod;
+using Shared.DataTransferObjects.Ubications.Department;
+using Shared.DataTransferObjects.Ubications.Municipality;
+using Shared.DataTransferObjects.Ubications.Neighborhood;
 using Shared.DataTransferObjects.Users;
 
 namespace JucarAutopartes
@@ -105,7 +109,8 @@ namespace JucarAutopartes
 
             /* Direcciones de Proveedor */
 
-            CreateMap<ProviderAddress, ProviderAddressDto>();
+            CreateMap<ProviderAddress, ProviderAddressDto>()
+                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name));
 
             CreateMap<ProviderAddressForCreationDto, ProviderAddress>();
 
@@ -132,7 +137,8 @@ namespace JucarAutopartes
 
             /* Direcciones de Cliente */
 
-            CreateMap<CustomerAddress, CustomerAddressDto>();
+            CreateMap<CustomerAddress, CustomerAddressDto>()
+                .ForMember(dest => dest.NeighborhoodName, opt => opt.MapFrom(src => src.Neighborhood.Name));
 
             CreateMap<CustomerAddressForCreationDto, CustomerAddress>();
 
@@ -178,6 +184,21 @@ namespace JucarAutopartes
             /* Usuarios */
 
             CreateMap<UserForRegistrationDto, User>();
+
+
+            /* Departamentos */
+
+            CreateMap<Department, DepartmentDto>();
+
+
+            /* Municipios */
+
+            CreateMap<Municipality, MunicipalityDto>();
+
+
+            /* Barrio */
+
+            CreateMap<Neighborhood, NeighborhoodDto>();
         }
     }
 }

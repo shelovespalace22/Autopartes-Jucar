@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RawMaterial_has_Movements" directorySegmentName="seg_0" id="E6AD31B1-5CB4-159B-F60F-FF5D8B03A59C">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 21:48:40 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>C7E6823D-69FC-9498-3686-763998C5998B</sourcePk>
+<targetPk>607A4113-9E0D-6174-4B5C-36F105A1D08F</targetPk>
+<identifying>false</identifying>
+<nameOnSource>tener un</nameOnSource>
+<nameOnTarget>asociado a una</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B7762C04-8310-68E5-B062-EE2EF03416D6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>28DF377A-2126-F957-C044-265503084072</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

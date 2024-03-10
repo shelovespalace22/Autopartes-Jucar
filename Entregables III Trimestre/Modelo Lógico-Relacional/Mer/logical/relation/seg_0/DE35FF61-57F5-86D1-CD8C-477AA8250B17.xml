@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Customer_has_Phones" directorySegmentName="seg_0" id="DE35FF61-57F5-86D1-CD8C-477AA8250B17">
+<createdBy>MI PC</createdBy>
+<createdTime>2024-03-06 22:09:49 UTC</createdTime>
+<ownerDesignName>Mer</ownerDesignName>
+<engineerTo>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>BE0AF768-0101-E4EE-318D-FBE531D76078</sourcePk>
+<targetPk>7754CA55-F688-AC0E-F68D-9F48D0B25B2D</targetPk>
+<identifying>false</identifying>
+<nameOnSource>tener un</nameOnSource>
+<nameOnTarget>pertenecer a un</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>15E6A91D-1FE5-C368-AF2A-1A2C45D76D97</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8535AD01-E21D-B7BE-E2F9-F45E6DC8BC29</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>
