@@ -56,8 +56,7 @@ namespace JucarAutopartes.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Value")
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("AutopartID");
 
@@ -66,138 +65,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("SubcategoryId");
 
                     b.ToTable("Autoparts");
-
-                    b.HasData(
-                        new
-                        {
-                            AutopartID = new Guid("2a2bb8a4-ef22-4875-9cdf-1d83b06defe8"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6608),
-                            Description = "N/N",
-                            Inventory = 80,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6611),
-                            Name = "PIN CRUCETA 334",
-                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
-                            State = true,
-                            SubcategoryId = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
-                            Value = 100m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("def7808b-1f75-4ed9-875a-54a09659b77e"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6622),
-                            Description = "N/N",
-                            Inventory = 10,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6623),
-                            Name = "PIN TUERCA HOUSING 950 PLANO",
-                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
-                            State = true,
-                            SubcategoryId = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
-                            Value = 150m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("2653e777-21cb-43a5-b585-3bcbf7e513fe"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6632),
-                            Description = "N/N",
-                            Inventory = 60,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6633),
-                            Name = "PIN DISCO QUINTA RUEDA",
-                            RawMaterialId = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
-                            State = true,
-                            SubcategoryId = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
-                            Value = 800m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("65f4a9e7-30a8-48f2-abff-843ebe0f3333"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6637),
-                            Description = "N/N",
-                            Inventory = 80,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6638),
-                            Name = "PIN LEVA 1 1/4",
-                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            State = true,
-                            SubcategoryId = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
-                            Value = 100m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("d0ec66b5-378b-44c1-aa29-08614564de98"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6643),
-                            Description = "N/N",
-                            Inventory = 200,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6643),
-                            Name = "ARANDELA CACHO AGRALE MODELO NUEVO",
-                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            State = true,
-                            SubcategoryId = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
-                            Value = 90m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("322f81e3-7781-4bcd-947f-d32acc672ce6"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6648),
-                            Description = "N/N",
-                            Inventory = 190,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6648),
-                            Name = "ARANDELA LEVA 3/4",
-                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            State = true,
-                            SubcategoryId = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
-                            Value = 50m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("2d57d220-0899-4f97-ae4c-c75d132a8921"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6653),
-                            Description = "N/N",
-                            Inventory = 80,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6653),
-                            Name = "LAINA SPLINDER NPR",
-                            RawMaterialId = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            State = true,
-                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            Value = 100m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("d5afd5fc-4094-4003-a242-fd35342f6bc0"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6658),
-                            Description = "N/N",
-                            Inventory = 65,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6658),
-                            Name = "LAINA SPLINDER KENWORTH",
-                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
-                            State = true,
-                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            Value = 70m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("8db21635-4db7-453d-8010-831137e72d63"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6663),
-                            Description = "N/N",
-                            Inventory = 45,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6663),
-                            Name = "LAINA SPLINDER HINO FC 500",
-                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
-                            State = true,
-                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            Value = 200m
-                        },
-                        new
-                        {
-                            AutopartID = new Guid("f9e4d631-4015-45e1-9c11-8b88262ad802"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6668),
-                            Description = "N/N",
-                            Inventory = 23,
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6668),
-                            Name = "LAINA SPLINDER NISSAN MT 3000",
-                            RawMaterialId = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
-                            State = true,
-                            SubcategoryId = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            Value = 150m
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Category", b =>
@@ -223,56 +90,6 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryID = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5406),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5422),
-                            Name = "PIN",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5435),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5436),
-                            Name = "ARANDELA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5439),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5439),
-                            Name = "LAINA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("29961716-b4fe-43a9-874d-0acdc993a5b8"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5442),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5443),
-                            Name = "EMPAQUE CARNAZA",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("2e6b11a6-3f6c-47f6-beb6-f7edd8645175"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5446),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5446),
-                            Name = "TELEFONO CAUCHO",
-                            State = true
-                        },
-                        new
-                        {
-                            CategoryID = new Guid("6b158255-0b3e-47f0-bc22-5ba2ec06ffef"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5449),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5449),
-                            Name = "MEDIA LUNA",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Loss", b =>
@@ -371,32 +188,6 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("RawMaterialID");
 
                     b.ToTable("RawMaterials");
-
-                    b.HasData(
-                        new
-                        {
-                            RawMaterialID = new Guid("c3818a2d-d242-4493-b437-2d74d434fa21"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6882),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6884),
-                            Name = "Acero",
-                            State = true
-                        },
-                        new
-                        {
-                            RawMaterialID = new Guid("8a7505db-8bb3-4872-a927-8113834f0c10"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6889),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6890),
-                            Name = "Hierro",
-                            State = true
-                        },
-                        new
-                        {
-                            RawMaterialID = new Guid("da932f1f-4bf1-4233-9fd6-283a0ff4ce6e"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6892),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(6892),
-                            Name = "Cobre",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Products.Stock", b =>
@@ -465,71 +256,6 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
-
-                    b.HasData(
-                        new
-                        {
-                            SubcategoryID = new Guid("b449767b-601c-4811-ad3e-8b388bedf632"),
-                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5960),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5962),
-                            Name = "PIN CRUCETA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("6378b394-f899-4ad4-96c6-9183c6787ad4"),
-                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5968),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5969),
-                            Name = "PIN TUERCA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("52992cc2-fd87-4298-81cc-9c290e0e53ba"),
-                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5972),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5973),
-                            Name = "PIN DISCO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("37c86e98-38d1-4ddf-bba2-df4b3098ea67"),
-                            CategoryId = new Guid("70dcee4c-8fea-43ad-9d30-a35f5b458c1a"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5976),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5977),
-                            Name = "PIN LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("e08f3a12-fb06-4e53-9e37-c7d9ad42f9d3"),
-                            CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5979),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5980),
-                            Name = "ARANDELA CACHO",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("19e5fff4-c619-4ce4-b250-044ca30dca43"),
-                            CategoryId = new Guid("d0529dd0-a201-48d0-bbf5-447cb0d2997e"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5983),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5984),
-                            Name = "ARANDELA LEVA",
-                            State = true
-                        },
-                        new
-                        {
-                            SubcategoryID = new Guid("3120692a-9626-418d-baae-315eea262ab5"),
-                            CategoryId = new Guid("ae377c3d-bbfd-4ed2-a84a-47fd42c823b6"),
-                            CreationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5986),
-                            ModificationDate = new DateTime(2024, 3, 2, 16, 6, 14, 442, DateTimeKind.Local).AddTicks(5987),
-                            Name = "LAINA SPLINDER",
-                            State = true
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Providers.Provider", b =>
@@ -656,8 +382,7 @@ namespace JucarAutopartes.Migrations
 
                     b.Property<decimal>("AmountPaid")
                         .HasMaxLength(5)
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("ContributionDate")
                         .HasColumnType("datetime2");
@@ -826,8 +551,7 @@ namespace JucarAutopartes.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal?>("Total")
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderID");
 
@@ -860,13 +584,11 @@ namespace JucarAutopartes.Migrations
 
                     b.Property<decimal>("SubtotalValue")
                         .HasMaxLength(10)
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("UnitValue")
                         .HasMaxLength(10)
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderDetailID");
 
@@ -914,6 +636,38 @@ namespace JucarAutopartes.Migrations
                     b.HasKey("DepartmentID");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            DepartmentID = new Guid("c5424105-77c9-4cb2-bf05-ff1db7fa1b12"),
+                            Name = "Bogotá D.C."
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Cundinamarca"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Antioquia"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Boyacá"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Bolívar"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Santander"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Municipality", b =>
@@ -933,6 +687,164 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Municipalities");
+
+                    b.HasData(
+                        new
+                        {
+                            MunicipalityID = new Guid("c9209c76-d6e3-49c3-b9b1-27ce300cf820"),
+                            DepartmentId = new Guid("c5424105-77c9-4cb2-bf05-ff1db7fa1b12"),
+                            Name = "Bogotá"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("f2c2bfc3-b03f-44d6-8396-ce1d64245f72"),
+                            DepartmentId = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Soacha"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("a3abfc70-4368-4f24-b4bc-378d2ea1c72e"),
+                            DepartmentId = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Facatativá"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("ffad25db-cd64-4f75-96df-d4db4a698e3a"),
+                            DepartmentId = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Zipaquirá"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("0070ac2f-33fe-4ee6-95ee-559838f741cc"),
+                            DepartmentId = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Chía"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("efc46672-7656-408a-aed7-33110510d825"),
+                            DepartmentId = new Guid("958920ce-4d55-4038-a87f-af783ff1d533"),
+                            Name = "Fusagasugá"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("afa8f2fb-5494-460e-8a5d-91ba20052bb0"),
+                            DepartmentId = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Medellín"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("e8eb2e8c-3421-426b-8035-049a8367980d"),
+                            DepartmentId = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Envigado"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("444b2ed7-85b9-4fc4-8421-e32227de9e5c"),
+                            DepartmentId = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Bello"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("12601027-07fe-435d-bf86-c0b8b63e7576"),
+                            DepartmentId = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Itagüí"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("77292549-bb02-48d3-b9cd-70b7d3a4a22f"),
+                            DepartmentId = new Guid("eeb58df4-a5c4-47b9-9cea-5f98b338260f"),
+                            Name = "Sabaneta"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("6a1e6bff-b542-4731-ad4c-8b80097a0a61"),
+                            DepartmentId = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Tunja"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("0aa41c1a-bce7-4cd0-b372-7bfca622b3c0"),
+                            DepartmentId = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Duitama"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("0efcc66c-64f7-4187-a634-c61b4f54984b"),
+                            DepartmentId = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Sogamoso"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("9f2efb19-b9d0-4e2e-a2d9-ca94eecbbae5"),
+                            DepartmentId = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Chiquinquirá"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("07cae774-1c0b-4b94-a76a-463d475d93fc"),
+                            DepartmentId = new Guid("e6a04ebb-433f-492f-9d0d-6636e8e9c392"),
+                            Name = "Paipa"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("863104b2-3845-4fbf-b0aa-0471015ba6cc"),
+                            DepartmentId = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Cartagena"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("09ee73c3-df0d-432e-99b6-f444bc6f25de"),
+                            DepartmentId = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Turbaco"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("04445038-5881-4660-9a97-9bc53687c8aa"),
+                            DepartmentId = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Magangué"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("a1aa7f91-20a2-403d-ad2d-6ef971a46832"),
+                            DepartmentId = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Soledad"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("f90c2016-dd81-46e0-ab68-919e7d5be04b"),
+                            DepartmentId = new Guid("25b2b57e-f928-4c8e-8eb5-23209e9a2ae1"),
+                            Name = "Arjona"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("ba0e0021-eca6-4e4d-bb01-31a2fbc36fe5"),
+                            DepartmentId = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Bucaramanga"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("5376159b-6903-439f-9045-36b176354e55"),
+                            DepartmentId = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Floridablanca"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("fb28c89a-4565-48a2-9516-b8b25da4efd8"),
+                            DepartmentId = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Girón"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("26af7150-f00e-4b4d-bba4-a6156f161a18"),
+                            DepartmentId = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Pídecuesta"
+                        },
+                        new
+                        {
+                            MunicipalityID = new Guid("515185c4-491c-483b-b2d1-d8e99eaa0189"),
+                            DepartmentId = new Guid("c26f1779-ac31-4b71-935b-cc91864f35d8"),
+                            Name = "Barrancabermeja"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Ubications.Neighborhood", b =>
@@ -952,6 +864,320 @@ namespace JucarAutopartes.Migrations
                     b.HasIndex("MunicipalityId");
 
                     b.ToTable("Neighborhoods");
+
+                    b.HasData(
+                        new
+                        {
+                            NeighborhoodID = new Guid("0adb69c7-8c3b-4b7f-b2ee-70153f2bb33f"),
+                            MunicipalityId = new Guid("afa8f2fb-5494-460e-8a5d-91ba20052bb0"),
+                            Name = "El Poblado"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("847a9d5f-c78d-40c3-8a74-b1ec2720b424"),
+                            MunicipalityId = new Guid("afa8f2fb-5494-460e-8a5d-91ba20052bb0"),
+                            Name = "Laureles"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("d03940eb-8802-4139-8513-74756bb4ba1f"),
+                            MunicipalityId = new Guid("e8eb2e8c-3421-426b-8035-049a8367980d"),
+                            Name = "Jardínes"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("2eba303f-b2e5-4a99-a086-9b70a2b0b3cc"),
+                            MunicipalityId = new Guid("e8eb2e8c-3421-426b-8035-049a8367980d"),
+                            Name = "El Dorado"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("11da7410-5d21-4c5d-8310-0bf0ad1f0f79"),
+                            MunicipalityId = new Guid("444b2ed7-85b9-4fc4-8421-e32227de9e5c"),
+                            Name = "Niquía"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("7be523f2-d9e3-4f17-a3f6-6bfd1d59b203"),
+                            MunicipalityId = new Guid("444b2ed7-85b9-4fc4-8421-e32227de9e5c"),
+                            Name = "San Félix"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("9b664bdd-3685-4c78-b381-bbb5d0343b85"),
+                            MunicipalityId = new Guid("12601027-07fe-435d-bf86-c0b8b63e7576"),
+                            Name = "Santa María"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("8e4b97f6-fef0-44dd-9b28-cff12cdbffac"),
+                            MunicipalityId = new Guid("12601027-07fe-435d-bf86-c0b8b63e7576"),
+                            Name = "El Porvenir"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("da8bf5a8-8d02-487b-a25e-32d8d08cfa95"),
+                            MunicipalityId = new Guid("77292549-bb02-48d3-b9cd-70b7d3a4a22f"),
+                            Name = "Ciudadela Robledo"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("6eb90f2c-1eb5-4823-9ba8-4b59d4101a86"),
+                            MunicipalityId = new Guid("77292549-bb02-48d3-b9cd-70b7d3a4a22f"),
+                            Name = "La Doctora"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("9d54cec9-1677-4e9a-87ed-6d71d8e780d3"),
+                            MunicipalityId = new Guid("6a1e6bff-b542-4731-ad4c-8b80097a0a61"),
+                            Name = "Centro Histórico"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("4b9caeb5-0572-4e98-ac45-a01efe3ff258"),
+                            MunicipalityId = new Guid("6a1e6bff-b542-4731-ad4c-8b80097a0a61"),
+                            Name = "El Topo"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("a32b5c95-0232-49bc-9fff-b75b52599e24"),
+                            MunicipalityId = new Guid("0aa41c1a-bce7-4cd0-b372-7bfca622b3c0"),
+                            Name = "El Libertador"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("af50ccf0-b2d6-406b-b3ac-e4337b6bb717"),
+                            MunicipalityId = new Guid("0aa41c1a-bce7-4cd0-b372-7bfca622b3c0"),
+                            Name = "La Floresta"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("d53a814f-2ba4-4e5a-a542-fe5c13e7b44f"),
+                            MunicipalityId = new Guid("0efcc66c-64f7-4187-a634-c61b4f54984b"),
+                            Name = "Centro"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("f0455fc4-ff3f-4569-9820-4fa9932efe71"),
+                            MunicipalityId = new Guid("0efcc66c-64f7-4187-a634-c61b4f54984b"),
+                            Name = "La Campiña"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("c5897d98-6fc5-462f-98a6-b28d62497047"),
+                            MunicipalityId = new Guid("9f2efb19-b9d0-4e2e-a2d9-ca94eecbbae5"),
+                            Name = "Barrio Simón Bólivar"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("60462cc0-e02d-4daa-94a1-ef67d60c3b7f"),
+                            MunicipalityId = new Guid("9f2efb19-b9d0-4e2e-a2d9-ca94eecbbae5"),
+                            Name = "Barrio San Antonio"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("b820e69d-8a05-4a55-b07d-e0e93abbecc8"),
+                            MunicipalityId = new Guid("07cae774-1c0b-4b94-a76a-463d475d93fc"),
+                            Name = "La Colina"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("8a77da5b-74d8-4c73-a24c-9f9cba66120f"),
+                            MunicipalityId = new Guid("07cae774-1c0b-4b94-a76a-463d475d93fc"),
+                            Name = "Santa Rita"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("d4bfcebc-90cc-4657-9281-f5fe30e18aea"),
+                            MunicipalityId = new Guid("ba0e0021-eca6-4e4d-bb01-31a2fbc36fe5"),
+                            Name = "Cabecera del Llano"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("9c8c2877-c973-4493-8032-0bf90fee4206"),
+                            MunicipalityId = new Guid("ba0e0021-eca6-4e4d-bb01-31a2fbc36fe5"),
+                            Name = "Provenza"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("b723a4d9-22b7-470b-b9c6-637429e6028b"),
+                            MunicipalityId = new Guid("5376159b-6903-439f-9045-36b176354e55"),
+                            Name = "Cañaveral"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("edea2a92-d5a3-4350-bcbf-ac80b770d359"),
+                            MunicipalityId = new Guid("5376159b-6903-439f-9045-36b176354e55"),
+                            Name = "Lagos del Cacique"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("0e05d355-c573-4b37-bd09-cc6a4ff1f459"),
+                            MunicipalityId = new Guid("fb28c89a-4565-48a2-9516-b8b25da4efd8"),
+                            Name = "Villa Carolina"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("d40747ce-547e-4334-a211-7a3b93fa5fb4"),
+                            MunicipalityId = new Guid("fb28c89a-4565-48a2-9516-b8b25da4efd8"),
+                            Name = "Altos de Pan de Azúcar"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("45350c07-2e64-4025-87d3-d063a885c46f"),
+                            MunicipalityId = new Guid("26af7150-f00e-4b4d-bba4-a6156f161a18"),
+                            Name = "Prados del Mutis"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("dda14777-d0f8-416c-97f3-318607704bbf"),
+                            MunicipalityId = new Guid("26af7150-f00e-4b4d-bba4-a6156f161a18"),
+                            Name = "Villa del Prado"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("16c7f9dd-8700-4d96-8453-4e647bdeaeee"),
+                            MunicipalityId = new Guid("515185c4-491c-483b-b2d1-d8e99eaa0189"),
+                            Name = "San Rafael"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("6f263844-aa55-4280-840c-27bda923beac"),
+                            MunicipalityId = new Guid("515185c4-491c-483b-b2d1-d8e99eaa0189"),
+                            Name = "Los Cedros"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("7f1629c6-e440-4bd4-9338-d7e284100140"),
+                            MunicipalityId = new Guid("863104b2-3845-4fbf-b0aa-0471015ba6cc"),
+                            Name = "Bocagrande"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("2f2a97df-9a51-4bbe-a26c-88f71d803d01"),
+                            MunicipalityId = new Guid("863104b2-3845-4fbf-b0aa-0471015ba6cc"),
+                            Name = "Getsemaní"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("4c589372-1a7e-431f-a9ea-fb8d748c493b"),
+                            MunicipalityId = new Guid("09ee73c3-df0d-432e-99b6-f444bc6f25de"),
+                            Name = "El Pueblito"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("16b2e90d-2f62-4dc4-9e4c-f7bab28d5e8d"),
+                            MunicipalityId = new Guid("09ee73c3-df0d-432e-99b6-f444bc6f25de"),
+                            Name = "Las Palmeras"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("a2a07452-dc8e-4cff-828d-75d9cdcdafb5"),
+                            MunicipalityId = new Guid("04445038-5881-4660-9a97-9bc53687c8aa"),
+                            Name = "El Pueblo Nuevo"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("b077ca81-a434-46ce-bc15-b242675a011c"),
+                            MunicipalityId = new Guid("04445038-5881-4660-9a97-9bc53687c8aa"),
+                            Name = "Barrio Libertad"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("f22856fd-a0f5-4cb1-8d76-d703afaa3a66"),
+                            MunicipalityId = new Guid("a1aa7f91-20a2-403d-ad2d-6ef971a46832"),
+                            Name = "El Hipódromo"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("237d8ae9-36c6-4199-88fd-b8eea93eb2fc"),
+                            MunicipalityId = new Guid("a1aa7f91-20a2-403d-ad2d-6ef971a46832"),
+                            Name = "Las Moras"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("f59ffed8-d257-48b9-b961-3499c41cfa04"),
+                            MunicipalityId = new Guid("f90c2016-dd81-46e0-ab68-919e7d5be04b"),
+                            Name = "Centro"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("48065608-6caa-4c95-955e-8f748393fbdd"),
+                            MunicipalityId = new Guid("f90c2016-dd81-46e0-ab68-919e7d5be04b"),
+                            Name = "Barrio El Cacao"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("bc1664e2-92fa-45b0-9868-fdf4b669e78e"),
+                            MunicipalityId = new Guid("f2c2bfc3-b03f-44d6-8396-ce1d64245f72"),
+                            Name = "Ciudad Verde"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("87004677-4dff-4bbe-a941-c311f017a769"),
+                            MunicipalityId = new Guid("f2c2bfc3-b03f-44d6-8396-ce1d64245f72"),
+                            Name = "Compartir"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("ec91bd61-d1e4-469d-8b78-5e544e4c7c73"),
+                            MunicipalityId = new Guid("a3abfc70-4368-4f24-b4bc-378d2ea1c72e"),
+                            Name = "San Rafael"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("514e8495-fc39-4233-936d-a2b7ee255444"),
+                            MunicipalityId = new Guid("a3abfc70-4368-4f24-b4bc-378d2ea1c72e"),
+                            Name = "La Estación"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("4fd9e0cc-2d93-4245-9a82-5dd59563c691"),
+                            MunicipalityId = new Guid("ffad25db-cd64-4f75-96df-d4db4a698e3a"),
+                            Name = "La Esperanza"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("a1a2c738-c1db-4e39-9fdc-2855536d0f6a"),
+                            MunicipalityId = new Guid("ffad25db-cd64-4f75-96df-d4db4a698e3a"),
+                            Name = "El Carmen"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("5cde767f-13f9-4462-a96c-2f7cb9aa6e0a"),
+                            MunicipalityId = new Guid("0070ac2f-33fe-4ee6-95ee-559838f741cc"),
+                            Name = "Guaymaral"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("cefb34aa-e2da-4a37-ba8c-0071d40ae846"),
+                            MunicipalityId = new Guid("0070ac2f-33fe-4ee6-95ee-559838f741cc"),
+                            Name = "La Pradera"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("3c276cb8-6ee2-4950-8c70-d0b193b729e6"),
+                            MunicipalityId = new Guid("efc46672-7656-408a-aed7-33110510d825"),
+                            Name = "La Esperanza"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("57888bd6-957f-4754-9cc0-587d15b31f6f"),
+                            MunicipalityId = new Guid("efc46672-7656-408a-aed7-33110510d825"),
+                            Name = "Centro"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("a7d35971-aa5b-4479-8f4d-71de97846c74"),
+                            MunicipalityId = new Guid("c9209c76-d6e3-49c3-b9b1-27ce300cf820"),
+                            Name = "Chapinero"
+                        },
+                        new
+                        {
+                            NeighborhoodID = new Guid("610ae713-3a68-41c1-92ac-dd844c60051a"),
+                            MunicipalityId = new Guid("c9209c76-d6e3-49c3-b9b1-27ce300cf820"),
+                            Name = "Usaquén"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Users.User", b =>
@@ -1058,20 +1284,6 @@ namespace JucarAutopartes.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "ec1552f4-7066-481b-9b6a-f4d64fda3d5f",
-                            Name = "Manager",
-                            NormalizedName = "MANAGER"
-                        },
-                        new
-                        {
-                            Id = "e841271b-1baa-475c-8f09-e0963632ee40",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

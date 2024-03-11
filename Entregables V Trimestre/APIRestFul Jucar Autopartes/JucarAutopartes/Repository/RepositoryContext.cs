@@ -26,14 +26,17 @@ namespace Repository
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new AutopartConfiguration());
-            modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
-            modelBuilder.ApplyConfiguration(new RoleConfiguration());
-            modelBuilder.ApplyConfiguration(new ContributionConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+            //modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            //modelBuilder.ApplyConfiguration(new SubcategoryConfiguration());
+            //modelBuilder.ApplyConfiguration(new AutopartConfiguration());
+            //modelBuilder.ApplyConfiguration(new RawMaterialConfiguration());
+            //modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            //modelBuilder.ApplyConfiguration(new ContributionConfiguration());
+            //modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            //modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+            modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
+            modelBuilder.ApplyConfiguration(new MunicipalityConfiguration());
+            modelBuilder.ApplyConfiguration(new NeighborhoodConfiguration());
         }
 
         /* Products */
