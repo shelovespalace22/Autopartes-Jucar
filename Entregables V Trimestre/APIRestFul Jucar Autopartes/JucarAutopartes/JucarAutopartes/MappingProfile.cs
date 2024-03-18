@@ -156,7 +156,8 @@ namespace JucarAutopartes
 
             /* Detalles de Pedido */
 
-            CreateMap<OrderDetail, OrderDetailDto>();
+            CreateMap<OrderDetail, OrderDetailDto>()
+                .ForMember(dest => dest.AutopartName, opt => opt.MapFrom(src => src.Autopart.Name));
 
             CreateMap<OrderDetailForCreationDto, OrderDetail>();
 
@@ -174,7 +175,8 @@ namespace JucarAutopartes
 
             /* Contribuciones */
 
-            CreateMap<Contribution, ContributionDto>();
+            CreateMap<Contribution, ContributionDto>()
+                .ForMember(dest => dest.PaymentMethodName, opt => opt.MapFrom(src => src.PaymentMethod.PaymentMethodName));
 
             CreateMap<ContributionForCreationDto, Contribution>();
 

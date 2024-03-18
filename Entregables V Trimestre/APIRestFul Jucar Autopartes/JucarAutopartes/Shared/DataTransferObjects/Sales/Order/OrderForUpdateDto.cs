@@ -15,8 +15,8 @@ namespace Shared.DataTransferObjects.Sales.Order
         [DisplayName("Fecha del Pedido")]
         public DateTime OrderDate { get; init; }
 
-        [DisplayName("Total de Venta")]
-        public decimal? Total { get; set; }
+        //[DisplayName("Total de Venta")]
+        //public decimal? Total { get; set; }
 
         [MaxLength(50, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 50 cáracteres.")]
         [DisplayName("Estado de Pago")]
