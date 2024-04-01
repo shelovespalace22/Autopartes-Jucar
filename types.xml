@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<logtypes>
+	<logicaltype name="unknown" objectid="LOGDT017" default="true">
+		<mapping rdbms="Oracle Database 21c">UNKNOWN</mapping>
+		<mapping rdbms="Oracle Database 12cR2">UNKNOWN</mapping>
+		<mapping rdbms="Oracle Database 12c">UNKNOWN</mapping>
+		<mapping rdbms="Oracle Database 11g">UNKNOWN</mapping>
+		<mapping rdbms="Oracle Database 10g">UNKNOWN</mapping>
+		<mapping rdbms="Oracle9i">UNKNOWN</mapping>
+		<mapping rdbms="SQL Server 2012">UNKNOWN</mapping>
+		<mapping rdbms="SQL Server 2008">UNKNOWN</mapping>
+		<mapping rdbms="SQL Server 2005">UNKNOWN</mapping>
+		<mapping rdbms="SQL Server 2000">UNKNOWN</mapping>
+		<mapping rdbms="DB2/390 8">UNKNOWN</mapping>
+		<mapping rdbms="DB2/390 7">UNKNOWN</mapping>
+		<mapping rdbms="DB2/UDB 9">UNKNOWN</mapping>
+		<mapping rdbms="DB2/UDB 8.1">UNKNOWN</mapping>
+		<mapping rdbms="DB2/UDB 7.1">UNKNOWN</mapping>
+	</logicaltype>
+	<native_to_logical_mappings>
+		<mappings_for_RDBMS_type rdbms_type="Oracle Database 21c" />
+		<mappings_for_RDBMS_type rdbms_type="Oracle Database 12cR2" />
+		<mappings_for_RDBMS_type rdbms_type="Oracle Database 12c" />
+		<mappings_for_RDBMS_type rdbms_type="Oracle Database 11g" />
+		<mappings_for_RDBMS_type rdbms_type="Oracle Database 10g" />
+		<mappings_for_RDBMS_type rdbms_type="Oracle9i" />
+		<mappings_for_RDBMS_type rdbms_type="SQL Server 2012" />
+		<mappings_for_RDBMS_type rdbms_type="SQL Server 2008" />
+		<mappings_for_RDBMS_type rdbms_type="SQL Server 2005" />
+		<mappings_for_RDBMS_type rdbms_type="SQL Server 2000" />
+		<mappings_for_RDBMS_type rdbms_type="DB2/390 8" />
+		<mappings_for_RDBMS_type rdbms_type="DB2/390 7" />
+		<mappings_for_RDBMS_type rdbms_type="DB2/UDB 9" />
+		<mappings_for_RDBMS_type rdbms_type="DB2/UDB 8.1" />
+		<mappings_for_RDBMS_type rdbms_type="DB2/UDB 7.1" />
+	</native_to_logical_mappings>
+	<ud_native_db_types />
+</logtypes>
