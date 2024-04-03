@@ -11,6 +11,7 @@
 <Column name="MunicipalityID" id="93735969-EC4F-59EC-8542-B2D0F0E991F7">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del municipio/ciudad]]></commentInRDBMS>
 <generatorID>C2AE6403-D3D0-CCB9-3316-D42D1D35D766</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="C9B9B8D8-BEB3-4546-C344-D7E27BFC8B08">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del municipio/ciudad]]></commentInRDBMS>
 <generatorID>8DD6DE07-92D3-DE3E-E911-E1C0C6E38BD2</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -33,6 +35,7 @@
 <Column name="Department_DepartmentID" id="A2FEE55F-DDE2-B106-68F9-3D842AE41708">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del departamento asociado al municipio/ciudad]]></commentInRDBMS>
 <generatorID>C1D3098A-2ECB-B430-2996-C10A5FFFC7F2</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

@@ -18,6 +18,7 @@
 <Attribute name="PaymentMethodID" id="9E5519C3-034B-97FF-D8BC-AE71A5EF60B3">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:57:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del Método de Pago]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="PaymentMethodName" id="51BCD1B8-C886-6508-9737-B6B053B51B99">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:57:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del método de pago]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="State" id="1F22615B-105E-B7A5-78B0-69E525248E6F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:57:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="CreationDate" id="7DFF2373-2D34-7BF5-4FCA-975740DBD44F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:58:05 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="ModificationDate" id="0C175B94-3DD0-CC21-D403-F869FC052B06">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:58:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -83,8 +88,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:57:36 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

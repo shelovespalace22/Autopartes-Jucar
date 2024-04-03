@@ -11,6 +11,7 @@
 <Column name="RawMaterialID" id="E4052041-AACA-8E6E-DEFA-F0C12CD9BA41">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima]]></commentInRDBMS>
 <generatorID>59942AD6-0B55-4907-4F28-CE9EB5336A34</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="4A665C57-EA52-C449-8A43-FA8FCD183E7A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la materia prima]]></commentInRDBMS>
 <generatorID>32FDB358-A2D1-1914-FDF5-91141CC9C26D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="State" id="328BC383-BC2C-3E9E-CC00-78291E666AFB">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <generatorID>2DB37804-2269-ED16-7800-AE2D116FC42A</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="F58F3554-46A2-6E1D-03C3-179F7FBB0AA8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>684A6643-F5E2-94C3-A84C-3F0FE96246B8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="5F501FDF-190D-A09A-E8F6-E702D33A8D37">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>49BD4B0E-9BCC-9122-CF24-CAFC8957F22B</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

@@ -18,6 +18,7 @@
 <Attribute name="ContributionID" id="8B28A454-1A6B-A6C0-2203-176F374BE926">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:03:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la contribución]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="AmountPaid" id="A2FEC4F2-11A1-9671-45DB-3C2BB38668C0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:04:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Monto abonado en la contribución]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -44,6 +46,7 @@
 <Attribute name="ContributionDate" id="A78319B7-7E6A-5E6E-B07B-BBEA89286D0E">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:04:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha del pago]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="CreationDate" id="32748FA9-5639-C729-5D00-409D2AEC5C00">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="ModificationDate" id="2D65B8FE-05E6-8139-692E-352D1F0C1382">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:04:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -80,6 +85,7 @@
 <Attribute name="OrderID" id="9F0C8491-8435-E30D-7326-465FC678E460">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:10:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del pedido asociado a la contribución]]></commentInRDBMS>
 <generatorID>3E79CFA0-9081-EC46-C7D3-736EB6ACF836</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -94,6 +100,7 @@
 <Attribute name="PaymentMethodID" id="B62FEF01-E6F5-0935-019A-6FEBBBC3DA3F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:11:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del método de pago asociado a la contribución]]></commentInRDBMS>
 <generatorID>96188DBD-3057-2D70-9C98-439E7B0EC672</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -111,8 +118,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:03:58 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

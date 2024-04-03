@@ -18,6 +18,7 @@
 <Attribute name="LossID" id="3BEBD127-3146-E8E1-4B04-04D195EAA5CE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:39:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la perdida]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="AmountLoss" id="741014E2-94C2-B03A-8E21-D3E9016F832B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:39:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad perdida de autopartes]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -42,6 +44,7 @@
 <Attribute name="Responsible" id="3C40144C-1254-B075-98BB-9C6887AD9176">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:40:05 UTC</createdTime>
+<commentInRDBMS><![CDATA[Persona responsable de la perdida]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -55,6 +58,7 @@
 <Attribute name="Reason" id="8664ED07-A4E5-125B-2E98-9F302ADB9A68">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:40:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Motivo de la perdida]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="LossDate" id="8D86C62C-4E69-3DC7-535A-CAC17D3C5FBA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:40:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha en la que ocurrió la perdida]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -80,6 +85,7 @@
 <Attribute name="CreationDate" id="938CADE4-D621-02F4-219D-BCDEE1ED7ECE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:40:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -92,6 +98,7 @@
 <Attribute name="ModificationDate" id="B99ACEDC-69A6-4DC9-3268-8EA0B65C5997">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:41:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -104,6 +111,7 @@
 <Attribute name="AutopartID" id="D5E166C5-7B74-B76A-B994-EADB57B973A8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:42:01 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la autoparte asociada a la pérdida]]></commentInRDBMS>
 <generatorID>FB5E942C-0482-19E6-1AF1-E7E24EC06502</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -121,8 +129,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:39:39 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

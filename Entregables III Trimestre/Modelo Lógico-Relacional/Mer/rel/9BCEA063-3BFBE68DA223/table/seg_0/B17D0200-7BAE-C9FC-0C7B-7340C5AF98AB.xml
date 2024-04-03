@@ -11,6 +11,7 @@
 <Column name="NeighborhoodID" id="E41CAE45-FACF-D306-9A21-9D1E545A72DC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del barrio]]></commentInRDBMS>
 <generatorID>C4946640-828A-0BF9-BF16-1CAD1A1CB37A</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="AA9D1891-1D3F-BC28-2A07-17B62A75B865">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del barrio]]></commentInRDBMS>
 <generatorID>B999B71B-5C1E-9560-679C-0E2617FFAACB</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -33,6 +35,7 @@
 <Column name="Municipality_MunicipalityID" id="F07086C5-1A77-8302-5001-A4D924EECD6C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del municipio/ciudad asociada al barrio]]></commentInRDBMS>
 <generatorID>EDD5BD8E-7940-D3FA-D6F7-EC309605143D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

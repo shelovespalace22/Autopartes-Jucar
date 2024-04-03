@@ -18,6 +18,7 @@
 <Attribute name="ProviderID" id="5F9671A1-DA11-C949-952F-4809CA45B6F6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:19:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del proveedor]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="IdentifierType" id="3A12710B-B47C-69C0-D087-59665F1DD788">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:19:53 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de proveedor (Natural/Juridico)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="IdentifierNumber" id="DD8DD018-30BB-FCF6-3CA2-8946626EA85A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:20:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Número identificativo del proveedor]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="Name" id="11D69527-ABDC-2816-C560-639220F75A03">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:20:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del proveedor]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -69,6 +73,7 @@
 <Attribute name="EmailAddress" id="3A1C45C2-B5EE-30EE-C491-3C41156F34BA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:20:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Correo electrónico del proveedor]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -81,6 +86,7 @@
 <Attribute name="ProductType" id="969E45E6-D4C9-1458-29C0-957BECA7491A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:20:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de producto que provee]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -94,6 +100,7 @@
 <Attribute name="State" id="D8C393CE-6A3E-FEC7-D9FA-7502BC7EE020">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:21:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -107,6 +114,7 @@
 <Attribute name="CreationDate" id="334C2EA2-142A-70AF-6D9C-AE6E2FC8B7BC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:21:16 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -119,6 +127,7 @@
 <Attribute name="ModificationDate" id="89334348-B3ED-7204-F4B4-4CA8BF03E81D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:21:24 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -134,8 +143,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:19:45 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

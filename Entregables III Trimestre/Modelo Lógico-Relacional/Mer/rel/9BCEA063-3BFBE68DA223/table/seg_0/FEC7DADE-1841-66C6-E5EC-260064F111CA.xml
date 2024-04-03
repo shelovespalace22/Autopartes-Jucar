@@ -11,6 +11,7 @@
 <Column name="ContributionID" id="3A7C69C0-1537-553F-6EB4-9BDCEBB39503">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la contribución]]></commentInRDBMS>
 <generatorID>8B28A454-1A6B-A6C0-2203-176F374BE926</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="AmountPaid" id="C207BFFC-5035-C053-2769-C997E0AFF411">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Monto abonado en la contribución]]></commentInRDBMS>
 <generatorID>A2FEC4F2-11A1-9671-45DB-3C2BB38668C0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -35,6 +37,7 @@
 <Column name="ContributionDate" id="2A2D9721-D5F0-8F1D-9153-0544D4DF2BDE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha del pago]]></commentInRDBMS>
 <generatorID>A78319B7-7E6A-5E6E-B07B-BBEA89286D0E</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="366165A4-1DAD-A16E-28EA-ACB02550E7B1">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>32748FA9-5639-C729-5D00-409D2AEC5C00</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="BACF96D7-3163-42C5-C2ED-C2102C68A07F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>2D65B8FE-05E6-8139-692E-352D1F0C1382</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,6 +73,7 @@
 <Column name="Order_OrderID" id="BD2BE278-9BD2-360C-80AB-3B3726DF2CB7">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del pedido asociado a la contribución]]></commentInRDBMS>
 <generatorID>9F0C8491-8435-E30D-7326-465FC678E460</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,6 +89,7 @@
 <Column name="PaymentMethod_PaymentMethodID" id="FE220AC0-3E0F-617A-83E6-E291EC564B91">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del método de pago asociado a la contribución]]></commentInRDBMS>
 <generatorID>B62FEF01-E6F5-0935-019A-6FEBBBC3DA3F</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

@@ -18,6 +18,7 @@
 <Attribute name="MovementID" id="F83FB3B0-0589-F9EE-1420-2E8FFA49328B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:44:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del movimiento]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Quantity" id="8BA63EE9-24C6-DE9C-2FC0-1100823FBBA4">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:44:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad involucrada en el movimiento de materia prima]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -42,6 +44,7 @@
 <Attribute name="MovementType" id="F923D1B7-8525-D847-1701-9D93DF3B0C07">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:45:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de movimiento (Entrada/Salida) de materia prima]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -55,6 +58,7 @@
 <Attribute name="MovementDate" id="0B3EF46B-DC7A-5956-9BDD-AF35B6EE19F0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:45:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha en la que se realizó el movimiento]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -67,6 +71,7 @@
 <Attribute name="CreationDate" id="982F89AF-D977-AE17-B5AA-BB771DA4F46C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:45:33 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -79,6 +84,7 @@
 <Attribute name="ModificationDate" id="6EE563FA-5A1A-51EE-4661-C444F11FF0BE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:45:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -91,6 +97,7 @@
 <Attribute name="RawMaterialID" id="C8A381A1-EA69-B89C-7622-C999651510C5">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:48:40 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima asociada al movimiento]]></commentInRDBMS>
 <generatorID>E6AD31B1-5CB4-159B-F60F-FF5D8B03A59C</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -108,8 +115,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:44:41 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

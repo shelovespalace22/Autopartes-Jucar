@@ -11,6 +11,7 @@
 <Column name="OrderID" id="85C39AF6-EA2D-F8B5-2952-267553538600">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del pedido]]></commentInRDBMS>
 <generatorID>B8F28F1B-7E5C-4AC7-EFC7-AE9B450A7126</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="OrderDate" id="CB3C8F54-BA9D-2097-58EF-5EA9551F53A6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de realización del pedido]]></commentInRDBMS>
 <generatorID>CBF1127A-B7FD-1E64-62B0-D3847F124B20</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -33,6 +35,7 @@
 <Column name="Total" id="0DCA8D7D-2B95-2D48-92E1-AFE9DB967BFA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Valor total del pedido]]></commentInRDBMS>
 <generatorID>07AF0BE5-C0C9-F917-5C32-BC46B9AAC757</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -47,6 +50,7 @@
 <Column name="PaymentStatus" id="14D8EB87-39D1-8300-8CAA-94E7F3FAB138">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado de pago del pedido]]></commentInRDBMS>
 <generatorID>1A4C70DE-0BE2-5B05-86CD-BD7E62ADADA2</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -60,6 +64,7 @@
 <Column name="ShippingAddress" id="012D4F9D-51CA-B726-4715-167704FEBC3A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Dirección de envío del pedido]]></commentInRDBMS>
 <generatorID>10B5AD2F-E001-5CB2-AE29-DC7FA02EF3C0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -73,6 +78,7 @@
 <Column name="ShippingStatus" id="41BE5B53-F493-8440-3AFF-08D1BEC80D0F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del envío del pedido]]></commentInRDBMS>
 <generatorID>183EE559-BCC6-DCB9-D610-51AAB3FA27D7</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -86,6 +92,7 @@
 <Column name="Observation" id="0DF41E42-B56B-F746-42C9-77C80CC0BB00">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Observaciones adicionales sobre el pedido]]></commentInRDBMS>
 <generatorID>12088C79-2DC8-B976-836F-D7078DD520AB</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -98,6 +105,7 @@
 <Column name="CreationDate" id="7CBB870D-9555-F74A-FCFF-8ACEE7BB2522">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>A8C9E995-D358-6BD4-8A34-25841F352EE0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -109,6 +117,7 @@
 <Column name="ModificationDate" id="2E1E457E-C884-1D60-42F0-F6E043D74BDB">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>1D033A8E-A4D8-A31A-A05B-B1F3F3C66367</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -120,6 +129,7 @@
 <Column name="Customer_CustomerID" id="4BBA924B-E362-9912-4ED6-218C3055021F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del cliente asociado al pedido]]></commentInRDBMS>
 <generatorID>F128777D-A34C-3F26-EC61-90003083166D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

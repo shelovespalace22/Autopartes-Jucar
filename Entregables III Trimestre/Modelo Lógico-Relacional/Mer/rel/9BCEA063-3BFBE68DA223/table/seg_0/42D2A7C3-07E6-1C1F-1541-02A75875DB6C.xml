@@ -11,6 +11,7 @@
 <Column name="DepartmentID" id="2337A7A0-6356-0D51-9C62-101DD6ADEEB6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del departamento]]></commentInRDBMS>
 <generatorID>D39875E8-2570-F3BC-9D9F-58AEE5994E98</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="8A9F64E1-79A8-DC43-1268-ED5425DF19BA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del departamento]]></commentInRDBMS>
 <generatorID>56B72AF4-2C9D-33C2-0310-5C0F305B1040</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
