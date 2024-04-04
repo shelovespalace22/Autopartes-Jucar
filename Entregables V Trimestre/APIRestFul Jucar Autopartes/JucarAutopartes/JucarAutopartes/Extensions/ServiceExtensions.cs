@@ -44,7 +44,7 @@ namespace JucarAutopartes.Extensions
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
             services.AddDbContext<RepositoryContext>(opts =>
-                opts.UseSqlServer(configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
+                opts.UseSqlServer(configuration.GetConnectionString("SqlConnection")));
 
         public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
             builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
