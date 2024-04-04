@@ -11,6 +11,7 @@
 <Column name="AutopartID" id="506E498C-EC92-712F-17DC-75172792063E">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la autoparte]]></commentInRDBMS>
 <generatorID>116C8A43-7B0E-E939-F411-B37A43D32B08</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="77079BA4-3F3C-C675-D580-A99111FBD5CC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la autoparte]]></commentInRDBMS>
 <generatorID>D439EF96-3671-2319-8624-3B5B8A6D2CBA</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="Description" id="BD3C41FD-3AF9-1056-8E24-20A13223C421">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Descripción de la autoparte]]></commentInRDBMS>
 <generatorID>A4B705AD-423A-3FC4-8447-27F2D4D06AF0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="Inventory" id="3D49FC61-B2FF-FC28-71D5-92A48E8D7DFC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad disponible y/o stock de la autoparte]]></commentInRDBMS>
 <generatorID>E7FC6D52-8C26-CCD6-67D8-1D68776C4406</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -58,6 +62,7 @@
 <Column name="Value" id="0644AF6E-D0D4-5435-8956-75ECA9B2A557">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Precio unitario de la autoparte]]></commentInRDBMS>
 <generatorID>15716952-E269-D912-66F2-D4DB2D0E80C0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -71,6 +76,7 @@
 <Column name="State" id="1C7A6F40-DBF7-2607-008E-6BCA4A1498F9">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <generatorID>78F4189B-F846-CC56-9453-23403340429B</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,6 +89,7 @@
 <Column name="CreationDate" id="99FEE773-1899-1ABD-2581-3EF00BE17B0D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>B2599377-91DC-CF70-8F06-08EB455DD5E8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -94,6 +101,7 @@
 <Column name="ModificationDate" id="45446BB7-FDD5-5527-653F-81C7442D9A90">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>2BF0CD24-7932-CC87-022B-DF3C6FF370EE</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -105,6 +113,7 @@
 <Column name="Subcategory_SubcategoryID" id="F67793F6-D871-0A51-6AAB-97260D25B96B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la subcategoria asociada a la autoparte]]></commentInRDBMS>
 <generatorID>6342FFE2-83D1-BAF9-9EB4-8CE6508B11E5</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -120,6 +129,7 @@
 <Column name="RawMaterial_RawMaterialID" id="D81A062A-9AB5-15B1-D784-88B5EAA1A51F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima asociada a la autoparte]]></commentInRDBMS>
 <generatorID>8D79E035-D8D6-C390-E543-2CF82DF3E222</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

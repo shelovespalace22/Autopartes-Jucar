@@ -18,6 +18,7 @@
 <Attribute name="NeighborhoodID" id="C4946640-828A-0BF9-BF16-1CAD1A1CB37A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:15:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del barrio]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="B999B71B-5C1E-9560-679C-0E2617FFAACB">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:15:20 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del barrio]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -42,6 +44,7 @@
 <Attribute name="MunicipalityID" id="EDD5BD8E-7940-D3FA-D6F7-EC309605143D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:16:33 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del municipio/ciudad asociada al barrio]]></commentInRDBMS>
 <generatorID>4BFBC367-FED1-864C-59E9-C67231A16B29</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -59,8 +62,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:15:18 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

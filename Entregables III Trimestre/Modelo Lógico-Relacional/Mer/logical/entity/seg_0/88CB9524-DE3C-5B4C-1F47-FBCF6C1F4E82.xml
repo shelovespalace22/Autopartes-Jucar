@@ -18,6 +18,7 @@
 <Attribute name="AutopartID" id="116C8A43-7B0E-E939-F411-B37A43D32B08">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:53:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la autoparte]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="D439EF96-3671-2319-8624-3B5B8A6D2CBA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:53:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la autoparte]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="Description" id="A4B705AD-423A-3FC4-8447-27F2D4D06AF0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:53:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Descripción de la autoparte]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="Inventory" id="E7FC6D52-8C26-CCD6-67D8-1D68776C4406">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:54:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad disponible y/o stock de la autoparte]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -69,6 +73,7 @@
 <Attribute name="Value" id="15716952-E269-D912-66F2-D4DB2D0E80C0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:54:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Precio unitario de la autoparte]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -83,6 +88,7 @@
 <Attribute name="State" id="78F4189B-F846-CC56-9453-23403340429B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:54:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -96,6 +102,7 @@
 <Attribute name="CreationDate" id="B2599377-91DC-CF70-8F06-08EB455DD5E8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:55:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -108,6 +115,7 @@
 <Attribute name="ModificationDate" id="2BF0CD24-7932-CC87-022B-DF3C6FF370EE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:55:20 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -120,6 +128,7 @@
 <Attribute name="SubcategoryID" id="6342FFE2-83D1-BAF9-9EB4-8CE6508B11E5">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:58:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la subcategoria asociada a la autoparte]]></commentInRDBMS>
 <generatorID>70EC4F2E-ED8D-B2A2-A337-3F5E813F455E</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -134,6 +143,7 @@
 <Attribute name="RawMaterialID" id="8D79E035-D8D6-C390-E543-2CF82DF3E222">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 19:00:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima asociada a la autoparte]]></commentInRDBMS>
 <generatorID>B3C70F13-E097-0577-570F-32F239738077</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -151,8 +161,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:53:14 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

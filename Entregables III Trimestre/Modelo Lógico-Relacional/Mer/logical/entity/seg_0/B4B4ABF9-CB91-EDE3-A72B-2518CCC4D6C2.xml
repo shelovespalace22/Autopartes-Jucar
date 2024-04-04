@@ -18,6 +18,7 @@
 <Attribute name="DepartmentID" id="D39875E8-2570-F3BC-9D9F-58AEE5994E98">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:13:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del departamento]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="56B72AF4-2C9D-33C2-0310-5C0F305B1040">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:13:33 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del departamento]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -45,8 +47,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:13:15 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

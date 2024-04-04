@@ -18,6 +18,7 @@
 <Attribute name="MunicipalityID" id="C2AE6403-D3D0-CCB9-3316-D42D1D35D766">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:14:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del municipio/ciudad]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="8DD6DE07-92D3-DE3E-E911-E1C0C6E38BD2">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:14:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del municipio/ciudad]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -42,6 +44,7 @@
 <Attribute name="DepartmentID" id="C1D3098A-2ECB-B430-2996-C10A5FFFC7F2">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:15:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del departamento asociado al municipio/ciudad]]></commentInRDBMS>
 <generatorID>3F7009E6-F3BA-7AA9-DDEB-D458A67F6CB2</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -59,8 +62,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:14:46 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -11,6 +11,7 @@
 <Column name="CustomerID" id="25D9FCBD-7E7D-2B0F-3FB1-1F911896C563">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del cliente]]></commentInRDBMS>
 <generatorID>36AB1160-8D3E-81C5-6874-EA7A56E5A17D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="IdentifierType" id="304FA2DF-D396-27B0-CB4C-3EC710A2AD47">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de cliente (Natural/Juridico)]]></commentInRDBMS>
 <generatorID>8D1A23EC-A62E-1293-699F-19DBAD1F37DF</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="IdentifierNumber" id="4079E100-CEF2-5316-1734-27CF5F4AE187">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Número identificativo del cliente (Cédula/NIT)]]></commentInRDBMS>
 <generatorID>0EB315FF-B923-F60B-C4C3-2A074CC2F62E</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="Name" id="DE01F4A3-982E-0FB6-A03A-8D249B70F63B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del cliente]]></commentInRDBMS>
 <generatorID>38CCAB57-CC60-F871-420A-85A00BBEC609</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -58,6 +62,7 @@
 <Column name="Email" id="2FABAE15-5D9D-9B80-9B5F-C56650A3463C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Correo electrónico del cliente]]></commentInRDBMS>
 <generatorID>A131D2DC-AD1C-5E4C-A201-64CF437F9562</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,6 +74,7 @@
 <Column name="CreationDate" id="64FA7D14-CC5F-5CDF-DA3E-FE6F46DEB25D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>771FBD56-B1A9-BA0B-E220-F5587E455CBE</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -80,6 +86,7 @@
 <Column name="ModificationDate" id="5447EA7B-4957-548F-BF5E-A941C84A581A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>BBE66460-B55F-8CC0-DC8E-364839D5C153</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

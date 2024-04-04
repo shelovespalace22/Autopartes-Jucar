@@ -11,6 +11,7 @@
 <Column name="CustomerPhoneID" id="7AE87D98-1014-AB7D-5008-E9865B1053F6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del télefono de cliente]]></commentInRDBMS>
 <generatorID>4FF7ECBD-FBC5-41E5-54FC-1242A6E253B0</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="PhoneType" id="5A33824B-78E0-EDC9-3ADC-409843ED4EEB">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de número telefónico]]></commentInRDBMS>
 <generatorID>939BFBE1-8E24-D5A6-43F8-B215A46544A2</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="PhoneNumber" id="B3472C8C-083D-7A42-20BD-8F121F82BF0A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Número telefónico]]></commentInRDBMS>
 <generatorID>15AB8ADD-6E75-9E62-D8C5-50AF77F5AA56</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="245CA9FF-7F6B-CF7D-F474-9E06EDD4761C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>C6D7551D-A61E-A95C-0153-09660008BDC9</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="A5B3F066-49B0-5FA7-F0E7-4E4F9FAF78E6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>5C6CC808-CBA9-C1E9-24B4-9B8E6FD0BB91</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,6 +73,7 @@
 <Column name="Customer_CustomerID" id="19B2192B-F28B-336C-C9AB-D60FA53BF6BA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del cliente asociado al teléfono]]></commentInRDBMS>
 <generatorID>E7FC69D8-58B4-A16F-0793-B608BF271CDE</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

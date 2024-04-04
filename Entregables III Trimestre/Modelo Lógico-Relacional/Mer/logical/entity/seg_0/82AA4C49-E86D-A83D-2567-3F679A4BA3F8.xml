@@ -18,6 +18,7 @@
 <Attribute name="SubcategoryID" id="54B5E37F-279E-C412-CFD2-E09AFC05F59D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:30:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la subcategoria]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="449477BE-DDA6-612F-C390-927A9EB5A6B8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:30:53 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la subcategoria]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="State" id="7E947C59-45C0-DD46-A8B1-52A0AF941C32">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:31:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="CreationDate" id="C2077ABC-6285-68DE-9F22-9145A436C7D4">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:31:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="ModificationDate" id="F4866FBF-9C81-6A39-2277-85B692B9C495">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:31:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -80,6 +85,7 @@
 <Attribute name="CategoryID" id="E60EB312-7A15-E7C6-5502-FE4ADA4CF810">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:34:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la categoria asociada a la subcategoria]]></commentInRDBMS>
 <generatorID>F1DA5FAB-3210-7FA7-25FA-51DFD147B351</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -97,8 +103,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:30:51 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

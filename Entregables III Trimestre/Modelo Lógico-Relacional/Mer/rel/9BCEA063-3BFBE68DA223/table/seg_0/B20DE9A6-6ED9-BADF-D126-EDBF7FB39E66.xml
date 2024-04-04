@@ -11,6 +11,7 @@
 <Column name="ProviderAddressID" id="7229D222-7C53-D8C8-AE5B-9AD13EFC6025">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la dirección de proveedor]]></commentInRDBMS>
 <generatorID>9D08346B-E2A3-6A66-DFCC-33526F3848C1</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Address" id="2DDC997A-FBAC-E573-1AD5-CF4020A789EB">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Dirección y/o coordenadas]]></commentInRDBMS>
 <generatorID>EE13861C-57BC-98F6-67CF-18C4D9BD8C98</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="AddressType" id="6FF2F848-F604-AF15-0247-000D1290927F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de dirección (Laboral/Hogar/...)]]></commentInRDBMS>
 <generatorID>9BCEB67D-F5E0-9493-8B90-FBB33804DDEA</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="State" id="7059FB4B-2799-1091-9394-343377EFB84A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <generatorID>1EE323E9-D2DF-594D-B962-AA4095CDFA5C</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -58,6 +62,7 @@
 <Column name="CreationDate" id="BA861B83-E339-56DD-DA3B-A1ED2A24F63B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>B448955E-27BD-6ED5-B5BC-FB13394C0689</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,6 +74,7 @@
 <Column name="ModificationDate" id="25FAFDEB-F86F-973D-3D26-9C9ABDF8DCF0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>324E7AFF-FB3C-B132-3B41-CD7EB616F7B4</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -80,6 +86,7 @@
 <Column name="Provider_ProviderID" id="FCA40ECD-8C88-3BB0-4DD4-FAC7C70A0654">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del proveedor asociado a la dirección]]></commentInRDBMS>
 <generatorID>848D9EAF-2F31-E315-1DAA-A82BEE486F90</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -95,6 +102,7 @@
 <Column name="Neighborhood_NeighborhoodID" id="0484CE34-2921-CC09-B16B-98A3EC9D1DA7">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del barrio asociado a la dirección]]></commentInRDBMS>
 <generatorID>DF060F84-87FA-8128-963E-EAA667A6E259</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

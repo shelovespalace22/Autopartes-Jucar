@@ -18,6 +18,7 @@
 <Attribute name="CustomerAddressID" id="312390DE-7528-DFA2-630B-CC8222E39A68">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la dirección del cliente]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Address" id="27222897-5D71-A914-543D-1698C06A3B47">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Dirección y/o coordenadas]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="AddressType" id="9BF642E2-64AD-C3F8-B6BF-461485F1EFE8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de dirección (Laboral/Hogar/...)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="State" id="459DE717-F71B-5D1B-151E-2793F8C6838A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -69,6 +73,7 @@
 <Attribute name="CreationDate" id="08BB6938-CBAA-969A-7F6B-919152676AEA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -81,6 +86,7 @@
 <Attribute name="ModificationDate" id="C4A9C0C4-20B7-48C0-4CC9-AA324619366C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:57:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -93,6 +99,7 @@
 <Attribute name="CustomerID" id="1E46497B-F0CB-AA93-6C2D-7D2D95D5CE28">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:09:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del cliente asociado a la dirección]]></commentInRDBMS>
 <generatorID>90C932E7-F4FE-09EA-499B-9DAF0C204981</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -107,6 +114,7 @@
 <Attribute name="NeighborhoodID" id="82815967-F033-3809-8C50-5E789D738BBE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:17:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del barrio asociado a la dirección]]></commentInRDBMS>
 <generatorID>BE4AA15C-1BB6-2818-826E-75694C640B78</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -124,8 +132,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:56:11 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

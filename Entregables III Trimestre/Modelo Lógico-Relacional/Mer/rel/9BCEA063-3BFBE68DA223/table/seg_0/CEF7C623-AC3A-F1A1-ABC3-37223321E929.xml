@@ -11,6 +11,7 @@
 <Column name="PaymentMethodID" id="FB55DB5B-2FA3-F600-4A89-DD0BCA390439">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del Método de Pago]]></commentInRDBMS>
 <generatorID>9E5519C3-034B-97FF-D8BC-AE71A5EF60B3</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="PaymentMethodName" id="99A74C79-8D41-C794-6B37-EA890FD9BE1F">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre del método de pago]]></commentInRDBMS>
 <generatorID>51BCD1B8-C886-6508-9737-B6B053B51B99</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="State" id="E15777C0-C06A-C76D-F5C5-A6A590C2E5A4">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <generatorID>1F22615B-105E-B7A5-78B0-69E525248E6F</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="50305374-6FC8-44FB-596B-8D61D640C92E">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>7DFF2373-2D34-7BF5-4FCA-975740DBD44F</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="1F4CACA3-2F5A-5DDC-D171-25D420AB7802">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>0C175B94-3DD0-CC21-D403-F869FC052B06</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

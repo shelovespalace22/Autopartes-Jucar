@@ -18,6 +18,7 @@
 <Attribute name="OrderDetailID" id="5397F9CD-A353-170B-3214-46AD5EBD27CD">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:01:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del detalle del pedido]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -29,6 +30,7 @@
 <Attribute name="Quantity" id="E961438E-5FE0-51EA-0BB3-357E17892368">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:01:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad de producto a llevar(autoparte)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -40,6 +42,7 @@
 <Attribute name="UnitValue" id="5CE33157-1B03-98A5-66E1-BE4AC37B6223">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:02:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Precio unitario del producto (autoparte)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -51,19 +54,19 @@
 <Attribute name="SubtotalValue" id="AE550084-CFC3-E59E-E43B-7D7F37E0AE54">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:02:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Valor subtotal de cada detalle de pedido]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<dataTypePrecision>10</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="CreationDate" id="03E25E63-E13A-6F5B-F37B-8B26161B3E8B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:03:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -75,6 +78,7 @@
 <Attribute name="ModificationDate" id="09FAB219-8C17-29FA-FC8F-BA5186A1B5D6">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:03:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -86,6 +90,7 @@
 <Attribute name="AutopartID" id="9AEC46E1-E2D4-2B98-5665-95E524963D28">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:07:18 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la autoparte asociada a cada detalle]]></commentInRDBMS>
 <generatorID>706F3F33-E395-BF72-AA30-7AE15C620385</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -94,11 +99,13 @@
 <referedAttribute>116C8A43-7B0E-E939-F411-B37A43D32B08</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="OrderID" id="8752498E-0DF6-E992-C01A-84F98C62B865">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:08:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del pedido asociado a los detalles]]></commentInRDBMS>
 <generatorID>BF06F497-C9C5-52AA-CE0B-5812CD56C1C7</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -107,6 +114,7 @@
 <referedAttribute>B8F28F1B-7E5C-4AC7-EFC7-AE9B450A7126</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -115,8 +123,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:01:53 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

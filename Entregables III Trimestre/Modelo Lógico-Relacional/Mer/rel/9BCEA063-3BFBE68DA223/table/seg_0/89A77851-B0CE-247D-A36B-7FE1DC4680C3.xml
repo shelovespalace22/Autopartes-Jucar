@@ -11,6 +11,7 @@
 <Column name="StockID" id="C03A76BF-4505-3859-3958-AB00BDA6902D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del stock]]></commentInRDBMS>
 <generatorID>9B41FE50-659A-9BA8-74F9-F1065C362FC9</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="QuantityAvailable" id="2F55F3C9-0CCE-B58A-0560-6E87DDC3A173">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad disponible de la materia prima]]></commentInRDBMS>
 <generatorID>2440DB39-BCB0-0DB0-8470-64FD8A6569E8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -33,6 +35,7 @@
 <Column name="InitialStock" id="D6B4ECB3-54ED-D0D7-351B-DC5D3FC15360">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad mensual inicial de la materia prima]]></commentInRDBMS>
 <generatorID>11E7812A-C7CF-34A4-BE6E-826C7E70A0E8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -44,6 +47,7 @@
 <Column name="ReorderPoint" id="12CADD18-0EC5-0225-E2F6-BD2234E0D177">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad de materia prima a la que se debe solicitar abastecimiento]]></commentInRDBMS>
 <generatorID>900D199C-E6E9-B875-EE5A-D6A4FFA1BB96</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,6 +59,7 @@
 <Column name="MinimumInventory" id="CF47817F-2C3B-1304-EBBF-E135B3FDB571">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad disponible minima permitida de la materia prima]]></commentInRDBMS>
 <generatorID>B16E1C72-D083-67A2-4A3F-298B25963717</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -66,6 +71,7 @@
 <Column name="MaximumInventory" id="3322EE33-918F-5F6A-B3F1-0E1FE02DE44C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad disponible máxima permitida de la materia prima]]></commentInRDBMS>
 <generatorID>AF24DDC2-F7AF-BCC2-F626-1BC83B88FCE6</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -77,6 +83,7 @@
 <Column name="CreationDate" id="FD670FA2-F582-62E5-D9EC-54AE18A35477">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>BEBE8A6D-F259-CF52-19C8-006335DF0697</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -88,6 +95,7 @@
 <Column name="ModificationDate" id="3B38BBDB-AFE2-C338-A568-3FE4233AF620">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>8BF08937-C3A3-5FD6-659F-56ED26346654</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -99,6 +107,7 @@
 <Column name="RawMaterial_RawMaterialID" id="51DB092E-F6B8-BCA4-4ADF-7EB622463CB9">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima asociada al stock]]></commentInRDBMS>
 <generatorID>6BA9F95D-DEB8-29C8-725A-6C666B09043D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
