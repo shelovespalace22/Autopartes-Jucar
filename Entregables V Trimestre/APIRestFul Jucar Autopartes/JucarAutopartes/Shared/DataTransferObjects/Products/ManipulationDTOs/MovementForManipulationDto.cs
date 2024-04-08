@@ -18,7 +18,7 @@ namespace Shared.DataTransferObjects.Products.ManipulationDTOs
 
         [Required(ErrorMessage = "Debe indicar si el movimiento es una Salida o Entrada")]
         [MaxLength(20, ErrorMessage = "La longitud máxima permitida para el campo {0} es de 20 cáracteres.")]
-        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "El formato del campo {0} no es válido. Asegúrate de seguir el patrón requerido.")]
+        [RegularExpression("^(Entrada|entrada|Salida|salida)$", ErrorMessage = "El formato del campo {0} no es válido. Solo se permiten los valores 'Entrada' o 'Salida'.")]
         [DisplayName("Tipo de Movimiento")]
         public string? MovementType { get; init; }
 

@@ -10,6 +10,7 @@ namespace Shared.DataTransferObjects.Sales.OrderDetail
     {
         public Guid OrderDetailID { get; init; }
         public Guid AutopartId { get; init; }
+        public string? AutopartName { get; init; }
         public int Quantity { get; init; }
         public decimal UnitValue { get; init; }
         public decimal SubtotalValue { get; init; }

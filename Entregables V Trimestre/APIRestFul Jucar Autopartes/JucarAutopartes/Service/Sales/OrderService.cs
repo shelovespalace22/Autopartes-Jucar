@@ -35,6 +35,11 @@ namespace Service.Sales
 
             var orderEntity = _mapper.Map<Order>(order);
 
+            foreach (var detail in orderEntity.OrderDetails) 
+            {
+                await UpdateAutopartInventory(detail.AutopartId, detail.Quantity);
+            }
+
             _repository.Order.CreateOrder(customerId, orderEntity);
 
             await _repository.SaveAsync();
@@ -138,6 +143,19 @@ namespace Service.Sales
                 throw new CustomerNotFoundException(customerId);
 
             return customer;
+        }
+
+        private async Task UpdateAutopartInventory(Guid autopartId, int amountLoss)
+        {
+            var autopart = await _repository.Autopart.GetAutopartByIdAsync(autopartId, false);
+
+            if (autopart != null)
+            {
+                autopart.Inventory -= amountLoss;
+                autopart.setModificationDate();
+                _repository.Autopart.UpdateAutopartInventory(autopart);
+                await _repository.SaveAsync();
+            }
         }
 
     }

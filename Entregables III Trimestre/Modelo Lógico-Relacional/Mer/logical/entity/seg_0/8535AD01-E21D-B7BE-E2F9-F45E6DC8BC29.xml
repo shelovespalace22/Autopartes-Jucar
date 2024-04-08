@@ -18,6 +18,7 @@
 <Attribute name="CustomerPhoneID" id="4FF7ECBD-FBC5-41E5-54FC-1242A6E253B0">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:54:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del télefono de cliente]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="PhoneType" id="939BFBE1-8E24-D5A6-43F8-B215A46544A2">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:55:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de número telefónico]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="PhoneNumber" id="15AB8ADD-6E75-9E62-D8C5-50AF77F5AA56">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:55:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[Número telefónico]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="CreationDate" id="C6D7551D-A61E-A95C-0153-09660008BDC9">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:55:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="ModificationDate" id="5C6CC808-CBA9-C1E9-24B4-9B8E6FD0BB91">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:55:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -80,6 +85,7 @@
 <Attribute name="CustomerID" id="E7FC69D8-58B4-A16F-0793-B608BF271CDE">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:09:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del cliente asociado al teléfono]]></commentInRDBMS>
 <generatorID>DE35FF61-57F5-86D1-CD8C-477AA8250B17</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
@@ -97,8 +103,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 21:54:58 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -4,6 +4,7 @@ using Entities.Exceptions.NotFound.Products;
 using Entities.Models.Products;
 using Service.Contracts.Products;
 using Shared.DataTransferObjects.Products;
+using Shared.DataTransferObjects.Products.ManipulationDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Service.Products
         {
             var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
-            await UpdateStockQuantity(rawMaterial, movementForCreation);
+            await UpdateStockQuantityForCreate(rawMaterial, movementForCreation);
 
             var movementEntity = _mapper.Map<Movement>(movementForCreation);
 
@@ -48,9 +49,11 @@ namespace Service.Products
         /* Eliminar */
         public async Task DeleteMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, bool trackChanges)
         {
-            await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
+            var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
 
             var movementForRawmaterial = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
+
+            await RemoveStock(rawMaterial, movementForRawmaterial);
 
             _repository.Movement.DeleteMovement(movementForRawmaterial);
 
@@ -87,7 +90,9 @@ namespace Service.Products
         /* Actualizar */
         public async Task UpdateMovementForRawmaterialAsync(Guid rawMaterialId, Guid id, MovementForUpdateDto movementForUpdate, bool rawTrackChanges, bool movTrackChanges)
         {
-            await CheckIfRawMaterialExists(rawMaterialId, rawTrackChanges);
+            var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, rawTrackChanges);
+
+            await UpdateStockQuantityForUpdate(rawMaterial, movementForUpdate);
 
             var movementEntity = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, movTrackChanges);
 
@@ -98,20 +103,8 @@ namespace Service.Products
             await _repository.SaveAsync();
         }
 
-
-
-
-
-
         /* <--- Métodos Privados ---> */
-
-        public enum MovementType
-        {
-            Entrada,
-            Salida
-        }
-
-        private async Task UpdateStockQuantity(RawMaterial rawMaterial, MovementForCreationDto movement)
+        private async Task UpdateStockQuantityForCreate(RawMaterial rawMaterial, MovementForCreationDto movement)
         {
             // Verificar si 'rawMaterial.Stock' es null antes de acceder a 'StockID'
             if (rawMaterial.Stock is null)
@@ -133,6 +126,52 @@ namespace Service.Products
             stock.setModificationDate();
 
             _repository.Stock.UpdateStockQuantity(stock);
+
+            await _repository.SaveAsync();
+        }
+
+        private async Task UpdateStockQuantityForUpdate(RawMaterial rawMaterial, MovementForUpdateDto movement)
+        {
+            // Verificar si 'rawMaterial.Stock' es null antes de acceder a 'StockID'
+            if (rawMaterial.Stock is null)
+                throw new StockNotFoundException(rawMaterial.Stock.StockID);
+
+            // Buscar el stock correspondiente a la materia prima
+            var stock = await _repository.Stock.GetStockByRawMaterialAsync(rawMaterial.RawMaterialID, rawMaterial.Stock.StockID, false);
+
+            // Actualizar 'QuantityAvailable' del stock dependiendo del tipo de movimiento
+            if (movement.MovementType == "Entrada" || movement.MovementType == "entrada")
+            {
+                stock.QuantityAvailable += movement.Quantity;
+            }
+            else if (movement.MovementType == "Salida" || movement.MovementType == "salida")
+            {
+                stock.QuantityAvailable -= movement.Quantity;
+            }
+
+            stock.setModificationDate();
+
+            _repository.Stock.UpdateStockQuantity(stock);
+
+            await _repository.SaveAsync();
+        }
+
+        public async Task RemoveStock(RawMaterial raw, Movement mov)
+        {
+            //var rawMaterial = await CheckIfRawMaterialExists(rawMaterialId, trackChanges);
+
+            //var movement = await GetMovementForRawMaterialAndCheckIfItExists(rawMaterialId, id, trackChanges);
+
+            var stock = await _repository.Stock.GetStockByRawMaterialAsync(raw.RawMaterialID, raw.Stock.StockID, false);
+
+            if (stock != null)
+            {
+                stock.QuantityAvailable -= mov.Quantity;
+
+                stock.setModificationDate();
+
+                _repository.Stock.UpdateStockQuantity(stock);
+            }
 
             await _repository.SaveAsync();
         }

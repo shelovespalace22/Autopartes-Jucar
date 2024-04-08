@@ -18,6 +18,7 @@
 <Attribute name="RawMaterialID" id="59942AD6-0B55-4907-4F28-CE9EB5336A34">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:55:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la materia prima]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -30,6 +31,7 @@
 <Attribute name="Name" id="32FDB358-A2D1-1914-FDF5-91141CC9C26D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:56:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la materia prima]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -43,6 +45,7 @@
 <Attribute name="State" id="2DB37804-2269-ED16-7800-AE2D116FC42A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:56:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -56,6 +59,7 @@
 <Attribute name="CreationDate" id="684A6643-F5E2-94C3-A84C-3F0FE96246B8">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:56:34 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -68,6 +72,7 @@
 <Attribute name="ModificationDate" id="49BD4B0E-9BCC-9122-CF24-CAFC8957F22B">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:56:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <ownerDesignName>Mer</ownerDesignName>
 <engineerTo>
 <item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
@@ -83,8 +88,9 @@
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 18:55:58 UTC</createdTime>
 <ownerDesignName>Mer</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="true"/>
+<item key="9BCEA063-849B-8AAE-AADF-3BFBE68DA223" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

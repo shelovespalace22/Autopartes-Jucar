@@ -11,6 +11,7 @@ namespace Shared.DataTransferObjects.Sales.Contribution
         public Guid OrderId { get; init; }
         public Guid ContributionID { get; init; }
         public Guid PaymentMethodId { get; init; }
+        public string? PaymentMethodName { get; init; }
         public decimal AmountPaid { get; init; }
         public DateTime ContributionDate { get; init; }
     }

@@ -11,6 +11,7 @@
 <Column name="SubcategoryID" id="81A34D9D-4B85-972A-3052-F968FE3B6B35">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la subcategoria]]></commentInRDBMS>
 <generatorID>54B5E37F-279E-C412-CFD2-E09AFC05F59D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="Name" id="42F7F2A9-3BBB-A22E-B4B2-7BF32C0F7135">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de la subcategoria]]></commentInRDBMS>
 <generatorID>449477BE-DDA6-612F-C390-927A9EB5A6B8</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="State" id="2F54F22F-1CC6-212C-0540-1992DE82AD7A">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Estado del registro (activo/inactivo)]]></commentInRDBMS>
 <generatorID>7E947C59-45C0-DD46-A8B1-52A0AF941C32</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="C8D7CCB9-453D-0E85-4213-B88C27221B7C">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>C2077ABC-6285-68DE-9F22-9145A436C7D4</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="79E6872D-D19E-5E69-0D90-8E790463D2AC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>F4866FBF-9C81-6A39-2277-85B692B9C495</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,6 +73,7 @@
 <Column name="Category_CategoryID" id="0E4BDD76-C1D2-D65B-0E72-659E478CD7BC">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador de la categoria asociada a la subcategoria]]></commentInRDBMS>
 <generatorID>E60EB312-7A15-E7C6-5502-FE4ADA4CF810</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

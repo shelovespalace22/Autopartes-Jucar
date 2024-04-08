@@ -11,6 +11,7 @@
 <Column name="ProviderPhoneID" id="793CF1FA-A619-1EFD-1D9D-D9934ED5F885">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del número telefónico del proveedor]]></commentInRDBMS>
 <generatorID>710C0DA4-E0EF-CD04-4192-87CBA492B8B9</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -22,6 +23,7 @@
 <Column name="PhoneType" id="9B6F7A9D-8B9C-1A81-99C5-AAF652940C96">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de número telefónico]]></commentInRDBMS>
 <generatorID>033A7A89-B073-EA72-3489-CFD8F4C29D47</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -34,6 +36,7 @@
 <Column name="PhoneNumber" id="4E8980AA-06A0-DD51-B622-7FFF4E280640">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Número del teléfono]]></commentInRDBMS>
 <generatorID>1109B068-124F-AE9B-526F-BB416E95735B</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,6 +49,7 @@
 <Column name="CreationDate" id="5041F3C4-4ADD-B5BC-C834-D53F7C166DEA">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de creación del registro]]></commentInRDBMS>
 <generatorID>B12335E8-5E78-19FD-540E-DF2D27B4724D</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,6 +61,7 @@
 <Column name="ModificationDate" id="E3C1E136-8370-E7A2-62C1-BD204C6647B9">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha de modificación del registro]]></commentInRDBMS>
 <generatorID>CF985142-D94F-B045-7F0D-B1718E6C40A5</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,6 +73,7 @@
 <Column name="Provider_ProviderID" id="A208CA87-BA8B-E152-72FB-929272B5B89D">
 <createdBy>MI PC</createdBy>
 <createdTime>2024-03-06 22:30:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador del proveedor asociado al teléfono]]></commentInRDBMS>
 <generatorID>250CB195-B7B4-0B36-11EC-8714D0345548</generatorID>
 <ownerDesignName>Mer</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

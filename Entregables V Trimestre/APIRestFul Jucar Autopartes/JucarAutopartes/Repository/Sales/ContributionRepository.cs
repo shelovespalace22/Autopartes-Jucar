@@ -36,6 +36,7 @@ namespace Repository.Sales
         /* Listar */
         public async Task<IEnumerable<Contribution>> GetContributionsAsync(Guid orderId, bool trackChanges) =>
             await FindByCondition(c => c.OrderId.Equals(orderId), trackChanges)
+            .Include(c => c.PaymentMethod)
             .OrderBy(c => c.AmountPaid)
             .ToListAsync();
     }

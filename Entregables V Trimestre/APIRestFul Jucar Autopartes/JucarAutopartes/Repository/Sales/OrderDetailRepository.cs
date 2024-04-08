@@ -20,7 +20,8 @@ namespace Repository.Sales
         /* Listar */
         public async Task<IEnumerable<OrderDetail>> GetOrderDetailsAsync(Guid orderId, bool trackChanges) =>
             await FindByCondition(d => d.OrderId.Equals(orderId), trackChanges)
-            .OrderBy(d => d.SubtotalValue)
+            .Include(d => d.Autopart)
+            .OrderBy(d => d.Autopart.Name)
             .ToListAsync();
     }
 }
